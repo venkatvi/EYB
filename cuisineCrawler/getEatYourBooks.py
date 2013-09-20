@@ -50,6 +50,15 @@ class Tag:
 	attrs = [];
 	isRecipe = 0
 
+	def __eq__(self, other):
+		for attr in ['name', 'text', 'first_child', 'parent', 'next_sibling', 'closed', 'depth', 'attrs', 'isRecipe']: 
+			v1, v2 = [getattr(obj, attr, _NOTFOUND) for obj in [self,other]]
+			if v1 is _NOTFOUND or v2 is __NOTFOUND:
+				return False
+			elif v1 != v2:
+				return False
+		return True
+
 	def get_tag_info_str(self):
 		c ,p ,s = 'none', 'none', 'none'
 		if self.first_child != 0:
@@ -181,6 +190,44 @@ class EatYourBooksParser(HTMLParser):
 			print ('Tag: {} not found'.format(name))
 		else:
 			print t.get_tag_info_str()
+
+
+class EatYourBooksRecipe():
+	id = 0
+	root_depth = 0
+	is_indexed = 0
+	categories = []
+	ingredients = []
+	class BookData():
+		shelf_status = ""
+		recipe_str = ""
+		recipe_url = ""
+		source_str = ""
+		source_url = ""
+		author_str = ""
+		author_url = ""
+	class Feedback():
+		rating = 0
+		notes_str = ""
+		notes_url = ""
+		online_url = ""
+
+	
+	def __init__(self, tag_list, start_index):
+		root_depth = start_index
+		recursive_parser(tag_list, start_index)
+
+	def recursive_parser(self, tag_list, start_index):
+		node = tag_list[start_index]
+		child = tag_list[start_index + 1]
+		if node.depth > child.depth + 1:
+			return start_index + 1
+		if node.child == child and child.parent == node: 
+			switch (node.depth-root_depth):
+			
+			
+				
+			
 
 	
 if __name__ == '__main__':
