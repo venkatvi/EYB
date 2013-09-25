@@ -418,7 +418,6 @@ class EatYourBooksFilter():
 	root_url = ""
 	urls = []
 	recipes = []
-	current_tag_list = []
 
 	def __init__(self, url):
 		self.root_url = url
@@ -442,7 +441,7 @@ class EatYourBooksFilter():
 
 		recipe = EatYourBooksRecipe(current_tag_list, recipe_root_nodes[len(recipe_root_nodes)-1].list_index, len(current_tag_list)-1)
 		self.recipes.append(recipe)
-		self.current_tag_list = current_tag_list
+		
 		
 	def parse_pagination(self, tag_list):
 		pagination_root_node = filter(lambda x: x.name == 'ul' and x.is_page_root, tag_list)
@@ -478,20 +477,7 @@ class EatYourBooksFilter():
 	def parse_other_pages(self):
 		for url in self.urls:
 			if url != self.root_url:
-				parser = EatYourBooksParser()
-				downloader = Downloader(url)
-				downloader.download()
-				
-				parser.feed(downloader.contents.decode('UTF-8'))
-				tag_list = parser.get_tag_list()
-				recipe_root_nodes = filter(lambda x: x.name == 'li' and x.is_recipe, tag_list)
-				for i in range(0, len(recipe_root_nodes)-2):
-					recipe = EatYourBooksRecipe(tag_list, recipe_root_nodes[i].list_index, recipe_root_nodes[i+1].list_index)
-					self.recipes.append(recipe)
-
-				recipe = EatYourBooksRecipe(tag_list, recipe_root_nodes[len(recipe_root_nodes)-1].list_index, len(tag_list)-1)
-				self.recipes.append(recipe)
-
+				self.parse_recipes(url)
 class RecipeDB():
 	connection = None
 	db = None
@@ -499,6 +485,7 @@ class RecipeDB():
 	def __init__(self):
 		connection = Connection('localhost', 27017)
 		db = connection['recipedb']
+		db.createCollection('recipe')
 		recipe_collection = db['recipe']
 	def add_recipe(self, recipe):
 		new_recipe =  {"id": recipe.id,
@@ -513,14 +500,16 @@ class RecipeDB():
 				"author_str": recipe.book_data.author_str,
 				"author_url": recipe.book_data.author_url,
 				"source_url": recipe.book_data.source_url,
-				"source_str": recipe.book_data.source_str
+				"source_str": recipe.book_data.source_str,
+			        "cuisine": "indian"
+
 			       }		
 		recipe_collection.insert(new_recipe)
 if __name__ == '__main__':
 	start_url = "http://www.eatyourbooks.com/recipes/indian"
 	eatyourbooksParser = EatYourBooksFilter(start_url)
 	eatyourbooksParser.parse_recipes(start_url)
-	print ''.join('Total recipes', str(len(eatyourbooksParser.recipes)))
+	print 'Total recipes '.join(str(len(eatyourbooksParser.recipes)))
 
 	db = RecipeDB()
 	for recipe in eatyourbooksParser.recipes:
