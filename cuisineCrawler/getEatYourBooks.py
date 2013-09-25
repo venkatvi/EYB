@@ -501,13 +501,30 @@ class RecipeDB():
 		db = connection['recipedb']
 		recipe_collection = db['recipe']
 	def add_recipe(self, recipe):
-		new_recipe = [ {"id"34
+		new_recipe =  {"id": recipe.id,
+				"type": recipe.type,
+				"indexed": recipe.is_indexed,
+				"recipe_str": recipe.book_data.recipe_str,
+				"recipe_url": recipe.book_data.recipe_url,
+				"rating": recipe.feed_back.rating,
+				"notes_str": recipe.feed_back.notes_str,
+				"notes_url": recipe.feed_back.notes_url,
+				"online_url": recipe.feed_back.online_url,
+				"author_str": recipe.book_data.author_str,
+				"author_url": recipe.book_data.author_url,
+				"source_url": recipe.book_data.source_url,
+				"source_str": recipe.book_data.source_str
+			       }		
 		recipe_collection.insert(new_recipe)
 if __name__ == '__main__':
 	start_url = "http://www.eatyourbooks.com/recipes/indian"
 	eatyourbooksParser = EatYourBooksFilter(start_url)
 	eatyourbooksParser.parse_recipes(start_url)
 	print ''.join('Total recipes', str(len(eatyourbooksParser.recipes)))
+
+	db = RecipeDB()
+	for recipe in eatyourbooksParser.recipes:
+		db.add_recipe(recipe)
 	
 	
 	
