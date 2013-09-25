@@ -2,7 +2,7 @@ import re
 import requests
 from urllib2 import URLError, HTTPError
 from HTMLParser import HTMLParser
-
+from pymongo import Connection
 #from xml.etree import cElementTree as etree
 
 class Downloader():
@@ -492,7 +492,17 @@ class EatYourBooksFilter():
 				recipe = EatYourBooksRecipe(tag_list, recipe_root_nodes[len(recipe_root_nodes)-1].list_index, len(tag_list)-1)
 				self.recipes.append(recipe)
 
-		
+class RecipeDB():
+	connection = None
+	db = None
+	recipe_collection = None
+	def __init__(self):
+		connection = Connection('localhost', 27017)
+		db = connection['recipedb']
+		recipe_collection = db['recipe']
+	def add_recipe(self, recipe):
+		new_recipe = [ {"id"34
+		recipe_collection.insert(new_recipe)
 if __name__ == '__main__':
 	start_url = "http://www.eatyourbooks.com/recipes/indian"
 	eatyourbooksParser = EatYourBooksFilter(start_url)
