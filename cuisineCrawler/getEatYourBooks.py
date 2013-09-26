@@ -5,7 +5,7 @@ from HTMLParser import HTMLParser
 from pymongo import Connection
 #from xml.etree import cElementTree as etree
 
-class Downloader():
+class Downloader:
 	'''
 	Class to retrieve HTML code from a specific page
 	'''
@@ -213,7 +213,7 @@ class EatYourBooksParser(HTMLParser):
 	def get_tag_list(self):
 		return self.tag_list;
 
-class EatYourBooksRecipe():
+class EatYourBooksRecipe:
 	'''
 	Class parses out recipe snippets from HTML
 	Typical recipe snippet is:
@@ -262,7 +262,7 @@ class EatYourBooksRecipe():
 	categories = []
 	ingredients = []
 
-	class BookData():
+	class BookData:
 		shelf_status = ""
 		recipe_str = ""
 		recipe_url = ""
@@ -272,7 +272,7 @@ class EatYourBooksRecipe():
 		author_url = ""
 		def __call__(self):
 			shelf_status = "";
-	class Feedback():
+	class Feedback:
 		rating = 0
 		notes_str = ""
 		notes_url = ""
@@ -414,7 +414,7 @@ class EatYourBooksRecipe():
 		formatString = u" Id = {} \n Type = {} \n Is Indexed = {} \n Categories = {} \n Ingredients = {} \n Shelf Status = {} \n Name = {} \n Url = {} \n Source = {} \n Source Url = {} \n Author = {} \n Author Url = {} \n Rating = {} \n Notes Url = {} \n Online Url = {} \n\n\n".format(self.id, self.type, self.is_indexed, categories_str, ingredients_str, self.book_data.shelf_status, self.book_data.recipe_str, self.book_data.recipe_url, self.book_data.source_str, self.book_data.source_url, self.book_data.author_str, self.book_data.author_url, self.feed_back.rating, self.feed_back.notes_url, self.feed_back.online_url)
 		print formatString	    
 
-class EatYourBooksFilter():
+class EatYourBooksFilter:
 	root_url = ""
 	urls = []
 	recipes = []
@@ -433,22 +433,17 @@ class EatYourBooksFilter():
 
 		if (url == self.root_url):
 			self.parse_pagination(current_tag_list)
-
-		recipe_root_nodes = filter(lambda x: x.name == 'li' and x.is_recipe, current_tag_list)
-		for i in range(0, len(recipe_root_nodes)-2):
-			recipe = EatYourBooksRecipe(current_tag_list, recipe_root_nodes[i].list_index, recipe_root_nodes[i+1].list_index)
-			self.recipes.append(recipe)
-
-		recipe = EatYourBooksRecipe(current_tag_list, recipe_root_nodes[len(recipe_root_nodes)-1].list_index, len(current_tag_list)-1)
-		self.recipes.append(recipe)
+		for url in self.urls:
+			if url == self.root_url:
+				self.parse_page_by_url("", current_tag_list)
+			else:
+				self.parse_page_by_url(url, None)
 		
 		
 	def parse_pagination(self, tag_list):
 		pagination_root_node = filter(lambda x: x.name == 'ul' and x.is_page_root, tag_list)
 		if(len(pagination_root_node) == 1):
 			self.parse_page_urls(pagination_root_node[0].list_index, tag_list)
-			if len(self.urls) > 1:
-				self.parse_other_pages()
 		
 	def parse_page_urls(self, page_root_index, tag_list):
 		root_url = 'http://www.eatyourbooks.com'
@@ -474,19 +469,36 @@ class EatYourBooksFilter():
 			if page_url not in self.urls:
 				self.urls.append(page_url)
 				
-	def parse_other_pages(self):
-		for url in self.urls:
-			if url != self.root_url:
-				self.parse_recipes(url)
-class RecipeDB():
+	def parse_page_by_url(self, url="", tag_list=None):
+		ptag_list = [];
+		if url == "" and tag_list == None:
+			return
+		if url != "":
+			parser = EatYourBooksParser()
+			downloader = Downloader(url)
+			downloader.download()
+
+			parser.feed(downloader.contents.decode('UTF-8'))
+			ptag_list = parser.get_tag_list()
+		else:
+			ptag_list = tag_list
+		
+		recipe_root_nodes = filter(lambda x: x.name == 'li' and x.is_recipe, ptag_list)
+		for i in range(0, len(recipe_root_nodes)-2):
+			recipe = EatYourBooksRecipe(ptag_list, recipe_root_nodes[i].list_index, recipe_root_nodes[i+1].list_index)
+			self.recipes.append(recipe)
+
+		recipe = EatYourBooksRecipe(ptag_list, recipe_root_nodes[len(recipe_root_nodes)-1].list_index, len(ptag_list)-1)
+		self.recipes.append(recipe)
+
+class RecipeDB:
 	connection = None
 	db = None
 	recipe_collection = None
 	def __init__(self):
-		connection = Connection('localhost', 27017)
-		db = connection['recipedb']
-		db.createCollection('recipe')
-		recipe_collection = db['recipe']
+		self.connection = Connection('localhost', 27017)
+		self.db = self.connection['recipedb']
+		self.recipe_collection = self.db['recipe']
 	def add_recipe(self, recipe):
 		new_recipe =  {"id": recipe.id,
 				"type": recipe.type,
@@ -504,12 +516,12 @@ class RecipeDB():
 			        "cuisine": "indian"
 
 			       }		
-		recipe_collection.insert(new_recipe)
+		self.recipe_collection.save(new_recipe)
 if __name__ == '__main__':
 	start_url = "http://www.eatyourbooks.com/recipes/indian"
 	eatyourbooksParser = EatYourBooksFilter(start_url)
 	eatyourbooksParser.parse_recipes(start_url)
-	print 'Total recipes '.join(str(len(eatyourbooksParser.recipes)))
+	print 'Total recipes ' + str(len(eatyourbooksParser.recipes))
 
 	db = RecipeDB()
 	for recipe in eatyourbooksParser.recipes:
