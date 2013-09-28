@@ -409,11 +409,12 @@ class EatYourBooksFilter:
 	root_url = ""
 	urls = []
 	recipes = {}
+	cuisine = ""
 
-	def __init__(self, url):
+	def __init__(self, url, cuisine):
 		self.root_url = url
 		self.urls.append(url)
-
+		self.cuisine = cuisine 
 	def parse_recipes(self, url):
 		parser = EatYourBooksParser()
 		downloader = Downloader(url)
@@ -456,7 +457,7 @@ class EatYourBooksFilter:
 							pg = m.group(0)
 							last_page_index = int(pg)
 		for i in range(2, last_page_index):
-			page_url = ''.join([root_url, '/recipes/indian/', str(i)])
+			page_url = ''.join([root_url, '/recipes/', self.cuisine, '/', str(i)])
 			if page_url not in self.urls:
 				self.urls.append(page_url)
 				
@@ -529,7 +530,7 @@ if __name__ == '__main__':
 		cuisine = m.group(0)
 		cuisine = cuisine.strip('/');
 		print "Cuisine: " + cuisine
-		eatyourbooksParser = EatYourBooksFilter(start_url)
+		eatyourbooksParser = EatYourBooksFilter(start_url, cuisine)
 		eatyourbooksParser.parse_recipes(start_url)
 		print 'Total recipes ' + str(len(eatyourbooksParser.recipes))
 	
