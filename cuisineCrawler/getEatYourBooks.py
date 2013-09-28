@@ -1,5 +1,6 @@
 import re
 import requests
+import hashlib
 from urllib2 import URLError, HTTPError
 from HTMLParser import HTMLParser
 from pymongo import Connection
@@ -33,8 +34,6 @@ class Downloader:
 			contents = r.text
 			contents = contents.encode(r.encoding)
 			self.contents = contents
-			f = open('urlcontents.txt', 'w')
-			f.write(self.contents)
 
 class Tag:
 	'''
@@ -261,28 +260,28 @@ class EatYourBooksRecipe:
 	is_indexed = 0
 	categories = []
 	ingredients = []
-
+	recipe_str = ""
+	recipe_url = ""
+	rating = 0
+	notes_str = ""
+	notes_url = ""
+	online_url = ""
+	check_sum = ""
+	'''
+	Used inner classes to test anonymous classes, their callability and access in python. 
+	Ignore this design. 
+	'''
 	class BookData:
 		shelf_status = ""
-		recipe_str = ""
-		recipe_url = ""
 		source_str = ""
 		source_url = ""
 		author_str = ""
 		author_url = ""
 		def __call__(self):
 			shelf_status = "";
-	class Feedback:
-		rating = 0
-		notes_str = ""
-		notes_url = ""
-		online_url = ""
-		def __call__(self):
-			rating = 0 
 
 	def __init__(self, tag_list, start_index, end_index):
 		self.book_data = self.BookData()
-		self.feed_back = self.Feedback()
 		child_nodes=filter(lambda x: x.depth == tag_list[start_index].depth + 1, tag_list[start_index: end_index -1])
 		if len(child_nodes) == 2:
 			self.parse_book_data(tag_list, child_nodes[1].list_index, end_index)
@@ -328,10 +327,8 @@ class EatYourBooksRecipe:
 				if name == 'href': 
 					recipe_url = value
 			recipe_str = child_node.text
-		if self.book_data is None:
-			self.book_data = self.BookData()
-		self.book_data.recipe_url = recipe_url
-		self.book_data.recipe_str = recipe_str
+		self.recipe_url = recipe_url
+		self.recipe_str = recipe_str
 		
 
 	def parse_from_by(self, tag_list, start_index, end_index):
@@ -380,44 +377,38 @@ class EatYourBooksRecipe:
 			self.is_indexed = 1
 		
 	def parse_rating(self, tag_list, start_index, end_index):
-		if self.feed_back is None:
-			self.feed_back = self.Feedback()
 		child_node = tag_list[start_index + 1]
 		if child_node.name == 'span':
 			for name, value in child_node.attrs:
 				if name == 'rating':
-					self.feed_back.rating = float(value)
+					self.rating = float(value)
 				if name == 'entitytype':
 					self.type = value
 				if name == 'entityid':
 					self.id = int(value)
 	def parse_notes(self, tag_list, start_index, end_index):
-		if self.feed_back is None:
-			self.feed_back = self.Feedback()
 		child_node = tag_list[start_index + 1]
 		if child_node.name == 'a':
 			for name, value in child_node.attrs:
 				if name == 'href':
-					self.feed_back.notes_url = value
+					self.notes_url = value
 	def parse_online(self, tag_list, start_index, end_index):
-		if self.feed_back is None:
-			self.feed_back = self.Feedback()
 		child_node = tag_list[start_index + 1]
 		if child_node.name == 'a':
 			for name, value in child_node.attrs:
 				if name == 'href':
-					self.feed_back.online_url = value
+					self.online_url = value
 	def print_recipe(self):
 		categories_str = ', '.join(self.categories)
 		ingredients_str = ', '.join(self.ingredients)
 
-		formatString = u" Id = {} \n Type = {} \n Is Indexed = {} \n Categories = {} \n Ingredients = {} \n Shelf Status = {} \n Name = {} \n Url = {} \n Source = {} \n Source Url = {} \n Author = {} \n Author Url = {} \n Rating = {} \n Notes Url = {} \n Online Url = {} \n\n\n".format(self.id, self.type, self.is_indexed, categories_str, ingredients_str, self.book_data.shelf_status, self.book_data.recipe_str, self.book_data.recipe_url, self.book_data.source_str, self.book_data.source_url, self.book_data.author_str, self.book_data.author_url, self.feed_back.rating, self.feed_back.notes_url, self.feed_back.online_url)
-		print formatString	    
+		formatString = u" Id = {} \n Type = {} \n Is Indexed = {} \n Categories = {} \n Ingredients = {} \n Shelf Status = {} \n Name = {} \n Url = {} \n Source = {} \n Source Url = {} \n Author = {} \n Author Url = {} \n Rating = {} \n Notes Url = {} \n Online Url = {} \n\n\n".format(self.id, self.type, self.is_indexed, categories_str, ingredients_str, self.book_data.shelf_status, self.recipe_str, self.recipe_url, self.book_data.source_str, self.book_data.source_url, self.book_data.author_str, self.book_data.author_url, self.rating, self.notes_url, self.online_url)
+		return formatString.encode('UTF-8')	    
 
 class EatYourBooksFilter:
 	root_url = ""
 	urls = []
-	recipes = []
+	recipes = {}
 
 	def __init__(self, url):
 		self.root_url = url
@@ -486,10 +477,21 @@ class EatYourBooksFilter:
 		recipe_root_nodes = filter(lambda x: x.name == 'li' and x.is_recipe, ptag_list)
 		for i in range(0, len(recipe_root_nodes)-2):
 			recipe = EatYourBooksRecipe(ptag_list, recipe_root_nodes[i].list_index, recipe_root_nodes[i+1].list_index)
-			self.recipes.append(recipe)
+			self.add_recipe(recipe)
 
 		recipe = EatYourBooksRecipe(ptag_list, recipe_root_nodes[len(recipe_root_nodes)-1].list_index, len(ptag_list)-1)
-		self.recipes.append(recipe)
+		self.add_recipe(recipe)
+	def add_recipe(self,recipe):
+		recipe_contents = recipe.print_recipe()
+		recipe_checksum = hashlib.md5(recipe_contents).hexdigest()
+		f = open('repeated recipes.txt', 'w')
+		if recipe_checksum in self.recipes.keys():
+			pstr = "Recipe already exists:" + str(recipe.id) + " " + recipe.recipe_str + " -- " + recipe.recipe_url + "\n"
+			f.write(pstr.encode('UTF-8'))
+		else:
+			recipe.check_sum = recipe_checksum
+			self.recipes[recipe_checksum]=recipe
+		f.close()
 
 class RecipeDB:
 	connection = None
@@ -499,34 +501,42 @@ class RecipeDB:
 		self.connection = Connection('localhost', 27017)
 		self.db = self.connection['recipedb']
 		self.recipe_collection = self.db['recipe']
-	def add_recipe(self, recipe):
+	def add_recipe(self, recipe, cuisine):
 		new_recipe =  {"id": recipe.id,
 				"type": recipe.type,
 				"indexed": recipe.is_indexed,
-				"recipe_str": recipe.book_data.recipe_str,
-				"recipe_url": recipe.book_data.recipe_url,
-				"rating": recipe.feed_back.rating,
-				"notes_str": recipe.feed_back.notes_str,
-				"notes_url": recipe.feed_back.notes_url,
-				"online_url": recipe.feed_back.online_url,
+				"recipe_str": recipe.recipe_str,
+				"recipe_url": recipe.recipe_url,
+				"rating": recipe.rating,
+				"notes_str": recipe.notes_str,
+				"notes_url": recipe.notes_url,
+				"online_url": recipe.online_url,
 				"author_str": recipe.book_data.author_str,
 				"author_url": recipe.book_data.author_url,
 				"source_url": recipe.book_data.source_url,
 				"source_str": recipe.book_data.source_str,
-			        "cuisine": "indian"
-
+			        "cuisine": cuisine,
+			        "ingredients": recipe.ingredients,
+			        "categories": recipe.categories,
+			        "check_sum" : recipe.check_sum
 			       }		
 		self.recipe_collection.save(new_recipe)
 if __name__ == '__main__':
-	start_url = "http://www.eatyourbooks.com/recipes/indian"
-	eatyourbooksParser = EatYourBooksFilter(start_url)
-	eatyourbooksParser.parse_recipes(start_url)
-	print 'Total recipes ' + str(len(eatyourbooksParser.recipes))
-
-	db = RecipeDB()
-	for recipe in eatyourbooksParser.recipes:
-		db.add_recipe(recipe)
+	urls = [line.strip() for line in open('recipe_links.txt')]
+	for url in urls:
+		start_url = url#"http://www.eatyourbooks.com/recipes/indian"
+		m = re.search('\/[a-z-]+$', start_url);
+		cuisine = m.group(0)
+		cuisine = cuisine.strip('/');
+		print "Cuisine: " + cuisine
+		eatyourbooksParser = EatYourBooksFilter(start_url)
+		eatyourbooksParser.parse_recipes(start_url)
+		print 'Total recipes ' + str(len(eatyourbooksParser.recipes))
 	
+		db = RecipeDB()
+		for key, recipe in eatyourbooksParser.recipes.iteritems():
+			db.add_recipe(recipe, cuisine)
+
 	
 	
 	
