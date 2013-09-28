@@ -4,6 +4,7 @@ import hashlib
 from urllib2 import URLError, HTTPError
 from HTMLParser import HTMLParser
 from pymongo import Connection
+from optparse import OptionParser
 #from xml.etree import cElementTree as etree
 
 class Downloader:
@@ -51,6 +52,20 @@ class Tag:
 	is_recipe = 0
 	list_index = 0
 	is_page_root = 0
+	
+	def __init__(self):
+		name = ''
+		text = ''
+		first_child = 0
+		parent = 0
+		next_sibling = 0
+		closed = 0
+		depth = 0
+		attrs = []
+		is_recipe = 0
+		list_index = 0
+		is_page_root = 0
+
 
 	def __eq__(self, other):
 		for attr in ['name', 'text', 'first_child', 'parent', 'next_sibling', 'closed', 'depth', 'attrs', 'is_recipe']: 
@@ -100,6 +115,14 @@ class EatYourBooksParser(HTMLParser):
 	depth = 0
 	previous_tag = 'none'
 	mode = 'nonsilent'
+	def initalize(self):
+		self.tag_list = []
+		self.depth = 0
+		self.previous_tag = 'none'
+		self.mode = 'nonsilent'
+
+	def cleanup(self):
+		del self.tag_list[:]
 
 	def handle_starttag(self, tag, attrs):			
 		self.depth = self.depth + 1
@@ -282,16 +305,16 @@ class EatYourBooksRecipe:
 
 	def __init__(self, tag_list, start_index, end_index):
 		self.book_data = self.BookData()
-		child_nodes=filter(lambda x: x.depth == tag_list[start_index].depth + 1, tag_list[start_index: end_index -1])
-		if len(child_nodes) == 2:
-			self.parse_book_data(tag_list, child_nodes[1].list_index, end_index)
+		child_nodes=filter(lambda x: x.depth == tag_list[start_index].depth + 1, tag_list[start_index: end_index ])
+		if len(child_nodes) == 3:
+			self.parse_book_data(tag_list, child_nodes[1].list_index, end_index-1)
 
 	def parse_book_data(self, tag_list, start_index, end_index):
-		child_nodes = filter(lambda x: x.depth == tag_list[start_index].depth + 1, tag_list[start_index: end_index-1])
+		child_nodes = filter(lambda x: x.depth == tag_list[start_index].depth + 1, tag_list[start_index: end_index])
 		if len(child_nodes) == 4: # bookshelf_status, book_title, feedback, meta.
 			self.parse_bookshelf_status(tag_list, child_nodes[0].list_index, child_nodes[1].list_index)
 			self.parse_book_title(tag_list, child_nodes[1].list_index, child_nodes[2].list_index)
-			self.parse_feedback(tag_list, child_nodes[2]. list_index, child_nodes[3].list_index)
+			self.parse_feedback(tag_list, child_nodes[2].list_index, child_nodes[3].list_index)
 			self.parse_meta(tag_list, child_nodes[3].list_index, end_index)
 
 	def parse_bookshelf_status(self, tag_list, start_index, end_index):
@@ -413,10 +436,15 @@ class EatYourBooksFilter:
 
 	def __init__(self, url, cuisine):
 		self.root_url = url
+		self.urls = []
 		self.urls.append(url)
+		self.recipes = {}
 		self.cuisine = cuisine 
+
 	def parse_recipes(self, url):
 		parser = EatYourBooksParser()
+		parser.initalize()
+
 		downloader = Downloader(url)
 		downloader.download()
 
@@ -430,7 +458,7 @@ class EatYourBooksFilter:
 				self.parse_page_by_url("", current_tag_list)
 			else:
 				self.parse_page_by_url(url, None)
-		
+			#print "Recipes So Far: " + str(len(self.recipes))
 		
 	def parse_pagination(self, tag_list):
 		pagination_root_node = filter(lambda x: x.name == 'ul' and x.is_page_root, tag_list)
@@ -463,10 +491,13 @@ class EatYourBooksFilter:
 				
 	def parse_page_by_url(self, url="", tag_list=None):
 		ptag_list = [];
+		parser = None
 		if url == "" and tag_list == None:
 			return
 		if url != "":
 			parser = EatYourBooksParser()
+			parser.initalize()
+
 			downloader = Downloader(url)
 			downloader.download()
 
@@ -476,23 +507,38 @@ class EatYourBooksFilter:
 			ptag_list = tag_list
 		
 		recipe_root_nodes = filter(lambda x: x.name == 'li' and x.is_recipe, ptag_list)
-		for i in range(0, len(recipe_root_nodes)-2):
+		for i in range(0, len(recipe_root_nodes)-1):
+			ps = recipe_root_nodes[i].list_index
+			pe = recipe_root_nodes[i+1].list_index
 			recipe = EatYourBooksRecipe(ptag_list, recipe_root_nodes[i].list_index, recipe_root_nodes[i+1].list_index)
 			self.add_recipe(recipe)
 
-		recipe = EatYourBooksRecipe(ptag_list, recipe_root_nodes[len(recipe_root_nodes)-1].list_index, len(ptag_list)-1)
+		ps = recipe_root_nodes[len(recipe_root_nodes)-1].list_index
+		
+		recipe_end_nodes = filter(lambda x: x.depth == recipe_root_nodes[-1].depth, ptag_list[ps+1:])
+		end_index = len(ptag_list)-1;
+		if len(recipe_end_nodes) <= 0:
+			print "ERRRRRRRORRR"
+		else:
+			end_index = recipe_end_nodes[0].list_index
+		recipe = EatYourBooksRecipe(ptag_list, recipe_root_nodes[len(recipe_root_nodes)-1].list_index, end_index)
 		self.add_recipe(recipe)
+		del ptag_list[:]
+
 	def add_recipe(self,recipe):
 		recipe_contents = recipe.print_recipe()
+
 		recipe_checksum = hashlib.md5(recipe_contents).hexdigest()
-		f = open('repeated recipes.txt', 'w')
+
 		if recipe_checksum in self.recipes.keys():
-			pstr = "Recipe already exists:" + str(recipe.id) + " " + recipe.recipe_str + " -- " + recipe.recipe_url + "\n"
+			f = open('repeated_recipes.txt', 'a')
+			pstr = "Recipe already exists:" + str(recipe.id) + " " + recipe.print_recipe() + "\n"
 			f.write(pstr.encode('UTF-8'))
+			f.close()
 		else:
 			recipe.check_sum = recipe_checksum
 			self.recipes[recipe_checksum]=recipe
-		f.close()
+
 
 class RecipeDB:
 	connection = None
@@ -523,16 +569,20 @@ class RecipeDB:
 			       }		
 		self.recipe_collection.save(new_recipe)
 if __name__ == '__main__':
+	parser = OptionParser()
+	parser.add_option("-i", "--ipaddress", dest="ipaddress", help="ipaddress of remote mongodbserver", default="localhost")
+	parser
+	
 	urls = [line.strip() for line in open('recipe_links.txt')]
 	for url in urls:
 		start_url = url#"http://www.eatyourbooks.com/recipes/indian"
 		m = re.search('\/[a-z-]+$', start_url);
 		cuisine = m.group(0)
 		cuisine = cuisine.strip('/');
-		print "Cuisine: " + cuisine
+		print "Cuisine: " + cuisine 
 		eatyourbooksParser = EatYourBooksFilter(start_url, cuisine)
 		eatyourbooksParser.parse_recipes(start_url)
-		print 'Total recipes ' + str(len(eatyourbooksParser.recipes))
+		print 'Cuisine:' + cuisine + ' Recipe Collection: ' + str(len(eatyourbooksParser.recipes))
 	
 		db = RecipeDB()
 		for key, recipe in eatyourbooksParser.recipes.iteritems():
