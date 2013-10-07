@@ -86,6 +86,9 @@ class Tag:
 				elif value == "listing" :
 					self.tag_type = "cookbooks"
 					break
+				elif value == 'listing recipe hrecipe no-image':
+					self.tag_type = "cookbookrecipes"
+					break
 			if self.name == 'ul' and name == 'class' and value == 'pages':
 				self.is_page_root = 1
 				break
@@ -322,17 +325,19 @@ class EatYourBooksItem:
 		self.item_type = item_type
 		self.book_data = self.BookData()
 		child_nodes=filter(lambda x: x.depth == tag_list[start_index].depth + 1, tag_list[start_index: end_index ])
-		if len(child_nodes) == 3:
-			self.parse_book_data(tag_list, child_nodes[1].list_index, end_index-1)
+		index = 1
+		if len(child_nodes) == 2 if "cookbookrecipes" in self.item_type else 3:
+			index = 0
+			self.parse_book_data(tag_list, child_nodes[index].list_index, end_index-1)
 
 	def parse_book_data(self, tag_list, start_index, end_index):
 		child_nodes = filter(lambda x: x.depth == tag_list[start_index].depth + 1, tag_list[start_index: end_index])
 		# Recipes: bookshelf_status, book_title, feedback, meta.
 		# Cookbooks: bookshelf_status, feedback, meta.
-		child_tags_count = 4 if self.item_type == "recipes" else  3
+		child_tags_count = 4 if "recipes" in self.item_type else  3
 		if len(child_nodes) == child_tags_count:
 			index = 0
-			if self.item_type == "recipes": 
+			if "recipes" in self.item_type: 
 				self.parse_bookshelf_status(tag_list, child_nodes[0].list_index, child_nodes[1].list_index)
 				index = 1	
 			self.parse_book_title(tag_list, child_nodes[index].list_index, child_nodes[index + 1].list_index)
@@ -352,14 +357,19 @@ class EatYourBooksItem:
 
 	def parse_book_title(self, tag_list, start_index, end_index):
 		child_nodes = filter(lambda x: x.depth == tag_list[start_index].depth + 1, tag_list[start_index:end_index -1])
-		child_tags_count = 2 if self.item_type == "recipes" else 3
+		child_tags_count = 2 if "recipes" in self.item_type else 3
+		child_tags_count = 1 if "cookbookrecipes" == self.item_type else child_tags_count
 		if len(child_nodes) == child_tags_count:
 			index = 0
 			if self.item_type == "cookbooks":
 				self.parse_bookshelf_status(tag_list, child_nodes[0].list_index, child_nodes[1].list_index)
 				index = 1
-			self.parse_title_fn(tag_list, child_nodes[index ].list_index, child_nodes[index + 1].list_index)
-			self.parse_from_by(tag_list, child_nodes[index + 1].list_index, end_index)
+			e_index = end_index
+			if self.item_type != "cookbookrecipes":
+				e_index = child_nodes[index+1].list_index
+				self.parse_from_by(tag_list, child_nodes[index + 1].list_index, end_index)
+			
+			self.parse_title_fn(tag_list, child_nodes[index ].list_index, e_index)
 				  
 	def parse_feedback(self, tag_list, start_index, end_index):
 		child_nodes = filter(lambda x: x.depth == tag_list[start_index].depth + 1, tag_list[start_index:end_index - 1])
@@ -372,23 +382,25 @@ class EatYourBooksItem:
 		child_nodes = filter(lambda x: x.depth == tag_list[start_index].depth + 1, tag_list[start_index:end_index])
 	 	if len(child_nodes) > 0: 
 			self.parse_categories(tag_list, child_nodes[0].list_index, child_nodes[1].list_index)
-		if self.item_type == "recipes" and len(child_nodes) > 1:
+		if "recipes" in self.item_type and len(child_nodes) > 1:
 			self.parse_ingredients(tag_list, child_nodes[1].list_index, child_nodes[2].list_index)
-		if self.item_type == "cookbooks" and len(child_nodes) > 1:
+		if self.item_type == "cookbooks"  and len(child_nodes) > 1:
 			self.parse_isbn(tag_list, child_nodes[1].list_index, child_nodes[2].list_index)
 		index = 2
 		if len(child_nodes) == 4: #sometimes an empty li tag is inserted. 
 			index = 3;
 		self.parse_index_status(tag_list, child_nodes[index].list_index, end_index)
-		if self.item_type == "recipes" and (len(self.categories) == 0 or len(self.ingredients) == 0):
+		if "recipes" in self.item_type and (len(self.categories) == 0 or len(self.ingredients) == 0):
 			print "ERROR"
 		elif self.item_type == "cookbooks" and (len(self.categories) == 0 or self.book_data.isbn == ""):
 			print "POT ERROR"
+		'''
 		else:
 			print self.ingredients
 			print self.categories
 			print self.book_data.isbn
 			print self.is_indexed
+		'''
 	def parse_title_fn(self, tag_list, start_index, end_index):
 		item_url = ""
 		item_str = ""
@@ -536,6 +548,9 @@ class EatYourBooksFilter:
 		
 	def parse_page_urls(self, page_root_index, tag_list):
 		root_url = 'http://www.eatyourbooks.com'
+		if self.item_type == "cookbookrecipes":	
+			root_url =  ""
+		prefix_url = ""
 		last_page_index = 0
 		page_root_depth = tag_list[page_root_index].depth
 		for i in range(page_root_index+2, len(tag_list)-1):
@@ -553,8 +568,16 @@ class EatYourBooksFilter:
 							new_page_url = ''.join([ root_url, value])
 							if new_page_url not in self.urls:
 								self.urls.append(new_page_url)
+						if prefix_url == "":
+							prefix_url = re.sub('\/\d+$', '', value)
+							
+		if self.item_type == "cookbookrecipes":
+			db_type = ""
+			root_url = prefix_url
+		else:
+			db_type = ''.join(['/', self.item_type, '/', self.cuisine])	
 		for i in range(2, last_page_index):
-			page_url = ''.join([root_url, '/', self.item_type, '/', self.cuisine, '/', str(i)])
+			page_url = ''.join([root_url, db_type, '/', str(i)])
 			if page_url not in self.urls:
 				self.urls.append(page_url)
 				
@@ -595,8 +618,8 @@ class EatYourBooksFilter:
 				end_index = item_end_nodes[0].list_index
 			item = EatYourBooksItem(ptag_list, item_root_nodes[len(item_root_nodes)-1].list_index, end_index, self.item_type)
 			self.add_item(item)
-		else:
-			print "No items found for " + url		
+		#else:
+		#	print "No items found for " + url		
 		del ptag_list[:]
 
 	def add_item(self,item):
@@ -648,6 +671,9 @@ class EatYourBooksDB:
 			        "check_sum" : item.check_sum
 			       }		
 		self.item_collection.save(new_item)
+	
+	def get_cookbooks(self):
+		return self.db["cookbooks"].find({"cuisine": "indian"})
 if __name__ == '__main__':
 	ipaddress = ""
 	itemtype = ""
@@ -665,25 +691,41 @@ if __name__ == '__main__':
 	print "links file: " + options.urllinks	
 	print "db name: " + options.db
 	
-	
-	urls = [line.strip() for line in open(options.urllinks)]
-	for url in urls:
-		start_url = url #"http://www.eatyourbooks.com/recipes/indian"
-		m = re.search('\/[a-z-]+$', start_url);
-		cuisine = m.group(0)
-		cuisine = cuisine.strip('/');
-		print "Cuisine: " + cuisine 
-		eatyourbooksParser = EatYourBooksFilter(start_url, cuisine, options.itemtype)
-		eatyourbooksParser.parse_items(start_url)
-		print 'Cuisine:' + cuisine + ' Item Collection: ' + str(len(eatyourbooksParser.items))
-	
-		
+	if options.itemtype == "cookbookrecipes":
 		db = EatYourBooksDB(options.db, options.ipaddress, options.itemtype)
-		for key, item in eatyourbooksParser.items.iteritems():
-			db.add_item(item, cuisine, options.itemtype)
-
+		urls = db.get_cookbooks()
+		print urls.count()
+	else:
+		urls = [line.strip() for line in open(options.urllinks)]
 	
-	
+	for url in urls:
+		if options.itemtype == "cookbookrecipes":
+			link = url["online_url"] if url["item_url"] == "" else url["item_url"]
+			start_url = "http://www.eatyourbooks.com" + link
+		else:
+			start_url = url #"http://www.eatyourbooks.com/recipes/indian"
+		
+		if start_url != "http:/www.eatyourbooks.com":
+			start_url = re.sub('#Members_who_own_this_book', '', start_url)
+			m = re.search('\/[a-z-]+$', start_url);
+			if options.itemtype != "cookbookrecipes" and m is not None:
+				cuisine = m.group(0)
+				cuisine = cuisine.strip('/');
+			else:
+				cuisine = url["cuisine"]
+			eatyourbooksParser = EatYourBooksFilter(start_url, cuisine, options.itemtype)
+			eatyourbooksParser.parse_items(start_url)
+			if len(eatyourbooksParser.items) > 0:
+				print 'Cuisine:' + cuisine + ' Url: ' + start_url + ' Item Collection: ' + str(len(tatyourbooksParser.items))
+				for key, item in eatyourbooksParser.items.iteritems():
+					item.book_data.source_url = start_url
+					item.book_data.source_str = url["item_str"]
+					item.book_data.author_str = url["author_str"]
+					item.book_data.author_url = url["author_url"]
+					db.add_item(item, cuisine, options.itemtype)
+			else:
+				print "No recipes found for cookbook: " + start_url
+		
 	
 
 	
