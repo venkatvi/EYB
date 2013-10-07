@@ -49,9 +49,10 @@ class Tag:
 	closed = 0
 	depth = 0
 	attrs = [];
-	is_recipe = 0
+	tag_type = ""
 	list_index = 0
 	is_page_root = 0
+	
 	
 	def __init__(self):
 		name = ''
@@ -62,13 +63,13 @@ class Tag:
 		closed = 0
 		depth = 0
 		attrs = []
-		is_recipe = 0
+		tag_type = ""
 		list_index = 0
 		is_page_root = 0
 
 
 	def __eq__(self, other):
-		for attr in ['name', 'text', 'first_child', 'parent', 'next_sibling', 'closed', 'depth', 'attrs', 'is_recipe']: 
+		for attr in ['name', 'text', 'first_child', 'parent', 'next_sibling', 'closed', 'depth', 'attrs', 'tag_type']: 
 			v1, v2 = [getattr(obj, attr, _NOTFOUND) for obj in [self,other]]
 			if v1 is _NOTFOUND or v2 is __NOTFOUND:
 				return False
@@ -78,9 +79,13 @@ class Tag:
 
 	def update_tag_info(self):
 		for name, value in self.attrs:
-			if name == 'class' and value == 'listing recipe hrecipe ' :
-				self.is_recipe = 1
-				break
+			if name == 'class':
+				if value == 'listing recipe hrecipe ' :
+					self.tag_type = "recipes"
+					break
+				elif value == "listing" :
+					self.tag_type = "cookbooks"
+					break
 			if self.name == 'ul' and name == 'class' and value == 'pages':
 				self.is_page_root = 1
 				break
@@ -95,14 +100,18 @@ class Tag:
 			s = self.next_sibling.name
 
 		for name, value in self.attrs:
-			if name == 'class' and value == 'listing recipe hrecipe ' :
-				self.is_recipe = 1
-				break
+			if name == 'class':
+				if value == 'listing recipe hrecipe ' :
+					self.tag_type = "recipes"
+					break
+				elif value == 'listing': 
+					self.tag_type = "cookbooks"
+					break
 			if self.name == 'ul' and name == 'class' and value == 'pages':
 				self.is_page_root = 1
 				break
 
-		formatString = u" Name = {}, Text = {} \n Parent = {}, First Child = {}, Next Sibling = {} \n Closed = {}, Depth = {} \n Is Recipe = {} \n\n\n".format(self.name, self.text, p, c, s, self.closed, self.depth, self.is_recipe)
+		formatString = u" Name = {}, Text = {} \n Parent = {}, First Child = {}, Next Sibling = {} \n Closed = {}, Depth = {} \n Type = {} \n\n\n".format(self.name, self.text, p, c, s, self.closed, self.depth, self.tag_type)
 		return formatString
 
 class EatYourBooksParser(HTMLParser):
@@ -235,7 +244,8 @@ class EatYourBooksParser(HTMLParser):
 	def get_tag_list(self):
 		return self.tag_list;
 
-class EatYourBooksRecipe:
+
+class EatYourBooksItem:
 	'''
 	Class parses out recipe snippets from HTML
 	Typical recipe snippet is:
@@ -283,13 +293,14 @@ class EatYourBooksRecipe:
 	is_indexed = 0
 	categories = []
 	ingredients = []
-	recipe_str = ""
-	recipe_url = ""
+	item_str = ""
+	item_url = ""
 	rating = 0
 	notes_str = ""
 	notes_url = ""
 	online_url = ""
 	check_sum = ""
+	item_type = ""
 	'''
 	Used inner classes to test anonymous classes, their callability and access in python. 
 	Ignore this design. 
@@ -300,10 +311,15 @@ class EatYourBooksRecipe:
 		source_url = ""
 		author_str = ""
 		author_url = ""
+		isbn = ""
+		cover_type = ""
+		published_country = ""
+		published_date = ""
 		def __call__(self):
 			shelf_status = "";
 
-	def __init__(self, tag_list, start_index, end_index):
+	def __init__(self, tag_list, start_index, end_index, item_type):
+		self.item_type = item_type
 		self.book_data = self.BookData()
 		child_nodes=filter(lambda x: x.depth == tag_list[start_index].depth + 1, tag_list[start_index: end_index ])
 		if len(child_nodes) == 3:
@@ -311,21 +327,39 @@ class EatYourBooksRecipe:
 
 	def parse_book_data(self, tag_list, start_index, end_index):
 		child_nodes = filter(lambda x: x.depth == tag_list[start_index].depth + 1, tag_list[start_index: end_index])
-		if len(child_nodes) == 4: # bookshelf_status, book_title, feedback, meta.
-			self.parse_bookshelf_status(tag_list, child_nodes[0].list_index, child_nodes[1].list_index)
-			self.parse_book_title(tag_list, child_nodes[1].list_index, child_nodes[2].list_index)
-			self.parse_feedback(tag_list, child_nodes[2].list_index, child_nodes[3].list_index)
-			self.parse_meta(tag_list, child_nodes[3].list_index, end_index)
+		# Recipes: bookshelf_status, book_title, feedback, meta.
+		# Cookbooks: bookshelf_status, feedback, meta.
+		child_tags_count = 4 if self.item_type == "recipes" else  3
+		if len(child_nodes) == child_tags_count:
+			index = 0
+			if self.item_type == "recipes": 
+				self.parse_bookshelf_status(tag_list, child_nodes[0].list_index, child_nodes[1].list_index)
+				index = 1	
+			self.parse_book_title(tag_list, child_nodes[index].list_index, child_nodes[index + 1].list_index)
+			self.parse_feedback(tag_list, child_nodes[index + 1].list_index, child_nodes[index + 2].list_index)
+			self.parse_meta(tag_list, child_nodes[index + 2].list_index, end_index)
 
 	def parse_bookshelf_status(self, tag_list, start_index, end_index):
 		child_nodes = filter(lambda x: x.depth == tag_list[start_index].depth + 1, tag_list[start_index: end_index - 1])
 		#how to handle? 
+		#this tag is empty for recipes. 
+		'''
+		<div class="bookshelf-status">
+                	<button class="btn btnshelf" entityid="11997" entitytype="1" ismag="False" title="Add to your Bookshelf">Bookshelf</button>
+            	</div>
+		'''
+		#this is getting parsed in rating
 
 	def parse_book_title(self, tag_list, start_index, end_index):
 		child_nodes = filter(lambda x: x.depth == tag_list[start_index].depth + 1, tag_list[start_index:end_index -1])
-		if len(child_nodes) == 2:
-			self.parse_title_fn(tag_list, child_nodes[0].list_index, child_nodes[1].list_index)
-			self.parse_from_by(tag_list, child_nodes[1].list_index, end_index)
+		child_tags_count = 2 if self.item_type == "recipes" else 3
+		if len(child_nodes) == child_tags_count:
+			index = 0
+			if self.item_type == "cookbooks":
+				self.parse_bookshelf_status(tag_list, child_nodes[0].list_index, child_nodes[1].list_index)
+				index = 1
+			self.parse_title_fn(tag_list, child_nodes[index ].list_index, child_nodes[index + 1].list_index)
+			self.parse_from_by(tag_list, child_nodes[index + 1].list_index, end_index)
 				  
 	def parse_feedback(self, tag_list, start_index, end_index):
 		child_nodes = filter(lambda x: x.depth == tag_list[start_index].depth + 1, tag_list[start_index:end_index - 1])
@@ -335,23 +369,37 @@ class EatYourBooksRecipe:
 			self.parse_online(tag_list, child_nodes[2].list_index, end_index)
 
 	def parse_meta(self, tag_list, start_index, end_index):
-		child_nodes = filter(lambda x: x.depth == tag_list[start_index].depth + 1, tag_list[start_index:end_index - 1])
-		if len(child_nodes) == 3:
+		child_nodes = filter(lambda x: x.depth == tag_list[start_index].depth + 1, tag_list[start_index:end_index])
+	 	if len(child_nodes) > 0: 
 			self.parse_categories(tag_list, child_nodes[0].list_index, child_nodes[1].list_index)
+		if self.item_type == "recipes" and len(child_nodes) > 1:
 			self.parse_ingredients(tag_list, child_nodes[1].list_index, child_nodes[2].list_index)
-			self.parse_index_status(tag_list, child_nodes[2].list_index, end_index)
-
+		if self.item_type == "cookbooks" and len(child_nodes) > 1:
+			self.parse_isbn(tag_list, child_nodes[1].list_index, child_nodes[2].list_index)
+		index = 2
+		if len(child_nodes) == 4: #sometimes an empty li tag is inserted. 
+			index = 3;
+		self.parse_index_status(tag_list, child_nodes[index].list_index, end_index)
+		if self.item_type == "recipes" and (len(self.categories) == 0 or len(self.ingredients) == 0):
+			print "ERROR"
+		elif self.item_type == "cookbooks" and (len(self.categories) == 0 or self.book_data.isbn == ""):
+			print "POT ERROR"
+		else:
+			print self.ingredients
+			print self.categories
+			print self.book_data.isbn
+			print self.is_indexed
 	def parse_title_fn(self, tag_list, start_index, end_index):
-		recipe_url = ""
-		recipe_str = ""
+		item_url = ""
+		item_str = ""
 		child_node = tag_list[start_index + 1]
 		if child_node.name == 'a':
 			for name, value in child_node.attrs:
 				if name == 'href': 
-					recipe_url = value
-			recipe_str = child_node.text
-		self.recipe_url = recipe_url
-		self.recipe_str = recipe_str
+					item_url = value
+			item_str = child_node.text
+		self.item_url = item_url
+		self.item_str = item_str
 		
 
 	def parse_from_by(self, tag_list, start_index, end_index):
@@ -393,7 +441,26 @@ class EatYourBooksRecipe:
 			ingred_text = ingred_text.strip()
 			self.ingredients = ingred_text.split(';')
 			self.ingredients = map(lambda s: s.strip(), self.ingredients)
-			
+	def parse_isbn(self, tag_list, start_index, end_index):
+		child_node = tag_list[start_index + 1]
+		if child_node.text == 'ISBN:':
+			isbn_text = tag_list[start_index].text
+			isbn_text = isbn_text.strip()
+			isbn_contents = isbn_text.split('\r\n');
+			if len(isbn_contents) > 0: 
+				temp1 = isbn_contents[0].split(' ');
+				isbn = temp1[0].strip()
+				self.book_data.isbn = isbn
+				if len(temp1) > 1:
+					cover_type = temp1[1].strip()
+					self.book_data.cover_type = cover_type
+				if len(isbn_contents) > 1:
+					published_country = isbn_contents[1].strip()
+					self.book_data.published_country = published_country
+				if len(isbn_contents) > 2:
+					published_year = isbn_contents[2].strip()
+					self.book_data.published_date = published_year
+		
 	def parse_index_status(self, tag_list, start_index, end_index):
 		child_node = tag_list[start_index + 1]
 		if child_node.name == 'b' and child_node.text == 'Member Indexed': 
@@ -421,27 +488,29 @@ class EatYourBooksRecipe:
 			for name, value in child_node.attrs:
 				if name == 'href':
 					self.online_url = value
-	def print_recipe(self):
+	def print_item(self):
 		categories_str = ', '.join(self.categories)
 		ingredients_str = ', '.join(self.ingredients)
 
-		formatString = u" Id = {} \n Type = {} \n Is Indexed = {} \n Categories = {} \n Ingredients = {} \n Shelf Status = {} \n Name = {} \n Url = {} \n Source = {} \n Source Url = {} \n Author = {} \n Author Url = {} \n Rating = {} \n Notes Url = {} \n Online Url = {} \n\n\n".format(self.id, self.type, self.is_indexed, categories_str, ingredients_str, self.book_data.shelf_status, self.recipe_str, self.recipe_url, self.book_data.source_str, self.book_data.source_url, self.book_data.author_str, self.book_data.author_url, self.rating, self.notes_url, self.online_url)
+		formatString = u" Id = {} \n Type = {} \n Is Indexed = {} \n Categories = {} \n Ingredients = {} \n Shelf Status = {} \n Name = {} \n Url = {} \n Source = {} \n Source Url = {} \n Author = {} \n Author Url = {} \n Rating = {} \n Notes Url = {} \n Online Url = {} \n\n\n".format(self.id, self.type, self.is_indexed, categories_str, ingredients_str, self.book_data.shelf_status, self.item_str, self.item_url, self.book_data.source_str, self.book_data.source_url, self.book_data.author_str, self.book_data.author_url, self.rating, self.notes_url, self.online_url)
 		return formatString.encode('UTF-8')	    
 
 class EatYourBooksFilter:
 	root_url = ""
 	urls = []
-	recipes = {}
+	items = {}
 	cuisine = ""
+	item_type = ""
 
-	def __init__(self, url, cuisine):
+	def __init__(self, url, cuisine, item_type):
 		self.root_url = url
 		self.urls = []
 		self.urls.append(url)
-		self.recipes = {}
+		self.items = {}
 		self.cuisine = cuisine 
+		self.item_type = item_type
 
-	def parse_recipes(self, url):
+	def parse_items(self, url):
 		parser = EatYourBooksParser()
 		parser.initalize()
 
@@ -477,21 +546,22 @@ class EatYourBooksFilter:
 			if (tag.depth == page_root_depth + 2):
 				for name, value in tag.attrs:
 					if tag.name == 'a' and name == 'href':
-						new_page_url = ''.join([ root_url, value])
-						if new_page_url not in self.urls:
-							self.urls.append(new_page_url)
 						m = re.search('\d+', tag.text)
 						if m is not None:
 							pg = m.group(0)
 							last_page_index = int(pg)
+							new_page_url = ''.join([ root_url, value])
+							if new_page_url not in self.urls:
+								self.urls.append(new_page_url)
 		for i in range(2, last_page_index):
-			page_url = ''.join([root_url, '/recipes/', self.cuisine, '/', str(i)])
+			page_url = ''.join([root_url, '/', self.item_type, '/', self.cuisine, '/', str(i)])
 			if page_url not in self.urls:
 				self.urls.append(page_url)
 				
 	def parse_page_by_url(self, url="", tag_list=None):
 		ptag_list = [];
 		parser = None
+	#	print "URL to parse: " + url
 		if url == "" and tag_list == None:
 			return
 		if url != "":
@@ -506,87 +576,111 @@ class EatYourBooksFilter:
 		else:
 			ptag_list = tag_list
 		
-		recipe_root_nodes = filter(lambda x: x.name == 'li' and x.is_recipe, ptag_list)
-		for i in range(0, len(recipe_root_nodes)-1):
-			ps = recipe_root_nodes[i].list_index
-			pe = recipe_root_nodes[i+1].list_index
-			recipe = EatYourBooksRecipe(ptag_list, recipe_root_nodes[i].list_index, recipe_root_nodes[i+1].list_index)
-			self.add_recipe(recipe)
+		item_root_nodes = filter(lambda x: x.name == 'li' and x.tag_type == self.item_type, ptag_list)
+		if len(item_root_nodes) > 0:
+			for i in range(0, len(item_root_nodes)-1):
+				ps = item_root_nodes[i].list_index
+				pe = item_root_nodes[i+1].list_index
+				item = EatYourBooksItem(ptag_list, item_root_nodes[i].list_index, item_root_nodes[i+1].list_index, self.item_type)
+				self.add_item(item)
+				
 
-		ps = recipe_root_nodes[len(recipe_root_nodes)-1].list_index
-		
-		recipe_end_nodes = filter(lambda x: x.depth == recipe_root_nodes[-1].depth, ptag_list[ps+1:])
-		end_index = len(ptag_list)-1;
-		if len(recipe_end_nodes) <= 0:
-			print "ERRRRRRRORRR"
+			ps = item_root_nodes[len(item_root_nodes)-1].list_index
+			
+			item_end_nodes = filter(lambda x: x.depth == item_root_nodes[-1].depth, ptag_list[ps+1:])
+			end_index = len(ptag_list)-1;
+			if len(item_end_nodes) <= 0:
+				print "ERRRRRRRORRR"
+			else:
+				end_index = item_end_nodes[0].list_index
+			item = EatYourBooksItem(ptag_list, item_root_nodes[len(item_root_nodes)-1].list_index, end_index, self.item_type)
+			self.add_item(item)
 		else:
-			end_index = recipe_end_nodes[0].list_index
-		recipe = EatYourBooksRecipe(ptag_list, recipe_root_nodes[len(recipe_root_nodes)-1].list_index, end_index)
-		self.add_recipe(recipe)
+			print "No items found for " + url		
 		del ptag_list[:]
 
-	def add_recipe(self,recipe):
-		recipe_contents = recipe.print_recipe()
+	def add_item(self,item):
+		item_contents = item.print_item()
+		item_checksum = hashlib.md5(item_contents).hexdigest()
 
-		recipe_checksum = hashlib.md5(recipe_contents).hexdigest()
-
-		if recipe_checksum in self.recipes.keys():
-			f = open('repeated_recipes.txt', 'a')
-			pstr = "Recipe already exists:" + str(recipe.id) + " " + recipe.print_recipe() + "\n"
+		if item_checksum in self.items.keys():
+			f = open('repeated_items.txt', 'a')
+			pstr = "Items already exists:" + str(item.id) + " " + item.print_item() + "\n"
 			f.write(pstr.encode('UTF-8'))
 			f.close()
 		else:
-			recipe.check_sum = recipe_checksum
-			self.recipes[recipe_checksum]=recipe
+			item.check_sum = item_checksum
+			self.items[item_checksum]=item
 
 
-class RecipeDB:
+class EatYourBooksDB:
 	connection = None
 	db = None
-	recipe_collection = None
-	def __init__(self):
-		self.connection = Connection('localhost', 27017)
-		self.db = self.connection['recipedb']
-		self.recipe_collection = self.db['recipe']
-	def add_recipe(self, recipe, cuisine):
-		new_recipe =  {"id": recipe.id,
-				"type": recipe.type,
-				"indexed": recipe.is_indexed,
-				"recipe_str": recipe.recipe_str,
-				"recipe_url": recipe.recipe_url,
-				"rating": recipe.rating,
-				"notes_str": recipe.notes_str,
-				"notes_url": recipe.notes_url,
-				"online_url": recipe.online_url,
-				"author_str": recipe.book_data.author_str,
-				"author_url": recipe.book_data.author_url,
-				"source_url": recipe.book_data.source_url,
-				"source_str": recipe.book_data.source_str,
+	item_collection = None
+	def __init__(self, dbname, ipaddress, item_type):
+		self.connection = Connection(ipaddress, 27017)
+		db_name = dbname;
+		collection_name = item_type; 
+		self.db = self.connection[db_name]
+		self.item_collection = self.db[collection_name]
+	
+	def add_item(self, item, cuisine, item_type):
+		new_item =  {"id": item.id,
+				"type": item.type,
+				"indexed": item.is_indexed,
+				"item_str": item.item_str,
+				"item_url": item.item_url,
+				"rating": item.rating,
+				"notes_str": item.notes_str,
+				"notes_url": item.notes_url,
+				"online_url": item.online_url,
+				"author_str": item.book_data.author_str,
+				"author_url": item.book_data.author_url,
+				"source_url": item.book_data.source_url,
+				"source_str": item.book_data.source_str,
 			        "cuisine": cuisine,
-			        "ingredients": recipe.ingredients,
-			        "categories": recipe.categories,
-			        "check_sum" : recipe.check_sum
+			        "ingredients": item.ingredients,
+			        "categories": item.categories,
+				"isbn": item.book_data.isbn,
+				"published_year": item.book_data.published_date,
+				"published_country": item.book_data.published_country,
+				"cover_type" : item.book_data.cover_type,
+			        "check_sum" : item.check_sum
 			       }		
-		self.recipe_collection.save(new_recipe)
+		self.item_collection.save(new_item)
 if __name__ == '__main__':
+	ipaddress = ""
+	itemtype = ""
+	urllinks = ""
 	parser = OptionParser()
 	parser.add_option("-i", "--ipaddress", dest="ipaddress", help="ipaddress of remote mongodbserver", default="localhost")
-	parser
+	parser.add_option("-t", "--itemtype", dest="itemtype", help="item type i.e. recipes/cookbooks to be parsed and added", default="recipes")
+	parser.add_option("-u", "--urllinks", dest="urllinks", help="text file containing urls to be parsed", default="recipe_links.txt")
+	parser.add_option("-d", "--database", dest="db", help="database name to store parsed data. Database should contain collections of the name given in --itemtype option", default="EatYourBooksDB")
+
+	options, arguments = parser.parse_args()
+	print "Command Line Inputs: " 
+	print "ipaddress: " + options.ipaddress
+	print "item type: " + options.itemtype
+	print "links file: " + options.urllinks	
+	print "db name: " + options.db
 	
-	urls = [line.strip() for line in open('recipe_links.txt')]
+	
+	urls = [line.strip() for line in open(options.urllinks)]
 	for url in urls:
-		start_url = url#"http://www.eatyourbooks.com/recipes/indian"
+		start_url = url #"http://www.eatyourbooks.com/recipes/indian"
 		m = re.search('\/[a-z-]+$', start_url);
 		cuisine = m.group(0)
 		cuisine = cuisine.strip('/');
 		print "Cuisine: " + cuisine 
-		eatyourbooksParser = EatYourBooksFilter(start_url, cuisine)
-		eatyourbooksParser.parse_recipes(start_url)
-		print 'Cuisine:' + cuisine + ' Recipe Collection: ' + str(len(eatyourbooksParser.recipes))
+		eatyourbooksParser = EatYourBooksFilter(start_url, cuisine, options.itemtype)
+		eatyourbooksParser.parse_items(start_url)
+		print 'Cuisine:' + cuisine + ' Item Collection: ' + str(len(eatyourbooksParser.items))
 	
-		db = RecipeDB()
-		for key, recipe in eatyourbooksParser.recipes.iteritems():
-			db.add_recipe(recipe, cuisine)
+		
+		db = EatYourBooksDB(options.db, options.ipaddress, options.itemtype)
+		for key, item in eatyourbooksParser.items.iteritems():
+			db.add_item(item, cuisine, options.itemtype)
 
 	
 	
