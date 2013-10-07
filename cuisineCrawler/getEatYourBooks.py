@@ -673,7 +673,7 @@ class EatYourBooksDB:
 		self.item_collection.save(new_item)
 	
 	def get_cookbooks(self):
-		return self.db["cookbooks"].find({"cuisine": "indian"})
+		return self.db["cookbooks"].find()
 if __name__ == '__main__':
 	ipaddress = ""
 	itemtype = ""
@@ -685,19 +685,15 @@ if __name__ == '__main__':
 	parser.add_option("-d", "--database", dest="db", help="database name to store parsed data. Database should contain collections of the name given in --itemtype option", default="EatYourBooksDB")
 
 	options, arguments = parser.parse_args()
-	print "Command Line Inputs: " 
-	print "ipaddress: " + options.ipaddress
-	print "item type: " + options.itemtype
-	print "links file: " + options.urllinks	
-	print "db name: " + options.db
 	
 	if options.itemtype == "cookbookrecipes":
 		db = EatYourBooksDB(options.db, options.ipaddress, options.itemtype)
 		urls = db.get_cookbooks()
-		print urls.count()
 	else:
 		urls = [line.strip() for line in open(options.urllinks)]
-	
+
+	worked_urls = open('cookbooks.txt', 'w');
+	dead_urls = open('deadurls.txt', 'w');	
 	for url in urls:
 		if options.itemtype == "cookbookrecipes":
 			link = url["online_url"] if url["item_url"] == "" else url["item_url"]
@@ -716,7 +712,8 @@ if __name__ == '__main__':
 			eatyourbooksParser = EatYourBooksFilter(start_url, cuisine, options.itemtype)
 			eatyourbooksParser.parse_items(start_url)
 			if len(eatyourbooksParser.items) > 0:
-				print 'Cuisine:' + cuisine + ' Url: ' + start_url + ' Item Collection: ' + str(len(tatyourbooksParser.items))
+				print 'Cuisine:' + cuisine + ' Url: ' + start_url + ' Item Collection: ' + str(len(eatyourbooksParser.items))
+				worked_urls.write(cuisine + ":" + start_url + ":" + str(len(eatyourbooksParser.items)))
 				for key, item in eatyourbooksParser.items.iteritems():
 					item.book_data.source_url = start_url
 					item.book_data.source_str = url["item_str"]
@@ -725,7 +722,9 @@ if __name__ == '__main__':
 					db.add_item(item, cuisine, options.itemtype)
 			else:
 				print "No recipes found for cookbook: " + start_url
+				dead_urls.write(start_url)
 		
 	
-
+	worked_urls.close()
+	dead_urls.close()
 	
