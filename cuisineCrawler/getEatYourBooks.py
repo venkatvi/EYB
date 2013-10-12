@@ -558,10 +558,12 @@ class EatYourBooksFilter:
 				#ignore li
 				continue
 			tag = tag_list[i]
+			if tag.text == "next":
+				break
 			if (tag.depth == page_root_depth + 2):
 				for name, value in tag.attrs:
 					if tag.name == 'a' and name == 'href':
-						m = re.search('\d+', tag.text)
+						m = re.search('^\d+$', tag.text.strip())
 						if m is not None:
 							pg = m.group(0)
 							last_page_index = int(pg)
@@ -673,7 +675,7 @@ class EatYourBooksDB:
 		self.item_collection.save(new_item)
 	
 	def get_cookbooks(self):
-		return self.db["cookbooks"].find()
+		return self.db["cookbooks"].find({"cuisine":"italian"})
 if __name__ == '__main__':
 	ipaddress = ""
 	itemtype = ""
@@ -723,8 +725,8 @@ if __name__ == '__main__':
 			else:
 				print "No recipes found for cookbook: " + start_url
 				dead_urls.write(start_url)
-		
+			del eatyourbooksParser		
 	
 	worked_urls.close()
 	dead_urls.close()
-	
+	del db
