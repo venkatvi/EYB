@@ -1,0 +1,1782 @@
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+
+Items already exists:0  Id = 0 
+ Type =  
+ Is Indexed = 0 
+ Categories =  
+ Ingredients =  
+ Shelf Status =  
+ Name =  
+ Url =  
+ Source =  
+ Source Url =  
+ Author =  
+ Author Url =  
+ Rating = 0 
+ Notes Url =  
+ Online Url =  
+
+
+

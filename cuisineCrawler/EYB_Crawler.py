@@ -674,8 +674,8 @@ class EatYourBooksDB:
 			       }		
 		self.item_collection.save(new_item)
 	
-	def get_cookbooks(self):
-		return self.db["cookbooks"].find({"cuisine":"pakistani"})
+	def get_cookbooks(self, cuisine):
+		return self.db["cookbooks"].find({"cuisine": cuisine})
 if __name__ == '__main__':
 	ipaddress = ""
 	itemtype = ""
@@ -685,17 +685,18 @@ if __name__ == '__main__':
 	parser.add_option("-t", "--itemtype", dest="itemtype", help="item type i.e. recipes/cookbooks to be parsed and added", default="recipes")
 	parser.add_option("-u", "--urllinks", dest="urllinks", help="text file containing urls to be parsed", default="recipe_links.txt")
 	parser.add_option("-d", "--database", dest="db", help="database name to store parsed data. Database should contain collections of the name given in --itemtype option", default="EatYourBooksDB")
+	parser.add_option("-c", "--cuisine", dest="cuisine", help="cuisine name to parse cookbook recipes from Database should contain collections of the name given in --itemtype option", default="indian")
 
 	options, arguments = parser.parse_args()
 	
 	if options.itemtype == "cookbookrecipes":
 		db = EatYourBooksDB(options.db, options.ipaddress, options.itemtype)
-		urls = db.get_cookbooks()
+		urls = db.get_cookbooks(options.cuisine)
 	else:
 		urls = [line.strip() for line in open(options.urllinks)]
 
-	worked_urls = open('cookbooks.txt', 'w');
-	dead_urls = open('deadurls.txt', 'w');	
+	worked_urls = open( options.cuisine+'_cookbooks.txt', 'w');
+	dead_urls = open( options.cuisine + '_deadurls.txt', 'w');
 	for url in urls:
 		if options.itemtype == "cookbookrecipes":
 			link = url["online_url"] if url["item_url"] == "" else url["item_url"]
@@ -715,7 +716,7 @@ if __name__ == '__main__':
 			eatyourbooksParser.parse_items(start_url)
 			if len(eatyourbooksParser.items) > 0:
 				print 'Cuisine:' + cuisine + ' Url: ' + start_url + ' Item Collection: ' + str(len(eatyourbooksParser.items))
-				worked_urls.write(cuisine + ":" + start_url + ":" + str(len(eatyourbooksParser.items)))
+				worked_urls.write(cuisine + ":" + start_url + ":" + str(len(eatyourbooksParser.items)) + '\n')
 				for key, item in eatyourbooksParser.items.iteritems():
 					item.book_data.source_url = start_url
 					item.book_data.source_str = url["item_str"]
@@ -724,7 +725,7 @@ if __name__ == '__main__':
 					db.add_item(item, cuisine, options.itemtype)
 			else:
 				print "No recipes found for cookbook: " + start_url
-				dead_urls.write(start_url)
+				dead_urls.write(start_url + '\n')
 			del eatyourbooksParser		
 	
 	worked_urls.close()
