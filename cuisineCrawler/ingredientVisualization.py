@@ -1,7 +1,9 @@
 import nltk
 from nltk.corpus import wordnet as wn
 import networkx as nx
+from networkx.algorithms import bipartite
 import matplotlib.pyplot as plt
+import d3py
 
 ingredParentMap = {}
 def addChildren(G, parentName):
@@ -102,6 +104,7 @@ def analyzeBigramSynsets(wordWiseSynsets, wordKey, originalText, originalPhraseL
 				insertSubPhraseKey(originalText,wordKey,nFirst,multiWordIngredMap)
 			else:		
 				insertSubPhraseKey(originalText,wordKey,1,nextIterIngredMap)			
+				# check pos for this combination, identify noun phrase and map it
 				#stats[statsMap['Both']] += 1
 	else:
 		print "Error: INVALID combination of subphrases: " + wordKey
@@ -116,11 +119,66 @@ def insertSubPhraseKey(parentKey, childKey, value, dataMap):
 		if value not in dataMap[parentKey][childKey]:
 			dataMap[parentKey][childKey].append(value)
 
+def identifyKeyword(dataMap):
+	wnl = nltk.stem.WordNetLemmatizer()
+	for key, value in dataMap.iteritems():
+		for vkey, vvalue in value.iteritems():
+			vtext=vkey.replace("_", " ")
+			vwords = vtext.split(" ")
+			phraseLemmas = {}
+			lemmatizedWord = ""	
+			for word in vwords:
+				if word == "chile":
+					word = "chiles"
+				wordLemmas = {}
+				tok_text = nltk.word_tokenize(word)
+				pos_text = nltk.pos_tag(tok_text)
+				if 'NN'  in pos_text[0][1]:
+					lemma = wnl.lemmatize(word, 'n')
+					wordLemmas['n'] = lemma
+				elif 'VBD' in pos_text[0][1]:
+					vlemma = wnl.lemmatize(word, 'v')
+					wordLemmas['v'] = vlemma
+					nlemma = wnl.lemmatize(word, 'n')
+					wordLemmas['n'] = nlemma
+				elif 'PR' in pos_text[0][1]:
+					plemma = wnl.lemmatize(word, 'n')
+					wordLemmas['n'] = plemma
+				elif 'JJ' in pos_text[0][1]:
+					jlemma = wnl.lemmatize(word, 'a')
+					wordLemmas['j'] = jlemma
+					nlemma = wnl.lemmatize(word, 'n')
+					wordLemmas['n'] = nlemma
+				
+				if len(wordLemmas.keys()) >= 1:
+					if 'j' in wordLemmas.keys():
+						phraseLemmas[word] = wordLemmas['j']
+						lemmatizedWord += " " + wordLemmas['j']
+					elif 'n' in wordLemmas.keys():
+						phraseLemmas[word] = wordLemmas['n']		
+						lemmatizedWord += " " + wordLemmas['n']
+			lemmatizedWord = lemmatizedWord.lstrip().rstrip()		
+
+			tok_text = nltk.word_tokenize(lemmatizedWord)
+			pos_text = nltk.pos_tag(tok_text)
+	
+			prunedWord = ""
+			for pos in pos_text:
+				if pos[1] == 'VBD':	
+					continue;
+				prunedWord += " " + pos[0]
+			prunedWord = prunedWord.lstrip().rstrip()
+			
+			dataMap[key][vkey] = prunedWord
+			
+	return dataMap		
+
 statsMap = {'Complete': 0, 'None': 1, 'First': 2, 'Last': 3, 'Both': 4}
 stats = [0,0,0,0,0]
 multiWordIngredMap = {}
 nextIterIngredMap = {}
 notFoundIngredMap = {}
+globalIngredMap = {}
 i=0
 if __name__ == '__main__':
 	G = constructGraph("food")
@@ -128,11 +186,14 @@ if __name__ == '__main__':
 	lines = [line.strip() for line in open('data/pakistani_ingredients.txt')]
 	for line in lines:
 		text = line.lstrip().rstrip()
+		text = text.decode('utf-8')
+		globalIngredMap[text] = "";
 		words = text.split(" ")
 		nCompleteText = text.replace(" ", "_")
 		if (isCompleteTextFood(nCompleteText))['isFood'] == 1:
 			stats[statsMap['Complete']] += 1 
 			insertSubPhraseKey(text,text,text, multiWordIngredMap)
+	
 		else:
 			wordWiseSynsets = [];
 			for word in words:
@@ -145,11 +206,59 @@ if __name__ == '__main__':
 				i=i+1
 				analyzeWordWiseSynsets(wordWiseSynsets, words, len(words), text)
 	
-	print "#################################################################"
-	print multiWordIngredMap
-	print "#################################################################"
-	print notFoundIngredMap
-	print "#################################################################"
-	print nextIterIngredMap
-	print "#################################################################"
-		
+	nextIterIngredMap = identifyKeyword(nextIterIngredMap)
+
+
+	leafs = {}
+	for key in globalIngredMap.keys():
+		keyFound = 0
+		if key in multiWordIngredMap.keys():
+			globalIngredMap[key] = multiWordIngredMap[key]
+			keyFound = 1
+			for nKey, nValues in multiWordIngredMap[key].iteritems():
+				for value in nValues:
+					if value in leafs.keys():
+						leafs[value].append(key)
+					else:
+						leafs[value] = [key];
+				
+		if key in nextIterIngredMap.keys():
+			if keyFound == 1:
+				nMaps = nextIterIngredMap[key]
+				for nKey, nValue in nMaps.iteritems():
+					globalIngredMap[key][nKey] = nValue
+		  	else:
+				globalIngredMap[key] = nextIterIngredMap[key]		
+			for nKey, nValues in nextIterIngredMap[key].iteritems():
+				for value in nValues:
+					if value in leafs.keys():
+						leafs[value].append(key)
+					else:
+						leafs[value] = [key]
+	
+
+
+	#visualize as graph
+	'''
+	B = nx.Graph()
+	B.add_nodes(leafs.keys())
+	B.add_nodes(globalIngredMap.keys())
+	for key in leafs.keys():
+		ingredients = leafs[key]
+		for ingredient in ingredients:
+			B.add_edge([(key, ingredient)])
+
+	nx.draw(B)
+
+	
+	with d3py.NetworkXFigure(B, width=1024, height=724, host='localhost') as p:
+		p+= d3py.ForceLayout()
+		p.css['.node'] = {'fill': 'blue', 'stroke': 'magenta'}
+		p.css['.link'] = {'stroke': 'red', 'stroke-width' :'3px'}
+		p.show()
+	
+	#plt.savefig('pakistani.png')
+	nx.write_graphml(B, 'pakistani.graphml', encoding='utf-8')	
+	#nx.write_gexf(B, 'pakistani.gexf', encoding='utf-8')
+	#create adjacency matrix
+	'''	

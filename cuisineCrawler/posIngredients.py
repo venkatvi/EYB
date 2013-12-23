@@ -2,9 +2,9 @@ import nltk as nltk
 from  nltk.corpus import wordnet as wn
 from nltk.collocations import *
 from nltk.probability import * 
-import collections 
+import collections
 
-lines = [line.strip() for line in open('pakistani_ingredients.txt')]
+lines = [line.strip() for line in open('data/pakistani_ingredients.txt')]
 ingred_map = {}
 gSim = {}
 
@@ -45,17 +45,29 @@ for line in lines:
 		isBigram = 0
 		tree = nltk.ne_chunk(pos_text)	
 		prefixes = prefix_keys[words[0]]
-		'''
+	
+		inPrefixes=0
 		for prefix in prefixes:
+			inPrefixes = inPrefixes + 1
 			pstr = prefix[0]
 			if pstr == words[1]:
-				print "mmHola!: " + line  + ":" + words[1] + " has a bigram occurence: score: " 
-				bigram_match_count = bigram_match_count +1
+				print "Case1: " + text + ": " + words[0] + ": " + prefix[0] + "-" + str(prefix[1]) + ": index:" +str(inPrefixes) + " : totalcount: " + str(len(prefixes)) 
+				isBigram = 1
+
+		prefixes = prefix_keys[words[1]]
+		inPrefixes = 0	
+		for prefix in prefixes:
+			inPrefixes = inPrefixes + 1
+			pstr = prefix[1]
+			if pstr == words[0]: 
+				print "Case 2: " + text + ": " + words[1] + ": " + prefix[0] + "-" + str(prefix[1]) + ": index:" +str(inPrefixes) + " : totalcount: " + str(len(prefixes)) 
 				isBigram = 1
 				print prefix
-		if isBigram == 0:
-			print tree
-		'''
+		if isBigram == 1:
+			bigrams_match_count = bigrams_match_count + 1
+		else:
+			print pos_text
+			print tree	
 	elif len(words) == 3:
 		trigram_count += 1
 		'''
