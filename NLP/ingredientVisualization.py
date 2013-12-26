@@ -2,41 +2,11 @@ import nltk
 from nltk.corpus import wordnet as wn
 import networkx as nx
 from networkx.algorithms import bipartite
-import matplotlib.pyplot as plt
-import d3py
-
-ingredParentMap = {}
-def addChildren(G, parentName):
-	print "Adding children for " + parentName
-	childSynsets = wn.synset(parentName).hyponyms()
-	for child in childSynsets:
-		G.add_node(child.name, defi=child.definition, name=child.name)
-		G.add_edge(G.node[parentName]['name'], child.name)
-		if child.name not in ingredParentMap.keys():
-			ingredParentMap[child.name] = {parentName}
-		else:
-			parents = ingredParentMap[child.name]
-			if parentName not in parents:
-				parents.add(parentName)
-			ingredParentMap[child.name] = parents
-		addChildren(G, child.name)
-	return G
-
-def constructGraph(rootName):
-	G = nx.DiGraph()
-	rootSynsets = wn.synsets(rootName)
-	for root in rootSynsets:
-		G.add_node(root.name, defi=root.definition, name=root.name)
-		ingredParentMap[root.name] = {'None'}
-		addChildren(G, root.name)
-	return G
-	
+from networkx.readwrite import json_graph
+import numpy as np
+from optparse import OptionParser
+from pymongo import Connection
 def isFood(word, level, isRice):
-	#if "cinnamon" in word:
-	#	isRice =1
-	#if isRice==0:
-	#	return;
-	#print "Looking for " + word + "...\n Synsets are:"
 	synsets = []
 	if level == 0:
 		synsets = wn.synsets(word)
@@ -45,35 +15,25 @@ def isFood(word, level, isRice):
 		synsets = { synset }
 	if len(synsets) > 0:
 		for synset in synsets:
-	#		print "Processing synset: " + synset.name + "\n Parents: "  
 			parents = synset.hypernyms()
 			if len(parents) > 0:
 				for parent in parents:
-	#				print "Parent: " + parent.name + " level: " + str(level)
 					if "food" in parent.name or "edible" in parent.name or "herb" in parent.name:
-	#					print "Yay food"
 						return {'isFood': 1, 'Parent':parent}
 					else:
-	#					print "Not a food parent.. recursing" 
 						result = isFood(parent.name, level+1, isRice)
 						if result['isFood'] == 1:
-	#						print "yay: foood: " + parent.name + " word: " + word
 							return result # you dont have to parse other parents
 						else:
-	#						print "continuing.. for " + word + "'s parents..."
 							continue # finish parsing other parents
-	#		else:
-	#			print "No parents: " + synset.name + " word:" + word
 
 		#if done traversing all parents for all synsets:
 		return {'isFood': 0, 'Parent': 'None'}
 	else:
-	#	print "No synsets for " + word
 		return {'isFood': 0, 'Parent': 	'None'}
 def isCompleteTextFood(nCompleteText):
 	completeSynsets = wn.synsets(nCompleteText)
 	if len(completeSynsets) > 0:
-		#print "Complete Synset: " + nCompleteText
 		return isFood(nCompleteText, 0, 0)
 	else:
 		return {'isFood': 0, 'Parent': 'None'}
@@ -97,15 +57,11 @@ def analyzeBigramSynsets(wordWiseSynsets, wordKey, originalText, originalPhraseL
 			stats[statsMap['None']] += 1
 		else:
 			if wordWiseSynsets[0]['isFood'] == 0 and wordWiseSynsets[1]['isFood'] == 1:
-				#stats[wordsLen][statsMap['Last']] += 1
 				insertSubPhraseKey(originalText,wordKey,nLast,multiWordIngredMap)
 			elif wordWiseSynsets[1]['isFood'] == 0 and wordWiseSynsets[0]['isFood'] == 1:
-				#stats[statsMap['First']] += 1
 				insertSubPhraseKey(originalText,wordKey,nFirst,multiWordIngredMap)
 			else:		
 				insertSubPhraseKey(originalText,wordKey,1,nextIterIngredMap)			
-				# check pos for this combination, identify noun phrase and map it
-				#stats[statsMap['Both']] += 1
 	else:
 		print "Error: INVALID combination of subphrases: " + wordKey
 
@@ -170,19 +126,49 @@ def identifyKeyword(dataMap):
 			prunedWord = prunedWord.lstrip().rstrip()
 			
 			dataMap[key][vkey] = prunedWord
-			
 	return dataMap		
 
+class EatYourBooksDB:
+	connection=None
+	db=None
+	item_collection=None
+	def __init__(self, dbname, ipaddress, item_type):
+		self.connection = Connection(ipaddress, 27017)
+		db_name = dbname;
+		collection_name = item_type
+		self.db = self.connection[db_name]
+		self.item_collection = self.db[collection_name]
+	def get_recipe_vs_ingredient(self, cuisine):
+		recipes = self.item_collection.find({'cuisine': cuisine})
+		return recipes
+		
+	def get_distinct_ingredients_by_cuisine(self, cuisine):
+		recipes = self.item_collection.find({'cuisine': cuisine})
+		return list(recipes.distinct('ingredients'))
+	
 statsMap = {'Complete': 0, 'None': 1, 'First': 2, 'Last': 3, 'Both': 4}
 stats = [0,0,0,0,0]
 multiWordIngredMap = {}
 nextIterIngredMap = {}
 notFoundIngredMap = {}
 globalIngredMap = {}
-i=0
 if __name__ == '__main__':
-	G = constructGraph("food")
-	print "Graph done"
+	db =""
+	itemtype=""
+	ipaddress=""
+	cuisine=""
+	parser=OptionParser()
+	parser.add_option("-i", "--ipaddress", dest="ipaddress", help="ipaddress of remote mongodbserver", default="localhost")
+        parser.add_option("-t", "--itemtype", dest="itemtype", help="item type i.e. recipes/cookbooks to be parsed and added", default="recipes")
+        parser.add_option("-c", "--cuisine", dest="cuisine", help="cuisine type", default="pakistani")
+        parser.add_option("-d", "--database", dest="db", help="database name to store parsed data. Database should contain collections of the name given in --itemtype option", default="EatYourBooksDB")
+
+        options, arguments = parser.parse_args()
+        print "ipaddress: " + options.ipaddress
+        print "item type: " + options.itemtype
+        print "db name: " + options.db
+	print "cuisine: " + options.cuisine
+	
 	lines = [line.strip() for line in open('data/pakistani_ingredients.txt')]
 	for line in lines:
 		text = line.lstrip().rstrip()
@@ -203,7 +189,6 @@ if __name__ == '__main__':
 			if len(wordWiseSynsets) == 1 and words[0] not in notFoundIngredMap.keys():
 				notFoundIngredMap[words[0]] = 1
 			else:
-				i=i+1
 				analyzeWordWiseSynsets(wordWiseSynsets, words, len(words), text)
 	
 	nextIterIngredMap = identifyKeyword(nextIterIngredMap)
@@ -230,35 +215,85 @@ if __name__ == '__main__':
 		  	else:
 				globalIngredMap[key] = nextIterIngredMap[key]		
 			for nKey, nValues in nextIterIngredMap[key].iteritems():
-				for value in nValues:
-					if value in leafs.keys():
-						leafs[value].append(key)
-					else:
-						leafs[value] = [key]
+				if nValues in leafs.keys():
+					leafs[nValues].append(key)
+				else:
+					leafs[nValues] = [key]
 	
 
-
+	
+		
+ 	nodeDegree={}	
+	edgeStrength={}
+	for key in leafs.keys():
+		for iKey in globalIngredMap.keys():
+			keyAll = key + "_" + iKey
+			if keyAll in edgeStrength.keys():
+				edgeStrength[keyAll] = edgeStrength[keyAll] + 1
+			else:
+				edgeStrength[keyAll] = 1
 	#visualize as graph
-	'''
 	B = nx.Graph()
-	B.add_nodes(leafs.keys())
-	B.add_nodes(globalIngredMap.keys())
+	B.add_nodes_from(leafs.keys(), bipartite=0)
+	B.add_nodes_from(globalIngredMap.keys(), bipartite=1)
 	for key in leafs.keys():
 		ingredients = leafs[key]
 		for ingredient in ingredients:
-			B.add_edge([(key, ingredient)])
+			B.add_edges_from([(key, ingredient)])
+			B[key][ingredient]['value'] = edgeStrength[key+"_"+ingredient]
+			B.node[key]['degree'] += 1
+			B.node[ingredient]['degree'] += 1
 
-	nx.draw(B)
+	db=EatYourBooksDB(options.db, options.ipaddress, options.itemtype)
+	dbRecipes=db.get_recipe_vs_ingredient(options.cuisine)
+	distinctIngredList=db.get_distinct_ingredients_by_cuisine(options.cuisine)
+
+	recipeIngredMat=[]	
+	rowIndex=0
+	ingredCount = len(distinctIngredList)
+	recipes=[]
+	for recipe in dbRecipes:
+		ingredVec = []
+		for i in range(0,len(distinctIngredList)):
+			ingredVec.append(0)
+		recipes.append(recipe["_id"])
+		for ingredient in recipe["ingredients"]:
+			ingredIndex = distinctIngredList.index(ingredient)
+			if ingredIndex >= 0:
+				ingredVec[ingredIndex]=1
+			else:
+				print "Trouble: " + ingredient 
+		recipeIngredMat.append(ingredVec)
+		rowIndex=rowIndex+1
+		
+
+	rIMat=np.matrix(recipeIngredMat)
+	rIMatT=rIMat.transpose()
+	ingredCo=rIMatT*rIMat
+
+	ingredCoList = ingredCo.tolist()
+	i=0
+	for row in ingredCoList:
+		source=distinctIngredList[i]
+		j=0
+		for col in row:
+			if i!=j and i<=j:
+				edgeWeight=col
+				target=distinctIngredList[j]
+				if edgeWeight > 0 :
+					B.add_edge(source, target, value=edgeWeight)
+					print B.node[source]
+					print B.node[target]
+			j=j+1
+		i=i+1
+			
+	#write network data into json
+	dumps = json_graph.dumps(B)
+
+	with open('pakistani_bipartite.json', 'w') as file:
+		file.write(dumps);
+
 
 	
-	with d3py.NetworkXFigure(B, width=1024, height=724, host='localhost') as p:
-		p+= d3py.ForceLayout()
-		p.css['.node'] = {'fill': 'blue', 'stroke': 'magenta'}
-		p.css['.link'] = {'stroke': 'red', 'stroke-width' :'3px'}
-		p.show()
-	
-	#plt.savefig('pakistani.png')
-	nx.write_graphml(B, 'pakistani.graphml', encoding='utf-8')	
-	#nx.write_gexf(B, 'pakistani.gexf', encoding='utf-8')
-	#create adjacency matrix
-	'''	
+
+
