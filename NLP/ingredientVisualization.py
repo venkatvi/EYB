@@ -173,41 +173,49 @@ if __name__ == '__main__':
 	for line in lines:
 		text = line.lstrip().rstrip()
 		text = text.decode('utf-8')
+		
 		globalIngredMap[text] = "";
 		words = text.split(" ")
 		nCompleteText = text.replace(" ", "_")
+		#if complete text is a food ingredient: e.g. black_pepper
 		if (isCompleteTextFood(nCompleteText))['isFood'] == 1:
 			stats[statsMap['Complete']] += 1 
 			insertSubPhraseKey(text,text,text, multiWordIngredMap)
 	
 		else:
+			#Get wordwise synsets which are food synsets
 			wordWiseSynsets = [];
 			for word in words:
-				#if "chile" in word or "goat" in word or "pasta" in word or "cheese" in word or "vegetable" in word:
-				#	print "Alert"
 				wordWiseSynsets.append(isFood(word, 0, 0))	
+			# add to not found list if word synset is not found
 			if len(wordWiseSynsets) == 1 and words[0] not in notFoundIngredMap.keys():
 				notFoundIngredMap[words[0]] = 1
 			else:
+				#analyze pairwise words for combinatorial context
 				analyzeWordWiseSynsets(wordWiseSynsets, words, len(words), text)
 	
+	#combinatorial identification of keyword/ context
 	nextIterIngredMap = identifyKeyword(nextIterIngredMap)
 
-
+	
 	leafs = {}
+	#for each key in globalIngredMap, check if key in multiword or nextiteringredmap
 	for key in globalIngredMap.keys():
 		keyFound = 0
 		if key in multiWordIngredMap.keys():
+			# add values to globalIngred
 			globalIngredMap[key] = multiWordIngredMap[key]
 			keyFound = 1
 			for nKey, nValues in multiWordIngredMap[key].iteritems():
 				for value in nValues:
+					# leafs degree can be computed 
 					if value in leafs.keys():
 						leafs[value].append(key)
 					else:
 						leafs[value] = [key];
 				
 		if key in nextIterIngredMap.keys():
+			# add values to nextIterIngredMap
 			if keyFound == 1:
 				nMaps = nextIterIngredMap[key]
 				for nKey, nValue in nMaps.iteritems():
@@ -219,19 +227,17 @@ if __name__ == '__main__':
 					leafs[nValues].append(key)
 				else:
 					leafs[nValues] = [key]
-	
-
-	
-		
- 	nodeDegree={}	
+	#i dont know why this code is in here!
 	edgeStrength={}
 	for key in leafs.keys():
 		for iKey in globalIngredMap.keys():
-			keyAll = key + "_" + iKey
+			keyAll = key + "#" + iKey
 			if keyAll in edgeStrength.keys():
 				edgeStrength[keyAll] = edgeStrength[keyAll] + 1
 			else:
 				edgeStrength[keyAll] = 1
+	
+	edgeList={}
 	#visualize as graph
 	B = nx.Graph()
 	B.add_nodes_from(leafs.keys(), bipartite=0)
@@ -239,10 +245,16 @@ if __name__ == '__main__':
 	for key in leafs.keys():
 		ingredients = leafs[key]
 		for ingredient in ingredients:
-			B.add_edges_from([(key, ingredient)])
-			B[key][ingredient]['value'] = edgeStrength[key+"_"+ingredient]
-			B.node[key]['degree'] += 1
-			B.node[ingredient]['degree'] += 1
+			edge = key + "#" + ingredient
+			revEdge = ingredient + "#" + key
+			if edge in edgeList.keys():
+				edgeList[edge] += edgeStrength[edge]
+			else:
+				if revEdge in edgeList.keys():
+					edgeList[revEdge] += edgeStrength[edge]
+				else:	
+					edgeList[edge] = edgeStrength[edge]
+
 
 	db=EatYourBooksDB(options.db, options.ipaddress, options.itemtype)
 	dbRecipes=db.get_recipe_vs_ingredient(options.cuisine)
@@ -271,6 +283,8 @@ if __name__ == '__main__':
 	rIMatT=rIMat.transpose()
 	ingredCo=rIMatT*rIMat
 
+		
+
 	ingredCoList = ingredCo.tolist()
 	i=0
 	for row in ingredCoList:
@@ -281,12 +295,41 @@ if __name__ == '__main__':
 				edgeWeight=col
 				target=distinctIngredList[j]
 				if edgeWeight > 0 :
-					B.add_edge(source, target, value=edgeWeight)
-					print B.node[source]
-					print B.node[target]
+					key = source + "#" + target
+					revKey = target + "#" + source
+					if key in edgeList.keys():
+						edgeList[key] += edgeWeight
+					else:
+						if revKey in edgeList.keys():
+							edgeList[revKey] += edgeWeight
+						else:
+							edgeList[key] = edgeWeight
 			j=j+1
 		i=i+1
-			
+
+
+	for edge, weight in edgeList.iteritems():
+		nodes=edge.split("#")
+		error =0
+		for node in nodes:
+			if node == "turmeric":
+				print edge + "_" + str(weight)
+			if node in B:
+				if not 'degree' in B.node[node]:
+					B.node[node]['degree'] = 1
+				else:
+					B.node[node]['degree'] += 1
+			else:
+				print "No node found: " + node
+				error = 1
+				break;
+		if error == 0:
+			B.add_edges_from([(nodes[0], nodes[1])]) 
+			B[nodes[0]][nodes[1]]['value'] = weight
+	
+#	print edgeList
+	for node in B.nodes_iter(data=True):
+		print node
 	#write network data into json
 	dumps = json_graph.dumps(B)
 
