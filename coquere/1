@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Document sans nom</title>
+<meta name="robots" content="none">
+<style>
+
+body
+{ 
+    margin: 64px; 
+    margin-top:0;
+    font-size:100%;
+    font-family: arial, sans;
+    background-color: #FFF;
+}
+
+</style>
+
+</head>
+
+<body>
+<h1>DOM Tab</h1>
+<p>About the Document Object Model standard.</p>
+<form id="form1" name="form1" method="post" action="">
+  <label>
+  <input name="textfield" type="text" value="example" />
+  </label>
+  <p>
+    <label>
+    <input type="button" name="Submit" value="Submit" onclick="alert(document.form1.textfield.value)" />
+    </label>
+  </p>
+</form>
+<p>&nbsp;</p>
+</body>
+</html>
+

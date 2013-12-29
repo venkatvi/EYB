@@ -1,0 +1,43 @@
+body {
+  background: gray;
+  font-family: sans-serif;
+}
+.wrapper {
+  background: white;
+  margin: auto;
+  padding: 1em;
+  width: 50%;
+}
+h1 {
+  text-align: center;
+}
+ul.tabs {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ul.tabs li {
+  border: gray solid 1px;
+  border-bottom: none;
+  float: left;
+  margin: 0 .25em 0 0;
+  padding: .25em .5em;
+}
+ul.tabs li a {
+  color: gray;
+  font-weight: bold;
+  text-decoration: none;
+}
+ul.tabs li.active {
+  background: gray;
+}
+ul.tabs li.active a {
+  color: white;
+}
+.clr {
+  clear: both;
+}
+article {
+  border-top: gray solid 1px;
+  padding: 0 1em;
+}
