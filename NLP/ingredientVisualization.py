@@ -6,6 +6,8 @@ from networkx.readwrite import json_graph
 import numpy as np
 from optparse import OptionParser
 from pymongo import Connection
+
+#checks if ingredient is food
 def isFood(word, level, isRice):
 	synsets = []
 	if level == 0:
@@ -31,6 +33,8 @@ def isFood(word, level, isRice):
 		return {'isFood': 0, 'Parent': 'None'}
 	else:
 		return {'isFood': 0, 'Parent': 	'None'}
+
+#checks if a  phrase is ingredient
 def isCompleteTextFood(nCompleteText):
 	completeSynsets = wn.synsets(nCompleteText)
 	if len(completeSynsets) > 0:
@@ -38,34 +42,43 @@ def isCompleteTextFood(nCompleteText):
 	else:
 		return {'isFood': 0, 'Parent': 'None'}
 
+#analyzes combination for words looking for candidate ingredient subphrases
 def analyzeWordWiseSynsets(wordWiseSynsets, words, wordsLen, text):
+	wnl = nltk.stem.WordNetLemmatizer()
 	if len(words)>=2 :
 		for i in range(0,len(words)-1):
 			wordKey = words[i] + "_" + words[i+1]
 			if (isCompleteTextFood(wordKey))['isFood'] == 1:
-				insertSubPhraseKey(text, wordKey, wordKey, multiWordIngredMap);
+				lemma = wnl.lemmatize(wordKey, 'n')
+				insertSubPhraseKey(text, wordKey, lemma, multiWordIngredMap);
+
 			else:
 				analyzeBigramSynsets(wordWiseSynsets[i:i+2], wordKey, text, wordsLen);
+
+# reads a bigram and finds if its a potential word for ingredient
 def analyzeBigramSynsets(wordWiseSynsets, wordKey, originalText, originalPhraseLength):
 	words = wordKey.split("_")
 	nFirst=words[0]
 	nLast=words[1]
 	
+	wnl = nltk.stem.WordNetLemmatizer()
 	if len(wordWiseSynsets) == 2:
 		if wordWiseSynsets[0]['isFood'] == 0 and wordWiseSynsets[1]['isFood'] == 0 :
 			print "Ingredient not recognized " + text + " wordKey: " + wordKey
 			stats[statsMap['None']] += 1
 		else:
 			if wordWiseSynsets[0]['isFood'] == 0 and wordWiseSynsets[1]['isFood'] == 1:
-				insertSubPhraseKey(originalText,wordKey,nLast,multiWordIngredMap)
+				lemma = wnl.lemmatize(nLast)
+				insertSubPhraseKey(originalText,wordKey,lemma,multiWordIngredMap)
 			elif wordWiseSynsets[1]['isFood'] == 0 and wordWiseSynsets[0]['isFood'] == 1:
-				insertSubPhraseKey(originalText,wordKey,nFirst,multiWordIngredMap)
+				lemma = wnl.lemmatize(nFirst)
+				insertSubPhraseKey(originalText,wordKey,lemma,multiWordIngredMap)
 			else:		
 				insertSubPhraseKey(originalText,wordKey,1,nextIterIngredMap)			
 	else:
 		print "Error: INVALID combination of subphrases: " + wordKey
 
-	
+# inserts a subphrase of  a ingredient phase as candidate keyword into dataMap dict
 def insertSubPhraseKey(parentKey, childKey, value, dataMap):
 	if parentKey not in dataMap.keys():
 		dataMap[parentKey] = {}
@@ -75,6 +88,7 @@ def insertSubPhraseKey(parentKey, childKey, value, dataMap):
 		if value not in dataMap[parentKey][childKey]:
 			dataMap[parentKey][childKey].append(value)
 
+#identifies keywords given a dict of words and corresponding bigram pos
 def identifyKeyword(dataMap):
 	wnl = nltk.stem.WordNetLemmatizer()
 	for key, value in dataMap.iteritems():
@@ -113,8 +127,8 @@ def identifyKeyword(dataMap):
 					elif 'n' in wordLemmas.keys():
 						phraseLemmas[word] = wordLemmas['n']		
 						lemmatizedWord += " " + wordLemmas['n']
-			lemmatizedWord = lemmatizedWord.lstrip().rstrip()		
-
+			lemmatizedWord = lemmatizedWord.lstrip().rstrip()			
+	
 			tok_text = nltk.word_tokenize(lemmatizedWord)
 			pos_text = nltk.pos_tag(tok_text)
 	
@@ -128,10 +142,195 @@ def identifyKeyword(dataMap):
 			dataMap[key][vkey] = prunedWord
 	return dataMap		
 
+#returns the edgeList/Weights of nodes for a given ingredientList and their co-occurence matrix
+def createEdgeList(ingredList, ingredCo):
+	# get edgeList / weights for ingredients
+	edgeList = {}
+	ingredCoList = ingredCo.tolist()
+	i = 0
+	for row in ingredCoList:
+		source = ingredList[i]
+		j = 0
+		for col in row:
+			if i != j and i <= j:
+				edgeWeight = col
+				target = ingredList[j]
+				if edgeWeight > 0 :
+					key = source + "#" + target
+					revKey = target + "#" + source
+					if key in edgeList.keys():
+						edgeList[key] += edgeWeight
+					else:
+						if revKey in edgeList.keys():
+							edgeList[revKey] += edgeWeight
+						else:
+							edgeList[key] = edgeWeight
+			j = j+1
+		i = i+1
+
+	return edgeList
+#disambiguate leafs 
+def disambiguateParents(parents):
+	disambiguatedLeafSet = {}
+	for  key in parents.keys():
+		if len(parents[key]) > 1:
+			kleafs = parents[key]
+			commonSynset = 0
+			synsets = []
+			if kleafs[0] == kleafs[1]:
+				disambiguatedLeafSet[key] = [kleafs[0]]
+				commonSynset = 1
+			else:
+				for kleaf in kleafs:
+					if "chile" in kleaf:
+						kleaf = kleaf.replace("chile", "chili")
+				  	synsets.append(wn.synsets(kleaf))
+				if len(synsets[0]) == 0:
+					for synset in synsets[1]:
+						if isFood(synset.name, 0, 0):
+							disambiguatedLeafSet[key] = [kleafs[1]]
+							commonSynset = 1
+				elif len(synsets[1]) == 0:
+					for synset in synsets[1]:
+						if isFood(synset.name, 0, 0):
+							disambiguatedLeafSet[key] = [kleafs[0]]
+							commonSynset = 1
+				else:
+					for synset in synsets[0]:
+						if synset in synsets[1]:
+							commonSynset = 1
+							if len(kleafs[0]) > len(kleaf[1]):
+								disambiguatedLeafSet[key] = [kleafs[0]]
+							else:
+								disambiguatedLeafSet[key] = [kleafs[1]]
+							break
+			if commonSynset == 0:
+				for i in range(0, len(synsets[0])):
+					for j in range(0, len(synsets[1])):
+						hypernyms = synsets[0][i].common_hypernyms(synsets[1][j])
+						for hypernym in hypernyms:
+							if hypernym in synsets[0]:
+								commonSynset = 1
+								disambiguatedLeafSet[key] = [kleafs[0]]
+							elif hypernym in synsets[1]:
+								commonSynset = 1
+								disambiguatedLeafSet[key] = [kleafs[1]]
+							elif "food" in hypernym.name:
+								commonSynset =1
+								disambiguatedLeafSet[key] = [kleafs[0]]
+								disambiguatedLeafSet[key].append(kleafs[1])
+								break
+	
+	return disambiguatedLeafSet
+#find max path similarity
+def findMaxPathSimilarity(ingredSynsets, foodSynsets):
+	maxPathSimilarity = 0
+	for synseta in ingredSynsets:
+		for synsetb in foodSynsets:
+			pathSim = wn.path_similarity(synseta, synsetb)
+			if pathSim > maxPathSimilarity: 
+				maxPathSimilarity = pathSim
+	return maxPathSimilarity
+#chooseCandidatePhrases
+def chooseCandidatePhrases(ingredient):
+	ingredParts = ingredient.split(" ")
+	ingredSynsets = []
+	for ingred in ingredParts:
+		ingredSynsets.append(wn.synsets(ingred))
+	maxPathSimilarity = [0,0];
+	foodSynsets = wn.synsets("food")
+	maxPathSimilarity[0] = findMaxPathSimilarity(ingredSynsets[0], foodSynsets)
+	maxPathSimilarity[1] = findMaxPathSimilarity(ingredSynsets[1], foodSynsets)
+	if maxPathSimilarity[0] > maxPathSimilarity[1]:	
+		return [ingredParts[0]]
+	else:
+		return [ingredParts[1]]
+	
+#disambiguate leafs 
+def disambiguateLeafs(leafs):
+	leafKeys = sorted(leafs.keys())
+	synsets = {}
+	toRemove = []
+	dupSynsets = {}
+	for key in leafKeys:
+		synsets[key] = wn.synsets(key)
+	for keya in leafKeys:
+		combinedKey = keya.replace(" ", "_")
+		if len(synsets[keya]) == 0 and len(wn.synsets(combinedKey)) == 0:
+			candidates = chooseCandidatePhrases(keya) 
+			if len(candidates) == 0:
+				toRemove.append(keya)
+			else:
+				dupSynsets[keya] = candidates[0]
+		else:
+			if len(synsets[keya]) == 0:
+				synsets[keya] = wn.synsets(combinedKey)
+			for keyb in leafKeys:
+				if len(synsets[keyb]) > 0:
+					commonSubset = 0
+					if keya != keyb: 
+						for synseta in synsets[keya]:
+							for synsetb in synsets[keyb]:
+								if synseta == synsetb:
+									# only if synset's common hypernym contains food
+									hypernyms = synseta.common_hypernyms(synsetb)
+									isFood = 0
+									for hypernym in hypernyms:
+										if "food" in hypernym.name:
+											isFood = 1
+									if isFood:
+										if keya in dupSynsets.keys():
+											if keyb not in dupSynsets[keya]:
+												dupSynsets[keya].append(keyb)
+										else:
+											dupSynsets[keya] = [keyb]
+											if keyb not in toRemove:
+												toRemove.append(keyb)
+										commonSubset = 1
+										break
+														
+											
+	print "Dup Synsets:" 
+	print dupSynsets
+	print "Removable Synsets:"
+	print toRemove  
+#visualize a network
+def visualizeNetwork(nodes, edges, json_file):
+	#visualize as graph
+	B = nx.Graph()
+	B.add_nodes_from(nodes)
+	for edge, weight in edges.iteritems():
+		nodes=edge.split("#")
+		error =0
+		for node in nodes:
+			if node in B:
+				if not 'degree' in B.node[node]:
+					B.node[node]['degree'] = 1
+				else:
+					B.node[node]['degree'] += 1
+			else:
+				print "No node found: " + node
+				error = 1
+				break;
+		if error == 0:
+			B.add_edges_from([(nodes[0], nodes[1])]) 
+			B[nodes[0]][nodes[1]]['value'] = weight
+
+	#write network data into json
+	dumps = json_graph.dumps(B)
+
+	with open(json_file, 'w') as file:
+		file.write(dumps);
+
+#	np.savetxt('ingredCo_pakistani.txt', ingredCo, delimiter=",")
+
+
+
+#class to access EatYourBooksDB (mongodb)
 class EatYourBooksDB:
-	connection=None
-	db=None
-	item_collection=None
+	connection = None
+	db = None
+	item_collection = None
 	def __init__(self, dbname, ipaddress, item_type):
 		self.connection = Connection(ipaddress, 27017)
 		db_name = dbname;
@@ -145,6 +344,7 @@ class EatYourBooksDB:
 	def get_distinct_ingredients_by_cuisine(self, cuisine):
 		recipes = self.item_collection.find({'cuisine': cuisine})
 		return list(recipes.distinct('ingredients'))
+
 	
 statsMap = {'Complete': 0, 'None': 1, 'First': 2, 'Last': 3, 'Both': 4}
 stats = [0,0,0,0,0]
@@ -153,10 +353,10 @@ nextIterIngredMap = {}
 notFoundIngredMap = {}
 globalIngredMap = {}
 if __name__ == '__main__':
-	db =""
-	itemtype=""
-	ipaddress=""
-	cuisine=""
+	db = ""
+	itemtype = ""
+	ipaddress = ""
+	cuisine = ""
 	parser=OptionParser()
 	parser.add_option("-i", "--ipaddress", dest="ipaddress", help="ipaddress of remote mongodbserver", default="localhost")
         parser.add_option("-t", "--itemtype", dest="itemtype", help="item type i.e. recipes/cookbooks to be parsed and added", default="recipes")
@@ -169,18 +369,28 @@ if __name__ == '__main__':
         print "db name: " + options.db
 	print "cuisine: " + options.cuisine
 	
-	lines = [line.strip() for line in open('data/pakistani_ingredients.txt')]
-	for line in lines:
+	#lines = [line.strip() for line in open('data/pakistani_ingredients.txt')]
+
+	#Connect to DB to get ingredient list	
+	db = EatYourBooksDB(options.db, options.ipaddress, options.itemtype)
+	dbRecipes = db.get_recipe_vs_ingredient(options.cuisine)
+
+	#Get distinct ingredients found in recipes
+	distinctIngredList=sorted(db.get_distinct_ingredients_by_cuisine(options.cuisine))
+		
+	for line in distinctIngredList:
 		text = line.lstrip().rstrip()
-		text = text.decode('utf-8')
+		#text = text.decode('utf-8')
 		
 		globalIngredMap[text] = "";
 		words = text.split(" ")
 		nCompleteText = text.replace(" ", "_")
 		#if complete text is a food ingredient: e.g. black_pepper
 		if (isCompleteTextFood(nCompleteText))['isFood'] == 1:
+			wnl = nltk.stem.WordNetLemmatizer()
 			stats[statsMap['Complete']] += 1 
-			insertSubPhraseKey(text,text,text, multiWordIngredMap)
+			lemma = wnl.lemmatize(nCompleteText, 'n')
+			insertSubPhraseKey(text,text,lemma, multiWordIngredMap)
 	
 		else:
 			#Get wordwise synsets which are food synsets
@@ -199,6 +409,7 @@ if __name__ == '__main__':
 
 	
 	leafs = {}
+	parents = {}
 	#for each key in globalIngredMap, check if key in multiword or nextiteringredmap
 	for key in globalIngredMap.keys():
 		keyFound = 0
@@ -206,6 +417,7 @@ if __name__ == '__main__':
 			# add values to globalIngred
 			globalIngredMap[key] = multiWordIngredMap[key]
 			keyFound = 1
+			#for each child dict in multiwordingredmap  - add parent to leaf, add leaf to parent ingredient
 			for nKey, nValues in multiWordIngredMap[key].iteritems():
 				for value in nValues:
 					# leafs degree can be computed 
@@ -213,130 +425,106 @@ if __name__ == '__main__':
 						leafs[value].append(key)
 					else:
 						leafs[value] = [key];
+					if key in parents.keys():
+						parents[key].append(value)
+					else:	
+						parents[key] = [value]
 				
 		if key in nextIterIngredMap.keys():
-			# add values to nextIterIngredMap
+			# add values to globalIngredMap
 			if keyFound == 1:
 				nMaps = nextIterIngredMap[key]
 				for nKey, nValue in nMaps.iteritems():
 					globalIngredMap[key][nKey] = nValue
 		  	else:
 				globalIngredMap[key] = nextIterIngredMap[key]		
+
+			#for each child dict in nextInterIngredMap - add parent to leaf, add leaf to parent ingred
 			for nKey, nValues in nextIterIngredMap[key].iteritems():
 				if nValues in leafs.keys():
 					leafs[nValues].append(key)
 				else:
 					leafs[nValues] = [key]
-	#i dont know why this code is in here!
-	edgeStrength={}
-	for key in leafs.keys():
-		for iKey in globalIngredMap.keys():
-			keyAll = key + "#" + iKey
-			if keyAll in edgeStrength.keys():
-				edgeStrength[keyAll] = edgeStrength[keyAll] + 1
-			else:
-				edgeStrength[keyAll] = 1
+				if key in parents.keys():
+					if nValues not in parents[key]:
+						parents[key].append(nValues)
+				else:
+					parents[key] = [nValues]
 	
-	edgeList={}
-	#visualize as graph
-	B = nx.Graph()
-	B.add_nodes_from(leafs.keys(), bipartite=0)
-	B.add_nodes_from(globalIngredMap.keys(), bipartite=1)
-	for key in leafs.keys():
-		ingredients = leafs[key]
-		for ingredient in ingredients:
-			edge = key + "#" + ingredient
-			revEdge = ingredient + "#" + key
-			if edge in edgeList.keys():
-				edgeList[edge] += edgeStrength[edge]
-			else:
-				if revEdge in edgeList.keys():
-					edgeList[revEdge] += edgeStrength[edge]
-				else:	
-					edgeList[edge] = edgeStrength[edge]
+	
 
+	disambiguateParents = disambiguateParents(parents)
+	
+	for parent, dleafs in disambiguateParents.iteritems():
+		oldLeafs = parents[parent]
+		for leaf in oldLeafs:
+			if leaf not in dleafs:
+				if len(leafs[leaf]) == 1:
+					leafs.pop(leaf)	
+				else:
+					leafs[leaf].remove(parent)
+		parents[parent] = dleafs
+	
+	disambugateLeafs = disambiguateLeafs(leafs)			
+	#Get distinct parsed/NLPed ingredients found using NLTK
+	ingredLeafs = sorted(leafs.keys())
 
-	db=EatYourBooksDB(options.db, options.ipaddress, options.itemtype)
-	dbRecipes=db.get_recipe_vs_ingredient(options.cuisine)
-	distinctIngredList=db.get_distinct_ingredients_by_cuisine(options.cuisine)
+	#create recipes vs original ingreds, recipes vs leafs (parsed out of NLP)
+	recipeIngredMat = []	
+	recipeLeafMat = []
 
-	recipeIngredMat=[]	
 	rowIndex=0
-	ingredCount = len(distinctIngredList)
-	recipes=[]
+	
+	#List of recipe names ? why ?
+	recipes = []
+	i = 0
 	for recipe in dbRecipes:
 		ingredVec = []
-		for i in range(0,len(distinctIngredList)):
+		leafVec = []
+		for i in range(0, len(distinctIngredList)):
 			ingredVec.append(0)
+		for i in range(0, len(ingredLeafs)):
+			leafVec.append(0)
+
+		# to be deleted!
 		recipes.append(recipe["_id"])
+
+
 		for ingredient in recipe["ingredients"]:
+			# Mark recipe[i][ingred] = 1
 			ingredIndex = distinctIngredList.index(ingredient)
 			if ingredIndex >= 0:
-				ingredVec[ingredIndex]=1
+				ingredVec[ingredIndex] = 1
 			else:
 				print "Trouble: " + ingredient 
+
+			#find ingredients leafs in parents
+			if ingredient in parents.keys():
+				leafs = parents[ingredient]
+				for leaf in leafs:
+					leafIndex = ingredLeafs.index(leaf)
+					if leafIndex >= 0:
+						leafVec[leafIndex] = 1
+					
 		recipeIngredMat.append(ingredVec)
-		rowIndex=rowIndex+1
+		recipeLeafMat.append(leafVec)
+		rowIndex = rowIndex+1
 		
-
-	rIMat=np.matrix(recipeIngredMat)
-	rIMatT=rIMat.transpose()
-	ingredCo=rIMatT*rIMat
-
-		
-
-	ingredCoList = ingredCo.tolist()
-	i=0
-	for row in ingredCoList:
-		source=distinctIngredList[i]
-		j=0
-		for col in row:
-			if i!=j and i<=j:
-				edgeWeight=col
-				target=distinctIngredList[j]
-				if edgeWeight > 0 :
-					key = source + "#" + target
-					revKey = target + "#" + source
-					if key in edgeList.keys():
-						edgeList[key] += edgeWeight
-					else:
-						if revKey in edgeList.keys():
-							edgeList[revKey] += edgeWeight
-						else:
-							edgeList[key] = edgeWeight
-			j=j+1
-		i=i+1
-
-
-	for edge, weight in edgeList.iteritems():
-		nodes=edge.split("#")
-		error =0
-		for node in nodes:
-			if node == "turmeric":
-				print edge + "_" + str(weight)
-			if node in B:
-				if not 'degree' in B.node[node]:
-					B.node[node]['degree'] = 1
-				else:
-					B.node[node]['degree'] += 1
-			else:
-				print "No node found: " + node
-				error = 1
-				break;
-		if error == 0:
-			B.add_edges_from([(nodes[0], nodes[1])]) 
-			B[nodes[0]][nodes[1]]['value'] = weight
 	
-#	print edgeList
-	for node in B.nodes_iter(data=True):
-		print node
-	#write network data into json
-	dumps = json_graph.dumps(B)
-
-	with open('pakistani_bipartite.json', 'w') as file:
-		file.write(dumps);
-
-
+#	print recipeIngredMat
+	rIMat = np.matrix(recipeIngredMat)
+	rIMatT = rIMat.transpose()
+	ingredCo = rIMatT*rIMat
+	edges = createEdgeList(distinctIngredList, ingredCo);
+	filename = "d3/"+ options.cuisine + "/" + options.cuisine + "_allingred.json"
+	visualizeNetwork(distinctIngredList, edges, filename)
 	
+	rLMat = np.matrix(recipeLeafMat)
+	rLMatT = rLMat.transpose()
+	leafCo = rLMatT * rLMat
+	leafEdges = createEdgeList(ingredLeafs, leafCo);
+	filename = "d3/" + options.cuisine + "/" + options.cuisine + "_leafs.json"
+	visualizeNetwork(ingredLeafs, leafEdges, filename)
 
-
+	print len(ingredLeafs)
+	print len(distinctIngredList)

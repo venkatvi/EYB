@@ -63,7 +63,7 @@ def constructGraph(rootName):
 #def analyzeEdgeWeights(G):
 	
 if __name__ == '__main__':
-	G = constructGraph("food")
+	G = constructGraph("grain")
 #	G = analyzeEdgeWeights(G)
 	dumps = json_graph.dumps(G)
 	
