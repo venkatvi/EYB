@@ -234,6 +234,18 @@ def findMaxPathSimilarity(ingredSynsets, foodSynsets):
 #chooseCandidatePhrases
 def chooseCandidatePhrases(ingredient):
 	ingredParts = ingredient.split(" ")
+	text = nltk.wordpunct_tokenize(ingredient)
+	pos = nltk.pos_tag(text)
+	if (pos[0][1] == "JJ"):
+		return [ingredParts[1]]
+	if pos[1][1] == "PRP$":
+		#possesive pronoun - chickpea's flour. return both ingredients
+		iList = []
+		if isFood(ingredParts[0],0,0):
+			iList.append(ingredParts[0])
+		if isFood(ingredParts[1],0,0):
+			iList.append(ingredParts[1])
+		return iList
 	ingredSynsets = []
 	for ingred in ingredParts:
 		ingredSynsets.append(wn.synsets(ingred))
@@ -252,8 +264,10 @@ def disambiguateLeafs(leafs):
 	synsets = {}
 	toRemove = []
 	dupSynsets = {}
+	splitSynsets = {}
 	for key in leafKeys:
 		synsets[key] = wn.synsets(key)
+		
 	for keya in leafKeys:
 		combinedKey = keya.replace(" ", "_")
 		if len(synsets[keya]) == 0 and len(wn.synsets(combinedKey)) == 0:
@@ -261,39 +275,74 @@ def disambiguateLeafs(leafs):
 			if len(candidates) == 0:
 				toRemove.append(keya)
 			else:
-				dupSynsets[keya] = candidates[0]
+				splitSynsets[keya] = candidates
+				toRemove.append(keya)
 		else:
 			if len(synsets[keya]) == 0:
 				synsets[keya] = wn.synsets(combinedKey)
 			for keyb in leafKeys:
 				if len(synsets[keyb]) > 0:
 					commonSubset = 0
-					if keya != keyb: 
+					if keya != keyb and keya not in dupSynsets.keys() and keyb not in dupSynsets.keys(): 
+						if keya == "dry_mustard" and keyb == "mustard":
+							print "Disambiguating:" + keya + ":" + keyb
 						for synseta in synsets[keya]:
 							for synsetb in synsets[keyb]:
+								toWSD = 0
+								dupKey = keya
 								if synseta == synsetb:
-									# only if synset's common hypernym contains food
-									hypernyms = synseta.common_hypernyms(synsetb)
-									isFood = 0
-									for hypernym in hypernyms:
-										if "food" in hypernym.name:
-											isFood = 1
-									if isFood:
-										if keya in dupSynsets.keys():
-											if keyb not in dupSynsets[keya]:
-												dupSynsets[keya].append(keyb)
-										else:
-											dupSynsets[keya] = [keyb]
-											if keyb not in toRemove:
-												toRemove.append(keyb)
-										commonSubset = 1
-										break
-														
-											
-	print "Dup Synsets:" 
-	print dupSynsets
-	print "Removable Synsets:"
-	print toRemove  
+									# only if synset contains food
+									result = isFood(synseta.name.split(".")[0], 0,0)
+									if result['isFood'] == 1:
+										toWSD = 1
+								if toWSD:
+									otherKey = keyb if (keya == dupKey) else keya
+									if dupKey in dupSynsets.keys():
+										if otherKey not in dupSynsets[dupKey]:
+											dupSynsets[dupKey].append(otherKey)
+									else:
+										dupSynsets[dupKey] = [otherKey]
+									toRemove.append(dupKey)
+									commonSubset = 1
+									break
+	return [splitSynsets, dupSynsets, toRemove]	
+
+#split ingredient into multiple ingredients
+def splitIngredient(keyLeaf, valueLeafs, parents, leafs):
+	pparents = leafs[keyLeaf]
+	for parent in pparents:
+		for newLeaf in valueLeafs:
+			if newLeaf not in leafs.keys():
+				leafs[newLeaf] = [parent]		
+			else:
+				leafs[newLeaf].append(parent)
+			if newLeaf not in parents[parent]:
+				parents[parent].append(newLeaf)
+			if keyLeaf in parents[parent]:
+				parents[parent].remove(keyLeaf)
+	leafs.pop(keyLeaf)				
+	return [parents, leafs]
+
+#replace ingredient by another ingredient
+def replaceIngredient(keyLeaf, valueLeaf, parents, leafs):
+	if keyLeaf in leafs.keys():
+		pparents = leafs[keyLeaf]
+		#for each parent in keyLeaf which needs to be replaced. 
+		for parent in pparents:
+			if keyLeaf in parents[parent]:
+				parents[parent].remove(keyLeaf)
+			if valueLeaf not in parents[parent]:
+				parents[parent].append(valueLeaf)
+	
+		if valueLeaf not in leafs.keys():
+			leafs[valueLeaf] = pparents
+		else:
+			for parent in pparents:
+				if parent not in leafs[valueLeaf]:
+					leafs[valueLeaf].append(parent)
+		leafs.pop(keyLeaf)
+
+	return	[parents, leafs]
 #visualize a network
 def visualizeNetwork(nodes, edges, json_file):
 	#visualize as graph
@@ -421,14 +470,16 @@ if __name__ == '__main__':
 			for nKey, nValues in multiWordIngredMap[key].iteritems():
 				for value in nValues:
 					# leafs degree can be computed 
+					value = value.strip()
+					pkey = key.strip()
 					if value in leafs.keys():
-						leafs[value].append(key)
+						leafs[value].append(pkey)
 					else:
-						leafs[value] = [key];
-					if key in parents.keys():
-						parents[key].append(value)
+						leafs[value] = [pkey];
+					if pkey in parents.keys():
+						parents[pkey].append(value)
 					else:	
-						parents[key] = [value]
+						parents[pkey] = [value]
 				
 		if key in nextIterIngredMap.keys():
 			# add values to globalIngredMap
@@ -441,15 +492,17 @@ if __name__ == '__main__':
 
 			#for each child dict in nextInterIngredMap - add parent to leaf, add leaf to parent ingred
 			for nKey, nValues in nextIterIngredMap[key].iteritems():
-				if nValues in leafs.keys():
-					leafs[nValues].append(key)
+				nvalues = nValues.strip()
+				pkey = key.strip()
+				if nvalues in leafs.keys():
+					leafs[nvalues].append(pkey)
 				else:
-					leafs[nValues] = [key]
-				if key in parents.keys():
-					if nValues not in parents[key]:
-						parents[key].append(nValues)
+					leafs[nvalues] = [pkey]
+				if pkey in parents.keys():
+					if nvalues not in parents[pkey]:
+						parents[pkey].append(nvalues)
 				else:
-					parents[key] = [nValues]
+					parents[pkey] = [nvalues]
 	
 	
 
@@ -463,9 +516,44 @@ if __name__ == '__main__':
 					leafs.pop(leaf)	
 				else:
 					leafs[leaf].remove(parent)
+		for leaf in dleafs:
+			if leaf in leafs.keys():
+				leafs[leaf].append(parent)
+			else:
+				leafs[leaf] = [parent]
 		parents[parent] = dleafs
 	
-	disambugateLeafs = disambiguateLeafs(leafs)			
+	[leafsToSplit, leafsToMerge, leafsToRemove] = disambiguateLeafs(leafs)			
+	print leafsToSplit
+	print leafsToMerge
+	print leafsToRemove
+
+	for keyLeaf, valueLeafs in leafsToSplit.iteritems():
+		#remove parents of keyLeaf and push them to values in split leafs
+		[parents, leafs] = splitIngredient(keyLeaf, valueLeafs, parents, leafs)
+
+	for keyLeaf, valueLeafs in leafsToMerge.iteritems():
+		#move all entries of keyLeaf to valueLeaf
+		#remove entry keyLeaf in parents, leafs
+		if len(valueLeafs) == 1:
+			valueLeaf = valueLeafs[0]
+			[parents, leafs] = replaceIngredient(keyLeaf, valueLeafs[0], parents, leafs)
+		else:
+			print "Trouble: " + keyLeaf
+			print valueLeafs
+
+	#check if all toRemove are already removed from leafs
+	for ingred in leafsToRemove:
+		if ingred in leafs.keys():
+			mergeIngred = leafsToMerge[ingred]
+			if len(mergeIngred) == 1:
+				[parents, leafs] = replaceIngredient(ingred, mergeIngred[0], parents, leafs)
+			else:
+				print "Trouble: " +  keyLeaf
+				print mergeIngred
+			
+
+
 	#Get distinct parsed/NLPed ingredients found using NLTK
 	ingredLeafs = sorted(leafs.keys())
 
@@ -500,8 +588,8 @@ if __name__ == '__main__':
 
 			#find ingredients leafs in parents
 			if ingredient in parents.keys():
-				leafs = parents[ingredient]
-				for leaf in leafs:
+				ileafs = parents[ingredient]
+				for leaf in ileafs:
 					leafIndex = ingredLeafs.index(leaf)
 					if leafIndex >= 0:
 						leafVec[leafIndex] = 1
