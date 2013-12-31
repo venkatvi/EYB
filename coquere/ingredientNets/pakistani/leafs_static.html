@@ -41,7 +41,7 @@ var loading = svg.append("text")
 var force = d3.layout.force()
 	.size([width, height]);
  
-d3.json("wordnet_network.json", function(error, json) {
+d3.json("pakistani_leafs.json", function(error, json) {
 	force
 	.nodes(json.nodes)
 	.links(json.links);
@@ -49,7 +49,7 @@ d3.json("wordnet_network.json", function(error, json) {
 	// Use a timeout to allow the rest of the page to load first.
 	setTimeout(function() {
 
-		n=100; 
+		n=10000; 
 		// Run the layout a fixed number of times.
 		// The ideal number of times scales with graph complexity.
 		// Of course, don't run too long—you'll hang the page!
@@ -77,10 +77,15 @@ d3.json("wordnet_network.json", function(error, json) {
       		.on("mouseout", fade(1));
 
  		node.append("circle")
-		.attr("r", function(d) { return Math.sqrt(d.children+1)*2; })
-		.style("fill", function(d) { return color(d.children+1); })		    .attr("cx", function(d) { return d.x; })
+		.attr("r", function(d) { return Math.sqrt(d.degree+1)*2; })
+		.style("fill", function(d) { return color(d.degree+1); })		    .attr("cx", function(d) { return d.x; })
 		.attr("cy", function(d) { return d.y; });
 		
+		node.append("text")
+		.attr("dx", function(d) { return d.x + 1; })
+		.attr("dy", function (d) { return d.y + 0.35; })
+		.text(function(d) { return d.id });
+
 		var linkedByIndex = {};
 		json.links.forEach(function (d) {
 		linkedByIndex[d.source.index + "," + d.target.index] = 1;
