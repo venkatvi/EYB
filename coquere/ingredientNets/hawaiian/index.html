@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Tabs - Default functionality</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <link rel="stylesheet" href="../css/style.css" />	
+  <link rel="stylesheet" href="css/style-tabs.css" />
+  <script>
+  $(function() {
+    $( "#tabs" ).tabs();
+  });
+  </script>
+</head>
+<body>
+<div id="tabs">
+  <ul>
+    <li class="litab"><a href="#coocu">Ingredient Cooccurences</a></li>
+    <li class="litab"><a href="#net">Ingredient Networks</a></li>
+    <li class="litab"><a href="#stat">Network Statistics</a></li>
+    <li class="litab"><a href="#data">Data Statistics</a></li>
+  </ul>
+  <div id="coocu">
+	<iframe src="iCooc.html" scrolling="no" allowfullscreen width=800 height=900 frameborder="0"></iframe>
+  </div>
+  <div id="net">
+	<iframe src="network.html" scrolling="no" allowfullscreen width=800 height=900 frameborder="0"></iframe>
+  </div>
+  <div id="stat">
+	<p class="litab">Coming Soon...</p>
+  </div>
+  <div id="data">
+	<p class="litab">Coming Soon...</p>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+text {
+font: 10px sans-serif;
+}
+.link {
+fill: none;
+stroke: #fff;
+}
+.node circle
+{
+fill: steelblue;
+stroke: #fff;
+stroke-width: 1.5px;
+}
+.node text
+{
+pointer-events: none;
+font: 8px sans-serif;
+}
+select{
+font-size:10px;
+font-family:sans-serif;
+}

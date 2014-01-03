@@ -31,7 +31,18 @@
 	{
 		text-decoration: underline;
 	}
-	
+
+	.tabs li {
+	}
+	.litab
+	{
+		color: #474f51;
+		font-size: 13.5pt;
+		font-family: 'Yanone Kaffeesatz';
+		line-height: 1.85em;
+		font-weight: 300;
+	}
+
 	a:hover
 	{
 		text-decoration: none;
@@ -138,7 +149,7 @@
 		{
 			background: url('./images/icon-checkmark.png') 0px 0.5em no-repeat;
 			padding: 0.1em 0 0.1em 1px;
-			font-size: 1em;
+			font-size: 0.7em;
 		}
 		
 		
