@@ -1,3 +1,4 @@
+from __future__ import division
 import nltk
 from nltk.corpus import wordnet as wn
 import networkx as nx
@@ -6,7 +7,7 @@ from networkx.readwrite import json_graph
 import numpy as np
 from optparse import OptionParser
 from pymongo import Connection
-
+import simplejson as json
 #checks if ingredient is food
 def isFood(word, level, isRice):
 	synsets = []
@@ -374,6 +375,7 @@ def visualizeNetwork(nodes, edges, json_file):
 	with open(json_file, 'w') as file:
 		file.write(dumps);
 
+	return B
 #	np.savetxt('ingredCo_pakistani.txt', ingredCo, delimiter=",")
 
 
@@ -618,32 +620,10 @@ if __name__ == '__main__':
 	leafCo = rLMatT * rLMat
 	leafEdges = createEdgeList(ingredLeafs, leafCo);
 	filename = "d3/" + options.cuisine + "/" + options.cuisine + "_leafs.json"
-	visualizeNetwork(ingredLeafs, leafEdges, filename)
-
-	print len(ingredLeafs)
-	print len(distinctIngredList)
-
-	freqCount = rLMat.sum(axis=0)
-	lfreqCount = np.array(freqCount)[0].tolist()
-
-	freqFrac = {};
-	for j in range(0, len(lfreqCount)):
-		if lfreqCount[j] not in freqFrac.keys():
-			if ingredLeafs[j] != "":
-				freqFrac[lfreqCount[j]] = [ingredLeafs[j]]
-		else:
-			if ingredLeafs[j] != "":
-				freqFrac[lfreqCount[j]].append(ingredLeafs[j])
-
-
-	freqFracKeys = sorted(freqFrac.keys())
-	print freqFracKeys
-
-	#writing frequency distribution 
-	f = open('../coquere/ingredientNets/data/' + options.cuisine + "_freq.csv", 'w')
-	f.write("frequency,frac\n");
-	for i in range(0, len(freqFracKeys)):
-		freq = freqFracKeys[i] ;
-		numNodesWithFreq = len(freqFrac[freq]);
-		f.write(str(np.log10(freq)) + "," + str(np.log10(numNodesWithFreq)) + "\n");
+	G = visualizeNetwork(ingredLeafs, leafEdges, filename)
 	
+	json.dump(dict(nodes=[[n, G.node[n]] for n in G.nodes()],
+		edges=[[u,v,G.edge[u][v]] for u,v in G.edges()]),
+	open("hawaiian.json", 'w'), indent=2)
+	
+ 	
