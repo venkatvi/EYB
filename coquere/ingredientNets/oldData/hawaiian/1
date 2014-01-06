@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+.arc path {
+  stroke: #fff;
+}
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+var fileName = getQueryVariable("csv");
+var field = getQueryVariable("field");
+var cuisine = getQueryVariable("cuisine");
+
+function getQueryVariable(variable) {
+	var query = window.location.search.substring(1);
+	var vars = query.split("&");
+	for(var i=0; i<vars.length;  i++){
+		var pair = vars[i].split("=");
+		if (pair[0] == variable) {
+			return pair[1];
+		}
+	}
+	alert("Query variable " +  variable + " not found");
+}
+
+var width = 960,
+    height = 500,
+    radius = Math.min(width, height) / 2;
+
+var color = d3.scale.ordinal()
+    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+var arc = d3.svg.arc()
+    .outerRadius(radius - 10)
+    .innerRadius(0);
+
+var pie = d3.layout.pie()
+    .sort(null)
+    .value(function(d) { return d.count; });
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+var keys = [];
+d3.csv(fileName, function(error, data) {
+  countSoFar = 0
+  data.forEach(function(d) {
+	console.log(d)
+	console.log(d.count)
+	console.log(d.bField)
+	d.count = (countSoFar + parseInt(d.count)).toString();
+	countSoFar = d.count.toString();
+	console.log(countSoFar)
+	keys.push(d.bField);
+  	console.log(d.count)
+  });
+  console.log(color(keys.indexOf("Roys_Feasts_from_Hawaii") + 1))
+  var g = svg.selectAll(".arc")
+      .data(pie(data))
+    .enter().append("g")
+      .attr("class", "arc");
+
+  g.append("path")
+      .attr("d", arc)
+      .style("fill", function(d) { return color(keys.indexOf(d.data.bField) + 1); });
+
+  g.append("text")
+      .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+      .attr("dy", ".35em")
+      .style("text-anchor", "middle")
+      .text(function(d) { return d.data.bField; });
+
+});
+
+</script>

@@ -13,10 +13,10 @@
 
 /* Basic */
 
-	body, input, textarea, select
+	body, input, textarea, select, h3
 	{
 		color: #474f51;
-		font-size: 13.5pt;
+		font-size: 11.5pt;
 		font-family: 'Yanone Kaffeesatz';
 		line-height: 1.85em;
 		font-weight: 300;
@@ -31,7 +31,14 @@
 	{
 		text-decoration: underline;
 	}
-
+	.pieleft{
+		float: left;
+		width: 30%;
+		height:300px; 
+		border:1px solid #a1a1a1;
+		padding:20px 1px 100px 10px; 
+		border-radius: 6px;
+	}
 	.tabs li {
 	}
 	.litab
@@ -148,7 +155,7 @@
 		.check-list li
 		{
 			background: url('./images/icon-checkmark.png') 0px 0.5em no-repeat;
-			padding: 0.1em 0 0.1em 1px;
+			padding: 0em 0 0em 30px;
 			font-size: 0.7em;
 		}
 		
@@ -226,3 +233,4 @@
 		background-image: -o-linear-gradient(top, #ce1a00, #ed391b);
 		background-image: linear-gradient(top, #ce1a00, #ed391b);
 	}
+

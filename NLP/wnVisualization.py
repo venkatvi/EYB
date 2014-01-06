@@ -25,12 +25,17 @@ def constructGraph(rootName):
 	
 	
 if __name__ == '__main__':
-	G = constructGraph("food")
+	G = constructGraph("cashew_nuts")
 	entitySynsets = wn.synsets("entity")[0].hyponyms()
 	for entity in entitySynsets:
 		G.add_node(entity.name, defi=entity.definition, name=entity.name)
 		addChildren(G, entity.name)
-	
-#	nx.write_graphml(G, 'wnsynsets.graphml')
-	nx.write_gexf(G, 'wnsynsets.gexf')
+
+	#write network data into json
+	dumps = json_graph.dumps(G)
+
+	with open(json_file, 'w') as file:
+		file.write(dumps);
+
+
 

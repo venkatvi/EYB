@@ -236,6 +236,8 @@ def chooseCandidatePhrases(ingredient):
 	ingredParts = ingredient.split(" ")
 	text = nltk.wordpunct_tokenize(ingredient)
 	pos = nltk.pos_tag(text)
+	if len(pos) == 0:
+		return []
 	if (pos[0][1] == "JJ"):
 		return [ingredParts[1]]
 	if pos[1][1] == "PRP$":
@@ -272,6 +274,7 @@ def disambiguateLeafs(leafs):
 		combinedKey = keya.replace(" ", "_")
 		if len(synsets[keya]) == 0 and len(wn.synsets(combinedKey)) == 0:
 			candidates = chooseCandidatePhrases(keya) 
+			
 			if len(candidates) == 0:
 				toRemove.append(keya)
 			else:
@@ -409,7 +412,7 @@ if __name__ == '__main__':
 	parser=OptionParser()
 	parser.add_option("-i", "--ipaddress", dest="ipaddress", help="ipaddress of remote mongodbserver", default="localhost")
         parser.add_option("-t", "--itemtype", dest="itemtype", help="item type i.e. recipes/cookbooks to be parsed and added", default="recipes")
-        parser.add_option("-c", "--cuisine", dest="cuisine", help="cuisine type", default="pakistani")
+        parser.add_option("-c", "--cuisine", dest="cuisine", help="cuisine type", default="hawaiian")
         parser.add_option("-d", "--database", dest="db", help="database name to store parsed data. Database should contain collections of the name given in --itemtype option", default="EatYourBooksDB")
 
         options, arguments = parser.parse_args()
@@ -544,13 +547,16 @@ if __name__ == '__main__':
 
 	#check if all toRemove are already removed from leafs
 	for ingred in leafsToRemove:
-		if ingred in leafs.keys():
-			mergeIngred = leafsToMerge[ingred]
-			if len(mergeIngred) == 1:
-				[parents, leafs] = replaceIngredient(ingred, mergeIngred[0], parents, leafs)
-			else:
-				print "Trouble: " +  keyLeaf
-				print mergeIngred
+		if not ingred:
+			print "Empty String"
+		else:
+			if ingred in leafs.keys():
+				mergeIngred = leafsToMerge[ingred]
+				if len(mergeIngred) == 1:
+					[parents, leafs] = replaceIngredient(ingred, mergeIngred[0], parents, leafs)
+				else:
+					print "Trouble: " +  keyLeaf
+					print mergeIngred
 			
 
 
@@ -604,7 +610,7 @@ if __name__ == '__main__':
 	rIMatT = rIMat.transpose()
 	ingredCo = rIMatT*rIMat
 	edges = createEdgeList(distinctIngredList, ingredCo);
-	filename = "d3/"+ options.cuisine + "/" + options.cuisine + "_allingred.json"
+	filename = "../coquere/ingredientNets/oldData/"+ options.cuisine + "/" + options.cuisine + "_allingred.json"
 	visualizeNetwork(distinctIngredList, edges, filename)
 	
 	rLMat = np.matrix(recipeLeafMat)
@@ -616,3 +622,28 @@ if __name__ == '__main__':
 
 	print len(ingredLeafs)
 	print len(distinctIngredList)
+
+	freqCount = rLMat.sum(axis=0)
+	lfreqCount = np.array(freqCount)[0].tolist()
+
+	freqFrac = {};
+	for j in range(0, len(lfreqCount)):
+		if lfreqCount[j] not in freqFrac.keys():
+			if ingredLeafs[j] != "":
+				freqFrac[lfreqCount[j]] = [ingredLeafs[j]]
+		else:
+			if ingredLeafs[j] != "":
+				freqFrac[lfreqCount[j]].append(ingredLeafs[j])
+
+
+	freqFracKeys = sorted(freqFrac.keys())
+	print freqFracKeys
+
+	#writing frequency distribution 
+	f = open('../coquere/ingredientNets/data/' + options.cuisine + "_freq.csv", 'w')
+	f.write("frequency,frac\n");
+	for i in range(0, len(freqFracKeys)):
+		freq = freqFracKeys[i] ;
+		numNodesWithFreq = len(freqFrac[freq]);
+		f.write(str(np.log10(freq)) + "," + str(np.log10(numNodesWithFreq)) + "\n");
+	

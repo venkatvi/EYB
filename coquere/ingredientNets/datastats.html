@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>DataStatistics</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script src="../js/query.js"></script>
+  <link rel="stylesheet" href="css/style.css" />	
+  <script>
+  $(function() {
+    $( "#accordion" ).accordion({ collapsible: true, 
+		autoHeight: false, 
+		navigation: true});
+  });
+  window.onload = function(){
+	document.getElementById("datapie").src = getUrl("datapievis.html");
+	document.getElementById("datanet").src = getUrl("datanet.html");
+ }
+  function getUrl(rootUrl) {
+	var cuisine = getQueryVariable("cuisine");
+	var url = rootUrl + "?cuisine=" + cuisine ;
+	return url;
+  }	
+  </script>
+</head>
+<body>
+ 
+<div id="accordion">
+  <h3>Authors, Cookbooks, Categories</h3>
+  <div>
+	<iframe id='datanet' scrolling="no" allowfullscreen width=700 height=500 frameborder="0"></iframe>
+  </div>
+  <h3>Data Source Spread</h3>
+  <div>
+	<iframe id='datapie' scrolling="no" allowfullscreen width=700 height=500 frameborder="0"></iframe>
+  </div>
+</div>
+</body>
+</html>
+

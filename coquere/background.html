@@ -60,55 +60,7 @@
 											<h2>Background</h2>
 											<h3>The research thus far..</h3>
 										</header>
-										<p>
-											I have been working on this Coquere for last 4 years since 2009 April. Although it was not called “Coquere”, this was my masters thesis project in UC under Dr Ali Minai.
-
-In the last four years, and to be specific, in the last years time, I have discovered a plethora of tools and programming techniques which will help me shape up this project on the lines of our vision. To put it simple,our problem statement is:
-
-Can a ML based tool be aware of the underlying cuisine context in making recommendations for culinary recipes ? Can it make alterations to the list of ingredients given to suit a cuisine context ?
-
-Our auxiliary curiosity also rooted in understanding the culture of cuisines. “Culture of cuisines” is paradoxical as cuisines are often considered signatures of a culture.  However, indeed, we wanted to understand what is the “one” identifiable signature of a cuisine that makes it stand apart from its peer to be unique and different. Are there similarities between world cuisines?
-
-										</p>
-										<p>
-This sounds very much on the lines of work of many eminent researchers in Complex Systems and Networks world like Lada Adamic, Mark Newman, Barabasi, Yaneer Bar Yam and ofcourse the IBM Watson gargantuan. At the time we started our research in Summer 2009, we had few papers on cuisines and ingredient distributions. However today, almost all the big names in ML, Network theory, Complex systems research have made some significant contributions.
-
-I must admit, that, financial / funding constraints in UC, other hurdles like “non-exposure” to open source world/python/big data techniques/hadoop, we started our research using C#, ANTELOPE and MATLAB for our analysis.
-
-The overall workflow was straightforward, get data by crawling recipes from web, use them to analysis cuisines as ingredient networks. Allrecipes was the first website to be crawled. Around 50000 recipes were obtained and we also discovered that, although recipes were marked against a given cuisine by blogger entries or cooks, the ingredient lists could not be validated against the cuisine. For example, an indian recipe used olive oil in their recipe. Also, a majority of these recipes were of drinks or desserts menu which did not form a good data source of understanding the ethnic ingredients of a cuisine.
-
-										</p>
-										<p>
-A good first step, looking at this data, that we took was to ignore the quantities (we had to write our own DFA for that) and the procedure (keep NLP at minimum). This left us with ingredient phrases.  Recipes in Allrecipes were also “online” entries in majority which made us look for sources like BBCGoodFood were a pool of chefs blogged recipes of different cuisines. 16 Cuisines were listed and recipes listed under these cuisines were also seeming authentic on a glimpse. While cuisines like Italian, Indian and Chinese had many entries (close to 700 recipes), recipes for Indonesian  or Turkish were in the tens. Hence  a uniform sample size of recipes  could not be obtained from this source either.
-
-ANTLEOPE was a good start on the lines of NLP to parse the recipes listed in BBC Good Food. Stanford Parser, tokenizer and chunker did a good job in identifying noun phrases. Lexicon API of ANTELOPE was used to create a ontological tree of ingredients out of wordnet to parse ingredients and match against. We decided to use this hierarchy of ingredients for making decisions on ingredient substitutions in recipes to suit a cuisine context. Results were good this time except for tough ones like “garlic clove” which mapped to garlic and clove independently in the ingredient tree. After a lot of manual pruning, introducing stop words or quantum / color disqualifiers, a ingredient vs recipe data obtained for each cuisine. This data was further used to create a graph theoretic model to do recommendations. An ensemble of ML algorithms which incorporated dimensionality reduction techniques were also used to do the recommendations.
-
-As a simple start with this golden data, on a curious note, we did some analysis on culinary ingredient networks. We had some interesting results related to complex systems research which we presented in ICCN ‘10 in Boston. I defended my thesis on December 2011 with a lot of writing going into my dissertation document.
-
-The thesis was not published in a hope to extend this project to a more accurate data source which has minimalistic manual pruning. We also had a lot of attention from Science News and ICCN.
-										</p>
-										<p>
-On a quick exploration, Yummly was the choice. It had structured XML data of ingredients and recipes mapped to different cuisines which was useful.  A little more effort was put in to this project by creating a wikispace for collecting data related to the research. Coquere was chosen as a blog name at that time.
-
-On crawling Yummly using perl, it was found that it mirrored Allrecipes in marking recipes to a certain cuisine which seemed to be erroneous / in-authentic at time. In Feb 2012, I joined work which had a 10 week boot-camp training program. Following that, I got engaged in May 2012 and married by November 2012 which totally distracted me from this project entirely due to personal commitments.
-
-Post marriage, were the efforts related to moving to Boston where A lived and hence the interviews, prep time, winding up work at first job and preping to move on. I came to Boston in July.
-
-										</p>
-										<p>
-2013 has been an interesting year as I spent a lot of time attending meetups on Big Data, Hadoop, ML and opensource programming techniques in NYC  and Boston. MongoDB, ElasticSearch, Python, NLTK, D3 became my friends, thanks to some hackathons in Boston and  thanks to A for encouraging me to participate.
-
-In the last 4 months, I have managed to get some data when I discovered EatYourBooks which enlists recipes from cookbooks by indexing them. This was a great re-start to my work towards the vision.
-
-This time, I decided to use python to crawl websites. Recipes are stored in MongoDB maintaining the relevant cookbook information. Due to long distance, I learnt about LINODE and hosting a MongoDB in Cloud. I hurt myself because of my excitement for Amazon EC2 as I realized that it will not fit a pocket unless you are a VC sponspored startup almost ready to be acquired by Google/Yahoo!
-
- Now, there ingredients were further cleaned up by using NLTK and by devising an algorithm which will work with NLTK to make use of the structure of ingredients in Wordnet.
-
-This time, i wanted an open source visualization tool (I used MATLAB and C# Forms for creating networks). Thanks to Big Travel Data Hackathon, I learnt about D3 and Gource.
-
-D3 is incredibly easy to visualize data in a rather cool way. Now, i needed to host a webserver in cloud for displaying data. I learnt about Apache2 Web Server and HTML5 Boilerplates/HTML4Up templates which one could use to launch a cool website. I got a free domain name called “sitrundi.tk” from mydottk. Sitrundi means Tiffin in Tamil and Coquere is “to cook” in Latin. 
-
-										</p>
+										<p>	Coming Soon ...   </p>
 									</section>
 
 							</div>

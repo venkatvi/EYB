@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Tabs - Default functionality</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script src="../js/query.js"></script>
+  <link rel="stylesheet" href="css/style.css" />	
+  <script>
+  $(function() {
+    $( "#tabs" ).tabs();
+  });
+  window.onload = function(){
+	document.getElementById("network").src = getUrl("network.html");
+	document.getElementById("icooc").src = getUrl("iCooc.html");
+	document.getElementById("datastats").src = getUrl("datastats.html");
+	document.getElementById("netstats").src = getUrl("networkstats.html");
+ }
+  function getUrl(rootUrl) {
+	var cuisine = getQueryVariable("cuisine");
+	var url = rootUrl + "?cuisine=" + cuisine ;
+	return url;
+  }	
+  </script>
+</head>
+<body>
+<div id="tabs">
+  <ul>
+    <li class="litab"><a href="#coocu">Ingredient Cooccurences</a></li>
+    <li class="litab"><a href="#net">Ingredient Networks</a></li>
+    <li class="litab"><a href="#stat">Network Statistics</a></li>
+    <li class="litab"><a href="#data">Data Statistics</a></li>
+  </ul>
+  <div id="coocu">
+	<iframe id='icooc' scrolling="no" allowfullscreen width=800 height=800 frameborder="0"></iframe>
+  </div>
+  <div id="net">
+	<iframe id='network' scrolling="no" allowfullscreen width=800 height=800 frameborder="0"></iframe>
+  </div>
+  <div id="stat">
+	<iframe id="netstats" scrolling="no" allowfullscreen width=800 height=800 frameborder="0"></iframe>
+  </div>
+  <div id="data">
+	<iframe id='datastats' scrolling="no" allowfullscreen width=800 height=800 frameborder="0"></iframe>
+  </div>
+</div>
+</body>
+</html>

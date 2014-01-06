@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+ 
+text {
+font: 10px sans-serif;
+}
+.link {
+  stroke: #ccc;
+}
+
+.node text {
+  pointer-events: none;
+  font: 10px sans-serif;
+}
+ 
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+ 
+var width = 800,
+height = 800;
+
+var svg = d3.select("body").append("svg")
+	.attr("width", width)
+	.attr("height", height)
+	.attr("viewBox", "0 0 " + width + " " + height)
+	.attr("preserveAspectRatio", "xMidYMid meet");
+
+
+var color = d3.scale.category20();
+
+var loading = svg.append("text")
+.attr("x", width / 2)
+.attr("y", height / 2)
+.attr("dy", ".35em")
+.style("text-anchor", "middle")
+.text("Simulating. One moment please…");
+
+var force = d3.layout.force()
+	.size([width, height]);
+ 
+d3.json("pakistani_leafs.json", function(error, json) {
+	force
+	.nodes(json.nodes)
+	.links(json.links);
+
+	// Use a timeout to allow the rest of the page to load first.
+	setTimeout(function() {
+
+		n=10000; 
+		// Run the layout a fixed number of times.
+		// The ideal number of times scales with graph complexity.
+		// Of course, don't run too long—you'll hang the page!
+		force.start();
+		for (var i = n * n; i > 0; --i) force.tick();
+		force.stop();
+
+		var link = svg.selectAll(".link")
+		.data(json.links)
+		.enter().append("line")
+	        .attr("class", "link")
+		.attr("x1", function(d) { return d.source.x; })
+		.attr("y1", function(d) { return d.source.y; })
+		.attr("x2", function(d) { return d.target.x; })
+		.attr("y2", function(d) { return d.target.y; });
+	
+	 	var node = svg.selectAll(".node")
+	        .data(json.nodes)
+	        .enter().append("g")
+	        .attr("class", "node")
+		.attr("cx", function(d) { return d.x; })
+		.attr("cy", function(d) { return d.y; })
+		.attr("r", 4.5)
+		.on("mouseover", fade(.1))
+      		.on("mouseout", fade(1));
+
+ 		node.append("circle")
+		.attr("r", function(d) { return Math.sqrt(d.degree+1)*2; })
+		.style("fill", function(d) { return color(d.degree+1); })		    .attr("cx", function(d) { return d.x; })
+		.attr("cy", function(d) { return d.y; });
+		
+		node.append("text")
+		.attr("dx", function(d) { return d.x + 1; })
+		.attr("dy", function (d) { return d.y + 0.35; })
+		.text(function(d) { return d.id });
+
+		var linkedByIndex = {};
+		json.links.forEach(function (d) {
+		linkedByIndex[d.source.index + "," + d.target.index] = 1;
+		});
+		function isConnected(a,b){
+			return linkedByIndex[a.index+ "," + b.index] || linkedByIndex[b.index + "," + a.index] || a.index == b.index;
+		}
+
+		function fade(opacity){
+			
+			return function (d) {
+				node.style("stroke-opacity", function(o) {
+					thisOpacity = isConnected(d, o) ? 1: opacity;
+					this.setAttribute('fill-opacity', thisOpacity);
+					return thisOpacity;
+				});
+				link.style ("stroke-opacity", function(o) {
+					return o.source === d || o.target === d ? 1: opacity;
+				});
+		};
+
+    	}
+
+		loading.remove();
+
+}, 10);
+}); 
+</script>

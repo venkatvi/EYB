@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script src = "http://d3js.org/d3.v3.min.js"></script>
+		<script src="../js/query.js"></script>
+		<link rel="stylesheet" href="css/style.css" />	
+	</head>
+	<body>
+		<div>
+			<label for="chooseNode" >Choose Ingredient:</label>
+			<select id="chooseNode"></select>
+			<p> </p>
+			<div>
+				<div style="width: 50px; float: left;">Zoom: </div>
+				<div style="margin-left: 50px;">
+					<div id="vslider" style="width: 300px; height: 6px;"></div>	
+				</div>
+			</div>
+		</div>
+		<div id="chart"> </div>
+		<script>
+			var cuisine = getQueryVariable("cuisine");
+			var width = 700,
+				height = 500;
+
+			$(function() {
+			$( "#vslider" ).slider({
+				orientation: "horizontal",
+				range: "min",
+				min: 900,
+				max: 10000,
+				value: 1000,
+				slide: function( event, ui ) {
+					zoomWithSlider(ui.value/1000);
+				}
+			});
+			});
+			function zoomWithSlider(scale) {
+				var svg = d3.select("#chart").select("svg");
+				var container = svg.select("g");
+				var h = svg.attr("height"), w = svg.attr("width");
+
+				// Note: works only on the <g> element and not on the <svg> element
+				// which is a common mistake
+				container.attr("transform",
+						"translate(" + w/2 + ", " + h/2 + ") " +
+						"scale(" + scale + ") " +
+						"translate(" + (-w/2) + ", " + (-h/2) + ")");
+			}
+
+
+			var svg = d3.select("#chart")
+			.append("svg:svg")
+			.attr("width", width)
+			.attr("height", height)
+			.attr("pointer-events", "all")
+			.append('svg:g')
+			.call(d3.behavior.zoom().on("zoom", redraw))
+			.append('svg:g');
+
+			svg.append('svg:rect')
+			.attr('width', width)
+			.attr('height', height)
+			.attr('fill', 'white');
+
+			function redraw() {
+				console.log("here", d3.event.translate, d3.event.scale);
+				svg.attr("transform",
+						"translate(" + d3.event.translate + ")"
+						+ " scale(" + d3.event.scale + ")");
+			}
+
+			var force = d3.layout.force()
+			.size([width, height]);
+
+			jsonFile = "data/" + cuisine + "_dataStats.json";
+			d3.json(jsonFile, function(error, json) {
+					force
+					.nodes(json.nodes)
+					.links(json.links);
+
+					// Use a timeout to allow the rest of the page to load first.
+					setTimeout(function() {
+
+						n=2; 
+						// Run the layout a fixed number of times.
+						// The ideal number of times scales with graph complexity.
+						// Of course, don't run too long—you'll hang the page!
+						force.start();
+						for (var i = n * n; i > 0; --i) force.tick();
+						force.stop();
+
+						var color = d3.scale.category20();
+
+						var nodesByIndex = new Array();
+						var dropDownNodes = new Array();
+						json.nodes.forEach(function(d) {
+							if (d.id ){
+							dropDownNodes.push(d.id.toLowerCase());
+							nodesByIndex.push(d);
+							}
+							});
+						dropDownNodes.sort();
+						dropDownNodes.unshift("all");
+
+						orderedNodes = d3.range(nodesByIndex.length).sort(function(a,b) { d3.ascending(nodesByIndex[a].id, nodesByIndex[b].id)});
+						oldNodes = nodesByIndex;
+						nodesByIndex = new Array();
+						nodesByIndex.push("all");
+						for (var i=0; i<orderedNodes.length; i++){
+							nodesByIndex.push(oldNodes[i]);
+						}
+
+						// Build the dropdown menu
+						var dropDown = d3.select("#chooseNode")
+							.on("change", function() {
+									nodeId = this.selectedIndex;
+									d3.selectAll('circle')
+									.style("fill", function(d, i) { 
+										if(nodeId ==  0){
+										return  color(d.degree);
+										}
+										else {
+										if(d.id.toLowerCase() == dropDownNodes[nodeId]) {
+										return "#000";
+										}
+										else if(isConnected(d, nodesByIndex[nodeId])) {
+										return color(d.group);
+										}
+										else { return  "#999"; }  
+										}
+										});
+
+
+									})
+						.selectAll("option")
+							.data(dropDownNodes)
+							.enter()
+							.append("option")
+							.attr("value", function(d) { return d;} )
+							.text(function(d) {return d;});
+
+						var link = svg.selectAll(".link")
+							.data(json.links)
+							.enter().append("line")
+							.attr("class", "link")
+							.attr("x1", function(d) { return d.source.x; })
+							.attr("y1", function(d) { return d.source.y; })
+							.attr("x2", function(d) { return d.target.x; })
+							.attr("y2", function(d) { return d.target.y; })
+							.style("stroke", "#999");
+
+
+						var node = svg.selectAll(".node")
+							.data(json.nodes)
+							.enter().append("g")
+							.attr("class", "node")
+							.attr("cx", function(d) { return d.x; })
+							.attr("cy", function(d) { return d.y; })
+							.attr("r", 4.5)
+							.on("mouseover", fade(.1))
+							.on("mouseout", fade(1));
+
+						node.append("circle")
+							.attr("r", function(d) { return Math.sqrt(d.degree+1)*2; })
+							.style("fill", function(d) { return color(d.group); })
+					     	       .attr("cx", function(d) { return d.x; })
+							.attr("cy", function(d) { return d.y; });
+
+						node.append("text")
+							.attr("dx", function(d) { return d.x + 1; })
+							.attr("dy", function(d) { return d.y + 0.5; })
+							.style("font-size", 10);
+						var linkedByIndex = {};
+						json.links.forEach(function (d) {
+								linkedByIndex[d.source.index + "," + d.target.index] = 1;
+								});
+						function isConnected(a,b){
+							return linkedByIndex[a.index+ "," + b.index] || linkedByIndex[b.index + "," + a.index] || a.index == b.index;
+						}
+						function fade(opacity){
+							return function (d) {
+								node.style("stroke-opacity", function(o) {
+										thisOpacity = isConnected(d, o) ? 1: opacity;
+										this.setAttribute('fill-opacity', thisOpacity);
+										return thisOpacity;
+										});
+								link.style ("stroke-opacity", function(o) {
+										return o.source === d || o.target === d ? 1: opacity;
+										});
+								//link.style ("stroke", function(o) {
+								//	return opacity === 0.1 ? (o.source === d || o.target === d ? "#999": "#fff") : "#fff";
+								//	});
+								d3.select(this).select("text").text(function() { 
+										return opacity === 0.1 ? d.id.toLowerCase() : "";
+										});
+								d3.selectAll(".node").filter(function(o){
+										return isConnected(o, d) == 1;
+										}).select("text").text(function(o) {
+											return opacity === 0.1 ? o.id.toLowerCase() : "";
+											});
+
+							};
+
+						}
+					}, 10);
+
+			});
+		</script>
+	</body>
+</html>

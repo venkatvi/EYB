@@ -1,0 +1,8 @@
+index.html - launchpad of any results of  a given cuisine 
+|-- ingredient co-occurence matrix
+|-- ingredient network matrix
+|-- network statistics
+|-- data statistics
+	| - 3 pie charts - author spread, cookbook  spread, category spread
+	| - data network
+
