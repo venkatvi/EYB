@@ -8,6 +8,11 @@ from networkx.readwrite import json_graph
 from apgl.graph import SparseGraph
 import numpy as np
 from optparse import OptionParser
+from networkx.algorithms.centrality  import *
+from networkx.algorithms.vitality import *
+from networkx.algorithms.assortativity import *
+from networkx.algorithms.cluster import *
+from networkx.algorithms.distance_measures import *
 def computeNodeWiseClusteringCoefficient(A, degree):
 	alist = A.tolist()
 	globalClusteringCoefficient = 0
@@ -40,6 +45,7 @@ def getAssortativity(G, degree):
 	den1 /= 2*m
 	num2 = (num2 / (2*m)) ** 2
 	return (num1 - num2)/(den1 - num2)
+
 def getNeighborConnectivity(G, degree):
 	knn = []
 	for i in range(0, len(degree)):
@@ -96,11 +102,66 @@ if __name__ == '__main__':
 	G.add_nodes_from(d['nodes'])
 	G.add_edges_from(d['edges'])
 	
+
+
+	#Centrality Measures:
+	print "Node wise metrics: "
+	print "Networkx deg centrality: "
+	print degree_centrality(G)
+
+	print "closeness_centrality: " 
+	print closeness_centrality(G)
+
+	print "betweeness centrality: "
+	print betweenness_centrality(G)
+	#print "Edge betweeness: "
+	#print edge_betweenness_centrality(G)
+
+	print "eigen vector centrality: " 
+	print eigenvector_centrality(G)
+
+	print "communicability centrality: "
+	print communicability_centrality(G)
+
+	#print "closeness vitality: " 
+	#print closeness_vitality(G)
+
+	print "Assortativity: " 
+	print degree_assortativity_coefficient(G)
+	
+	print "Neighbour Connectivity: " 
+	print average_neighbor_degree(G)
+	
+	print "Avg degree connectivity: " 
+	print average_degree_connectivity(G)
+	
+	print "Avgf degree connectivity: k nearest neighbours" 
+	print k_nearest_neighbors(G)
+
+	print "Clustering coefficient: " 
+	print clustering(G)
+	
+	print "Graph level metrics"
+	print "transitivity:"
+	print transitivity(G)
+
+	print "Average clustering coefficient: " 
+	print average_clustering(G)
+	
+#	print "Communicability centrality: "
+#	print communicability(G)
+
+	print "Diameter"
+	print diameter(G)
+	
+	print "Radius: " 
+	print radius(G)
+
+	print "Eccentricity: "
+	print eccentricity(G)
 	
 	sparseGraph = SparseGraph.fromNetworkXGraph(G)
 
-	#todo:
-	#0. size 
 	print "Size"
 	print sparseGraph.size
 
@@ -112,7 +173,7 @@ if __name__ == '__main__':
 	print meanDegree
 
 	#2. diameter
-	print "Diameter"
+	print "SG Diameter"
 	print sparseGraph.diameter()
 
 
@@ -122,7 +183,17 @@ if __name__ == '__main__':
 	totalDistance  = np.sum(distances);
 	avgPath = float(totalDistance)/(float(len(degrees))*float(len(degrees)-1))
 	print avgPath
-			
+	
+	print "Density: "
+	print sparseGraph.density()
+
+	print "Degree Distribution: "
+	print sparseGraph.degreeDistribution()
+
+
+	# to compute
+	print "TO COMPUTE - GRAPH CENTRALITIES"	
+		
 	#network statistics
 	#4. clustering coefficient - node wise, graph wise
 	print "Clustering Coefficient: "
@@ -131,37 +202,53 @@ if __name__ == '__main__':
 	[gc, lcc] = computeNodeWiseClusteringCoefficient(adjacencyMatrix, degrees)
 	print gc
 
-	#5. assortative coefficient
+	#6. KNN
 	print "Neighbor Connectivity"
 	nn = getNeighborConnectivity(sparseGraph, degrees)
+	print nn 
 
+	#5. assortative coefficient
 	print "Assortativity"
 	r = getAssortativity(sparseGraph, degrees)
 	print r
 
-	#6. KNN
 	#7. centrality 
 	#7a. degree centrality - node wise, graph wise
+	deg_centrality= []
+	for i in range(0, len(degrees)):
+		deg_centrality.append(float(degrees[i])/float(sparseGraph.getNumVertices() - 1))
+	max_centrality = max(deg_centrality)
+	#graph centrality
+	graph_centrality = 0
+	for i in range(0, len(degrees)):
+ 		graph_centrality += (max_centrality - deg_centrality[i])
+	graph_centrality /= float(len(degrees)-1)*float(len(degrees)-2)
+	print "Degree centrality: " + str(graph_centrality)
+	print "Node wise degree centrality: " 
+	print deg_centrality
+
+	
 	#7b. betweenness centrality - node wise, graph wise
 	print "Betweenness: " 
 	print sparseGraph.betweenness()	
 
 	#7c. closeness centrality - node wise, graph wise
+	closeness_centrality = []
+	for i in range(0, len(degrees)):
+		sumDistances = 0
+		for j in range(0, len(degrees)):
+			sumDistances += distances[i][j]
+		closeness_centrality.append(float((len(degrees) -1)/sumDistances))
+	max_centrality = max(closeness_centrality)
+	graph_centrality = 0
+	for i in range(0, len(degrees)):
+		graph_centrality += (max_centrality - closeness_centrality[i])
+	graph_centrality = ((2*len(degrees)) -3) * graph_centrality
+	graph_centrality /= float(len(degrees)-1) *float(len(degrees) -2)
+	print "Closeness: " + str(graph_centrality) 
+	print "Node wise closeness centrality: "
+	print closeness_centrality
+ 
 	#7d. eigen vector centrality - node wise, graph wise
 
-	#8. Triange sequence
-	print "Triangle Sequence: "
-	print sparseGraph.triangleSequence() 
-
-
-
-	#other interesting features of sparse graph
-	print sparseGraph.fitPowerLaw()
 		
-	print "Degree Distribution: "
-	print sparseGraph.degreeDistribution()
-
-	print "Density: "
-	print sparseGraph.density()
-
-
