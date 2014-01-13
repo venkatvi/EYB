@@ -1,6 +1,5 @@
 body {
   background: gray;
-  font-family: sans-serif;
 }
 .wrapper {
   background: white;
@@ -40,4 +39,22 @@ ul.tabs li.active a {
 article {
   border-top: gray solid 1px;
   padding: 0 1em;
+}
+.ptabs li {
+        }
+        .litab
+        {
+                color: #474f51;
+                font-size: 13.5pt;
+                font-family: 'Yanone Kaffeesatz';
+                line-height: 1.85em;
+                font-weight: 300;
+        }
+a.tab {
+	        color: #474f51;
+                font-size: 13.5pt;
+                font-family: 'Yanone Kaffeesatz';
+                line-height: 1.85em;
+                font-weight: 300;
+
 }

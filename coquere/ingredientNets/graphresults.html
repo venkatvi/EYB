@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Tabs - Default functionality</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script src="../js/query.js"></script>
+  <script src = "http://d3js.org/d3.v3.min.js"></script>
+  <link rel="stylesheet" href="css/style.css" />	
+  <script>
+  window.onload = function(){
+	document.getElementById("map").src = getUrl("graphmap.html", dropDownCodes[0]);
+  }
+  var dropDownNodes = ["Assortative Coefficient","Transitivity", "Avg Clustering Coefficient", "Degree Centrality", "Betweeness Centrality", "Closeness"];
+  var dropDownCodes = ["asco", "trans", "avcc", "degc", "betc", "cloc"]; 
+  function getUrl(rootUrl, code) {
+	var url = rootUrl + "?prop=" + code;
+	return url;
+  }	
+</script>
+</head>
+<body>
+	<div>
+		<div style="width: 500px; float: left;">
+			<label for="chooseNode" >Choose Network Property:</label>
+			<select id="chooseNode"></select>
+		</div>
+		<div style="margin-left: 500px;" >
+			<ul class="check-list">
+				<li>Pick a network property to see cuisine behavior. </li>
+			</ul>
+		</div>
+
+	</div>	
+	<script>
+	 var dropDown = d3.select("#chooseNode")
+		    .on("change", function() {
+				nodeId = this.selectedIndex;
+				code = dropDownCodes[nodeId];
+				document.getElementById("map").src = getUrl("graphmap.html", code);
+			})
+		    .selectAll("option")
+		    .data(dropDownNodes)
+		    .enter()
+		    .append("option")
+		    .attr("value", function(d) { return d;} )
+		    .text(function(d) {return d;});
+  </script>
+
+	 <div id="gmap">
+		<iframe id='map' scrolling="no" allowfullscreen width=100% height=900 frameborder="0"></iframe>
+	  </div>
+</body>
+</html>

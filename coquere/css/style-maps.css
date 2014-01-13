@@ -1,0 +1,20 @@
+.stroke {
+  fill: none;
+  stroke: #999;
+  stroke-width: 1px;
+}
+
+.fill {
+  fill: #fff;
+}
+
+.land {
+  fill: #ddd;
+}
+
+.boundary {
+  fill: none;
+  stroke: #fff;
+}
+
+

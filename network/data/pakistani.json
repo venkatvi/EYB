@@ -1,0 +1,10826 @@
+{
+  "nodes": [
+    [
+      "peanut_oil",
+      {
+        "degree": 4
+      }
+    ],
+    [
+      "fennel_seed",
+      {
+        "degree": 54
+      }
+    ],
+    [
+      "coriander_seed",
+      {
+        "degree": 84
+      }
+    ],
+    [
+      "cider_vinegar",
+      {
+        "degree": 18
+      }
+    ],
+    [
+      "cherry tomato",
+      {
+        "degree": 28
+      }
+    ],
+    [
+      "saffron",
+      {
+        "degree": 29
+      }
+    ],
+    [
+      "chicken",
+      {
+        "degree": 33
+      }
+    ],
+    [
+      "fish_steak",
+      {
+        "degree": 9
+      }
+    ],
+    [
+      "milk",
+      {
+        "degree": 20
+      }
+    ],
+    [
+      "sugar",
+      {
+        "degree": 21
+      }
+    ],
+    [
+      "tomato_paste",
+      {
+        "degree": 14
+      }
+    ],
+    [
+      "tomato_juice",
+      {
+        "degree": 8
+      }
+    ],
+    [
+      "ghee",
+      {
+        "degree": 17
+      }
+    ],
+    [
+      "red_wine",
+      {
+        "degree": 3
+      }
+    ],
+    [
+      "rice",
+      {
+        "degree": 37
+      }
+    ],
+    [
+      "split",
+      {
+        "degree": 7
+      }
+    ],
+    [
+      "pistachio_nut",
+      {
+        "degree": 7
+      }
+    ],
+    [
+      "flour",
+      {
+        "degree": 32
+      }
+    ],
+    [
+      "fenugreek_seed",
+      {
+        "degree": 25
+      }
+    ],
+    [
+      "swordfish",
+      {
+        "degree": 8
+      }
+    ],
+    [
+      "black_tea",
+      {
+        "degree": 5
+      }
+    ],
+    [
+      "peanut_butter",
+      {
+        "degree": 5
+      }
+    ],
+    [
+      "semolina",
+      {
+        "degree": 8
+      }
+    ],
+    [
+      "bread",
+      {
+        "degree": 3
+      }
+    ],
+    [
+      "coconut_milk",
+      {
+        "degree": 37
+      }
+    ],
+    [
+      "onion",
+      {
+        "degree": 60
+      }
+    ],
+    [
+      "oyster mushroom",
+      {
+        "degree": 10
+      }
+    ],
+    [
+      "chickpea",
+      {
+        "degree": 27
+      }
+    ],
+    [
+      "collard_greens",
+      {
+        "degree": 2
+      }
+    ],
+    [
+      "nutmeg",
+      {
+        "degree": 8
+      }
+    ],
+    [
+      "beef_stock",
+      {
+        "degree": 17
+      }
+    ],
+    [
+      "zucchini",
+      {
+        "degree": 13
+      }
+    ],
+    [
+      "pork",
+      {
+        "degree": 15
+      }
+    ],
+    [
+      "tea",
+      {
+        "degree": 3
+      }
+    ],
+    [
+      "fish",
+      {
+        "degree": 10
+      }
+    ],
+    [
+      "almond",
+      {
+        "degree": 18
+      }
+    ],
+    [
+      "lentil",
+      {
+        "degree": 21
+      }
+    ],
+    [
+      "condensed_milk",
+      {
+        "degree": 4
+      }
+    ],
+    [
+      "lemongrass",
+      {
+        "degree": 8
+      }
+    ],
+    [
+      "red_onion",
+      {
+        "degree": 30
+      }
+    ],
+    [
+      "okra",
+      {
+        "degree": 18
+      }
+    ],
+    [
+      "green_bean",
+      {
+        "degree": 29
+      }
+    ],
+    [
+      "soy_sauce",
+      {
+        "degree": 8
+      }
+    ],
+    [
+      "mustard_greens",
+      {
+        "degree": 63
+      }
+    ],
+    [
+      "flounder",
+      {
+        "degree": 6
+      }
+    ],
+    [
+      "yogurt",
+      {
+        "degree": 69
+      }
+    ],
+    [
+      "pea",
+      {
+        "degree": 31
+      }
+    ],
+    [
+      "yellow_squash",
+      {
+        "degree": 4
+      }
+    ],
+    [
+      "cauliflower",
+      {
+        "degree": 18
+      }
+    ],
+    [
+      "leg",
+      {
+        "degree": 6
+      }
+    ],
+    [
+      "corn",
+      {
+        "degree": 13
+      }
+    ],
+    [
+      "chicken leg",
+      {
+        "degree": 12
+      }
+    ],
+    [
+      "pasta",
+      {
+        "degree": 2
+      }
+    ],
+    [
+      "curry_powder",
+      {
+        "degree": 21
+      }
+    ],
+    [
+      "paste",
+      {
+        "degree": 8
+      }
+    ],
+    [
+      "black_bean",
+      {
+        "degree": 8
+      }
+    ],
+    [
+      "whitebait",
+      {
+        "degree": 2
+      }
+    ],
+    [
+      "bay_leaf",
+      {
+        "degree": 24
+      }
+    ],
+    [
+      "raisin",
+      {
+        "degree": 13
+      }
+    ],
+    [
+      "shrimp",
+      {
+        "degree": 21
+      }
+    ],
+    [
+      "grain",
+      {
+        "degree": 15
+      }
+    ],
+    [
+      "cod",
+      {
+        "degree": 10
+      }
+    ],
+    [
+      "eggplant",
+      {
+        "degree": 19
+      }
+    ],
+    [
+      "popcorn",
+      {
+        "degree": 8
+      }
+    ],
+    [
+      "mussel",
+      {
+        "degree": 11
+      }
+    ],
+    [
+      "curry",
+      {
+        "degree": 58
+      }
+    ],
+    [
+      "cheese",
+      {
+        "degree": 3
+      }
+    ],
+    [
+      "apple",
+      {
+        "degree": 5
+      }
+    ],
+    [
+      "olive_oil",
+      {
+        "degree": 9
+      }
+    ],
+    [
+      "radish",
+      {
+        "degree": 1
+      }
+    ],
+    [
+      "garlic",
+      {
+        "degree": 33
+      }
+    ],
+    [
+      "lamb_chop",
+      {
+        "degree": 2
+      }
+    ],
+    [
+      "butternut_squash",
+      {
+        "degree": 14
+      }
+    ],
+    [
+      "duck",
+      {
+        "degree": 4
+      }
+    ],
+    [
+      "tamarind",
+      {
+        "degree": 7
+      }
+    ],
+    [
+      "lime",
+      {
+        "degree": 15
+      }
+    ],
+    [
+      "turkey",
+      {
+        "degree": 11
+      }
+    ],
+    [
+      "beef",
+      {
+        "degree": 15
+      }
+    ],
+    [
+      "spinach",
+      {
+        "degree": 19
+      }
+    ],
+    [
+      "dried_apricot",
+      {
+        "degree": 9
+      }
+    ],
+    [
+      "fish fillet",
+      {
+        "degree": 7
+      }
+    ],
+    [
+      "thyme",
+      {
+        "degree": 10
+      }
+    ],
+    [
+      "sea_bass",
+      {
+        "degree": 6
+      }
+    ],
+    [
+      "chapati",
+      {
+        "degree": 3
+      }
+    ],
+    [
+      "banana",
+      {
+        "degree": 3
+      }
+    ],
+    [
+      "mushroom",
+      {
+        "degree": 19
+      }
+    ],
+    [
+      "shallot",
+      {
+        "degree": 40
+      }
+    ],
+    [
+      "bulghur",
+      {
+        "degree": 5
+      }
+    ],
+    [
+      "Swiss_chard",
+      {
+        "degree": 10
+      }
+    ],
+    [
+      "liver",
+      {
+        "degree": 7
+      }
+    ],
+    [
+      "chile",
+      {
+        "degree": 76
+      }
+    ],
+    [
+      "Brussels_sprouts",
+      {
+        "degree": 7
+      }
+    ],
+    [
+      "mustard oil",
+      {
+        "degree": 19
+      }
+    ],
+    [
+      "spice",
+      {
+        "degree": 3
+      }
+    ],
+    [
+      "paprika",
+      {
+        "degree": 34
+      }
+    ],
+    [
+      "tapioca",
+      {
+        "degree": 5
+      }
+    ],
+    [
+      "black_mustard",
+      {
+        "degree": 13
+      }
+    ],
+    [
+      "chicken_stock",
+      {
+        "degree": 40
+      }
+    ],
+    [
+      "dill",
+      {
+        "degree": 3
+      }
+    ],
+    [
+      "coconut",
+      {
+        "degree": 19
+      }
+    ],
+    [
+      "squid",
+      {
+        "degree": 12
+      }
+    ],
+    [
+      "ginger",
+      {
+        "degree": 86
+      }
+    ],
+    [
+      "carrot",
+      {
+        "degree": 34
+      }
+    ],
+    [
+      "quail",
+      {
+        "degree": 6
+      }
+    ],
+    [
+      "black-eyed_pea",
+      {
+        "degree": 9
+      }
+    ],
+    [
+      "mint",
+      {
+        "degree": 33
+      }
+    ],
+    [
+      "lamb",
+      {
+        "degree": 27
+      }
+    ],
+    [
+      "heavy_cream",
+      {
+        "degree": 27
+      }
+    ],
+    [
+      "clove",
+      {
+        "degree": 42
+      }
+    ],
+    [
+      "lemon",
+      {
+        "degree": 13
+      }
+    ],
+    [
+      "striped_bass",
+      {
+        "degree": 5
+      }
+    ],
+    [
+      "peach",
+      {
+        "degree": 3
+      }
+    ],
+    [
+      "cashew",
+      {
+        "degree": 2
+      }
+    ],
+    [
+      "wine_vinegar",
+      {
+        "degree": 3
+      }
+    ],
+    [
+      "cumin_seed",
+      {
+        "degree": 99
+      }
+    ],
+    [
+      "mix",
+      {
+        "degree": 3
+      }
+    ],
+    [
+      "sesame_seed",
+      {
+        "degree": 16
+      }
+    ],
+    [
+      "vegetable",
+      {
+        "degree": 1
+      }
+    ],
+    [
+      "cinnamon",
+      {
+        "degree": 54
+      }
+    ],
+    [
+      "Spanish_mackerel",
+      {
+        "degree": 9
+      }
+    ],
+    [
+      "oil",
+      {
+        "degree": 7
+      }
+    ],
+    [
+      "dry_mustard",
+      {
+        "degree": 14
+      }
+    ],
+    [
+      "cardamom",
+      {
+        "degree": 55
+      }
+    ],
+    [
+      "Tabasco_sauce",
+      {
+        "degree": 8
+      }
+    ],
+    [
+      "salmon",
+      {
+        "degree": 13
+      }
+    ],
+    [
+      "cucumber",
+      {
+        "degree": 12
+      }
+    ],
+    [
+      "peppercorn",
+      {
+        "degree": 60
+      }
+    ],
+    [
+      "broccoli",
+      {
+        "degree": 3
+      }
+    ],
+    [
+      "brown_rice",
+      {
+        "degree": 6
+      }
+    ],
+    [
+      "tomato",
+      {
+        "degree": 62
+      }
+    ],
+    [
+      "noodle",
+      {
+        "degree": 7
+      }
+    ],
+    [
+      "red_pepper",
+      {
+        "degree": 110
+      }
+    ],
+    [
+      "potato",
+      {
+        "degree": 35
+      }
+    ],
+    [
+      "salt",
+      {
+        "degree": 2
+      }
+    ],
+    [
+      "mustard_seed",
+      {
+        "degree": 73
+      }
+    ],
+    [
+      "mango",
+      {
+        "degree": 2
+      }
+    ],
+    [
+      "green",
+      {
+        "degree": 39
+      }
+    ],
+    [
+      "halibut",
+      {
+        "degree": 5
+      }
+    ],
+    [
+      "pineapple",
+      {
+        "degree": 13
+      }
+    ],
+    [
+      "white_rice",
+      {
+        "degree": 7
+      }
+    ],
+    [
+      "egg",
+      {
+        "degree": 21
+      }
+    ],
+    [
+      "turmeric",
+      {
+        "degree": 75
+      }
+    ]
+  ],
+  "edges": [
+    [
+      "peanut_oil",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "peanut_oil",
+      "coriander_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "peanut_oil",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "peanut_oil",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "pork",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "fish",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "salmon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "coriander_seed",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "fennel_seed",
+      "ginger",
+      {
+        "value": 10
+      }
+    ],
+    [
+      "fennel_seed",
+      "cider_vinegar",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "onion",
+      {
+        "value": 8
+      }
+    ],
+    [
+      "fennel_seed",
+      "chickpea",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "fennel_seed",
+      "butternut_squash",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "black-eyed_pea",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "chicken",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "lamb",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "fennel_seed",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "clove",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "fennel_seed",
+      "beef",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "turmeric",
+      {
+        "value": 9
+      }
+    ],
+    [
+      "fennel_seed",
+      "soy_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "mustard_greens",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "fennel_seed",
+      "cumin_seed",
+      {
+        "value": 16
+      }
+    ],
+    [
+      "fennel_seed",
+      "sugar",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "shallot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "split",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "yogurt",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "fennel_seed",
+      "pea",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "cinnamon",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "fennel_seed",
+      "Spanish_mackerel",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "curry",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "fennel_seed",
+      "mushroom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "dry_mustard",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "cardamom",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "fennel_seed",
+      "flour",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "fennel_seed",
+      "fenugreek_seed",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "fennel_seed",
+      "swordfish",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "garlic",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "chile",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "fennel_seed",
+      "peppercorn",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "fennel_seed",
+      "curry_powder",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "paste",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "mustard oil",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "fennel_seed",
+      "tomato",
+      {
+        "value": 9
+      }
+    ],
+    [
+      "fennel_seed",
+      "coconut_milk",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "fennel_seed",
+      "red_pepper",
+      {
+        "value": 15
+      }
+    ],
+    [
+      "fennel_seed",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "oyster mushroom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "cherry tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "mustard_seed",
+      {
+        "value": 12
+      }
+    ],
+    [
+      "fennel_seed",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "cod",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "eggplant",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "fennel_seed",
+      "beef_stock",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "fennel_seed",
+      "black_mustard",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "egg",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "chicken_stock",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "coriander_seed",
+      "cheese",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "coconut",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "coriander_seed",
+      "semolina",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "olive_oil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "fish",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "squid",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "cucumber",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "pork",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "coriander_seed",
+      "ginger",
+      {
+        "value": 41
+      }
+    ],
+    [
+      "coriander_seed",
+      "cider_vinegar",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "okra",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "coriander_seed",
+      "chickpea",
+      {
+        "value": 11
+      }
+    ],
+    [
+      "coriander_seed",
+      "carrot",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "coriander_seed",
+      "butternut_squash",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "red_pepper",
+      {
+        "value": 60
+      }
+    ],
+    [
+      "coriander_seed",
+      "chicken",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "coriander_seed",
+      "fish_steak",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "mint",
+      {
+        "value": 8
+      }
+    ],
+    [
+      "coriander_seed",
+      "egg",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "coriander_seed",
+      "lemongrass",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "lamb",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "coriander_seed",
+      "heavy_cream",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "coriander_seed",
+      "red_onion",
+      {
+        "value": 8
+      }
+    ],
+    [
+      "coriander_seed",
+      "beef",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "coriander_seed",
+      "lemon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "cauliflower",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "coriander_seed",
+      "peach",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "saffron",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "green_bean",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "coriander_seed",
+      "soy_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "mustard_greens",
+      {
+        "value": 15
+      }
+    ],
+    [
+      "coriander_seed",
+      "fish fillet",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "cumin_seed",
+      {
+        "value": 49
+      }
+    ],
+    [
+      "coriander_seed",
+      "cardamom",
+      {
+        "value": 12
+      }
+    ],
+    [
+      "coriander_seed",
+      "tomato_paste",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "tomato_juice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "sesame_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "ghee",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "yogurt",
+      {
+        "value": 21
+      }
+    ],
+    [
+      "coriander_seed",
+      "grain",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "rice",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "coriander_seed",
+      "pea",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "coriander_seed",
+      "cinnamon",
+      {
+        "value": 13
+      }
+    ],
+    [
+      "coriander_seed",
+      "turkey",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "coriander_seed",
+      "oil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "chile",
+      {
+        "value": 19
+      }
+    ],
+    [
+      "coriander_seed",
+      "eggplant",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "coriander_seed",
+      "mushroom",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "coriander_seed",
+      "leg",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "shallot",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "coriander_seed",
+      "flour",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "coriander_seed",
+      "Tabasco_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "beef_stock",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "coriander_seed",
+      "salmon",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "coriander_seed",
+      "clove",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "coriander_seed",
+      "garlic",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "coriander_seed",
+      "nutmeg",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "chicken leg",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "shrimp",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "coriander_seed",
+      "peppercorn",
+      {
+        "value": 11
+      }
+    ],
+    [
+      "coriander_seed",
+      "curry_powder",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "coriander_seed",
+      "mustard oil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "bread",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "tomato",
+      {
+        "value": 18
+      }
+    ],
+    [
+      "coriander_seed",
+      "coconut_milk",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "coriander_seed",
+      "onion",
+      {
+        "value": 15
+      }
+    ],
+    [
+      "coriander_seed",
+      "potato",
+      {
+        "value": 8
+      }
+    ],
+    [
+      "coriander_seed",
+      "black_bean",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "oyster mushroom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "bay_leaf",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "cherry tomato",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "coriander_seed",
+      "mustard_seed",
+      {
+        "value": 18
+      }
+    ],
+    [
+      "coriander_seed",
+      "paprika",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "coriander_seed",
+      "green",
+      {
+        "value": 8
+      }
+    ],
+    [
+      "coriander_seed",
+      "lentil",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "coriander_seed",
+      "fenugreek_seed",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "coriander_seed",
+      "turmeric",
+      {
+        "value": 28
+      }
+    ],
+    [
+      "coriander_seed",
+      "mussel",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "black_mustard",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "curry",
+      {
+        "value": 14
+      }
+    ],
+    [
+      "coriander_seed",
+      "peanut_butter",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander_seed",
+      "chicken_stock",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "cider_vinegar",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cider_vinegar",
+      "red_pepper",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "cider_vinegar",
+      "mustard_greens",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "cider_vinegar",
+      "green_bean",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cider_vinegar",
+      "mustard_seed",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "cider_vinegar",
+      "fenugreek_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cider_vinegar",
+      "ginger",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "cider_vinegar",
+      "sugar",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cider_vinegar",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cider_vinegar",
+      "cumin_seed",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "cider_vinegar",
+      "pineapple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cider_vinegar",
+      "peppercorn",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "cider_vinegar",
+      "chicken",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cider_vinegar",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cider_vinegar",
+      "curry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cider_vinegar",
+      "turmeric",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "cherry tomato",
+      "olive_oil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cherry tomato",
+      "ginger",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "cherry tomato",
+      "chickpea",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cherry tomato",
+      "chicken",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cherry tomato",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cherry tomato",
+      "red_onion",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "cherry tomato",
+      "fish fillet",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cherry tomato",
+      "cumin_seed",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "cherry tomato",
+      "yogurt",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "cherry tomato",
+      "rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cherry tomato",
+      "mushroom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cherry tomato",
+      "mustard_greens",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "cherry tomato",
+      "shallot",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "cherry tomato",
+      "flour",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cherry tomato",
+      "cucumber",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "cherry tomato",
+      "chile",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "cherry tomato",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cherry tomato",
+      "red_pepper",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "cherry tomato",
+      "black_bean",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cherry tomato",
+      "egg",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "cherry tomato",
+      "mustard_seed",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "cherry tomato",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cherry tomato",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cherry tomato",
+      "chicken_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cherry tomato",
+      "curry",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "cherry tomato",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "saffron",
+      "almond",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "saffron",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "saffron",
+      "mint",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "saffron",
+      "milk",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "saffron",
+      "lamb",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "saffron",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "saffron",
+      "clove",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "saffron",
+      "lemon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "saffron",
+      "green_bean",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "saffron",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "saffron",
+      "sugar",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "saffron",
+      "ghee",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "saffron",
+      "yogurt",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "saffron",
+      "rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "saffron",
+      "pea",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "saffron",
+      "pistachio_nut",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "saffron",
+      "cauliflower",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "saffron",
+      "cardamom",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "saffron",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "saffron",
+      "onion",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "saffron",
+      "red_pepper",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "saffron",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "saffron",
+      "bay_leaf",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "saffron",
+      "raisin",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "saffron",
+      "tapioca",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "saffron",
+      "grain",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "saffron",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "saffron",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "almond",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "ginger",
+      {
+        "value": 11
+      }
+    ],
+    [
+      "chicken",
+      "chickpea",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "mint",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "red_onion",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "okra",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "dried_apricot",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chicken",
+      "cumin_seed",
+      {
+        "value": 11
+      }
+    ],
+    [
+      "chicken",
+      "tomato_paste",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "yogurt",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "chicken",
+      "mustard_greens",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "chicken",
+      "cardamom",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "chicken",
+      "flour",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "fenugreek_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "garlic",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "chicken",
+      "chile",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chicken",
+      "peppercorn",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chicken",
+      "curry_powder",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "coconut_milk",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "tomato",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "chicken",
+      "onion",
+      {
+        "value": 8
+      }
+    ],
+    [
+      "chicken",
+      "red_pepper",
+      {
+        "value": 13
+      }
+    ],
+    [
+      "chicken",
+      "bay_leaf",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "mustard_seed",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "chicken",
+      "paprika",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "chicken",
+      "cinnamon",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "chicken",
+      "chicken_stock",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chicken",
+      "curry",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "chicken",
+      "turmeric",
+      {
+        "value": 8
+      }
+    ],
+    [
+      "fish_steak",
+      "thyme",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish_steak",
+      "coconut_milk",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish_steak",
+      "red_pepper",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "fish_steak",
+      "ginger",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "fish_steak",
+      "garlic",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "fish_steak",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish_steak",
+      "curry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish_steak",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "milk",
+      "olive_oil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "milk",
+      "clove",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "milk",
+      "pistachio_nut",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "milk",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "milk",
+      "cardamom",
+      {
+        "value": 8
+      }
+    ],
+    [
+      "milk",
+      "tea",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "milk",
+      "black_tea",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "milk",
+      "raisin",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "milk",
+      "sugar",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "milk",
+      "tapioca",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "milk",
+      "mix",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "milk",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "milk",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "milk",
+      "flour",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "milk",
+      "pasta",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "milk",
+      "chapati",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "milk",
+      "rice",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "milk",
+      "condensed_milk",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "milk",
+      "spice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "sugar",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "sugar",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "sugar",
+      "pistachio_nut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "sugar",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "sugar",
+      "mustard_greens",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "sugar",
+      "cardamom",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "sugar",
+      "yogurt",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "sugar",
+      "clove",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "sugar",
+      "mustard_seed",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "sugar",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "sugar",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "sugar",
+      "sesame_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "sugar",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "sugar",
+      "popcorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "sugar",
+      "red_pepper",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "sugar",
+      "rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "sugar",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_paste",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_paste",
+      "onion",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "tomato_paste",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_paste",
+      "black_bean",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_paste",
+      "dried_apricot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_paste",
+      "squid",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_paste",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_paste",
+      "ginger",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "tomato_paste",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_paste",
+      "curry_powder",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_paste",
+      "curry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_paste",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_juice",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_juice",
+      "Tabasco_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_juice",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_juice",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_juice",
+      "eggplant",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_juice",
+      "yogurt",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_juice",
+      "mint",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ghee",
+      "cauliflower",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ghee",
+      "lemon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ghee",
+      "onion",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ghee",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ghee",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ghee",
+      "green_bean",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ghee",
+      "thyme",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ghee",
+      "cumin_seed",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "ghee",
+      "grain",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ghee",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "ghee",
+      "yogurt",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ghee",
+      "rice",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "ghee",
+      "mint",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ghee",
+      "pea",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ghee",
+      "striped_bass",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_wine",
+      "shallot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_wine",
+      "wine_vinegar",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_wine",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rice",
+      "almond",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rice",
+      "ginger",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "rice",
+      "peppercorn",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "rice",
+      "lentil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rice",
+      "lemongrass",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rice",
+      "clove",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "rice",
+      "cumin_seed",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "rice",
+      "shallot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rice",
+      "sesame_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rice",
+      "yogurt",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "rice",
+      "pistachio_nut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rice",
+      "mustard_greens",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "rice",
+      "cardamom",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "rice",
+      "flour",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rice",
+      "chile",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "rice",
+      "Brussels_sprouts",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rice",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rice",
+      "noodle",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "rice",
+      "coconut_milk",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rice",
+      "red_pepper",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "rice",
+      "bay_leaf",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "rice",
+      "raisin",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rice",
+      "onion",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rice",
+      "mustard_seed",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "rice",
+      "shrimp",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rice",
+      "cinnamon",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "rice",
+      "halibut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rice",
+      "turmeric",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "rice",
+      "white_rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rice",
+      "curry",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "rice",
+      "chicken_stock",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "split",
+      "mustard_greens",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "split",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "split",
+      "grain",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "split",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "split",
+      "chile",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "split",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pistachio_nut",
+      "cardamom",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "pistachio_nut",
+      "raisin",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pistachio_nut",
+      "tapioca",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "flour",
+      "olive_oil",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "flour",
+      "squid",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "flour",
+      "ginger",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "flour",
+      "red_onion",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "flour",
+      "fish fillet",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "flour",
+      "cumin_seed",
+      {
+        "value": 8
+      }
+    ],
+    [
+      "flour",
+      "yogurt",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "flour",
+      "chapati",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "flour",
+      "oil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "flour",
+      "eggplant",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "flour",
+      "mustard_greens",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "flour",
+      "chile",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "flour",
+      "curry_powder",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "flour",
+      "tomato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "flour",
+      "onion",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "flour",
+      "red_pepper",
+      {
+        "value": 8
+      }
+    ],
+    [
+      "flour",
+      "egg",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "flour",
+      "whitebait",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "flour",
+      "chickpea",
+      {
+        "value": 9
+      }
+    ],
+    [
+      "flour",
+      "mustard_seed",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "flour",
+      "shrimp",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "flour",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "flour",
+      "halibut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "flour",
+      "chicken_stock",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "flour",
+      "curry",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "flour",
+      "turmeric",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "fenugreek_seed",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fenugreek_seed",
+      "beef",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fenugreek_seed",
+      "cumin_seed",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "fenugreek_seed",
+      "yogurt",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fenugreek_seed",
+      "pea",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fenugreek_seed",
+      "cod",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fenugreek_seed",
+      "mustard_greens",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fenugreek_seed",
+      "garlic",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fenugreek_seed",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fenugreek_seed",
+      "peppercorn",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "fenugreek_seed",
+      "mustard oil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fenugreek_seed",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fenugreek_seed",
+      "red_pepper",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "fenugreek_seed",
+      "onion",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fenugreek_seed",
+      "mustard_seed",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "fenugreek_seed",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fenugreek_seed",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fenugreek_seed",
+      "beef_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fenugreek_seed",
+      "black_mustard",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fenugreek_seed",
+      "curry",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "fenugreek_seed",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "swordfish",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "swordfish",
+      "coconut_milk",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "swordfish",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "swordfish",
+      "mustard_greens",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "swordfish",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "swordfish",
+      "curry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "swordfish",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "black_tea",
+      "cardamom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "black_tea",
+      "clove",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "black_tea",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "black_tea",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "peanut_butter",
+      "yogurt",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "peanut_butter",
+      "shallot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "peanut_butter",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "peanut_butter",
+      "sesame_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "semolina",
+      "mustard_greens",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "semolina",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "semolina",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "semolina",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "semolina",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "semolina",
+      "curry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "semolina",
+      "pea",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bread",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bread",
+      "cheese",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "ginger",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "coconut_milk",
+      "carrot",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "coconut_milk",
+      "shrimp",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "lamb",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "coconut_milk",
+      "clove",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "okra",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "green_bean",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "cumin_seed",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "coconut_milk",
+      "shallot",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "coconut_milk",
+      "zucchini",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "Spanish_mackerel",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "mustard_greens",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "coconut_milk",
+      "cardamom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "Swiss_chard",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "red_onion",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "garlic",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "coconut_milk",
+      "chile",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "coconut_milk",
+      "peppercorn",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "coconut_milk",
+      "tomato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "coconut_milk",
+      "onion",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "coconut_milk",
+      "red_pepper",
+      {
+        "value": 11
+      }
+    ],
+    [
+      "coconut_milk",
+      "potato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "coconut_milk",
+      "sea_bass",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "mustard_seed",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "coconut_milk",
+      "paprika",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "coconut_milk",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "mussel",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "chicken_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "curry",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "coconut_milk",
+      "turmeric",
+      {
+        "value": 8
+      }
+    ],
+    [
+      "onion",
+      "pork",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "onion",
+      "chile",
+      {
+        "value": 11
+      }
+    ],
+    [
+      "onion",
+      "almond",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "onion",
+      "ginger",
+      {
+        "value": 22
+      }
+    ],
+    [
+      "onion",
+      "chickpea",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "onion",
+      "carrot",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "onion",
+      "butternut_squash",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "onion",
+      "black-eyed_pea",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "onion",
+      "lentil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "onion",
+      "mint",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "onion",
+      "lamb",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "onion",
+      "heavy_cream",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "onion",
+      "clove",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "onion",
+      "lemon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "onion",
+      "okra",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "onion",
+      "beef",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "onion",
+      "spinach",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "onion",
+      "green_bean",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "onion",
+      "dried_apricot",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "onion",
+      "mustard_greens",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "onion",
+      "cumin_seed",
+      {
+        "value": 26
+      }
+    ],
+    [
+      "onion",
+      "cardamom",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "onion",
+      "yogurt",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "onion",
+      "green",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "onion",
+      "pea",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "onion",
+      "squid",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "onion",
+      "cauliflower",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "onion",
+      "dry_mustard",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "onion",
+      "shallot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "onion",
+      "Swiss_chard",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "onion",
+      "garlic",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "onion",
+      "liver",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "onion",
+      "chicken leg",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "onion",
+      "peppercorn",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "onion",
+      "curry_powder",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "onion",
+      "paste",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "onion",
+      "tomato",
+      {
+        "value": 15
+      }
+    ],
+    [
+      "onion",
+      "red_pepper",
+      {
+        "value": 24
+      }
+    ],
+    [
+      "onion",
+      "potato",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "onion",
+      "bay_leaf",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "onion",
+      "mustard_seed",
+      {
+        "value": 9
+      }
+    ],
+    [
+      "onion",
+      "paprika",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "onion",
+      "grain",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "onion",
+      "cinnamon",
+      {
+        "value": 10
+      }
+    ],
+    [
+      "onion",
+      "eggplant",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "onion",
+      "beef_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "onion",
+      "mussel",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "onion",
+      "chicken_stock",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "onion",
+      "curry",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "onion",
+      "turmeric",
+      {
+        "value": 13
+      }
+    ],
+    [
+      "oyster mushroom",
+      "clove",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "oyster mushroom",
+      "cardamom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "oyster mushroom",
+      "fish",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "oyster mushroom",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "oyster mushroom",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "oyster mushroom",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "oyster mushroom",
+      "beef_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "oyster mushroom",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chickpea",
+      "squid",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chickpea",
+      "ginger",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "chickpea",
+      "red_onion",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "chickpea",
+      "cumin_seed",
+      {
+        "value": 12
+      }
+    ],
+    [
+      "chickpea",
+      "yogurt",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "chickpea",
+      "oil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chickpea",
+      "mushroom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chickpea",
+      "mustard_greens",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "chickpea",
+      "chile",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "chickpea",
+      "curry_powder",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chickpea",
+      "tomato",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "chickpea",
+      "red_pepper",
+      {
+        "value": 11
+      }
+    ],
+    [
+      "chickpea",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chickpea",
+      "curry",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "chickpea",
+      "mustard_seed",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "chickpea",
+      "shrimp",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chickpea",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chickpea",
+      "eggplant",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chickpea",
+      "chicken_stock",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chickpea",
+      "egg",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chickpea",
+      "turmeric",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "collard_greens",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "collard_greens",
+      "chicken_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "nutmeg",
+      "clove",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "nutmeg",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "nutmeg",
+      "cardamom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "nutmeg",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "nutmeg",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "nutmeg",
+      "peppercorn",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "nutmeg",
+      "mint",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef_stock",
+      "clove",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef_stock",
+      "beef",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef_stock",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef_stock",
+      "cardamom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef_stock",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef_stock",
+      "garlic",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef_stock",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef_stock",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef_stock",
+      "cumin_seed",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "beef_stock",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef_stock",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef_stock",
+      "fish",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "zucchini",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "zucchini",
+      "yellow_squash",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "zucchini",
+      "red_pepper",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "zucchini",
+      "mustard_greens",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "zucchini",
+      "shallot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "zucchini",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "zucchini",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "zucchini",
+      "cumin_seed",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "zucchini",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "zucchini",
+      "yogurt",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "zucchini",
+      "curry",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "zucchini",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pork",
+      "tomato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "pork",
+      "red_pepper",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "pork",
+      "shallot",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "pork",
+      "soy_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pork",
+      "cumin_seed",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "pork",
+      "ginger",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "pork",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pork",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pork",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pork",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pork",
+      "lentil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pork",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "tea",
+      "mix",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tea",
+      "spice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish",
+      "clove",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish",
+      "cardamom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "almond",
+      "lamb",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "almond",
+      "dill",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "almond",
+      "clove",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "almond",
+      "red_pepper",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "almond",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "almond",
+      "cardamom",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "almond",
+      "bay_leaf",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "almond",
+      "raisin",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "almond",
+      "ginger",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "almond",
+      "peppercorn",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "almond",
+      "cinnamon",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "almond",
+      "cumin_seed",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "almond",
+      "yogurt",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "almond",
+      "mint",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lentil",
+      "tomato",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "lentil",
+      "cardamom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lentil",
+      "red_pepper",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "lentil",
+      "mustard_greens",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lentil",
+      "shallot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lentil",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lentil",
+      "chicken_stock",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "lentil",
+      "bay_leaf",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lentil",
+      "ginger",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "lentil",
+      "green_bean",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lentil",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lentil",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lentil",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lentil",
+      "cumin_seed",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "lentil",
+      "curry_powder",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lentil",
+      "curry",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "lentil",
+      "turmeric",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "condensed_milk",
+      "cardamom",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "condensed_milk",
+      "yogurt",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "condensed_milk",
+      "banana",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lemongrass",
+      "clove",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lemongrass",
+      "cardamom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lemongrass",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lemongrass",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lemongrass",
+      "curry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lemongrass",
+      "chicken_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_onion",
+      "ginger",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "red_onion",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_onion",
+      "shrimp",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_onion",
+      "lamb",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "red_onion",
+      "clove",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "red_onion",
+      "okra",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_onion",
+      "cumin_seed",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "red_onion",
+      "yogurt",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "red_onion",
+      "oil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_onion",
+      "mushroom",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "red_onion",
+      "mustard_greens",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_onion",
+      "cardamom",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "red_onion",
+      "garlic",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_onion",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_onion",
+      "peppercorn",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "red_onion",
+      "tomato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "red_onion",
+      "red_pepper",
+      {
+        "value": 9
+      }
+    ],
+    [
+      "red_onion",
+      "potato",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "red_onion",
+      "curry",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "red_onion",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_onion",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_onion",
+      "cinnamon",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "red_onion",
+      "egg",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_onion",
+      "turmeric",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "okra",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "okra",
+      "red_pepper",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "okra",
+      "mustard_greens",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "okra",
+      "shallot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "okra",
+      "Swiss_chard",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "okra",
+      "mustard_seed",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "okra",
+      "green_bean",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "okra",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "okra",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "okra",
+      "cumin_seed",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "okra",
+      "yogurt",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "okra",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "okra",
+      "chicken_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "green_bean",
+      "coconut",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "green_bean",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "green_bean",
+      "carrot",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "green_bean",
+      "cumin_seed",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "green_bean",
+      "mint",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "green_bean",
+      "lemon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "green_bean",
+      "sesame_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "green_bean",
+      "yogurt",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "green_bean",
+      "pea",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "green_bean",
+      "cauliflower",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "green_bean",
+      "mustard_greens",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "green_bean",
+      "shallot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "green_bean",
+      "Swiss_chard",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "green_bean",
+      "chile",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "green_bean",
+      "red_pepper",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "green_bean",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "green_bean",
+      "mustard_seed",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "green_bean",
+      "grain",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "green_bean",
+      "chicken_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "green_bean",
+      "curry",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "green_bean",
+      "turmeric",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "soy_sauce",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "soy_sauce",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "soy_sauce",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "soy_sauce",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "soy_sauce",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard_greens",
+      "coconut",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "mustard_greens",
+      "chile",
+      {
+        "value": 19
+      }
+    ],
+    [
+      "mustard_greens",
+      "squid",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard_greens",
+      "salmon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard_greens",
+      "ginger",
+      {
+        "value": 13
+      }
+    ],
+    [
+      "mustard_greens",
+      "Brussels_sprouts",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard_greens",
+      "carrot",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "mustard_greens",
+      "butternut_squash",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard_greens",
+      "red_pepper",
+      {
+        "value": 32
+      }
+    ],
+    [
+      "mustard_greens",
+      "paprika",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "mustard_greens",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard_greens",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard_greens",
+      "cauliflower",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard_greens",
+      "spinach",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard_greens",
+      "cumin_seed",
+      {
+        "value": 21
+      }
+    ],
+    [
+      "mustard_greens",
+      "shallot",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "mustard_greens",
+      "sesame_seed",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "mustard_greens",
+      "yogurt",
+      {
+        "value": 10
+      }
+    ],
+    [
+      "mustard_greens",
+      "chicken_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard_greens",
+      "curry",
+      {
+        "value": 21
+      }
+    ],
+    [
+      "mustard_greens",
+      "mushroom",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "mustard_greens",
+      "dry_mustard",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard_greens",
+      "cardamom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard_greens",
+      "corn",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "mustard_greens",
+      "clove",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "mustard_greens",
+      "garlic",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "mustard_greens",
+      "peppercorn",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "mustard_greens",
+      "mustard oil",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "mustard_greens",
+      "tomato",
+      {
+        "value": 8
+      }
+    ],
+    [
+      "mustard_greens",
+      "pea",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "mustard_greens",
+      "noodle",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard_greens",
+      "potato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "mustard_greens",
+      "bay_leaf",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard_greens",
+      "mustard_seed",
+      {
+        "value": 43
+      }
+    ],
+    [
+      "mustard_greens",
+      "shrimp",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard_greens",
+      "green",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "mustard_greens",
+      "cinnamon",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "mustard_greens",
+      "pineapple",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "mustard_greens",
+      "popcorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard_greens",
+      "mussel",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard_greens",
+      "white_rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard_greens",
+      "egg",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "mustard_greens",
+      "turmeric",
+      {
+        "value": 17
+      }
+    ],
+    [
+      "flounder",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "flounder",
+      "shallot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "flounder",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "flounder",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "flounder",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "flounder",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "coconut",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "yogurt",
+      "apple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "ginger",
+      {
+        "value": 21
+      }
+    ],
+    [
+      "yogurt",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "butternut_squash",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "duck",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "mint",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "yogurt",
+      "lamb",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "yogurt",
+      "lemon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "beef",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "spinach",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "cumin_seed",
+      {
+        "value": 19
+      }
+    ],
+    [
+      "yogurt",
+      "cardamom",
+      {
+        "value": 10
+      }
+    ],
+    [
+      "yogurt",
+      "sesame_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "cauliflower",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "green",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "yogurt",
+      "banana",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "cod",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "turkey",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "yogurt",
+      "mushroom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "leg",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "yogurt",
+      "shallot",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "yogurt",
+      "chicken leg",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "yogurt",
+      "clove",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "yogurt",
+      "Tabasco_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "cucumber",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "yogurt",
+      "chile",
+      {
+        "value": 10
+      }
+    ],
+    [
+      "yogurt",
+      "peppercorn",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "yogurt",
+      "curry_powder",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "mustard oil",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "yogurt",
+      "tomato",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "yogurt",
+      "pea",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "yogurt",
+      "red_pepper",
+      {
+        "value": 31
+      }
+    ],
+    [
+      "yogurt",
+      "potato",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "yogurt",
+      "egg",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "bay_leaf",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "yogurt",
+      "raisin",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "mustard_seed",
+      {
+        "value": 15
+      }
+    ],
+    [
+      "yogurt",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "mango",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "grain",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "cinnamon",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "yogurt",
+      "eggplant",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "pineapple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "garlic",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "yogurt",
+      "chicken_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yogurt",
+      "curry",
+      {
+        "value": 9
+      }
+    ],
+    [
+      "yogurt",
+      "turmeric",
+      {
+        "value": 8
+      }
+    ],
+    [
+      "pea",
+      "coconut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pea",
+      "chile",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "pea",
+      "ginger",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "pea",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pea",
+      "cumin_seed",
+      {
+        "value": 9
+      }
+    ],
+    [
+      "pea",
+      "mint",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pea",
+      "turkey",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pea",
+      "lemon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pea",
+      "cauliflower",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pea",
+      "grain",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pea",
+      "mushroom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pea",
+      "bulghur",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pea",
+      "mustard oil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pea",
+      "tomato",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "pea",
+      "red_pepper",
+      {
+        "value": 8
+      }
+    ],
+    [
+      "pea",
+      "potato",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "pea",
+      "mustard_seed",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "pea",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pea",
+      "cod",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pea",
+      "curry",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "pea",
+      "turmeric",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "yellow_squash",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yellow_squash",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yellow_squash",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cauliflower",
+      "lemon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cauliflower",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cauliflower",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cauliflower",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cauliflower",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cauliflower",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cauliflower",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cauliflower",
+      "grain",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cauliflower",
+      "mint",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cauliflower",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "leg",
+      "red_pepper",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "leg",
+      "ginger",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "leg",
+      "mint",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "leg",
+      "mustard oil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "corn",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "corn",
+      "clove",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "corn",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "corn",
+      "cardamom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "corn",
+      "mustard_seed",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "corn",
+      "bay_leaf",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "corn",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "corn",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "corn",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "corn",
+      "chile",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "corn",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "corn",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken leg",
+      "red_pepper",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "chicken leg",
+      "spinach",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken leg",
+      "cardamom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken leg",
+      "ginger",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "chicken leg",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken leg",
+      "garlic",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken leg",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken leg",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken leg",
+      "mint",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pasta",
+      "cardamom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry_powder",
+      "tomato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "curry_powder",
+      "red_pepper",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "curry_powder",
+      "squid",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry_powder",
+      "cumin_seed",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "curry_powder",
+      "ginger",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "curry_powder",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry_powder",
+      "mustard_seed",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "curry_powder",
+      "eggplant",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry_powder",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "curry_powder",
+      "curry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry_powder",
+      "egg",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry_powder",
+      "chicken_stock",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "paste",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "paste",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "paste",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "paste",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "paste",
+      "eggplant",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "paste",
+      "chicken_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "black_bean",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "black_bean",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "black_bean",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "black_bean",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "black_bean",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "whitebait",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "ginger",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "bay_leaf",
+      "lamb",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "bay_leaf",
+      "heavy_cream",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "bay_leaf",
+      "clove",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "bay_leaf",
+      "cardamom",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "bay_leaf",
+      "garlic",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "chile",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "bay_leaf",
+      "peppercorn",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "bay_leaf",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "red_pepper",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "bay_leaf",
+      "raisin",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "cinnamon",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "bay_leaf",
+      "chicken_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "raisin",
+      "lamb",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "raisin",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "raisin",
+      "cardamom",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "raisin",
+      "tapioca",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "raisin",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "raisin",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "shrimp",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "shrimp",
+      "red_pepper",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "shrimp",
+      "cardamom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "shrimp",
+      "mustard_seed",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "shrimp",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "shrimp",
+      "shallot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "shrimp",
+      "oil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "shrimp",
+      "garlic",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "shrimp",
+      "cumin_seed",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "shrimp",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "shrimp",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "shrimp",
+      "chicken_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "shrimp",
+      "curry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "shrimp",
+      "turmeric",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "grain",
+      "lemon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "grain",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "grain",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "grain",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "grain",
+      "mint",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "grain",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cod",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cod",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cod",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cod",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cod",
+      "mustard oil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cod",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "eggplant",
+      "tomato",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "eggplant",
+      "red_pepper",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "eggplant",
+      "Tabasco_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "eggplant",
+      "mustard_seed",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "eggplant",
+      "ginger",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "eggplant",
+      "cumin_seed",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "eggplant",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "eggplant",
+      "black_mustard",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "eggplant",
+      "mint",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "eggplant",
+      "chicken_stock",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "popcorn",
+      "clove",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "popcorn",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "popcorn",
+      "sesame_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "popcorn",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "popcorn",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "popcorn",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mussel",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mussel",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mussel",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mussel",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mussel",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mussel",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mussel",
+      "curry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry",
+      "coconut",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "curry",
+      "cinnamon",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "curry",
+      "squid",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "curry",
+      "cucumber",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry",
+      "ginger",
+      {
+        "value": 14
+      }
+    ],
+    [
+      "curry",
+      "paprika",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "curry",
+      "carrot",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "curry",
+      "tamarind",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry",
+      "lamb",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry",
+      "clove",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "curry",
+      "Brussels_sprouts",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry",
+      "cumin_seed",
+      {
+        "value": 15
+      }
+    ],
+    [
+      "curry",
+      "cardamom",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "curry",
+      "turkey",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry",
+      "chicken_stock",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "curry",
+      "mushroom",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "curry",
+      "shallot",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "curry",
+      "noodle",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry",
+      "garlic",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "curry",
+      "chile",
+      {
+        "value": 20
+      }
+    ],
+    [
+      "curry",
+      "peppercorn",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "curry",
+      "tomato",
+      {
+        "value": 10
+      }
+    ],
+    [
+      "curry",
+      "white_rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry",
+      "red_pepper",
+      {
+        "value": 21
+      }
+    ],
+    [
+      "curry",
+      "potato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "curry",
+      "mustard_seed",
+      {
+        "value": 29
+      }
+    ],
+    [
+      "curry",
+      "green",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "curry",
+      "pineapple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry",
+      "black_mustard",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry",
+      "egg",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry",
+      "turmeric",
+      {
+        "value": 11
+      }
+    ],
+    [
+      "cheese",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "apple",
+      "shallot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "apple",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "apple",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "apple",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "olive_oil",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "olive_oil",
+      "fish fillet",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "olive_oil",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "olive_oil",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "olive_oil",
+      "chapati",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "radish",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "garlic",
+      "thyme",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "garlic",
+      "ginger",
+      {
+        "value": 9
+      }
+    ],
+    [
+      "garlic",
+      "red_pepper",
+      {
+        "value": 11
+      }
+    ],
+    [
+      "garlic",
+      "tamarind",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "garlic",
+      "lamb",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "garlic",
+      "clove",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "garlic",
+      "beef",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "garlic",
+      "spinach",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "garlic",
+      "cumin_seed",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "garlic",
+      "cardamom",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "garlic",
+      "Swiss_chard",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "garlic",
+      "chile",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "garlic",
+      "peppercorn",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "garlic",
+      "tomato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "garlic",
+      "mustard_seed",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "garlic",
+      "paprika",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "garlic",
+      "cinnamon",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "garlic",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "lamb_chop",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lamb_chop",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "butternut_squash",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "butternut_squash",
+      "red_pepper",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "butternut_squash",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "butternut_squash",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "butternut_squash",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "butternut_squash",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "butternut_squash",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "butternut_squash",
+      "black-eyed_pea",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "butternut_squash",
+      "mustard oil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "duck",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "duck",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "duck",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tamarind",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tamarind",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tamarind",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tamarind",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tamarind",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lime",
+      "coconut",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "lime",
+      "red_pepper",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "lime",
+      "shallot",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "lime",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lime",
+      "paprika",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "lime",
+      "cucumber",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lime",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lime",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lime",
+      "cumin_seed",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "lime",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lime",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "turkey",
+      "red_pepper",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "turkey",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "turkey",
+      "ginger",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "turkey",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "turkey",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "turkey",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "turkey",
+      "mint",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "beef",
+      "red_pepper",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "beef",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef",
+      "cardamom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef",
+      "cumin_seed",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "beef",
+      "ginger",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "beef",
+      "cinnamon",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "beef",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spinach",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spinach",
+      "clove",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spinach",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spinach",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spinach",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spinach",
+      "cardamom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spinach",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spinach",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spinach",
+      "ginger",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "spinach",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spinach",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spinach",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spinach",
+      "red_pepper",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "spinach",
+      "chicken_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "dried_apricot",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "dried_apricot",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "dried_apricot",
+      "ginger",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "dried_apricot",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "dried_apricot",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "dried_apricot",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish fillet",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish fillet",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish fillet",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "Spanish_mackerel",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "striped_bass",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "red_pepper",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "thyme",
+      "cumin_seed",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "thyme",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "ginger",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "thyme",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "sea_bass",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "sea_bass",
+      "shallot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "sea_bass",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "sea_bass",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "sea_bass",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "banana",
+      "cardamom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mushroom",
+      "tomato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "mushroom",
+      "red_pepper",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "mushroom",
+      "ginger",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "mushroom",
+      "egg",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mushroom",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mushroom",
+      "cumin_seed",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "mushroom",
+      "mustard_seed",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "mushroom",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mushroom",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mushroom",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "shallot",
+      "ginger",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "shallot",
+      "quail",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "shallot",
+      "egg",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "shallot",
+      "coconut",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "shallot",
+      "wine_vinegar",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "shallot",
+      "cumin_seed",
+      {
+        "value": 8
+      }
+    ],
+    [
+      "shallot",
+      "sesame_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "shallot",
+      "Spanish_mackerel",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "shallot",
+      "cardamom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "shallot",
+      "cucumber",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "shallot",
+      "chile",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "shallot",
+      "peppercorn",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "shallot",
+      "tomato",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "shallot",
+      "red_pepper",
+      {
+        "value": 16
+      }
+    ],
+    [
+      "shallot",
+      "mustard_seed",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "shallot",
+      "paprika",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "shallot",
+      "green",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "shallot",
+      "pineapple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "shallot",
+      "turmeric",
+      {
+        "value": 9
+      }
+    ],
+    [
+      "bulghur",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bulghur",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bulghur",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bulghur",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Swiss_chard",
+      "red_pepper",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "Swiss_chard",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Swiss_chard",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Swiss_chard",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Swiss_chard",
+      "chicken_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "liver",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "liver",
+      "dry_mustard",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "liver",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "liver",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "liver",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "liver",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "turmeric",
+      {
+        "value": 14
+      }
+    ],
+    [
+      "chile",
+      "squid",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "ginger",
+      {
+        "value": 15
+      }
+    ],
+    [
+      "chile",
+      "Brussels_sprouts",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "carrot",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chile",
+      "mint",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "coconut",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "chile",
+      "heavy_cream",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chile",
+      "black_mustard",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chile",
+      "cumin_seed",
+      {
+        "value": 19
+      }
+    ],
+    [
+      "chile",
+      "sesame_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "lamb",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "dry_mustard",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chile",
+      "cardamom",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "chile",
+      "salmon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "clove",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "chile",
+      "peppercorn",
+      {
+        "value": 11
+      }
+    ],
+    [
+      "chile",
+      "mustard oil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "tomato",
+      {
+        "value": 10
+      }
+    ],
+    [
+      "chile",
+      "noodle",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "red_pepper",
+      {
+        "value": 14
+      }
+    ],
+    [
+      "chile",
+      "potato",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "chile",
+      "egg",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "mustard_seed",
+      {
+        "value": 26
+      }
+    ],
+    [
+      "chile",
+      "white_rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "green",
+      {
+        "value": 13
+      }
+    ],
+    [
+      "chile",
+      "cinnamon",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chile",
+      "pineapple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "black-eyed_pea",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "cucumber",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "chicken_stock",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "Brussels_sprouts",
+      "noodle",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Brussels_sprouts",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Brussels_sprouts",
+      "white_rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard oil",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard oil",
+      "red_pepper",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "mustard oil",
+      "mustard_seed",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "mustard oil",
+      "salmon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard oil",
+      "cumin_seed",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "mustard oil",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard oil",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard oil",
+      "dry_mustard",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard oil",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "spice",
+      "mix",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "paprika",
+      "coconut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "paprika",
+      "ginger",
+      {
+        "value": 9
+      }
+    ],
+    [
+      "paprika",
+      "lamb",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "paprika",
+      "cumin_seed",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "paprika",
+      "Spanish_mackerel",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "paprika",
+      "cardamom",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "paprika",
+      "clove",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "paprika",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "paprika",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "paprika",
+      "red_pepper",
+      {
+        "value": 12
+      }
+    ],
+    [
+      "paprika",
+      "mustard_seed",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "paprika",
+      "cinnamon",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "paprika",
+      "turmeric",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "tapioca",
+      "cardamom",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "black_mustard",
+      "tomato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "black_mustard",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "black_mustard",
+      "mustard_seed",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "black_mustard",
+      "cumin_seed",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "black_mustard",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "black_mustard",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "black_mustard",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chicken_stock",
+      "ginger",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "chicken_stock",
+      "carrot",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "chicken_stock",
+      "mustard_seed",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "chicken_stock",
+      "heavy_cream",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chicken_stock",
+      "clove",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "chicken_stock",
+      "cumin_seed",
+      {
+        "value": 11
+      }
+    ],
+    [
+      "chicken_stock",
+      "cardamom",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "chicken_stock",
+      "cucumber",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken_stock",
+      "peppercorn",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chicken_stock",
+      "brown_rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken_stock",
+      "tomato",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "chicken_stock",
+      "red_pepper",
+      {
+        "value": 10
+      }
+    ],
+    [
+      "chicken_stock",
+      "potato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chicken_stock",
+      "cinnamon",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "chicken_stock",
+      "turmeric",
+      {
+        "value": 8
+      }
+    ],
+    [
+      "dill",
+      "mint",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "dill",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut",
+      "red_pepper",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "coconut",
+      "cumin_seed",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "coconut",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut",
+      "green",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "coconut",
+      "mustard_seed",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "coconut",
+      "pineapple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut",
+      "mint",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "squid",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "squid",
+      "mustard_seed",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "squid",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ginger",
+      "cumin_seed",
+      {
+        "value": 39
+      }
+    ],
+    [
+      "ginger",
+      "cinnamon",
+      {
+        "value": 19
+      }
+    ],
+    [
+      "ginger",
+      "carrot",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "ginger",
+      "quail",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ginger",
+      "black-eyed_pea",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ginger",
+      "mint",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "ginger",
+      "lamb",
+      {
+        "value": 9
+      }
+    ],
+    [
+      "ginger",
+      "heavy_cream",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "ginger",
+      "clove",
+      {
+        "value": 9
+      }
+    ],
+    [
+      "ginger",
+      "Spanish_mackerel",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "ginger",
+      "cardamom",
+      {
+        "value": 16
+      }
+    ],
+    [
+      "ginger",
+      "Tabasco_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ginger",
+      "peppercorn",
+      {
+        "value": 12
+      }
+    ],
+    [
+      "ginger",
+      "tomato",
+      {
+        "value": 20
+      }
+    ],
+    [
+      "ginger",
+      "red_pepper",
+      {
+        "value": 63
+      }
+    ],
+    [
+      "ginger",
+      "potato",
+      {
+        "value": 8
+      }
+    ],
+    [
+      "ginger",
+      "mustard_seed",
+      {
+        "value": 18
+      }
+    ],
+    [
+      "ginger",
+      "green",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "ginger",
+      "halibut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ginger",
+      "pineapple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ginger",
+      "egg",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "ginger",
+      "turmeric",
+      {
+        "value": 32
+      }
+    ],
+    [
+      "carrot",
+      "lamb",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "carrot",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "carrot",
+      "cumin_seed",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "carrot",
+      "cardamom",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "carrot",
+      "clove",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "carrot",
+      "peppercorn",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "carrot",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "carrot",
+      "red_pepper",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "carrot",
+      "potato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "carrot",
+      "mustard_seed",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "carrot",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "carrot",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "quail",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "quail",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "quail",
+      "cardamom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "quail",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "black-eyed_pea",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "black-eyed_pea",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "black-eyed_pea",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "black-eyed_pea",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mint",
+      "lemon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mint",
+      "cumin_seed",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "mint",
+      "lamb",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mint",
+      "Tabasco_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mint",
+      "cucumber",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mint",
+      "peppercorn",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "mint",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mint",
+      "red_pepper",
+      {
+        "value": 10
+      }
+    ],
+    [
+      "mint",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mint",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mint",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mint",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lamb",
+      "cumin_seed",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "lamb",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lamb",
+      "cardamom",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "lamb",
+      "clove",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "lamb",
+      "peppercorn",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "lamb",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lamb",
+      "red_pepper",
+      {
+        "value": 9
+      }
+    ],
+    [
+      "lamb",
+      "potato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "lamb",
+      "cinnamon",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "lamb",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "heavy_cream",
+      "cumin_seed",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "heavy_cream",
+      "clove",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "heavy_cream",
+      "cardamom",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "heavy_cream",
+      "salmon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "heavy_cream",
+      "peppercorn",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "heavy_cream",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "heavy_cream",
+      "red_pepper",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "heavy_cream",
+      "potato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "heavy_cream",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "heavy_cream",
+      "cinnamon",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "heavy_cream",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "clove",
+      "cumin_seed",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "clove",
+      "sesame_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "clove",
+      "cardamom",
+      {
+        "value": 10
+      }
+    ],
+    [
+      "clove",
+      "peppercorn",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "clove",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "clove",
+      "red_pepper",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "clove",
+      "potato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "clove",
+      "mustard_seed",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "clove",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "clove",
+      "cinnamon",
+      {
+        "value": 10
+      }
+    ],
+    [
+      "clove",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "lemon",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lemon",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lemon",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "striped_bass",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "striped_bass",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "striped_bass",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "peach",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "peach",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cashew",
+      "cumin_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cashew",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "wine_vinegar",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin_seed",
+      "cucumber",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "cumin_seed",
+      "sesame_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin_seed",
+      "cinnamon",
+      {
+        "value": 9
+      }
+    ],
+    [
+      "cumin_seed",
+      "Spanish_mackerel",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin_seed",
+      "oil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin_seed",
+      "dry_mustard",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "cumin_seed",
+      "cardamom",
+      {
+        "value": 8
+      }
+    ],
+    [
+      "cumin_seed",
+      "Tabasco_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin_seed",
+      "salmon",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "cumin_seed",
+      "peppercorn",
+      {
+        "value": 14
+      }
+    ],
+    [
+      "cumin_seed",
+      "broccoli",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin_seed",
+      "brown_rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin_seed",
+      "tomato",
+      {
+        "value": 29
+      }
+    ],
+    [
+      "cumin_seed",
+      "red_pepper",
+      {
+        "value": 79
+      }
+    ],
+    [
+      "cumin_seed",
+      "potato",
+      {
+        "value": 10
+      }
+    ],
+    [
+      "cumin_seed",
+      "egg",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "cumin_seed",
+      "mustard_seed",
+      {
+        "value": 33
+      }
+    ],
+    [
+      "cumin_seed",
+      "green",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "cumin_seed",
+      "pineapple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin_seed",
+      "salt",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin_seed",
+      "turmeric",
+      {
+        "value": 41
+      }
+    ],
+    [
+      "sesame_seed",
+      "red_pepper",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "sesame_seed",
+      "mustard_seed",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "sesame_seed",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "sesame_seed",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "vegetable",
+      "egg",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cinnamon",
+      "cardamom",
+      {
+        "value": 16
+      }
+    ],
+    [
+      "cinnamon",
+      "peppercorn",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "cinnamon",
+      "brown_rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cinnamon",
+      "tomato",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "cinnamon",
+      "red_pepper",
+      {
+        "value": 18
+      }
+    ],
+    [
+      "cinnamon",
+      "potato",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "cinnamon",
+      "mustard_seed",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "cinnamon",
+      "turmeric",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "Spanish_mackerel",
+      "red_pepper",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "Spanish_mackerel",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "oil",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "dry_mustard",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "dry_mustard",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "dry_mustard",
+      "salmon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "dry_mustard",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "dry_mustard",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "dry_mustard",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "dry_mustard",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "cardamom",
+      "peppercorn",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "cardamom",
+      "brown_rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cardamom",
+      "tomato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "cardamom",
+      "red_pepper",
+      {
+        "value": 15
+      }
+    ],
+    [
+      "cardamom",
+      "potato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "cardamom",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cardamom",
+      "mango",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cardamom",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cardamom",
+      "turmeric",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "Tabasco_sauce",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "salmon",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "salmon",
+      "red_pepper",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "salmon",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "salmon",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "salmon",
+      "turmeric",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "cucumber",
+      "red_pepper",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "cucumber",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "peppercorn",
+      "turmeric",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "peppercorn",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "peppercorn",
+      "tomato",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "peppercorn",
+      "red_pepper",
+      {
+        "value": 13
+      }
+    ],
+    [
+      "peppercorn",
+      "potato",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "peppercorn",
+      "mustard_seed",
+      {
+        "value": 9
+      }
+    ],
+    [
+      "peppercorn",
+      "egg",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "broccoli",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "broccoli",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "brown_rice",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "brown_rice",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato",
+      "red_pepper",
+      {
+        "value": 31
+      }
+    ],
+    [
+      "tomato",
+      "potato",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "tomato",
+      "egg",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato",
+      "mustard_seed",
+      {
+        "value": 17
+      }
+    ],
+    [
+      "tomato",
+      "green",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "tomato",
+      "turmeric",
+      {
+        "value": 22
+      }
+    ],
+    [
+      "noodle",
+      "white_rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "noodle",
+      "mustard_seed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_pepper",
+      "potato",
+      {
+        "value": 11
+      }
+    ],
+    [
+      "red_pepper",
+      "mustard_seed",
+      {
+        "value": 41
+      }
+    ],
+    [
+      "red_pepper",
+      "green",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "red_pepper",
+      "halibut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_pepper",
+      "pineapple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_pepper",
+      "egg",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_pepper",
+      "turmeric",
+      {
+        "value": 52
+      }
+    ],
+    [
+      "potato",
+      "mustard_seed",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "potato",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "potato",
+      "turmeric",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "salt",
+      "egg",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard_seed",
+      "white_rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mustard_seed",
+      "green",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "mustard_seed",
+      "pineapple",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "mustard_seed",
+      "egg",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "mustard_seed",
+      "turmeric",
+      {
+        "value": 22
+      }
+    ],
+    [
+      "green",
+      "pineapple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "green",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "halibut",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pineapple",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ]
+  ]
+}

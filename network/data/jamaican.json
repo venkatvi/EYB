@@ -1,0 +1,7690 @@
+{
+  "nodes": [
+    [
+      "beef_roast",
+      {
+        "degree": 6
+      }
+    ],
+    [
+      "fennel_seed",
+      {
+        "degree": 11
+      }
+    ],
+    [
+      "kale",
+      {
+        "degree": 9
+      }
+    ],
+    [
+      "ham_hock",
+      {
+        "degree": 9
+      }
+    ],
+    [
+      "mackerel",
+      {
+        "degree": 6
+      }
+    ],
+    [
+      "chicken",
+      {
+        "degree": 22
+      }
+    ],
+    [
+      "ham",
+      {
+        "degree": 7
+      }
+    ],
+    [
+      "peanut",
+      {
+        "degree": 3
+      }
+    ],
+    [
+      "avocado",
+      {
+        "degree": 11
+      }
+    ],
+    [
+      "walnut",
+      {
+        "degree": 3
+      }
+    ],
+    [
+      "celery",
+      {
+        "degree": 25
+      }
+    ],
+    [
+      "tomato_paste",
+      {
+        "degree": 13
+      }
+    ],
+    [
+      "spring_onion",
+      {
+        "degree": 44
+      }
+    ],
+    [
+      "polenta",
+      {
+        "degree": 20
+      }
+    ],
+    [
+      "orange",
+      {
+        "degree": 20
+      }
+    ],
+    [
+      "bread",
+      {
+        "degree": 10
+      }
+    ],
+    [
+      "tomato_sauce",
+      {
+        "degree": 8
+      }
+    ],
+    [
+      "ingredient",
+      {
+        "degree": 19
+      }
+    ],
+    [
+      "aubergine",
+      {
+        "degree": 11
+      }
+    ],
+    [
+      "flour",
+      {
+        "degree": 1
+      }
+    ],
+    [
+      "game",
+      {
+        "degree": 5
+      }
+    ],
+    [
+      "molasses",
+      {
+        "degree": 9
+      }
+    ],
+    [
+      "offal",
+      {
+        "degree": 9
+      }
+    ],
+    [
+      "kidney_bean",
+      {
+        "degree": 14
+      }
+    ],
+    [
+      "rock_lobster",
+      {
+        "degree": 11
+      }
+    ],
+    [
+      "meat",
+      {
+        "degree": 6
+      }
+    ],
+    [
+      "coriander",
+      {
+        "degree": 17
+      }
+    ],
+    [
+      "nectar",
+      {
+        "degree": 9
+      }
+    ],
+    [
+      "thyme",
+      {
+        "degree": 78
+      }
+    ],
+    [
+      "cumin",
+      {
+        "degree": 23
+      }
+    ],
+    [
+      "aniseed",
+      {
+        "degree": 11
+      }
+    ],
+    [
+      "soursop",
+      {
+        "degree": 2
+      }
+    ],
+    [
+      "nutmeg",
+      {
+        "degree": 11
+      }
+    ],
+    [
+      "courgette",
+      {
+        "degree": 4
+      }
+    ],
+    [
+      "stock",
+      {
+        "degree": 6
+      }
+    ],
+    [
+      "rosemary",
+      {
+        "degree": 9
+      }
+    ],
+    [
+      "pork",
+      {
+        "degree": 9
+      }
+    ],
+    [
+      "pigeon_pea",
+      {
+        "degree": 11
+      }
+    ],
+    [
+      "allspice",
+      {
+        "degree": 17
+      }
+    ],
+    [
+      "breadfruit",
+      {
+        "degree": 2
+      }
+    ],
+    [
+      "fish",
+      {
+        "degree": 25
+      }
+    ],
+    [
+      "bacon",
+      {
+        "degree": 12
+      }
+    ],
+    [
+      "prawn",
+      {
+        "degree": 16
+      }
+    ],
+    [
+      "lobster",
+      {
+        "degree": 9
+      }
+    ],
+    [
+      "apple_juice",
+      {
+        "degree": 4
+      }
+    ],
+    [
+      "condensed_milk",
+      {
+        "degree": 2
+      }
+    ],
+    [
+      "lemongrass",
+      {
+        "degree": 11
+      }
+    ],
+    [
+      "red_onion",
+      {
+        "degree": 5
+      }
+    ],
+    [
+      "okra",
+      {
+        "degree": 18
+      }
+    ],
+    [
+      "tarragon",
+      {
+        "degree": 11
+      }
+    ],
+    [
+      "green_bean",
+      {
+        "degree": 11
+      }
+    ],
+    [
+      "soy_sauce",
+      {
+        "degree": 14
+      }
+    ],
+    [
+      "cocktail_sauce",
+      {
+        "degree": 6
+      }
+    ],
+    [
+      "coconut_milk",
+      {
+        "degree": 18
+      }
+    ],
+    [
+      "plantain",
+      {
+        "degree": 5
+      }
+    ],
+    [
+      "yellow_squash",
+      {
+        "degree": 4
+      }
+    ],
+    [
+      "plain_flour",
+      {
+        "degree": 3
+      }
+    ],
+    [
+      "Galliano",
+      {
+        "degree": 4
+      }
+    ],
+    [
+      "yellow_bean",
+      {
+        "degree": 5
+      }
+    ],
+    [
+      "rum",
+      {
+        "degree": 10
+      }
+    ],
+    [
+      "pineapple_juice",
+      {
+        "degree": 9
+      }
+    ],
+    [
+      "herb",
+      {
+        "degree": 7
+      }
+    ],
+    [
+      "ackee",
+      {
+        "degree": 16
+      }
+    ],
+    [
+      "Worcestershire_sauce",
+      {
+        "degree": 17
+      }
+    ],
+    [
+      "snapper",
+      {
+        "degree": 6
+      }
+    ],
+    [
+      "concentrate",
+      {
+        "degree": 4
+      }
+    ],
+    [
+      "curry_powder",
+      {
+        "degree": 8
+      }
+    ],
+    [
+      "vinegar",
+      {
+        "degree": 11
+      }
+    ],
+    [
+      "bay_leaf",
+      {
+        "degree": 51
+      }
+    ],
+    [
+      "raisin",
+      {
+        "degree": 4
+      }
+    ],
+    [
+      "chop",
+      {
+        "degree": 6
+      }
+    ],
+    [
+      "cinnamon",
+      {
+        "degree": 28
+      }
+    ],
+    [
+      "chive",
+      {
+        "degree": 7
+      }
+    ],
+    [
+      "red_snapper",
+      {
+        "degree": 8
+      }
+    ],
+    [
+      "cheddar_cheese",
+      {
+        "degree": 10
+      }
+    ],
+    [
+      "curry",
+      {
+        "degree": 4
+      }
+    ],
+    [
+      "cheese",
+      {
+        "degree": 7
+      }
+    ],
+    [
+      "apple",
+      {
+        "degree": 5
+      }
+    ],
+    [
+      "liqueur",
+      {
+        "degree": 4
+      }
+    ],
+    [
+      "vodka",
+      {
+        "degree": 2
+      }
+    ],
+    [
+      "parsley",
+      {
+        "degree": 22
+      }
+    ],
+    [
+      "double_cream",
+      {
+        "degree": 11
+      }
+    ],
+    [
+      "oregano",
+      {
+        "degree": 15
+      }
+    ],
+    [
+      "tamarind",
+      {}
+    ],
+    [
+      "lime",
+      {
+        "degree": 61
+      }
+    ],
+    [
+      "taro_root",
+      {
+        "degree": 16
+      }
+    ],
+    [
+      "beef",
+      {
+        "degree": 14
+      }
+    ],
+    [
+      "spinach",
+      {
+        "degree": 2
+      }
+    ],
+    [
+      "fish fillet",
+      {
+        "degree": 6
+      }
+    ],
+    [
+      "pork_loin",
+      {
+        "degree": 6
+      }
+    ],
+    [
+      "yam",
+      {
+        "degree": 13
+      }
+    ],
+    [
+      "beer",
+      {
+        "degree": 7
+      }
+    ],
+    [
+      "beet",
+      {
+        "degree": 2
+      }
+    ],
+    [
+      "basil",
+      {
+        "degree": 11
+      }
+    ],
+    [
+      "gin",
+      {
+        "degree": 2
+      }
+    ],
+    [
+      "white",
+      {
+        "degree": 13
+      }
+    ],
+    [
+      "bitter",
+      {
+        "degree": 4
+      }
+    ],
+    [
+      "banana",
+      {
+        "degree": 25
+      }
+    ],
+    [
+      "tomato",
+      {
+        "degree": 53
+      }
+    ],
+    [
+      "shallot",
+      {
+        "degree": 11
+      }
+    ],
+    [
+      "red_wine",
+      {
+        "degree": 4
+      }
+    ],
+    [
+      "hot_sauce",
+      {
+        "degree": 22
+      }
+    ],
+    [
+      "liver",
+      {
+        "degree": 7
+      }
+    ],
+    [
+      "chile",
+      {
+        "degree": 81
+      }
+    ],
+    [
+      "broad_bean",
+      {
+        "degree": 7
+      }
+    ],
+    [
+      "Scotch",
+      {
+        "degree": 81
+      }
+    ],
+    [
+      "rice",
+      {
+        "degree": 12
+      }
+    ],
+    [
+      "malt",
+      {
+        "degree": 7
+      }
+    ],
+    [
+      "paprika",
+      {
+        "degree": 33
+      }
+    ],
+    [
+      "strawberry",
+      {
+        "degree": 11
+      }
+    ],
+    [
+      "turnip",
+      {
+        "degree": 9
+      }
+    ],
+    [
+      "sweet potato",
+      {
+        "degree": 14
+      }
+    ],
+    [
+      "pumpkin",
+      {
+        "degree": 6
+      }
+    ],
+    [
+      "chicken_stock",
+      {
+        "degree": 9
+      }
+    ],
+    [
+      "coconut",
+      {
+        "degree": 24
+      }
+    ],
+    [
+      "soda_water",
+      {
+        "degree": 2
+      }
+    ],
+    [
+      "evaporated_milk",
+      {
+        "degree": 4
+      }
+    ],
+    [
+      "ginger",
+      {
+        "degree": 31
+      }
+    ],
+    [
+      "carrot",
+      {
+        "degree": 47
+      }
+    ],
+    [
+      "pastry",
+      {
+        "degree": 9
+      }
+    ],
+    [
+      "mint",
+      {
+        "degree": 5
+      }
+    ],
+    [
+      "lamb",
+      {
+        "degree": 4
+      }
+    ],
+    [
+      "heavy_cream",
+      {
+        "degree": 16
+      }
+    ],
+    [
+      "clove",
+      {
+        "degree": 6
+      }
+    ],
+    [
+      "lemon",
+      {
+        "degree": 10
+      }
+    ],
+    [
+      "salad_green",
+      {
+        "degree": 11
+      }
+    ],
+    [
+      "beef_tenderloin",
+      {
+        "degree": 4
+      }
+    ],
+    [
+      "leek",
+      {
+        "degree": 9
+      }
+    ],
+    [
+      "berry",
+      {
+        "degree": 12
+      }
+    ],
+    [
+      "fenugreek",
+      {
+        "degree": 12
+      }
+    ],
+    [
+      "oil",
+      {
+        "degree": 3
+      }
+    ],
+    [
+      "papaya",
+      {
+        "degree": 7
+      }
+    ],
+    [
+      "cardamom",
+      {
+        "degree": 12
+      }
+    ],
+    [
+      "sausage",
+      {
+        "degree": 9
+      }
+    ],
+    [
+      "peppercorn",
+      {
+        "degree": 22
+      }
+    ],
+    [
+      "salt_pork",
+      {
+        "degree": 9
+      }
+    ],
+    [
+      "cabbage",
+      {
+        "degree": 9
+      }
+    ],
+    [
+      "butter",
+      {
+        "degree": 2
+      }
+    ],
+    [
+      "red_pepper",
+      {
+        "degree": 6
+      }
+    ],
+    [
+      "potato",
+      {
+        "degree": 26
+      }
+    ],
+    [
+      "mango",
+      {
+        "degree": 20
+      }
+    ],
+    [
+      "green",
+      {
+        "degree": 46
+      }
+    ],
+    [
+      "pineapple",
+      {
+        "degree": 12
+      }
+    ],
+    [
+      "pecan",
+      {
+        "degree": 3
+      }
+    ],
+    [
+      "white_rice",
+      {
+        "degree": 11
+      }
+    ],
+    [
+      "salt",
+      {
+        "degree": 4
+      }
+    ],
+    [
+      "turmeric",
+      {
+        "degree": 12
+      }
+    ]
+  ],
+  "edges": [
+    [
+      "beef_roast",
+      "thyme",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef_roast",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef_roast",
+      "yam",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef_roast",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef_roast",
+      "spring_onion",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef_roast",
+      "pumpkin",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "oregano",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "thyme",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "tarragon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "fish",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "Worcestershire_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "aniseed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "basil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fennel_seed",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "kale",
+      "pork",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "kale",
+      "salt_pork",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "kale",
+      "okra",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "kale",
+      "thyme",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "kale",
+      "prawn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "kale",
+      "cumin",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "kale",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "kale",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "kale",
+      "chicken_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ham_hock",
+      "sausage",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ham_hock",
+      "polenta",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ham_hock",
+      "rosemary",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ham_hock",
+      "bay_leaf",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ham_hock",
+      "celery",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ham_hock",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ham_hock",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ham_hock",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ham_hock",
+      "pigeon_pea",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mackerel",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mackerel",
+      "coconut_milk",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mackerel",
+      "thyme",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mackerel",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mackerel",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mackerel",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "tomato_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "ginger",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chicken",
+      "carrot",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chicken",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "lemon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "soy_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "parsley",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "celery",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "beer",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "spring_onion",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "leek",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "shallot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "concentrate",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "hot_sauce",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chicken",
+      "chile",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chicken",
+      "Scotch",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chicken",
+      "coconut_milk",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "thyme",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "bay_leaf",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken",
+      "green",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chicken",
+      "curry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ham",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ham",
+      "beef",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ham",
+      "thyme",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ham",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ham",
+      "spring_onion",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ham",
+      "kidney_bean",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ham",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "peanut",
+      "clove",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "peanut",
+      "banana",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "peanut",
+      "ingredient",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "avocado",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "avocado",
+      "allspice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "avocado",
+      "thyme",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "avocado",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "avocado",
+      "cumin",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "avocado",
+      "mango",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "avocado",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "avocado",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "avocado",
+      "pineapple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "avocado",
+      "salad_green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "avocado",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "walnut",
+      "coconut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "walnut",
+      "pecan",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "walnut",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "celery",
+      "cocktail_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "celery",
+      "fish",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "celery",
+      "bacon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "celery",
+      "thyme",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "celery",
+      "carrot",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "celery",
+      "lobster",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "celery",
+      "sausage",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "celery",
+      "lemon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "celery",
+      "parsley",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "celery",
+      "tomato_paste",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "celery",
+      "polenta",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "celery",
+      "rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "celery",
+      "leek",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "celery",
+      "shallot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "celery",
+      "chile",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "celery",
+      "Scotch",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "celery",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "celery",
+      "meat",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "celery",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "celery",
+      "bay_leaf",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "celery",
+      "green",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "celery",
+      "rosemary",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "celery",
+      "pigeon_pea",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_paste",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_paste",
+      "lemon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_paste",
+      "meat",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_paste",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_paste",
+      "cocktail_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_paste",
+      "bacon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_paste",
+      "thyme",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_paste",
+      "green",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "tomato_paste",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_paste",
+      "lobster",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_paste",
+      "rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_paste",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "kidney_bean",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "spring_onion",
+      "tomato_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "fish",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "bacon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "coconut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "okra",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "carrot",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "spring_onion",
+      "turnip",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "lemongrass",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "breadfruit",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "beef",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "spring_onion",
+      "spinach",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "green_bean",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "soy_sauce",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "spring_onion",
+      "fish fillet",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "yam",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "spring_onion",
+      "polenta",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "rock_lobster",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "banana",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "pumpkin",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "aubergine",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "ackee",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "hot_sauce",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "spring_onion",
+      "liver",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "chile",
+      {
+        "value": 8
+      }
+    ],
+    [
+      "spring_onion",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "curry_powder",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "Scotch",
+      {
+        "value": 8
+      }
+    ],
+    [
+      "spring_onion",
+      "bread",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "tomato",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "spring_onion",
+      "coconut_milk",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "thyme",
+      {
+        "value": 9
+      }
+    ],
+    [
+      "spring_onion",
+      "potato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "spring_onion",
+      "bay_leaf",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "green",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "spring_onion",
+      "double_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "taro_root",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "spring_onion",
+      "offal",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "polenta",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "polenta",
+      "coconut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "polenta",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "polenta",
+      "ingredient",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "polenta",
+      "coconut_milk",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "polenta",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "polenta",
+      "bay_leaf",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "polenta",
+      "sausage",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "polenta",
+      "okra",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "polenta",
+      "molasses",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "polenta",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "polenta",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "polenta",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "polenta",
+      "allspice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "polenta",
+      "pigeon_pea",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "polenta",
+      "rosemary",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "polenta",
+      "banana",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "orange",
+      "lamb",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "orange",
+      "clove",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "orange",
+      "Galliano",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "orange",
+      "papaya",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "orange",
+      "apple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "orange",
+      "rum",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "orange",
+      "pineapple_juice",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "orange",
+      "liqueur",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "orange",
+      "red_wine",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "orange",
+      "nectar",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "orange",
+      "strawberry",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "orange",
+      "mango",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "orange",
+      "hot_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "orange",
+      "cinnamon",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "orange",
+      "apple_juice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "orange",
+      "bay_leaf",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "orange",
+      "sweet potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "orange",
+      "bitter",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "orange",
+      "banana",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "orange",
+      "lime",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "bread",
+      "beef",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bread",
+      "thyme",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bread",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bread",
+      "parsley",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bread",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bread",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bread",
+      "curry_powder",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bread",
+      "salt",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bread",
+      "berry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_sauce",
+      "thyme",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_sauce",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_sauce",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_sauce",
+      "hot_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_sauce",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato_sauce",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ingredient",
+      "butter",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ingredient",
+      "plain_flour",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "ingredient",
+      "oil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ingredient",
+      "flour",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ingredient",
+      "raisin",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ingredient",
+      "clove",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ingredient",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ingredient",
+      "molasses",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ingredient",
+      "nutmeg",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "ingredient",
+      "cinnamon",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "ingredient",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ingredient",
+      "plantain",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ingredient",
+      "cheddar_cheese",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ingredient",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ingredient",
+      "banana",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "ingredient",
+      "coconut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ingredient",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "aubergine",
+      "coconut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "aubergine",
+      "thyme",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "aubergine",
+      "bay_leaf",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "aubergine",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "aubergine",
+      "double_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "aubergine",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "aubergine",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "aubergine",
+      "rock_lobster",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "aubergine",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "aubergine",
+      "lemongrass",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "game",
+      "shallot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "game",
+      "sweet potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "game",
+      "vinegar",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "game",
+      "thyme",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "game",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "molasses",
+      "coconut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "molasses",
+      "coconut_milk",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "molasses",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "molasses",
+      "allspice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "molasses",
+      "nutmeg",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "molasses",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "molasses",
+      "banana",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "offal",
+      "thyme",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "offal",
+      "taro_root",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "offal",
+      "yam",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "offal",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "offal",
+      "turnip",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "offal",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "offal",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "offal",
+      "banana",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "kidney_bean",
+      "thyme",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "kidney_bean",
+      "rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "kidney_bean",
+      "coconut_milk",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "kidney_bean",
+      "yellow_bean",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "kidney_bean",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "kidney_bean",
+      "green_bean",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "kidney_bean",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "kidney_bean",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "kidney_bean",
+      "beef",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "kidney_bean",
+      "broad_bean",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "kidney_bean",
+      "mint",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "kidney_bean",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rock_lobster",
+      "coconut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rock_lobster",
+      "thyme",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rock_lobster",
+      "bay_leaf",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rock_lobster",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rock_lobster",
+      "double_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rock_lobster",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rock_lobster",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rock_lobster",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rock_lobster",
+      "lemongrass",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "meat",
+      "lemon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "meat",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "meat",
+      "cocktail_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "meat",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander",
+      "fenugreek",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "coriander",
+      "red_onion",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander",
+      "cardamom",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "coriander",
+      "bay_leaf",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander",
+      "ginger",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "coriander",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander",
+      "mango",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander",
+      "cinnamon",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "coriander",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander",
+      "white",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander",
+      "white_rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coriander",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "nectar",
+      "papaya",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "nectar",
+      "pineapple_juice",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "nectar",
+      "strawberry",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "nectar",
+      "mango",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "nectar",
+      "apple_juice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "nectar",
+      "white",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "nectar",
+      "banana",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "nectar",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "coconut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "taro_root",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "fish",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "thyme",
+      "bacon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "carrot",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "thyme",
+      "turnip",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "pastry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "oregano",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "thyme",
+      "salad_green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "chop",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "allspice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "curry_powder",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "salt_pork",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "okra",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "thyme",
+      "tarragon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "soy_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "parsley",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "pork_loin",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "coconut_milk",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "thyme",
+      "yam",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "thyme",
+      "basil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "pork",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "lemongrass",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "leek",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "pumpkin",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "banana",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "shallot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "ackee",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "Worcestershire_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "prawn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "hot_sauce",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "thyme",
+      "peppercorn",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "thyme",
+      "cabbage",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "broad_bean",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "Scotch",
+      {
+        "value": 17
+      }
+    ],
+    [
+      "thyme",
+      "lobster",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "tomato",
+      {
+        "value": 9
+      }
+    ],
+    [
+      "thyme",
+      "vinegar",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "thyme",
+      "rice",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "thyme",
+      "beef",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "thyme",
+      "potato",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "thyme",
+      "malt",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "bay_leaf",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "thyme",
+      "cumin",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "thyme",
+      "aniseed",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "lime",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "thyme",
+      "liver",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "mango",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "green",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "thyme",
+      "berry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "chile",
+      {
+        "value": 17
+      }
+    ],
+    [
+      "thyme",
+      "pineapple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "chive",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "sweet potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "red_snapper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "cheddar_cheese",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "double_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "thyme",
+      "chicken_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin",
+      "cheese",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin",
+      "pork",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin",
+      "allspice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin",
+      "taro_root",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin",
+      "prawn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin",
+      "salad_green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin",
+      "salt_pork",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin",
+      "okra",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin",
+      "herb",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin",
+      "chile",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "cumin",
+      "Scotch",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "cumin",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin",
+      "mango",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin",
+      "green",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "cumin",
+      "pineapple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin",
+      "sweet potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cumin",
+      "chicken_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "aniseed",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "aniseed",
+      "tarragon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "aniseed",
+      "fish",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "aniseed",
+      "Worcestershire_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "aniseed",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "aniseed",
+      "oregano",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "aniseed",
+      "basil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "aniseed",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "aniseed",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "soursop",
+      "rum",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "soursop",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "nutmeg",
+      "coconut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "nutmeg",
+      "evaporated_milk",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "nutmeg",
+      "raisin",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "nutmeg",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "nutmeg",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "nutmeg",
+      "beet",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "nutmeg",
+      "cinnamon",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "nutmeg",
+      "plantain",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "nutmeg",
+      "condensed_milk",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "courgette",
+      "yellow_squash",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "courgette",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "courgette",
+      "ackee",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "courgette",
+      "beef_tenderloin",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "stock",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "stock",
+      "green_bean",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "stock",
+      "soy_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "stock",
+      "fish fillet",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "stock",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rosemary",
+      "sausage",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rosemary",
+      "bay_leaf",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rosemary",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rosemary",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rosemary",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rosemary",
+      "pigeon_pea",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pork",
+      "salt_pork",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pork",
+      "prawn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pork",
+      "okra",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pork",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pork",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pork",
+      "chicken_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pigeon_pea",
+      "sausage",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pigeon_pea",
+      "chile",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "pigeon_pea",
+      "bay_leaf",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pigeon_pea",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pigeon_pea",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pigeon_pea",
+      "curry_powder",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pigeon_pea",
+      "Scotch",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "allspice",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "allspice",
+      "coconut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "allspice",
+      "coconut_milk",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "allspice",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "allspice",
+      "mango",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "allspice",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "allspice",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "allspice",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "allspice",
+      "pineapple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "allspice",
+      "salad_green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "allspice",
+      "banana",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "allspice",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "breadfruit",
+      "spinach",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish",
+      "bacon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish",
+      "oregano",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish",
+      "lime",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "fish",
+      "okra",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish",
+      "tarragon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish",
+      "basil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish",
+      "leek",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish",
+      "ackee",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish",
+      "Worcestershire_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish",
+      "chile",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "fish",
+      "cabbage",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish",
+      "Scotch",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "fish",
+      "tomato",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "fish",
+      "vinegar",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish",
+      "malt",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish",
+      "bay_leaf",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish",
+      "chive",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bacon",
+      "tomato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "bacon",
+      "ackee",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bacon",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bacon",
+      "chile",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "bacon",
+      "lobster",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bacon",
+      "rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bacon",
+      "Scotch",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "prawn",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "prawn",
+      "bay_leaf",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "prawn",
+      "salt_pork",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "prawn",
+      "okra",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "prawn",
+      "Worcestershire_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "prawn",
+      "parsley",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "prawn",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "prawn",
+      "chile",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "prawn",
+      "hot_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "prawn",
+      "chicken_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "prawn",
+      "Scotch",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "prawn",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lobster",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lobster",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lobster",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lobster",
+      "rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lobster",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "apple_juice",
+      "pineapple_juice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "apple_juice",
+      "strawberry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "condensed_milk",
+      "beet",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lemongrass",
+      "coconut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lemongrass",
+      "bay_leaf",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lemongrass",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lemongrass",
+      "double_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lemongrass",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lemongrass",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lemongrass",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_onion",
+      "mango",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_onion",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_onion",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_onion",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "okra",
+      "tomato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "okra",
+      "salt_pork",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "okra",
+      "chile",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "okra",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "okra",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "okra",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "okra",
+      "cabbage",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "okra",
+      "chicken_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "okra",
+      "Scotch",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "okra",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tarragon",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tarragon",
+      "Worcestershire_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tarragon",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tarragon",
+      "oregano",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tarragon",
+      "basil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tarragon",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tarragon",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "green_bean",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "green_bean",
+      "broad_bean",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "green_bean",
+      "yellow_bean",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "green_bean",
+      "soy_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "green_bean",
+      "fish fillet",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "green_bean",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "green_bean",
+      "mint",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "green_bean",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "soy_sauce",
+      "tomato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "soy_sauce",
+      "fish fillet",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "soy_sauce",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "soy_sauce",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "soy_sauce",
+      "hot_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "soy_sauce",
+      "liver",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "soy_sauce",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "soy_sauce",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "soy_sauce",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cocktail_sauce",
+      "lemon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cocktail_sauce",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cocktail_sauce",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "coconut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "beer",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "banana",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut_milk",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "plantain",
+      "raisin",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "plantain",
+      "oil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "plantain",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yellow_squash",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yellow_squash",
+      "ackee",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yellow_squash",
+      "beef_tenderloin",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "plain_flour",
+      "butter",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "plain_flour",
+      "oil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Galliano",
+      "liqueur",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Galliano",
+      "rum",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Galliano",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yellow_bean",
+      "broad_bean",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yellow_bean",
+      "mint",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yellow_bean",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rum",
+      "clove",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rum",
+      "liqueur",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rum",
+      "strawberry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rum",
+      "mango",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rum",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rum",
+      "sweet potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rum",
+      "lime",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "pineapple_juice",
+      "papaya",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pineapple_juice",
+      "strawberry",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "pineapple_juice",
+      "mango",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pineapple_juice",
+      "white",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pineapple_juice",
+      "banana",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pineapple_juice",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "herb",
+      "cheese",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "herb",
+      "taro_root",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "herb",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "herb",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "herb",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "herb",
+      "sweet potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ackee",
+      "tomato",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "ackee",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ackee",
+      "Scotch",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "ackee",
+      "bay_leaf",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ackee",
+      "beef_tenderloin",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ackee",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ackee",
+      "pastry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ackee",
+      "chile",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "ackee",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ackee",
+      "cheddar_cheese",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Worcestershire_sauce",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Worcestershire_sauce",
+      "oregano",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Worcestershire_sauce",
+      "bay_leaf",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Worcestershire_sauce",
+      "parsley",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Worcestershire_sauce",
+      "hot_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Worcestershire_sauce",
+      "chile",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "Worcestershire_sauce",
+      "basil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Worcestershire_sauce",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Worcestershire_sauce",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Worcestershire_sauce",
+      "Scotch",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "Worcestershire_sauce",
+      "lime",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "snapper",
+      "coconut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "snapper",
+      "beer",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "snapper",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "snapper",
+      "berry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "snapper",
+      "chile",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "snapper",
+      "Scotch",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "concentrate",
+      "lemon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "concentrate",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "concentrate",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry_powder",
+      "beef",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry_powder",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry_powder",
+      "chile",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "curry_powder",
+      "Scotch",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "vinegar",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "vinegar",
+      "shallot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "vinegar",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "vinegar",
+      "chive",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "vinegar",
+      "sweet potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "vinegar",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "vinegar",
+      "malt",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "vinegar",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "coconut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "fenugreek",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "carrot",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "bay_leaf",
+      "double_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "pastry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "oregano",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "lime",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "bay_leaf",
+      "lamb",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "sausage",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "beef",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "parsley",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "bay_leaf",
+      "pork_loin",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "shallot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "white",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "bitter",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "leek",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "bay_leaf",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "tomato",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "bay_leaf",
+      "cardamom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "hot_sauce",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "bay_leaf",
+      "chile",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "bay_leaf",
+      "peppercorn",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "bay_leaf",
+      "Scotch",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "bay_leaf",
+      "cheddar_cheese",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "chop",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "berry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "red_snapper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bay_leaf",
+      "white_rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "raisin",
+      "cinnamon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chop",
+      "pork_loin",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chop",
+      "berry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chop",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chop",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cinnamon",
+      "coconut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cinnamon",
+      "ginger",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "cinnamon",
+      "apple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cinnamon",
+      "clove",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cinnamon",
+      "white",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cinnamon",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cinnamon",
+      "banana",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cinnamon",
+      "fenugreek",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "cinnamon",
+      "cardamom",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "cinnamon",
+      "red_wine",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cinnamon",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cinnamon",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cinnamon",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cinnamon",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cinnamon",
+      "white_rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cinnamon",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chive",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chive",
+      "malt",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chive",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chive",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_snapper",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_snapper",
+      "parsley",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_snapper",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_snapper",
+      "oregano",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_snapper",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_snapper",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cheddar_cheese",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cheddar_cheese",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cheddar_cheese",
+      "pastry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cheddar_cheese",
+      "chile",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "cheddar_cheese",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cheddar_cheese",
+      "Scotch",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "curry",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry",
+      "hot_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "curry",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cheese",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cheese",
+      "taro_root",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cheese",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cheese",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cheese",
+      "sweet potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "apple",
+      "red_wine",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "apple",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "apple",
+      "lime",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "liqueur",
+      "lime",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "vodka",
+      "soda_water",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "vodka",
+      "lime",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "parsley",
+      "carrot",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "parsley",
+      "oregano",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "parsley",
+      "lime",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "parsley",
+      "beef",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "parsley",
+      "leek",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "parsley",
+      "shallot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "parsley",
+      "hot_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "parsley",
+      "chile",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "parsley",
+      "Scotch",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "parsley",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "parsley",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "parsley",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "parsley",
+      "berry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "parsley",
+      "salt",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "double_cream",
+      "coconut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "double_cream",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "double_cream",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "double_cream",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "double_cream",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "oregano",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "oregano",
+      "chile",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "oregano",
+      "basil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "oregano",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "oregano",
+      "Scotch",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "oregano",
+      "lime",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "lime",
+      "soda_water",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lime",
+      "ginger",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "lime",
+      "carrot",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "lime",
+      "salad_green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lime",
+      "lemon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lime",
+      "mint",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lime",
+      "shallot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lime",
+      "papaya",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lime",
+      "banana",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "lime",
+      "red_wine",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lime",
+      "basil",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lime",
+      "hot_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lime",
+      "chile",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "lime",
+      "cabbage",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lime",
+      "broad_bean",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lime",
+      "Scotch",
+      {
+        "value": 7
+      }
+    ],
+    [
+      "lime",
+      "tomato",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "lime",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lime",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lime",
+      "strawberry",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "lime",
+      "mango",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "lime",
+      "green",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "lime",
+      "pineapple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lime",
+      "sweet potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "taro_root",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "taro_root",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "taro_root",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "taro_root",
+      "yam",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "taro_root",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "taro_root",
+      "turnip",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "taro_root",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "taro_root",
+      "sweet potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "taro_root",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "taro_root",
+      "banana",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef",
+      "chile",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "beef",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef",
+      "hot_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beef",
+      "Scotch",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "beef",
+      "leek",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish fillet",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fish fillet",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pork_loin",
+      "berry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pork_loin",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pork_loin",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yam",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yam",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yam",
+      "turnip",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yam",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yam",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yam",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yam",
+      "banana",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "yam",
+      "pumpkin",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beer",
+      "coconut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beer",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beer",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "beer",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "basil",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "basil",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "basil",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "gin",
+      "strawberry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "gin",
+      "evaporated_milk",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "white",
+      "tomato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "white",
+      "fenugreek",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "white",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "white",
+      "cardamom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "white",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "white",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "white",
+      "white_rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "white",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bitter",
+      "lamb",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "bitter",
+      "hot_sauce",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "banana",
+      "coconut",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "banana",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "banana",
+      "turnip",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "banana",
+      "clove",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "banana",
+      "papaya",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "banana",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "banana",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "banana",
+      "strawberry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "banana",
+      "mango",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato",
+      "carrot",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "tomato",
+      "pastry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato",
+      "salad_green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato",
+      "rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato",
+      "fenugreek",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato",
+      "cardamom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato",
+      "hot_sauce",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "tomato",
+      "liver",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato",
+      "chile",
+      {
+        "value": 9
+      }
+    ],
+    [
+      "tomato",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato",
+      "cabbage",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato",
+      "broad_bean",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato",
+      "Scotch",
+      {
+        "value": 9
+      }
+    ],
+    [
+      "tomato",
+      "potato",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "tomato",
+      "malt",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato",
+      "mango",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato",
+      "green",
+      {
+        "value": 4
+      }
+    ],
+    [
+      "tomato",
+      "pineapple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato",
+      "white_rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "tomato",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "shallot",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "shallot",
+      "sweet potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "shallot",
+      "leek",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "hot_sauce",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "hot_sauce",
+      "lamb",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "hot_sauce",
+      "liver",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "hot_sauce",
+      "chile",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "hot_sauce",
+      "Scotch",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "hot_sauce",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "hot_sauce",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "liver",
+      "chile",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "liver",
+      "Scotch",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "coconut",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chile",
+      "carrot",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "chile",
+      "pastry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "salad_green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "salt_pork",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "sausage",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "peppercorn",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chile",
+      "cabbage",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "Scotch",
+      {
+        "value": 27
+      }
+    ],
+    [
+      "chile",
+      "rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "potato",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "chile",
+      "malt",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "turnip",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "mango",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chile",
+      "green",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "chile",
+      "berry",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "chile",
+      "pineapple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chile",
+      "chicken_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "broad_bean",
+      "mint",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Scotch",
+      "rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Scotch",
+      "pastry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Scotch",
+      "salad_green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Scotch",
+      "coconut",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "Scotch",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Scotch",
+      "sausage",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Scotch",
+      "salt_pork",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Scotch",
+      "peppercorn",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "Scotch",
+      "cabbage",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Scotch",
+      "carrot",
+      {
+        "value": 6
+      }
+    ],
+    [
+      "Scotch",
+      "potato",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "Scotch",
+      "malt",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Scotch",
+      "paprika",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Scotch",
+      "turnip",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Scotch",
+      "mango",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "Scotch",
+      "green",
+      {
+        "value": 5
+      }
+    ],
+    [
+      "Scotch",
+      "berry",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "Scotch",
+      "pineapple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "Scotch",
+      "chicken_stock",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "rice",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "paprika",
+      "fenugreek",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "paprika",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "paprika",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "paprika",
+      "cardamom",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "paprika",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "paprika",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "paprika",
+      "berry",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "paprika",
+      "sweet potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "paprika",
+      "white_rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "paprika",
+      "salt",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "paprika",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "strawberry",
+      "papaya",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "strawberry",
+      "evaporated_milk",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "strawberry",
+      "mango",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "turnip",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "sweet potato",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "sweet potato",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pumpkin",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pumpkin",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "chicken_stock",
+      "salt_pork",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut",
+      "ginger",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut",
+      "pecan",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "coconut",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "evaporated_milk",
+      "carrot",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ginger",
+      "lemon",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ginger",
+      "fenugreek",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "ginger",
+      "cardamom",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "ginger",
+      "pecan",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ginger",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ginger",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ginger",
+      "green",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "ginger",
+      "pineapple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ginger",
+      "white_rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "ginger",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "carrot",
+      "sausage",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "carrot",
+      "beef_tenderloin",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "carrot",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "carrot",
+      "cabbage",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "carrot",
+      "potato",
+      {
+        "value": 3
+      }
+    ],
+    [
+      "carrot",
+      "leek",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "pastry",
+      "heavy_cream",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "pastry",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "heavy_cream",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "heavy_cream",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lemon",
+      "red_pepper",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "lemon",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "salad_green",
+      "mango",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "salad_green",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "salad_green",
+      "pineapple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "berry",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "berry",
+      "salt",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fenugreek",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fenugreek",
+      "cardamom",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "fenugreek",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fenugreek",
+      "white_rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "fenugreek",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "papaya",
+      "mango",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cardamom",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cardamom",
+      "peppercorn",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cardamom",
+      "white_rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cardamom",
+      "turmeric",
+      {
+        "value": 2
+      }
+    ],
+    [
+      "peppercorn",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "cabbage",
+      "potato",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "red_pepper",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "potato",
+      "white_rice",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "potato",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mango",
+      "green",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "mango",
+      "pineapple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "green",
+      "pineapple",
+      {
+        "value": 1
+      }
+    ],
+    [
+      "white_rice",
+      "turmeric",
+      {
+        "value": 1
+      }
+    ]
+  ]
+}

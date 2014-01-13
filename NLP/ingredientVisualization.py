@@ -407,15 +407,12 @@ nextIterIngredMap = {}
 notFoundIngredMap = {}
 globalIngredMap = {}
 if __name__ == '__main__':
-	db = ""
-	itemtype = ""
-	ipaddress = ""
-	cuisine = ""
 	parser=OptionParser()
 	parser.add_option("-i", "--ipaddress", dest="ipaddress", help="ipaddress of remote mongodbserver", default="localhost")
         parser.add_option("-t", "--itemtype", dest="itemtype", help="item type i.e. recipes/cookbooks to be parsed and added", default="recipes")
         parser.add_option("-c", "--cuisine", dest="cuisine", help="cuisine type", default="hawaiian")
         parser.add_option("-d", "--database", dest="db", help="database name to store parsed data. Database should contain collections of the name given in --itemtype option", default="EatYourBooksDB")
+        parser.add_option("-p", "--path", dest="rootPath", help="root location to store results", default="/home/vaidehi/EYB")
 
         options, arguments = parser.parse_args()
         print "ipaddress: " + options.ipaddress
@@ -612,18 +609,57 @@ if __name__ == '__main__':
 	rIMatT = rIMat.transpose()
 	ingredCo = rIMatT*rIMat
 	edges = createEdgeList(distinctIngredList, ingredCo);
-	filename = "../coquere/ingredientNets/oldData/"+ options.cuisine + "/" + options.cuisine + "_allingred.json"
+	filename = options.rootPath + "/coquere/ingredientNets/oldData/"+ options.cuisine + "/" + options.cuisine + "_allingred.json"
 	visualizeNetwork(distinctIngredList, edges, filename)
 	
 	rLMat = np.matrix(recipeLeafMat)
 	rLMatT = rLMat.transpose()
 	leafCo = rLMatT * rLMat
 	leafEdges = createEdgeList(ingredLeafs, leafCo);
-	filename = "d3/" + options.cuisine + "/" + options.cuisine + "_leafs.json"
+	filename = options.rootPath + "/coquere/ingredientNets/data/" +  options.cuisine + ".json"
 	G = visualizeNetwork(ingredLeafs, leafEdges, filename)
 	
 	json.dump(dict(nodes=[[n, G.node[n]] for n in G.nodes()],
 		edges=[[u,v,G.edge[u][v]] for u,v in G.edges()]),
-	open("hawaiian.json", 'w'), indent=2)
+	open(options.rootPath + "/network/data/" + options.cuisine + ".json", 'w'), indent=2)
 	
- 	
+	freqCount = rLMat.sum(axis=0)
+	lfreqCount = np.array(freqCount)[0].tolist()
+
+	freqFrac = {};
+	for j in range(0, len(lfreqCount)):
+		if lfreqCount[j] not in freqFrac.keys():
+			if ingredLeafs[j] != "":
+				freqFrac[lfreqCount[j]] = [ingredLeafs[j]]
+		else:
+			if ingredLeafs[j] != "":
+				freqFrac[lfreqCount[j]].append(ingredLeafs[j])
+
+
+	freqFracKeys = sorted(freqFrac.keys())
+
+	#writing frequency distribution 
+	f = open(options.rootPath + '/coquere/ingredientNets/data/' + options.cuisine + "_freq.csv", 'w')
+	f.write("frequency,frac\n");
+	for i in range(0, len(freqFracKeys)):
+		freq = freqFracKeys[i] ;
+		numNodesWithFreq = len(freqFrac[freq]);
+		f.write(str(np.log10(freq)) + "," + str(np.log10(numNodesWithFreq)) + "\n");
+	f.close()
+
+	#computing clustering coefficient
+	leafCo = [] 
+	for i in range(0, len(ingredLeafs)):
+		leafVec = []
+		for j in range(0, len(ingredLeafs)):
+			leafVec.append(0)
+		leafCo.append(leafVec)
+	for i in range(0, len(recipeLeafMat)):
+		for j in range(0, len(ingredLeafs)):
+				for k in range(0, len(ingredLeafs)):
+					if recipeLeafMat[i][j] == 1 and recipeLeafMat[i][k] == 1:
+						leafCo[j][k] += 1
+						leafCo[k][j] += 1
+
+	
+	

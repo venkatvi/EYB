@@ -168,7 +168,17 @@
 			border-top: solid 1px #e0e4e6;
 			border-bottom: solid 1px #b5bec3;
 		}
-		
+	.results-check-list
+	{
+		list-style: none;
+	}
+
+		.results-check-list li
+		{
+			background: url('./images/icon-checkmark.png') 0px 0.5em no-repeat;
+			padding: 0em 0 0em 30px;
+			font-size: 0.7em;
+		}	
 	.feature-image
 	{
 		display: block;

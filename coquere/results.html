@@ -11,19 +11,43 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-		<script src="js/jquery.min.js"></script>
 		<script src="js/config.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/skel-tabs.min.js"></script>
+		<script src="js/query.js"></script>
+		<script src = "http://d3js.org/d3.v3.min.js"></script>
+		<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
+		<script src="http://d3js.org/queue.v1.min.js"></script>
+		<script src="http://d3js.org/topojson.v1.min.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
-			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
 			<link rel="stylesheet" href="css/style-tabs.css" />
 		</noscript>
+		<style>
+			.stroke {
+			  fill: none;
+			  stroke: #999;
+			  stroke-width: 1px;
+			}
+
+			.fill {
+			  fill: #fff;
+			}
+
+			.land {
+			  fill: #ddd;
+			}
+
+			.boundary {
+			  fill: none;
+			  stroke: #fff;
+			}
+		</style>
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
 	</head>
@@ -54,47 +78,158 @@
 
 		<!-- Content -->
 			<div id="content-wrapper">
-				<div id="content">
+				<div id="content" >
 					<div class="container">
 						<div class="row">
-							<div class="2u">
-								
-								<!-- Sidebar -->
-									<section>
-										<header>
-											<h2>Culinary Ingredient Networks</h2>
-										</header>
-										<ul class="tabs">
-											<li><a href="#hawai">Hawaiian</a></li>
-											<li><a href="#wordnet">Wordnet</a></li>
+							<div class="12u" style="background-color: #fff">
+								<section>
+									<header>
+									<h2>Culinary Ingredient Networks</h2>
+									</header>
+									<h3><a href="graphmetrics.html">Cross-cuisine Network Statistics</a></h3>
+									<br/>
+									<div style="width: 450px; float: left;">
+										<div>
+											<div style="width: 50px; float: left;">Zoom: </div>
+											<div style="margin-left: 50px;">
+												<div id="vslider" style="width: 300px; height: 6px;"></div>	
+											</div>
+										</div>
+									</div>
+									<div style="margin-left: 450px;" >
+										<ul class="results-check-list">
+											<li>Hover an colored region to have a quick peek at the data </li>
+											<li>Use slider to zoom in/out of a region </li>
+											<li>(Shift) double-click on a node to zoom (out)in. </li>
+											<li>Click on a colored region to view detailed results</li>
 										</ul>
-									</section>
-									<section>
-										<header>
-											<h2>Network Analysis</h2>
-										</header>
-										<p>
-											This page presents the culinary network visualizations of 16 cuisines which have been crawled out of EatYourBooks repository.
-										</p>
-									</section>
-
+									</div>
+									<div id="chart"></div>
+								</section>
 							</div>
+							<script>
+							var countryNames = ["jamaican", "polish", "pakistani", "african", "brazilian", "russian", "portugese", "german", "vietnamese", "caribbean", "moroccan", "irish", "greek", "japanese", "thai", "australian", "south-american", "spanish", "chinese", "mexican", "indian", "french", "italian"]
 
-							<div class="10u">
-								
-								<!-- Main Content -->
-									<section>
-											
-										<article id="hawai">
-												<iframe src="ingredientNets/index.html?cuisine=hawaiian" scrolling="no" allowfullscreen width=930 height=930 frameborder="0"></iframe>
-     										</article>
-										<article id="wordnet">
-											<iframe src="ingredientNets/wordnet/wordnet.html" scrolling="no" allowfullscreen height="95%" width="95%" frameborder="0"></iframe>
-										</article>
+							var width = 960,
+							    height = 800;
+
+							$(function() {
+							$( "#vslider" ).slider({
+								orientation: "horizontal",
+								range: "min",
+								min: 900,
+								max: 10000,
+								value: 1000,
+								slide: function( event, ui ) {
+									zoomWithSlider(ui.value/1000);
+								}
+							});
+							});
+							function zoomWithSlider(scale) {
+								var svg = d3.select("#chart").select("svg");
+								var container = svg.select("g");
+								var h = svg.attr("height"), w = svg.attr("width");
+
+								// Note: works only on the <g> element and not on the <svg> element
+								// which is a common mistake
+								container.attr("transform",
+										"translate(" + w/2 + ", " + h/2 + ") " +
+										"scale(" + scale + ") " +
+										"translate(" + (-w/2) + ", " + (-h/2) + ")");
+							}
 
 
-									</section>
-							</div>
+							var projection = d3.geo.naturalEarth()
+							    .scale(167)
+							    .translate([width / 2, height / 2])
+							    .precision(.1);
+
+							var color = d3.scale.category20b();
+
+							var path = d3.geo.path()
+							    .projection(projection);
+
+							var svg = d3.select("#chart").append("svg")
+								.attr("width", width)
+								.attr("height", height)
+								.attr("pointer-events", "all")
+								.append('svg:g')
+								.call(d3.behavior.zoom().on("zoom", redraw))
+								.append('svg:g');
+
+							function redraw() {
+								console.log("here", d3.event.translate, d3.event.scale);
+								svg.attr("transform",
+										"translate(" + d3.event.translate + ")"
+										+ " scale(" + d3.event.scale + ")");
+							}
+
+							svg.append("defs").append("path")
+							    .datum({type: "Sphere"})
+							    .attr("id", "sphere")
+							    .attr("d", path);
+
+							svg.append("use")
+							    .attr("class", "stroke")
+							    .attr("xlink:href", "#sphere");
+
+							svg.append("use")
+							    .attr("class", "fill")
+							    .attr("xlink:href", "#sphere");
+
+							queue()
+							    .defer(d3.json, "ingredientNets/data/world-50m.json")
+							    .defer(d3.tsv, "ingredientNets/data/cuisines.tsv", addCuisineIds)
+							    .await(ready);
+
+							function ready(error, world, cuisines) {
+							  var cuisinesById = d3.nest()
+							      .key(function(d) { return d.id; })
+							      .sortValues(function(a, b) { return a.recipes - b.recipes; })
+							      .map(cuisines, d3.map);
+
+							  var country = svg.insert("g", ".graticule")
+							      .attr("class", "land")
+							    .selectAll("path")
+							      .data(topojson.feature(world, world.objects.countries).features)
+							    .enter().append("path")
+							      .attr("d", path);
+
+							  country.filter(function(d) { return cuisinesById.has(d.id); })
+								.style("fill", function(d) { return color(countryNames.indexOf(cuisinesById.get(d.id)[0].cuisine)); })
+								.append("title")
+									.text(function(d) {
+										var cuisines = cuisinesById.get(d.id);
+										return cuisines[0].cuisine.toUpperCase() + "\n" + cuisines.map(function(d) { return d.recipes.toString() + " recipes\n" + d.cookbooks.toString() + " cookbooks\n" + d.ingredients.toString() + " ingredients\n";}).join("\n");
+									});
+							  svg.insert("path", ".graticule")
+								.datum(topojson.mesh(world, world.objects.countries, function(a, b) { return a !== b; }))
+								.attr("class", "boundary")
+								.attr("d", path);
+
+							  svg.selectAll("path")
+								.on("click", function(d) {
+									var cuisine = cuisinesById.get(d.id)[0].cuisine;
+									var recipes = cuisinesById.get(d.id)[0].recipes.toString();
+									var ingredients = cuisinesById.get(d.id)[0].ingredients.toString();
+									var cookbooks = cuisinesById.get(d.id)[0].cookbooks.toString();
+									loadResults(cuisine, recipes, ingredients, cookbooks);
+								});
+
+							}
+
+							function addCuisineIds(d) {
+							  d.id = +d.id;
+							  return d;
+							}
+
+							function loadResults(cuisine, recipes, ingredients, cookbooks){ 
+								console.log("loading " + cuisine + "\n");
+								window.location.href = "cuisine.html?cuisine=" + cuisine + "&recipes=" + recipes +  "&ingreds=" + ingredients + "&cookbooks=" + cookbooks;
+							}
+							d3.select(self.frameElement).style("height", height + "px");
+
+							</script>
 						</div>
 					</div>
 				</div>

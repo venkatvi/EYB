@@ -1,0 +1,263 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script src="../js/query.js"></script>
+		<script src = "http://d3js.org/d3.v3.min.js"></script>
+		<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
+		<script src="http://d3js.org/queue.v1.min.js"></script>
+		<script src="http://d3js.org/topojson.v1.min.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="../css/skel-noscript.css" />
+			<link rel="stylesheet" href="../css/style-desktop.css" />
+			<link rel="stylesheet" href="../css/style-tabs.css" />
+			<link rel="stylesheet" href="css/style.css" />
+		</noscript>
+		<style>
+			.stroke {
+			  fill: none;
+			  stroke: #999;
+			  stroke-width: 1px;
+			}
+
+			.fill {
+			  fill: #fff;
+			}
+
+			.land {
+			  fill: #ddd;
+			}
+
+			.boundary {
+			  fill: none;
+			  stroke: #fff;
+			}
+		</style>
+	</head>
+	<body> 
+		<div id="chart"></div>
+		<script>
+		var countryNames = ["jamaican", "polish", "pakistani", "african", "brazilian", "russian", "portugese", "german", "vietnamese", "caribbean", "moroccan", "irish", "greek", "japanese", "thai", "australian", "south-american", "spanish", "chinese", "mexican", "indian", "french", "italian"]
+		
+		var selectedProp = getQueryVariable("prop");
+		console.log(selectedProp)
+		function getIndex() {
+			if (selectedProp == "asco"){
+				return 0;
+			}
+			if (selectedProp == "trans") {
+				return 1;
+			}
+			if (selectedProp == "avcc") {
+				return 2;
+			}	
+			if (selectedProp == "degc") {
+				return 3;
+			}
+			if (selectedProp == "betc") {
+				return 4;
+			}
+			if (selectedProp == "cloc") {
+				return 5;
+			}
+		}
+		function getVal(d) {
+			console.log(selectedProp);
+			if (selectedProp == "asco"){
+				return d.assortativeCoefficient;
+			}
+			if (selectedProp == "trans") {
+				return d.transitivity;
+			}
+			if (selectedProp == "avcc") {
+				return d.avgClusteringCoefficient;
+			}	
+			if (selectedProp == "degc") {
+				return d.degreeCentrality;
+			}
+			if (selectedProp == "betc") {
+				return d.betweeness;
+			}
+			if (selectedProp == "cloc") {
+				return d.closeness;
+			}
+		}
+		var width = 900,
+		    height = 900;
+		// Build the dropdown menu
+
+		$(function() {
+		$( "#vslider" ).slider({
+			orientation: "horizontal",
+			range: "min",
+			min: 900,
+			max: 10000,
+			value: 1000,
+			slide: function( event, ui ) {
+				zoomWithSlider(ui.value/1000);
+			}
+		});
+		});
+		function zoomWithSlider(scale) {
+			var svg = d3.select("#chart").select("svg");
+			var container = svg.select("g");
+			var h = svg.attr("height"), w = svg.attr("width");
+
+			// Note: works only on the <g> element and not on the <svg> element
+			// which is a common mistake
+			container.attr("transform",
+					"translate(" + w/2 + ", " + h/2 + ") " +
+					"scale(" + scale + ") " +
+					"translate(" + (-w/2) + ", " + (-h/2) + ")");
+		}
+
+		var projection = d3.geo.naturalEarth()
+		    .scale(167)
+		    .translate([width / 2, height / 2])
+		    .precision(.1);
+
+		var path = d3.geo.path()
+		    .projection(projection);
+
+		var svg = d3.select("#chart").append("svg")
+			.attr("width", width)
+			.attr("height", height)
+			.attr("pointer-events", "all")
+			.append('svg:g')
+			.call(d3.behavior.zoom().on("zoom", redraw))
+			.append('svg:g');
+
+		function redraw() {
+			console.log("here", d3.event.translate, d3.event.scale);
+			svg.attr("transform",
+					"translate(" + d3.event.translate + ")"
+					+ " scale(" + d3.event.scale + ")");
+		}
+		
+		var maxVal = [0, 0, 0, 0, 0, 0]; //assortativity, transitivity, avgClusteringCoeff, degC, bet, closeness
+		var minVal = [0, 0, 0, 0, 0, 0]; //assortativity, transitivity, avgClusteringCoeff, degC, bet, closeness
+
+		var dataArray = new Array();
+		for (var i=0; i<6; i++){
+			dataArray[i] = new Array();
+		}
+		var j = 0;
+		function calculateStats(d) {
+			dataArray[0][j] = parseFloat(d.assortativeCoefficient);
+			dataArray[1][j] = parseFloat(d.transitivity);
+			dataArray[2][j] = parseFloat(d.avgClusteringCoefficient);
+			dataArray[3][j] = parseFloat(d.degreeCentrality);
+			dataArray[4][j] = parseFloat(d.betweeness);
+			dataArray[5][j] = parseFloat(d.closeness);
+			j = j + 1;
+		}
+		function addCuisineIds(d) {
+		  d.id = +d.id;
+		  calculateStats(d)
+		  for (var i=0;i <6; i++){
+			maxVal[i] = d3.max(dataArray[i])
+			minVal[i] = d3.min(dataArray[i])
+		  }
+		  return d;
+		}
+
+		svg.append("defs").append("path")
+		    .datum({type: "Sphere"})
+		    .attr("id", "sphere")
+		    .attr("d", path);
+
+		svg.append("use")
+		    .attr("class", "stroke")
+		    .attr("xlink:href", "#sphere");
+
+		svg.append("use")
+		    .attr("class", "fill")
+		    .attr("xlink:href", "#sphere");
+
+		queue()
+		    .defer(d3.json, "data/world-50m.json")
+		    .defer(d3.tsv, "data/graphMetrics.tsv", addCuisineIds)
+		    .await(ready);
+
+
+		function ready(error, world, cuisines) {
+		
+		  var color = d3.scale.linear()
+			.domain([minVal[getIndex()], maxVal[getIndex()]])
+			.range(["purple", "orange"])
+			.clamp(true)
+			.interpolate(d3.interpolateHcl);
+
+		  var cuisinesById = d3.nest()
+		      .key(function(d) { return d.id; })
+		      .sortValues(function(a, b) { return getVal(a) - getVal(b); })
+		      .map(cuisines, d3.map);
+
+		  var country = svg.insert("g", ".graticule")
+		      .attr("class", "land")
+		    .selectAll("path")
+		      .data(topojson.feature(world, world.objects.countries).features)
+		    .enter().append("path")
+		      .attr("d", path);
+
+		  country.filter(function(d) { return cuisinesById.has(d.id); })
+			.style("fill", function(d) { 
+				cuisines = cuisinesById.get(d.id);
+				cuisine = cuisines[0];
+				val = getVal(cuisine);
+				return color(val); 
+			}) 
+			.append("title")
+				.text(function(d) {
+					cuisines = cuisinesById.get(d.id);
+				 	cuisine = cuisines[0].cuisine.toUpperCase();
+					lcuisines = cuisines.map(function(c) {
+						val = getVal(c);
+						if (val == undefined){
+							val = "";
+						}
+						return val.toString();
+					});
+					vals = lcuisines.join("\n");
+					return cuisine  + "\n" + vals; //getNodeProperty is wat we want
+				})
+				.style("font-size", "10px")
+				.style("font-family", 'Yanone Kaffeesatz');
+		  svg.insert("path", ".graticule")
+			.datum(topojson.mesh(world, world.objects.countries, function(a, b) { return a !== b; }))
+			.attr("class", "boundary")
+			.attr("d", path);
+		
+		  var ext_color_domain = d3.set(dataArray[getIndex()]).values().sort(function(a,b) { return a-b;});
+		  var legend = svg.selectAll("g.legend")
+			.data(ext_color_domain)
+			.enter().append("g")
+			.attr("class", "legend");
+		
+		  var ls_w=20, ls_h=20;
+
+		  legend.append("rect")
+			.attr("x", 20)
+			.attr("y", function(d, i) { return height - (i*ls_h) - 15*ls_h;})
+			.attr("width", ls_w)
+			.attr("height", ls_h)
+			.style("fill", function(d, i) { return color(d); })
+			.style("opacity", 0.8);
+
+		   legend.append("text")
+			.attr("x", 50)
+			.attr("y", function(d, i){ return height - (i*ls_h) -14*ls_h -4;})
+			.text(function(d,i) { return d.toString(); })
+			.style("font-size", "10px")
+			.style("font-family", 'Yanone Kaffeesatz');
+	
+		};
+			d3.select(self.frameElement).style("height", height + "px");
+
+		</script>
+	</body>
+</html>

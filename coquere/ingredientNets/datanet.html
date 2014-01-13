@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="css/style.css" />	
 	</head>
 	<body>
+  		<h2>Authors, Cookbooks, Categories</h2>
 		<div>
 			<label for="chooseNode" >Choose Ingredient:</label>
 			<select id="chooseNode"></select>
@@ -25,8 +26,8 @@
 		<div id="chart"> </div>
 		<script>
 			var cuisine = getQueryVariable("cuisine");
-			var width = 700,
-				height = 500;
+			var width = 800,
+				height = 800;
 
 			$(function() {
 			$( "#vslider" ).slider({
@@ -81,13 +82,16 @@
 			jsonFile = "data/" + cuisine + "_dataStats.json";
 			d3.json(jsonFile, function(error, json) {
 					force
+					.gravity(0.2)
+					.distance(200)
+					.charge(-80)
 					.nodes(json.nodes)
 					.links(json.links);
 
 					// Use a timeout to allow the rest of the page to load first.
 					setTimeout(function() {
 
-						n=2; 
+						n=100; 
 						// Run the layout a fixed number of times.
 						// The ideal number of times scales with graph complexity.
 						// Of course, don't run too long—you'll hang the page!

@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<!--
+	Halcyonic 3.1 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Coquere</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/config.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/skel-tabs.min.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-tabs.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<div id="header-wrapper">
+				<header id="header" class="container">
+					<div class="row">
+						<div class="12u">
+
+							<!-- Logo -->
+								<h1><a href="#" id="logo">Coquere</a></h1>
+							
+							<!-- Nav -->
+								<nav id="nav">
+									<a href="index.html">Homepage</a>
+									<a href="background.html">Background</a>
+									<a href="problemdesign.html">Problem Design</a>
+									<a href="datasources.html">Data Sources</a>
+									<a href="contributions.html">Our Contributions</a>
+								</nav>
+
+						</div>
+					</div>
+				</header>
+			</div>
+
+		<!-- Content -->
+			<div id="content-wrapper">
+				<div id="content">
+					<div class="container">
+						<div class="row">
+							<div class="2u">
+								
+								<!-- Sidebar -->
+									<section>
+										<header>
+											<h2>Culinary Ingredient Networks</h2>
+										</header>
+										<ul class="tabs">
+											<li><a href="#african">African</a></li>
+											<li><a href="#australian">Australian</a></li>
+											<li><a href="#brazil">Brazilian</a></li>
+											<li><a href="#caribbean">Caribbean</a></li>
+											<li><a href="#chinese">Chinese</a></li>
+											<!--<li><a href="#european">European</a></li>-->
+											<li><a href="#french">French</a></li>
+											<li><a href="#german">German</a></li>
+											<li><a href="#greek">Greek</a></li>
+											<li><a href="#hawai">Hawaiian</a></li>
+											<li><a href="#indian">Indian</a></li>
+											<li><a href="#irish">Irish</a></li>
+											<li><a href="#italian">Italian</a></li>
+											<li><a href="#jamaica">Jamaican</a></li>
+											<li><a href="#mexican">Mexican</a></li>
+											<li><a href="#moroco">Moroccan</a></li>
+											<li><a href="#pakistani">Pakistani</a></li>
+											<li><a href="#polish">Polish</a></li>
+											<li><a href="#portugese">Portugese</a></li>
+											<li><a href="#russian">Russian</a></li>
+											<li><a href="#spanish">Spanish</a></li>
+											<li><a href="#southamerican">South-American</a></li>
+											<!--<li><a href="#thai">Thai</a></li>-->
+											<li><a href="#vietnamese">Vietnamese</a></li>
+											<li><a href="#wordnet">Wordnet</a></li>
+										</ul>
+									</section>
+									<section>
+										<header>
+											<h2>Network Analysis</h2>
+										</header>
+										<p>
+											This page presents the culinary network visualizations of 16 cuisines which have been crawled out of EatYourBooks repository.
+										</p>
+									</section>
+
+							</div>
+
+							<div class="10u">
+								
+								<!-- Main Content -->
+									<section>
+										<article id="african">
+											<iframe src="ingredientNets/index.html?cuisine=african" scrolling="no" allowfullscreen height="930" width="930" frameborder="0"></iframe>
+										</article>
+										<article id="australian">
+											<iframe src="ingredientNets/index.html?cuisine=australian" scrolling="no" allowfullscreen height="930" width="930" frameborder="0"></iframe>
+										</article>
+										<article id="brazil">
+											<iframe src="ingredientNets/index.html?cuisine=brazilian" scrolling="no" allowfullscreen height="930" width="930" frameborder="0"></iframe>
+										</article>
+										<article id="caribbean">
+											<iframe src="ingredientNets/index.html?cuisine=caribbean" scrolling="no" allowfullscreen height="930" width="930" frameborder="0"></iframe>
+										</article>
+										<article id="chinese">
+											<p>Chinese</p>
+										</article>
+										<article id="european">
+											<p>European</p>
+											<!--<iframe src="ingredientNets/index.html?cuisine=european" scrolling="no" allowfullscreen height="930" width="930" frameborder="0"></iframe>-->
+										</article>
+										<article id="french">
+											<p>French</p>
+										</article>
+										<article id="german">
+											<iframe src="ingredientNets/index.html?cuisine=german" scrolling="no" allowfullscreen height="930" width="930" frameborder="0"></iframe>
+										</article>
+										<article id="greek">
+											<iframe src="ingredientNets/index.html?cuisine=greek" scrolling="no" allowfullscreen height="930" width="930" frameborder="0"></iframe>
+										</article>
+										<article id="hawai">
+											<iframe src="ingredientNets/index.html?cuisine=hawaiian" scrolling="no" allowfullscreen width=930 height=930 frameborder="0"></iframe>
+     										</article>
+										<article id="indian">
+											<p>Indian</p>
+										</article>
+										<article id="irish">
+											<iframe src="ingredientNets/index.html?cuisine=irish" scrolling="no" allowfullscreen height="930" width="930" frameborder="0"></iframe>
+										</article>
+										<article id="italian">
+											<p>Italian</p>
+										</article>
+										<article id="jamaica">
+											<iframe src="ingredientNets/index.html?cuisine=jamaican" scrolling="no" allowfullscreen height="930" width="930" frameborder="0"></iframe>
+										</article>
+										<article id="mexican">
+											<p>Mexican</p>
+										</article>
+										<article id="moroco">
+											<iframe src="ingredientNets/index.html?cuisine=moroccan" scrolling="no" allowfullscreen height="930" width="930" frameborder="0"></iframe>
+										</article>
+										<article id="pakistani">
+											<iframe src="ingredientNets/index.html?cuisine=pakistani" scrolling="no" allowfullscreen height="930" width="930" frameborder="0" > </iframe>
+										</article>
+										<article id="polish">
+											<iframe src="ingredientNets/index.html?cuisine=polish" scrolling="no" allowfullscreen height="930" width="930" frameborder="0"></iframe>
+										</article>
+
+										<article id="portugese">
+											<iframe src="ingredientNets/index.html?cuisine=portugese" scrolling="no" allowfullscreen height="930" width="930" frameborder="0" > </iframe>
+										</article>
+
+										<article id="russian">
+											<iframe src="ingredientNets/index.html?cuisine=russian" scrolling="no" allowfullscreen height="930" width="930" frameborder="0" > </iframe>
+										</article>
+										<article id="spanish">
+											<p>Spanish</p>
+										</article>
+										<article id="southamerican">
+											<iframe src="ingredientNets/index.html?cuisine=south-american" scrolling="no" allowfullscreen height="930" width="930" frameborder="0" > </iframe>
+										</article>
+										<article id="thai">
+											<p>Thai</p>
+											<!--<iframe src="ingredientNets/index.html?cuisine=thai" scrolling="no" allowfullscreen height="930" width="930" frameborder="0" > </iframe>-->
+										</article>
+										<article id="vietnamese">
+											<iframe src="ingredientNets/index.html?cuisine=vietnamese" scrolling="no" allowfullscreen height="930" width="930" frameborder="0" > </iframe>
+										</article>
+
+										<article id="wordnet">
+											<iframe src="ingredientNets/wordnet/wordnet.html" scrolling="no" allowfullscreen height="95%" width="95%" frameborder="0"></iframe>
+										</article>
+									</section>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- Footer -->
+			<div id="footer-wrapper">
+				<footer id="footer" class="container">
+					<div class="row">
+						<div class="8u">
+						
+							<!-- Links -->
+								<section>
+									<h2>Interesting Links</h2>
+									<div>
+										<div class="row">
+											<div class="3u">
+												<ul class="link-list last-child">
+													<li><a href="http://www.ece.uc.edu/~aminai/">Dr Ali Minai</a></li>
+													<li><a href="http://www.linkedin.com/pub/vaidehi-venkatesan/16/b0/260">Vaidehi Venkatesan</a></li>
+												</ul>
+											</div>
+											<div class="3u">
+												<ul class="link-list last-child">
+													<li><a href="http://necsi.edu/events/iccs2011/papers/321.pdf">Cuisines as Complex Networks</a></li>
+													<li><a href="https://etd.ohiolink.edu/ap:10:0::NO:10:P10_ETD_SUBID:84304">Cuisines as Complex Networks (Thesis)</a></li>
+													<li><a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.191.598">Neurocognitive Spotlights: Configuring Domains for Ideation</a></li>
+												</ul>
+											</div>
+											<div class="3u">
+												<ul class="link-list last-child">
+													<li><a href="http://python.org">Python</a></li>
+													<li><a href="http://nltk.org/">NLTK</a></li>
+													<li><a href="http://d3js.org/">D3</a></li>
+													<li><a href="http://www.mongodb.org/">Mongodb</a></li>
+												</ul>
+											</div>
+											<div class="3u">
+												<ul class="link-list last-child">
+													<li><a href="http://html5up.net">HTML5Up</a></li>
+													<li><a href="http://httpd.apache.org">Apache2</a></li>
+													<li><a href="http://linode.com">Linode</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</section>
+
+						</div>
+						<div class="4u">
+							
+							<!-- Blurb -->
+								<section>
+									<h2>An Informative Text Blurb</h2>
+									<p>
+										Coquere is a culinary network analysis project which uses online recipes to understand and draw some interesting analytics on ingredient networks created out of their co-occurences in recipes. Coquere uses ML + NLP in short!
+									</p>
+								</section>
+						
+						</div>
+					</div>
+				</footer>
+			</div>
+
+		<!-- Copyright -->
+			<div id="copyright">
+				&copy; Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a> 
+			</div>
+
+	</body>
+</html>

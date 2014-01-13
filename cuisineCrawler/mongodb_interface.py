@@ -4,7 +4,7 @@ from pymongo import Connection
 import networkx as nx
 from networkx.readwrite import json_graph
 def writeDict(dictData, cuisine, fileName):
-	f = open("../coquere/ingredientNets/data/" + cuisine + "_" + fileName+".csv", 'wb');
+	f = open(options.rootPath + "/coquere/ingredientNets/data/" + cuisine + "_" + fileName+".csv", 'wb');
 	f.write("field,count\n");
 	for key in sorted(dictData.keys()):
 		keyStr = key.encode('utf-8')
@@ -35,15 +35,12 @@ class EatYourBooksDB:
 			
 
 if __name__ == '__main__':
-	db =""
-	itemtype=""
-	ipaddress=""
-	cuisine=""
 	parser=OptionParser()
 	parser.add_option("-i", "--ipaddress", dest="ipaddress", help="ipaddress of remote mongodbserver", default="localhost")
         parser.add_option("-t", "--itemtype", dest="itemtype", help="item type i.e. recipes/cookbooks to be parsed and added", default="recipes")
         parser.add_option("-c", "--cuisine", dest="cuisine", help="cuisine type", default="pakistani")
         parser.add_option("-d", "--database", dest="db", help="database name to store parsed data. Database should contain collections of the name given in --itemtype option", default="EatYourBooksDB")
+        parser.add_option("-p", "--path", dest="rootPath", help="root location to store results", default="/home/vaidehi/EYB")
 
         options, arguments = parser.parse_args()
         print "ipaddress: " + options.ipaddress
@@ -159,7 +156,7 @@ if __name__ == '__main__':
 		B.add_edges_from([(cookbook, author)])
 
 
-	json_file = "../coquere/ingredientNets/data/"+options.cuisine+"_dataStats.json"	
+	json_file = options.rootPath + "/coquere/ingredientNets/data/"+options.cuisine+"_dataStats.json"	
 	dumps = json_graph.dumps(B)
 	with open(json_file, 'w') as file:
 		file.write(dumps)		

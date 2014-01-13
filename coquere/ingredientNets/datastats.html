@@ -8,11 +8,24 @@
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <script src="../js/query.js"></script>
   <link rel="stylesheet" href="css/style.css" />	
-  <script>
+  <style>
+ #tabs .tabs-spacer { float: left; height: 200px; }
+  .tabs-bottom .ui-tabs-nav { clear: left; padding: 0 .2em .2em .2em; }
+  .tabs-bottom .ui-tabs-nav li { top: auto; bottom: 0; margin: 0 .2em 1px 0; border-bottom: auto; border-top: 0; }
+  .tabs-bottom .ui-tabs-nav li.ui-tabs-active { margin-top: -1px; padding-top: 1px; }
+  </style>
+ 
+<script>
   $(function() {
-    $( "#accordion" ).accordion({ collapsible: true, 
-		autoHeight: false, 
-		navigation: true});
+    $( "#tabs" ).tabs();
+ 
+    // fix the classes
+    $( ".tabs-bottom .ui-tabs-nav, .tabs-bottom .ui-tabs-nav > *" )
+      .removeClass( "ui-corner-all ui-corner-top" )
+      .addClass( "ui-corner-bottom" );
+ 
+    // move the nav to the bottom
+    $( ".tabs-bottom .ui-tabs-nav" ).appendTo( ".tabs-bottom" );
   });
   window.onload = function(){
 	document.getElementById("datapie").src = getUrl("datapievis.html");
@@ -26,16 +39,18 @@
   </script>
 </head>
 <body>
- 
-<div id="accordion">
-  <h3>Authors, Cookbooks, Categories</h3>
-  <div>
-	<iframe id='datanet' scrolling="no" allowfullscreen width=700 height=500 frameborder="0"></iframe>
-  </div>
-  <h3>Data Source Spread</h3>
-  <div>
-	<iframe id='datapie' scrolling="no" allowfullscreen width=700 height=500 frameborder="0"></iframe>
-  </div>
+<div id="tabs" class="tabs-bottom">
+	<ul>
+		<li class="litab"><a href="#net">Data Network</a></li>
+		<li class="litab"><a href="#pie">Data Spread</a></li>
+	</ul>
+	<div class="tabs-spacer"></div>
+	<div id="net">
+		<iframe id='datanet' scrolling="no" allowfullscreen width=100% height=880 frameborder="0"></iframe>
+  	</div>
+	<div id="pie">
+		<iframe id='datapie' scrolling="no" allowfullscreen width=100% height=880 frameborder="0"></iframe>
+  	</div>
 </div>
 </body>
 </html>

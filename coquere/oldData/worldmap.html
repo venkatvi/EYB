@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script src = "http://d3js.org/d3.v3.min.js"></script>
+		<script src="../js/query.js"></script>
+		<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
+		<script src="http://d3js.org/queue.v1.min.js"></script>
+		<script src="http://d3js.org/topojson.v1.min.js"></script>
+		<link rel="stylesheet" href="css/style.css" />	
+		<style>
+
+		body {
+		  background: #fcfcfa;
+		}
+
+		.stroke {
+		  fill: none;
+		  stroke: #000;
+		  stroke-width: 3px;
+		}
+
+		.fill {
+		  fill: #fff;
+		}
+
+		.land {
+		  fill: #ddd;
+		}
+
+		.boundary {
+		  fill: none;
+		  stroke: #fff;
+		}
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<div style="width: 450px; float: left;">
+				<div>
+					<div style="width: 50px; float: left;">Zoom: </div>
+					<div style="margin-left: 50px;">
+						<div id="vslider" style="width: 300px; height: 6px;"></div>	
+					</div>
+				</div>
+				<p> </p>
+			</div>
+			<div style="margin-left: 450px;" >
+				<ul class="check-list">
+					<li>Hover an colored region to have a quick peek at the data </li>
+					<li>Use slider to zoom in/out of a region </li>
+					<li>(Shift) double-click on a node to zoom (out)in. </li>
+					<li>Click on a colored region to view detailed results</li>
+				</ul>
+			</div>
+		</div>
+		<div id="chart"> </div>
+
+		<script>
+		var countryNames = ["jamaican", "polish", "pakistani", "african", "brazilian", "russian", "portugese", "german", "vietnamese", "caribbean", "moroccan", "irish", "greek", "japanese", "thai", "australian", "south-american", "spanish", "chinese", "mexican", "indian", "french", "italian"]
+
+		var width = 960,
+		    height = 800;
+
+		$(function() {
+		$( "#vslider" ).slider({
+			orientation: "horizontal",
+			range: "min",
+			min: 900,
+			max: 10000,
+			value: 1000,
+			slide: function( event, ui ) {
+				zoomWithSlider(ui.value/1000);
+			}
+		});
+		});
+		function zoomWithSlider(scale) {
+			var svg = d3.select("#chart").select("svg");
+			var container = svg.select("g");
+			var h = svg.attr("height"), w = svg.attr("width");
+
+			// Note: works only on the <g> element and not on the <svg> element
+			// which is a common mistake
+			container.attr("transform",
+					"translate(" + w/2 + ", " + h/2 + ") " +
+					"scale(" + scale + ") " +
+					"translate(" + (-w/2) + ", " + (-h/2) + ")");
+		}
+
+
+		var projection = d3.geo.naturalEarth()
+		    .scale(167)
+		    .translate([width / 2, height / 2])
+		    .precision(.1);
+
+		var color = d3.scale.category20b();
+
+		var path = d3.geo.path()
+		    .projection(projection);
+
+		var svg = d3.select("#chart").append("svg")
+			.attr("width", width)
+			.attr("height", height)
+			.attr("pointer-events", "all")
+			.append('svg:g')
+			.call(d3.behavior.zoom().on("zoom", redraw))
+			.append('svg:g');
+
+		function redraw() {
+			console.log("here", d3.event.translate, d3.event.scale);
+			svg.attr("transform",
+					"translate(" + d3.event.translate + ")"
+					+ " scale(" + d3.event.scale + ")");
+		}
+
+		svg.append("defs").append("path")
+		    .datum({type: "Sphere"})
+		    .attr("id", "sphere")
+		    .attr("d", path);
+
+		svg.append("use")
+		    .attr("class", "stroke")
+		    .attr("xlink:href", "#sphere");
+
+		svg.append("use")
+		    .attr("class", "fill")
+		    .attr("xlink:href", "#sphere");
+
+		queue()
+		    .defer(d3.json, "data/world-50m.json")
+		    .defer(d3.tsv, "data/cuisines.tsv", addCuisineIds)
+		    .await(ready);
+
+		function ready(error, world, cuisines) {
+		  var cuisinesById = d3.nest()
+		      .key(function(d) { return d.id; })
+		      .sortValues(function(a, b) { return a.recipes - b.recipes; })
+		      .map(cuisines, d3.map);
+
+		  var country = svg.insert("g", ".graticule")
+		      .attr("class", "land")
+		    .selectAll("path")
+		      .data(topojson.feature(world, world.objects.countries).features)
+		    .enter().append("path")
+		      .attr("d", path);
+
+		  country.filter(function(d) { return cuisinesById.has(d.id); })
+		  	.style("fill", function(d) { return color(countryNames.indexOf(cuisinesById.get(d.id)[0].cuisine)); })
+			.append("title")
+		  		.text(function(d) {
+					var cuisines = cuisinesById.get(d.id);
+					return cuisines[0].cuisine.toUpperCase() + "\n" + cuisines.map(function(d) { return d.recipes.toString() + " recipes\n" + d.cookbooks.toString() + " cookbooks\n" + d.ingredients.toString() + " ingredients\n";}).join("\n");
+			     	});
+		  svg.insert("path", ".graticule")
+		  	.datum(topojson.mesh(world, world.objects.countries, function(a, b) { return a !== b; }))
+		      	.attr("class", "boundary")
+		      	.attr("d", path);
+
+		  svg.selectAll("path")
+			.on("click", function(d) {
+				var cuisine = cuisinesById.get(d.id)[0].cuisine;
+				loadPage(cuisine);
+			});
+
+		}
+
+		function addCuisineIds(d) {
+		  d.id = +d.id;
+		  return d;
+		}
+
+		function loadPage(cuisine){ 
+			console.log("loading " + cuisine + "\n");
+			window.location.href = "index.html?cuisine=" + cuisine;
+			loadMap()
+		}
+		d3.select(self.frameElement).style("height", height + "px");
+
+		</script>
+	</body>
+</html>

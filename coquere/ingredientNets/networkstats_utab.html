@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Network Statistics Upper Tab</title>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script src="../js/query.js"></script>
+		<link rel="stylesheet" href="css/style.css" />	
+		<style>
+		 #tabs .tabs-spacer { float: left; height: 200px; }
+		  .tabs-bottom .ui-tabs-nav { clear: left; padding: 0 .2em .2em .2em; }
+		  .tabs-bottom .ui-tabs-nav li { top: auto; bottom: 0; margin: 0 .2em 1px 0; border-bottom: auto; border-top: 0; }
+		  .tabs-bottom .ui-tabs-nav li.ui-tabs-active { margin-top: -1px; padding-top: 1px; }
+		</style>
+		 
+		<script>
+		  $(function() {
+		    $( "#tabs" ).tabs();
+		 
+		    // fix the classes
+		    $( ".tabs-bottom .ui-tabs-nav, .tabs-bottom .ui-tabs-nav > *" )
+		      .removeClass( "ui-corner-all ui-corner-top" )
+		      .addClass( "ui-corner-bottom" );
+		 
+		    // move the nav to the bottom
+		    $( ".tabs-bottom .ui-tabs-nav" ).appendTo( ".tabs-bottom" );
+		  });
+		  window.onload = function(){
+			document.getElementById("freqDist").src = getUrl("freqdist.html");
+			//we would want to use mashNetStat.html with clco evetually for clustering coefficient. 
+			document.getElementById("cluscoeff").src = getUrl("cluscoeff.html");
+			document.getElementById("avgNDeg").src = appendUrl("mashNetStat.html?prop=and");
+			document.getElementById("degCent").src = appendUrl("mashNetStat.html?prop=dc");
+		  }
+		  function getUrl(rootUrl) {
+			var cuisine = getQueryVariable("cuisine");
+			var url = rootUrl + "?cuisine=" + cuisine ;
+			return url;
+		  }	
+		  function appendUrl(rootUrl) {
+			var cuisine = getQueryVariable("cuisine");
+			var url = rootUrl + "&cuisine=" + cuisine ;
+			return url;
+		  }	
+
+		</script>
+	</head>
+	<body>
+		<div id="tabs" class="tabs-bottom" style="height: 350px">
+			<ul>
+				<li class="litab"><a href="#freq">Ingredient Frequency</a></li>
+				<li class="litab"><a href="#and">Average Neighbour Degree</a></li>
+				<li class="litab"><a href="#cc">Clustering Coefficient</a></li>
+				<li class="litab"><a href="#dc">Degree Centrality</a></li>
+			</ul>
+			<div id="freq">
+				<iframe id='freqDist' scrolling="no" allowfullscreen width=700 height=300 frameborder="0"></iframe>
+			</div>
+			<div id="and">
+				<iframe id='avgNDeg' scrolling="no" allowfullscreen width=700 height=300 frameborder="0"></iframe>
+			</div>
+			<div id="cc">
+				<iframe id='cluscoeff' scrolling="no" allowfullscreen width=700 height=300 frameborder="0"></iframe>
+			</div>
+			<div id="dc">
+				<iframe id='degCent' scrolling="no" allowfullscreen width=700 height=300 frameborder="0"></iframe>
+			</div>
+		</div>
+	</body>
+</html>
+
