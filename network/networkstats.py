@@ -1,4 +1,5 @@
 from __future__ import division
+import os
 import math
 import nltk
 import simplejson as json
@@ -219,12 +220,13 @@ def calculateStats(json_file, stats_file):
 				f.write(options.cuisine + "\t" + str(asco) + "\t" + str(trans) + "\t" + str(avcc) + "\t" + str(dgraph) + "\t" + str(bgraph) + "\t" + str(cgraph) + "\t" + str(code) +  "\n");
 	f.close();
 if __name__ == '__main__':
+	home_folder = os.getenv("HOME")
 	parser=OptionParser()
 	parser.add_option("-i", "--ipaddress", dest="ipaddress", help="ipaddress of remote mongodbserver", default="localhost")
         parser.add_option("-t", "--itemtype", dest="itemtype", help="item type i.e. recipes/cookbooks to be parsed and added", default="recipes")
         parser.add_option("-c", "--cuisine", dest="cuisine", help="cuisine type", default="hawaiian")
         parser.add_option("-d", "--database", dest="db", help="database name to store parsed data. Database should contain collections of the name given in --itemtype option", default="EatYourBooksDB")
-        parser.add_option("-p", "--path", dest="rootPath", help="root location to store results", default="/home/vaidehi/EYB")
+        parser.add_option("-p", "--path", dest="rootPath", help="root location to store results", default=home_folder+"/EYB")
 
         options, arguments = parser.parse_args()
         print "ipaddress: " + options.ipaddress

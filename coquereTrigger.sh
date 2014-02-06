@@ -22,9 +22,10 @@ then
 	exit 1
 fi
 arguments="-i 23.92.17.38 -c $cuisine -t cookbookrecipes -d EatYourBooksDB"
-root="/home/vaidehi/EYB/"
+user_home=$(eval echo ~${SUDO_USER})
+root="$user_home/EYB/"
 networkDataPath="$root/NLP"
-cmd="python $networkDataPath/ingredientVisualization.py $arguments" 
+cmd="python $networkDataPath/inModVis.py $arguments" 
 echo "--------------------"
 echo $cmd
 echo "--------------------"
