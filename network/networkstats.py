@@ -14,7 +14,8 @@ from networkx.algorithms.vitality import *
 from networkx.algorithms.assortativity import *
 from networkx.algorithms.cluster import *
 from networkx.algorithms.distance_measures import *
-
+from networkx.linalg.graphmatrix import *
+import sys
 def getCountries(cuisine):
 	if (cuisine == "asian"):
 		return ["russia", "india", "mongolia", "china", "japan", "pakistan", "afghanistan", "kazakhstan", "south korea", "thailand", "indonesia"]
@@ -95,28 +96,12 @@ def computeCGraphCentrality(nodeCentralities):
 		sumAll += maxC - node;
 	return float((sumAll*(2*n -3)) / float((n-1)*(n-2)))
 
-if __name__ == '__main__':
-	parser=OptionParser()
-	parser.add_option("-i", "--ipaddress", dest="ipaddress", help="ipaddress of remote mongodbserver", default="localhost")
-        parser.add_option("-t", "--itemtype", dest="itemtype", help="item type i.e. recipes/cookbooks to be parsed and added", default="recipes")
-        parser.add_option("-c", "--cuisine", dest="cuisine", help="cuisine type", default="hawaiian")
-        parser.add_option("-d", "--database", dest="db", help="database name to store parsed data. Database should contain collections of the name given in --itemtype option", default="EatYourBooksDB")
-        parser.add_option("-p", "--path", dest="rootPath", help="root location to store results", default="/home/vaidehi/EYB")
-
-        options, arguments = parser.parse_args()
-        print "ipaddress: " + options.ipaddress
-        print "item type: " + options.itemtype
-        print "db name: " + options.db
-	print "cuisine: " + options.cuisine
-	
-	json_file =   options.rootPath + "/network/data/" + options.cuisine + ".json"
-	print json_file
+def calculateStats(json_file, stats_file):
 	G = nx.Graph()
 	d = json.load(open(json_file));
 	G.add_nodes_from(d['nodes'])
 	G.add_edges_from(d['edges'])
 	
-
 	#Centrality Measures:
 	print "Computing Node wise metrics... "
 	print "Degree..."
@@ -134,9 +119,14 @@ if __name__ == '__main__':
 	#print "Edge betweeness: "
 	#print edge_betweenness_centrality(G)
 
-	print "eigen vector centrality... " 
-	eig = eigenvector_centrality(G)
-
+	try:
+		print "eigen vector centrality... " 
+		eig = eigenvector_centrality(G)
+	except:
+		print "Unable to converge.. "
+		z = sys.exc_info()[0]
+		print z
+		eig = {};
 	print "communicability centrality..."
 	comc = communicability_centrality(G)
 
@@ -160,7 +150,7 @@ if __name__ == '__main__':
 	bCentralities = []
 	cCentralities = []
 	eCentralities = []
-	f = open(options.rootPath + "/coquere/ingredientNets/data/" + options.cuisine + "_nodeMetrics.csv" , "wb");
+	f = open(options.rootPath + "/coquere/ingredientNets/data/" + options.cuisine + "_" + stats_file + "_nodeMetrics.csv" , "wb");
 	f.write("node,degree,degreeCentrality,closeness,betCentrality,eigenvectorCentrality,communicability,avgNeigDegree,clusCoeff\n");
 	for key in deg.keys():
 		if key != "":
@@ -168,8 +158,13 @@ if __name__ == '__main__':
 			e=0
 			if bet[key] > 0:
 				b = np.log10(bet[key])
-			if eig[key] > 0:
+			if key in eig.keys() and eig[key] > 0:
 				e = np.log10(eig[key])
+				eCentralities.append(eig[key])
+			else:
+				e = 0;
+				eCentralities.append(0)
+
 			f.write(key + "," + str(deg[key])
 				+ "," + str(degC[key]) 
 				+ "," + str(clo[key])
@@ -181,7 +176,6 @@ if __name__ == '__main__':
 			dCentralities.append(degC[key])
 			bCentralities.append(bet[key])
 			cCentralities.append(clo[key])
-			eCentralities.append(eig[key])
 	f.close()
 
 	print "Computing Graph level metrics..."
@@ -205,7 +199,7 @@ if __name__ == '__main__':
 	cgraph = computeCGraphCentrality(cCentralities)
 	print "assortativity..." 
 	asco = degree_assortativity_coefficient(G)
-
+	
 	lines = [line.strip() for line in open(options.rootPath + "/coquere/ingredientNets/data/world-country-names.tsv", 'r')]
 	countryCodes = {}
 	for line in lines:
@@ -213,7 +207,7 @@ if __name__ == '__main__':
 		if items[1] not in countryCodes.keys():
 			countryCodes[items[1].lower()] = items[0]
 	
-	f = open(options.rootPath + "/coquere/ingredientNets/data/graphMetrics.tsv" , "a")
+	f = open(options.rootPath + "/coquere/ingredientNets/data/graphMetrics" + "_" + stats_file + ".tsv" , "a")
 	countries = getCountries(options.cuisine)
 	codes = []
 	if len(countries) > 0:
@@ -224,4 +218,32 @@ if __name__ == '__main__':
 			for code in codes:
 				f.write(options.cuisine + "\t" + str(asco) + "\t" + str(trans) + "\t" + str(avcc) + "\t" + str(dgraph) + "\t" + str(bgraph) + "\t" + str(cgraph) + "\t" + str(code) +  "\n");
 	f.close();
+if __name__ == '__main__':
+	parser=OptionParser()
+	parser.add_option("-i", "--ipaddress", dest="ipaddress", help="ipaddress of remote mongodbserver", default="localhost")
+        parser.add_option("-t", "--itemtype", dest="itemtype", help="item type i.e. recipes/cookbooks to be parsed and added", default="recipes")
+        parser.add_option("-c", "--cuisine", dest="cuisine", help="cuisine type", default="hawaiian")
+        parser.add_option("-d", "--database", dest="db", help="database name to store parsed data. Database should contain collections of the name given in --itemtype option", default="EatYourBooksDB")
+        parser.add_option("-p", "--path", dest="rootPath", help="root location to store results", default="/home/vaidehi/EYB")
 
+        options, arguments = parser.parse_args()
+        print "ipaddress: " + options.ipaddress
+        print "item type: " + options.itemtype
+        print "db name: " + options.db
+	print "cuisine: " + options.cuisine
+	
+	json_file =   options.rootPath + "/network/data/" + options.cuisine + ".json"
+	print json_file
+
+	calculateStats(json_file, "cooc");
+	
+	json_poscor_file =   options.rootPath + "/network/data/" + options.cuisine + "_posNet.json"
+	print json_poscor_file
+
+	calculateStats(json_poscor_file, "posCorr");
+
+	json_negcor_file =   options.rootPath + "/network/data/" + options.cuisine + "_negNet.json"
+	print json_negcor_file
+
+
+	calculateStats(json_negcor_file, "negCorr");
