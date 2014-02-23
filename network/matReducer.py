@@ -41,11 +41,13 @@ def initGraph(cuisineId, matType,networksMap, ingredListMap):
 		print matType
 		return networksMap
 	key = cuisine + "_" + netType
-	if matType == 4: #mapping to corceff mat
+	if netType == 'ccf': #mapping to corceff mat
 		# add pos and neg to the key
 		tkey = key + "_pos";	
 		networksMap = addKey(networksMap, ingredListMap, cuisine, tkey)
 		tkey = key + "_neg";
+		networksMap = addKey(networksMap, ingredListMap, cuisine, tkey)
+		tkey = key + "_uncr";
 		networksMap = addKey(networksMap, ingredListMap, cuisine, tkey)
 	else:
 		networksMap = addKey(networksMap, ingredListMap, cuisine, key)
@@ -53,7 +55,7 @@ def initGraph(cuisineId, matType,networksMap, ingredListMap):
 
 def addKey(networksMap, ingredListMap, cuisine, key):
 	if key not in networksMap.keys():
-		if matType == 4 or matType == 3: # mapping to corceff mat, or conditional prob matrix
+		if 'cp' in key: # mapping to conditional prob matrix
 			B = nx.DiGraph()
 			B.add_nodes_from(ingredListMap[cuisine])
 			networksMap[key] = B
@@ -76,11 +78,13 @@ def addEdge(edge, weight, cuisineId, matType, networksMap):
 		print matType
 		return networksMap
 	key = cuisine + "_" + netType
-	if matType == 4:
-		if weight >= 0:
-			key = key + "pos"
+	if netType == 'ccf':
+		if weight > 0:
+			key = key + "_pos"
+		elif weight < 0:
+			key = key + "_neg"
 		else:
-			key = key + "neg"
+			key = key + "_uncor"
 	B = networksMap[key]
 	# add edge to these nodes
 	nodes=edge.split("#")
