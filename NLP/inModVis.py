@@ -5,10 +5,33 @@ from nltk.corpus import wordnet as wn
 import networkx as nx
 from networkx.algorithms import bipartite
 from networkx.readwrite import json_graph
+from networkx.linalg.graphmatrix import *
 import numpy as np
 from optparse import OptionParser
 from pymongo import Connection
 import simplejson as json
+def getCuisineId(cuisineName):
+	if cuisineName == 'french':
+		return 1
+	elif cuisineName == 'italian':
+		return 2
+	elif cuisineName == 'indian':
+		return 3
+	elif cuisineName == 'chinese':
+		return 4
+	else:
+		return -1
+
+def appendColumns(mat, ingredIds, cuisineIds, matType):
+	dim = mat.shape;
+	print dim
+	mat = np.append(mat, ingredIds, axis=1)
+	mat = np.append(mat, cuisineIds, axis=1)
+	typeCol = np.ones([dim[0], 1])*matType
+	print typeCol.shape
+	mat = np.append(mat, typeCol, axis=1)
+	return mat
+
 #checks if ingredient is food
 def isFood(word, level, isRice):
 	synsets = []
@@ -610,21 +633,76 @@ if __name__ == '__main__':
 		rowIndex = rowIndex+1
 		
 
-	rLMat = np.asarray(recipeLeafMat)
-	matFile = options.rootPath + "/coquere/ingredientNets/data/" + options.cuisine + "_rlmat.txt";
-	np.savetxt(matFile, rLMat, fmt='%u', delimiter=",")
+	#get cuisineId
+	cuisineId = getCuisineId(options.cuisine)
 
-	ingredFile = options.rootPath + "/coquere/ingredientNets/data/" + options.cuisine + "_ingredLeafs.txt"
-	np.savetxt(ingredFile, ingredLeafs, fmt="%s", delimiter=",")
-	
+	#rLMat = np.asarray(recipeLeafMat)
+	rLMat = np.matrix(recipeLeafMat)
+	freqCount = rLMat.sum(axis=0)
+	lfreqCount = np.array(freqCount)[0].tolist()
+
 
 	print "------------------------- Network json on ingredient co-occurences-------------------------------"
 	leafEdges = createEdgeList(ingredLeafs, recipeLeafMat);
 	filename = options.rootPath + "/coquere/ingredientNets/data/" +  options.cuisine + ".json"
 	G = visualizeNetwork(ingredLeafs, leafEdges, filename)
 	
+
+	# write co-occurrence of this network  as cuisine_cooc.json
+	A = adjacency_matrix(G)
+	A = A.tolist()
+	dim = rLMat.shape
+	recipeCount = dim[0]
+	ingredCount = dim[1]
+
+	# reiterate co-occurence matrix
+	Co = np.zeros([dim[1], dim[1]])
+	# compute conditional prob
+	CP = np.zeros([dim[1], dim[1]])
+	# compute PMI 
+	PMI = np.zeros([dim[1], dim[1]])
+	# compute correlation coefficient mat
+	CCF = np.corrcoef(recipeLeafMat, rowvar=0);
+	
+	ingredIds = np.zeros([dim[1], 1])
+	cuisineCol = np.zeros([dim[1], 1])
+	for i in range(0, dim[1]-1):
+		ingredIds[i] = i;
+		cuisineCol[i] = cuisineId;
+		for j in range(0, dim[1]-2):
+			Co[i][j] = A[i][j]
+			pRecipesAB = A[i][j]/recipeCount;
+			pIngredI = lfreqCount[i]/recipeCount;
+			CP[i][j] = pRecipesAB/pIngredI;
+			if i!=j and i<=j:
+				pIngredJ = lfreqCount[j]/recipeCount;
+				PMI[i][j] = pRecipesAB/(pIngredI * pIngredJ)
+				PMI[j][i] = pRecipesAB/(pIngredI * pIngredJ)
+
+	Co = appendColumns(Co, ingredIds, cuisineCol, 1);
+	PMI = appendColumns(PMI, ingredIds, cuisineCol, 2);
+	CP = appendColumns(CP, ingredIds, cuisineCol, 3);
+	CCF = appendColumns(CCF, ingredIds, cuisineCol, 4);
+	
+	coocFile = options.rootPath + "/network/data/" + options.cuisine + "_cooc.csv"
+	cpFile = options.rootPath + "/network/data/" + options.cuisine + "_CP.csv"
+	pmiFile = options.rootPath + "/network/data/" + options.cuisine + "_PMI.csv"
+	ccfFile = options.rootPath + "/network/data/" + options.cuisine + "_CCF.csv"
+	matFile = options.rootPath + "/coquere/ingredientNets/data/" + options.cuisine + "_rlmat.txt";
+	ingredFile = options.rootPath + "/coquere/ingredientNets/data/" + options.cuisine + "_ingredLeafs.txt"
+	
+	#np.savetxt(matFile, rLMat, fmt='%u', delimiter=",")
+	np.savetxt(coocFile, Co, fmt='%10.5f', delimiter=",")
+	np.savetxt(pmiFile, PMI, fmt='%10.5f', delimiter=",")
+	np.savetxt(ccfFile, CCF, fmt='%10.5f', delimiter=",")
+	np.savetxt(cpFile, CP, fmt='%10.5f', delimiter=",")
+	#np.savetxt(ingredFile, ingredLeafs, fmt="%s", delimiter=",")
+
+	ingredFile = options.rootPath + "/coquere/ingredientNets/data/" + options.cuisine + "_ingredLeafs.txt"
+	np.savetxt(ingredFile, ingredLeafs, fmt="%s", delimiter=",")	
+
 	json.dump(dict(nodes=[[n, G.node[n]] for n in G.nodes()],
-		edges=[[u,v,G.edge[u][v]] for u,v in G.edges()]),
+	edges=[[u,v,G.edge[u][v]] for u,v in G.edges()]),
 	open(options.rootPath + "/network/data/" + options.cuisine + ".json", 'w'), indent=2)
 
 	print "-------------------------------------Over------------------------------------------------"
