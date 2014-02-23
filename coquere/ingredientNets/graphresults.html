@@ -59,7 +59,7 @@
 				document.getElementById("map").src = getUrl("graphmap.html", code, netType);
 			})
 		    .selectAll("option")
-		    .data(dropDownNodes)
+		    .data(dropDownNetType)
 		    .enter()
 		    .append("option")
 		    .attr("value", function(d) { return d;} )
