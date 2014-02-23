@@ -45,6 +45,11 @@
 		
 		var selectedProp = getQueryVariable("prop");
 		console.log(selectedProp)
+		var selectedNetType = getQueryVariable("net");
+		console.log(selectedNetType)
+		var fileName = "data/graphmetrics_" + selectedNetType + ".tsv";
+		console.log(fileName);
+
 		function getIndex() {
 			if (selectedProp == "asco"){
 				return 0;
@@ -180,7 +185,7 @@
 
 		queue()
 		    .defer(d3.json, "data/world-50m.json")
-		    .defer(d3.tsv, "data/graphMetrics.tsv", addCuisineIds)
+		    .defer(d3.tsv, fileName , addCuisineIds)
 		    .await(ready);
 
 

@@ -11,17 +11,32 @@
   <link rel="stylesheet" href="css/style.css" />	
   <script>
   window.onload = function(){
-	document.getElementById("map").src = getUrl("graphmap.html", dropDownCodes[0]);
+	document.getElementById("map").src = getUrl("graphmap.html", dropDownCodes[0], dropDownNetTypeCodes[0]);
   }
+  var dropDownNetType = ["Cooccurence in recipes", "Positive correlation of ingredients", "Negative correlation of ingredients", "Conditional probability", "Pairwise mutual information"];
+  var dropDownNetTypeCodes = ["cooc", "ccf_pos", "ccf_neg", "cp", "pmi"];
   var dropDownNodes = ["Assortative Coefficient","Transitivity", "Avg Clustering Coefficient", "Degree Centrality", "Betweeness Centrality", "Closeness"];
   var dropDownCodes = ["asco", "trans", "avcc", "degc", "betc", "cloc"]; 
-  function getUrl(rootUrl, code) {
-	var url = rootUrl + "?prop=" + code;
+  function getUrl(rootUrl, code, netType) {
+	var url = rootUrl + "?prop=" + code + "&net=" + netType;
 	return url;
   }	
 </script>
 </head>
 <body>
+	<div>
+		<div style="width: 500px; float: left;">
+			<label for="chooseNetType" >Choose Network Type:</label>
+			<select id="chooseNetType"></select>
+		</div>
+		<div style="margin-left: 500px;" >
+			<ul class="check-list">
+				<li>Pick a network type to see cuisine behavior. </li>
+			</ul>
+		</div>
+
+	</div>	
+
 	<div>
 		<div style="width: 500px; float: left;">
 			<label for="chooseNode" >Choose Network Property:</label>
@@ -35,11 +50,13 @@
 
 	</div>	
 	<script>
-	 var dropDown = d3.select("#chooseNode")
+	 var dropDown = d3.select("#chooseNetType")
 		    .on("change", function() {
 				nodeId = this.selectedIndex;
-				code = dropDownCodes[nodeId];
-				document.getElementById("map").src = getUrl("graphmap.html", code);
+				netType = dropDownNetTypeCodes[nodeId];
+				codeDropDown = document.getElementById("chooseNode");
+				code = codeDropDown.options[codeDropDown.selectedIndex].value;
+				document.getElementById("map").src = getUrl("graphmap.html", code, netType);
 			})
 		    .selectAll("option")
 		    .data(dropDownNodes)
@@ -47,6 +64,21 @@
 		    .append("option")
 		    .attr("value", function(d) { return d;} )
 		    .text(function(d) {return d;});
+	 var dropDown = d3.select("#chooseNode")
+		    .on("change", function() {
+				nodeId = this.selectedIndex;
+				code = dropDownCodes[nodeId];
+				netTypeDropDown = document.getElementById("chooseNetType");
+				netType = netTypeDropDown.options[netTypeDropDown.selectedIndex].value;
+				document.getElementById("map").src = getUrl("graphmap.html", code, netType);
+			})
+		    .selectAll("option")
+		    .data(dropDownNodes)
+		    .enter()
+		    .append("option")
+		    .attr("value", function(d) { return d;} )
+		    .text(function(d) {return d;});
+
   </script>
 
 	 <div id="gmap">
