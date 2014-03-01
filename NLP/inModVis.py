@@ -189,7 +189,6 @@ def createEdgeList(ingredList, recipeIngredMat):
 								edgeList[revKey] += 1
 							else:
 								edgeList[key] = 1
-						print key
 	return edgeList
 #disambiguate leafs 
 def disambiguateParents(parents):
