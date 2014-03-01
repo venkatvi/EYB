@@ -189,6 +189,7 @@ def createEdgeList(ingredList, recipeIngredMat):
 								edgeList[revKey] += 1
 							else:
 								edgeList[key] = 1
+						print key
 	return edgeList
 #disambiguate leafs 
 def disambiguateParents(parents):
@@ -507,8 +508,8 @@ if __name__ == '__main__':
 			for nKey, nValues in multiWordIngredMap[key].iteritems():
 				for value in nValues:
 					# leafs degree can be computed 
-					value = value.strip()
-					pkey = key.strip()
+					value = value.strip().lower()
+					pkey = key.strip().lower()
 					if value in leafs.keys():
 						leafs[value].append(pkey)
 					else:
@@ -529,8 +530,8 @@ if __name__ == '__main__':
 
 			#for each child dict in nextInterIngredMap - add parent to leaf, add leaf to parent ingred
 			for nKey, nValues in nextIterIngredMap[key].iteritems():
-				nvalues = nValues.strip()
-				pkey = key.strip()
+				nvalues = nValues.strip().lower()
+				pkey = key.strip().lower()
 				if nvalues in leafs.keys():
 					leafs[nvalues].append(pkey)
 				else:
@@ -618,16 +619,18 @@ if __name__ == '__main__':
 			leafVec.append(0)
 
 		for ingredient in recipe["ingredients"]:
-			# Mark recipe[i][ingred] = 1
-			ingredIndex = distinctIngredList.index(ingredient)
+			ingredient = ingredient.strip()
+			if ingredient:
+				# Mark recipe[i][ingred] = 1
+				ingredIndex = distinctIngredList.index(ingredient)
 
-			#find ingredients leafs in parents
-			if ingredient in parents.keys():
-				ileafs = parents[ingredient]
-				for leaf in ileafs:
-					leafIndex = ingredLeafs.index(leaf)
-					if leafIndex >= 0:
-						leafVec[leafIndex] = 1
+				#find ingredients leafs in parents
+				if ingredient in parents.keys():
+					ileafs = parents[ingredient]
+					for leaf in ileafs:
+						leafIndex = ingredLeafs.index(leaf)
+						if leafIndex >= 0:
+							leafVec[leafIndex] = 1
 					
 		recipeLeafMat.append(leafVec)
 		rowIndex = rowIndex+1
@@ -635,6 +638,8 @@ if __name__ == '__main__':
 
 	#get cuisineId
 	cuisineId = getCuisineId(options.cuisine)
+	ingredFile = options.rootPath + "/coquere/ingredientNets/data/" + options.cuisine + "_ingredLeafs.txt"
+	np.savetxt(ingredFile, ingredLeafs, fmt="%s", delimiter=",")	
 
 	#rLMat = np.asarray(recipeLeafMat)
 	rLMat = np.matrix(recipeLeafMat)
@@ -647,9 +652,8 @@ if __name__ == '__main__':
 	filename = options.rootPath + "/coquere/ingredientNets/data/" +  options.cuisine + ".json"
 	G = visualizeNetwork(ingredLeafs, leafEdges, filename)
 	
-
 	# write co-occurrence of this network  as cuisine_cooc.json
-	A = adjacency_matrix(G)
+	A = adjacency_matrix(G, ingredLeafs)
 	A = A.tolist()
 	dim = rLMat.shape
 	recipeCount = dim[0]
@@ -673,11 +677,13 @@ if __name__ == '__main__':
 			Co[i][j] = A[i][j]
 			pRecipesAB = A[i][j]/recipeCount;
 			pIngredI = lfreqCount[i]/recipeCount;
-			CP[i][j] = pRecipesAB/pIngredI;
+			if pIngredI > 0:
+				CP[i][j] = pRecipesAB/pIngredI;
 			if i!=j and i<=j:
 				pIngredJ = lfreqCount[j]/recipeCount;
-				PMI[i][j] = pRecipesAB/(pIngredI * pIngredJ)
-				PMI[j][i] = pRecipesAB/(pIngredI * pIngredJ)
+				if pIngredI > 0 and pIngredJ > 0:
+					PMI[i][j] = pRecipesAB/(pIngredI * pIngredJ)
+					PMI[j][i] = pRecipesAB/(pIngredI * pIngredJ)
 
 	Co = appendColumns(Co, ingredIds, cuisineCol, 1);
 	PMI = appendColumns(PMI, ingredIds, cuisineCol, 2);
@@ -692,19 +698,15 @@ if __name__ == '__main__':
 	ingredFile = options.rootPath + "/coquere/ingredientNets/data/" + options.cuisine + "_ingredLeafs.txt"
 	
 	#np.savetxt(matFile, rLMat, fmt='%u', delimiter=",")
-	np.savetxt(coocFile, Co, fmt='%10.5f', delimiter=",")
-	np.savetxt(pmiFile, PMI, fmt='%10.5f', delimiter=",")
-	np.savetxt(ccfFile, CCF, fmt='%10.5f', delimiter=",")
-	np.savetxt(cpFile, CP, fmt='%10.5f', delimiter=",")
-	#np.savetxt(ingredFile, ingredLeafs, fmt="%s", delimiter=",")
-
-	ingredFile = options.rootPath + "/coquere/ingredientNets/data/" + options.cuisine + "_ingredLeafs.txt"
-	np.savetxt(ingredFile, ingredLeafs, fmt="%s", delimiter=",")	
+	np.savetxt(coocFile, Co, fmt='%5.3f', delimiter=",")
+	np.savetxt(pmiFile, PMI, fmt='%5.3f', delimiter=",")
+	np.savetxt(ccfFile, CCF, fmt='%5.3f', delimiter=",")
+	np.savetxt(cpFile, CP, fmt='%5.3f', delimiter=",")
+	np.savetxt(ingredFile, ingredLeafs, fmt="%s", delimiter=",")
 
 	json.dump(dict(nodes=[[n, G.node[n]] for n in G.nodes()],
 	edges=[[u,v,G.edge[u][v]] for u,v in G.edges()]),
 	open(options.rootPath + "/network/data/" + options.cuisine + ".json", 'w'), indent=2)
 
 	print "-------------------------------------Over------------------------------------------------"
-	
 	
