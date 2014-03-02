@@ -19,6 +19,44 @@ def getCuisineId(cuisineName):
 		return 3
 	elif cuisineName == 'chinese':
 		return 4
+	elif cuisineName == 'spanish':
+		return 5
+	elif cuisineName == 'mexican':
+		return 6
+	elif cuisineName == 'irish':
+		return 7
+	elif cuisineName == 'german':
+		return 8
+	elif cuisineName == 'russian':
+		return 9
+	elif cuisineName == 'polish':
+		return 10
+	elif cuisineName == 'thai': 
+		return 11
+	elif cuisineName == 'vietnamese':
+		return 12
+	elif cuisineName == 'cambodian':
+		return 13
+	elif cuisineName == 'caribbean':
+		return 14
+	elif cuisineName == 'hawaiian':
+		return 15
+	elif cuisineName == 'south-american':
+		return 16
+	elif cuisineName == 'african':
+		return 17
+	elif cuisineName == 'australian':
+		return 18
+	elif cuisineName == 'brazilian':
+		return 19
+	elif cuisineName == 'moroccan':
+		return 20
+	elif cuisineName == 'ethiopian':
+		return 21
+	elif cuisineName == 'pakistani':
+		return 22
+	elif cuisineName == 'greek':
+		return 23
 	else:
 		return -1
 
