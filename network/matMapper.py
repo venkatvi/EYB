@@ -100,6 +100,8 @@ if __name__ == '__main__':
 			ingreds = []
 			ingreds.append(src)
 			ingreds.append(dest)
+			if row[col].strip() == 'nan':
+				row[col] = 0
 			value = float(row[col])
 			if value > 0:
 				key = "";

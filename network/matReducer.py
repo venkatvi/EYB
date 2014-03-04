@@ -105,6 +105,7 @@ def addKey(networksMap, ingredListMap, cuisine, key):
 def addEdge(edge, weight, cuisineId, matType, networksMap):
 	cuisine = getCuisineStr(cuisineId);
 	netType = getNetworkType(matType);
+	scalingFactor = 1;
 	if cuisine == 'temp':
 		print "addEdge"
 		print cuisineId
@@ -117,12 +118,15 @@ def addEdge(edge, weight, cuisineId, matType, networksMap):
 		return networksMap
 	key = cuisine + "_" + netType
 	if netType == 'ccf':
+		scalingFactor = 1000;
 		if weight > 0:
 			key = key + "_pos"
 		elif weight < 0:
 			key = key + "_neg"
 		else:
 			key = key + "_uncor"
+	if netType == 'cp':
+		scalingFactor = 1000;
 	B = networksMap[key]
 	# add edge to these nodes
 	nodes=edge.split("#")
@@ -141,7 +145,7 @@ def addEdge(edge, weight, cuisineId, matType, networksMap):
 				break;
 	if error == 0:
 		B.add_edges_from([(nodes[0], nodes[1])]) 
-		B[nodes[0]][nodes[1]]['value'] = weight
+		B[nodes[0]][nodes[1]]['value'] = abs(weight) * scalingFactor;
 	networksMap[key] = B
 	return networksMap
 def getIngredList(cuisine):
