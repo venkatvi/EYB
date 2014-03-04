@@ -145,7 +145,7 @@ def addEdge(edge, weight, cuisineId, matType, networksMap):
 				break;
 	if error == 0:
 		B.add_edges_from([(nodes[0], nodes[1])]) 
-		B[nodes[0]][nodes[1]]['value'] = abs(weight) * scalingFactor;
+		B[nodes[0]][nodes[1]]['value'] = abs(float(weight)) * scalingFactor;
 	networksMap[key] = B
 	return networksMap
 def getIngredList(cuisine):
