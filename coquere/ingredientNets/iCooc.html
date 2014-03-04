@@ -12,8 +12,29 @@
 		<script src="http://static.cybercommons.org/js/d3/lib/colorbrewer/colorbrewer.js" type="text/javascript"></script>
 		<link rel="stylesheet" href="css/style.css" />	
 		<link rel="stylesheet" href="http://static.cybercommons.org/js/d3/lib/colorbrewer/colorbrewer.css" />	
+		<script>
+			var cuisine = getQueryVariable("cuisine");
+			var dropDownNetType = ["Cooccurence in recipes", "Positive correlation of ingredients", "Negative correlation of ingredients", "Conditional probability", "Pairwise mutual information"];
+			var dropDownNetTypeCodes = ["cooc", "ccf_pos", "ccf_neg", "cp", "pmi"];
+			window.onload=function(){
+				jsonFile = "data/" + cuisine + "_" + dropDownNetTypeCodes[0] + ".json";
+				loadFile(jsonFile);
+			}
+
+		</script>
 	</head>
 	<body>
+		<div>
+			<div style="width: 500px; float: left;">
+				<label for="chooseNetType" >Choose Network Type:</label>
+				<select id="chooseNetType"></select>
+			</div>
+			<div style="margin-left: 500px;" >
+				<ul class="check-list">
+					<li>Pick a network type to see cuisine behavior. </li>
+				</ul>
+			</div>
+		</div>
 		<div>
 			<div style="width: 600px; float: left;">
 				<label for="chooseNode" >Choose Ingredient:</label>
@@ -48,7 +69,20 @@
 
 		<div id="chart"> </div>
 		<script>
-			var cuisine = getQueryVariable("cuisine");
+			var dropDown = d3.select("#chooseNetType")
+			    .on("change", function() {
+					nodeId = this.selectedIndex;
+					netType = dropDownNetTypeCodes[nodeId];
+					var jsonFile = "data/" + cuisine + "_" + netType + ".json";
+					loadFile(jsonFile);
+				})
+			    .selectAll("option")
+			    .data(dropDownNetType)
+			    .enter()
+			    .append("option")
+			    .attr("value", function(d) { return d;} )
+			    .text(function(d) {return d;});
+
 				
 			var margin = {top: 50, right: 150, bottom: 50, left: 50},
 			    width = 800,
@@ -101,159 +135,160 @@
 						"translate(" + d3.event.translate + ")"
 						+ " scale(" + d3.event.scale + ")");
 			}
-			var jsonFile = "data/" + cuisine + ".json";
-			d3.json(jsonFile, function(json) {
-			  var matrix = [],
-			      nodes = json.nodes.sort(),
-			      n = nodes.length;
+			function loadFile(jsonFile){
+				d3.json(jsonFile, function(json) {
+				  var matrix = [],
+				      nodes = json.nodes.sort(),
+				      n = nodes.length;
 
-			  // Compute index per node.
-			  nodes.forEach(function(node, i) {
-			    node.index = i;
-			    node.count = 0;
-			    matrix[i] = d3.range(n).map(function(j) { 
-				return {x: j, y: i, z: 0}; });
-			  });
-			  
-			  var dropDownNodes = new Array();
-			  json.nodes.forEach(function(d) {
-				if (d.id ){
-					dropDownNodes.push(d.id.toLowerCase());
-				}
-			  });
-			  dropDownNodes.sort();
-			  dropDownNodes.unshift("all"); 
+				  // Compute index per node.
+				  nodes.forEach(function(node, i) {
+				    node.index = i;
+				    node.count = 0;
+				    matrix[i] = d3.range(n).map(function(j) { 
+					return {x: j, y: i, z: 0}; });
+				  });
+				  
+				  var dropDownNodes = new Array();
+				  json.nodes.forEach(function(d) {
+					if (d.id ){
+						dropDownNodes.push(d.id.toLowerCase());
+					}
+				  });
+				  dropDownNodes.sort();
+				  dropDownNodes.unshift("all"); 
 
-			  var dropDown = d3.select("#chooseNode")
-			    .selectAll("option")
-			    .data(dropDownNodes)
-			    .enter()
-			    .append("option")
-			    .attr("value", function(d) { return d;} )
-			    .text(function(d) {return d;});
+				  var dropDown = d3.select("#chooseNode")
+				    .selectAll("option")
+				    .data(dropDownNodes)
+				    .enter()
+				    .append("option")
+				    .attr("value", function(d) { return d;} )
+				    .text(function(d) {return d;});
 
 
-			  // Convert links to matrix; count character occurrences.
-			  json.links.forEach(function(link) {
-				if (matrix[link.source][link.target] === undefined) {
-					console.log("SourceTargetMapping missing");
-				}
-				else {
-				    matrix[link.source][link.target].z += link.value;
-				    matrix[link.target][link.source].z += link.value;
-				    matrix[link.target][link.target].z += link.value;
-				    matrix[link.source][link.source].z += link.value;
-				    nodes[link.source].count += link.value;
-				    nodes[link.target].count += link.value;
-				}
-			  });
-			
-			  // Precompute the orders.
-			  var orders = {
-			    name: d3.range(n).sort(function(a, b) { return d3.ascending(nodes[a].id, nodes[b].id); }),
-			    count: d3.range(n).sort(function(a, b) { return nodes[b].count - nodes[a].count; }),
-			    degree: d3.range(n).sort(function(a, b) { return nodes[b].degree - nodes[a].degree; })
-			  };
+				  // Convert links to matrix; count character occurrences.
+				  json.links.forEach(function(link) {
+					if (matrix[link.source][link.target] === undefined) {
+						console.log("SourceTargetMapping missing");
+					}
+					else {
+					    matrix[link.source][link.target].z += link.value;
+					    matrix[link.target][link.source].z += link.value;
+					    matrix[link.target][link.target].z += link.value;
+					    matrix[link.source][link.source].z += link.value;
+					    nodes[link.source].count += link.value;
+					    nodes[link.target].count += link.value;
+					}
+				  });
+				
+				  // Precompute the orders.
+				  var orders = {
+				    name: d3.range(n).sort(function(a, b) { return d3.ascending(nodes[a].id, nodes[b].id); }),
+				    count: d3.range(n).sort(function(a, b) { return nodes[b].count - nodes[a].count; }),
+				    degree: d3.range(n).sort(function(a, b) { return nodes[b].degree - nodes[a].degree; })
+				  };
 
-			  // The default sort order.
-			  x.domain(orders.name);
+				  // The default sort order.
+				  x.domain(orders.name);
 
-			  svg.append("rect")
-			      .attr("class", "background")
-			      .attr("width", width)
-			      .attr("height", height)
-			      .attr("x", 100)
-			      .attr("y", 0);
+				  svg.append("rect")
+				      .attr("class", "background")
+				      .attr("width", width)
+				      .attr("height", height)
+				      .attr("x", 100)
+				      .attr("y", 0);
 
-			  var row = svg.selectAll(".row")
-			      .data(matrix)
-			    .enter().append("g")
-			      .attr("class", "row")
-			      .attr("transform", function(d, i) { return "translate(100," + x(i) + ")"; })
-			      .each(row);
+				  var row = svg.selectAll(".row")
+				      .data(matrix)
+				    .enter().append("g")
+				      .attr("class", "row")
+				      .attr("transform", function(d, i) { return "translate(100," + x(i) + ")"; })
+				      .each(row);
 
-			  row.append("line")
-			      .attr("x2", width);
+				  row.append("line")
+				      .attr("x2", width);
 
-			  console.log(x.rangeBand())
+				  console.log(x.rangeBand())
 
-			  row.append("text")
-			      .attr("x", 0)
-			      .attr("y", x.rangeBand() / 2)
-			      .attr("dy", ".32em")
-			      .attr("text-anchor", "end")
-			      .text(function(d, i) { return nodes[i].id.toLowerCase(); })
-			      .attr('font-size', 2);
+				  row.append("text")
+				      .attr("x", 0)
+				      .attr("y", x.rangeBand() / 2)
+				      .attr("dy", ".32em")
+				      .attr("text-anchor", "end")
+				      .text(function(d, i) { return nodes[i].id.toLowerCase(); })
+				      .attr('font-size', 2);
 
-			  var column = svg.selectAll(".column")
-			      .data(matrix)
-			    .enter().append("g")
-			      .attr("class", "column")
-			      .attr("transform", function(d, i) { return "translate(" + x(i) + ")rotate(-90)"; });
+				  var column = svg.selectAll(".column")
+				      .data(matrix)
+				    .enter().append("g")
+				      .attr("class", "column")
+				      .attr("transform", function(d, i) { return "translate(" + x(i) + ")rotate(-90)"; });
 
-			  column.append("line")
-			      .attr("x1", -width);
+				  column.append("line")
+				      .attr("x1", -width);
 
-			  column.append("text")
-			      .attr("x", 0)
-			      .attr("y", 100 + x.rangeBand() / 2)
-			      .attr("dy", ".32em")
-			      .attr("text-anchor", "start")
-			      .text(function(d, i) { return nodes[i].id.toLowerCase(); })
-			      .attr('font-size', 2);
+				  column.append("text")
+				      .attr("x", 0)
+				      .attr("y", 100 + x.rangeBand() / 2)
+				      .attr("dy", ".32em")
+				      .attr("text-anchor", "start")
+				      .text(function(d, i) { return nodes[i].id.toLowerCase(); })
+				      .attr('font-size', 2);
 
-			  function row(row) {
-			    var cell = d3.select(this).selectAll(".cell")
-				.data(row.filter(function(d) { return d.z; }))
-			      .enter().append("rect")
-				.attr("class", "cell")
-				.attr("x", function(d) { return x(d.x + 100); })
-				.attr("width", x.rangeBand())
-				.attr("height", x.rangeBand())
-				.style("fill-opacity", function(d) { return z(d.z); })
-				.style("fill", function(d) {
-					return c(d.z); }) 
-				.on("mouseover", mouseover)
-				.on("mouseout", mouseout);
-			  }
+				  function row(row) {
+				    var cell = d3.select(this).selectAll(".cell")
+					.data(row.filter(function(d) { return d.z; }))
+				      .enter().append("rect")
+					.attr("class", "cell")
+					.attr("x", function(d) { return x(d.x + 100); })
+					.attr("width", x.rangeBand())
+					.attr("height", x.rangeBand())
+					.style("fill-opacity", function(d) { return z(d.z); })
+					.style("fill", function(d) {
+						return c(d.z); }) 
+					.on("mouseover", mouseover)
+					.on("mouseout", mouseout);
+				  }
 
-			  function mouseover(p) {
-			    d3.selectAll(".row text").classed("active", function(d, i) { return i == p.y; });
-			    d3.selectAll(".column text").classed("active", function(d, i) { return i == p.x; });
-			  }
+				  function mouseover(p) {
+				    d3.selectAll(".row text").classed("active", function(d, i) { return i == p.y; });
+				    d3.selectAll(".column text").classed("active", function(d, i) { return i == p.x; });
+				  }
 
-			  function mouseout() {
-			    d3.selectAll("text").classed("active", false);
-			  }
+				  function mouseout() {
+				    d3.selectAll("text").classed("active", false);
+				  }
 
-			  d3.select("#order").on("change", function() {
-			    clearTimeout(timeout);
-			    order(this.value);
-			  });
+				  d3.select("#order").on("change", function() {
+				    clearTimeout(timeout);
+				    order(this.value);
+				  });
 
-			  function order(value) {
-		            orderingParam = value;
-			    x.domain(orders[value]);
+				  function order(value) {
+				    orderingParam = value;
+				    x.domain(orders[value]);
 
-			    var t = svg.transition().duration(2500);
+				    var t = svg.transition().duration(2500);
 
-			    t.selectAll(".row")
-				.delay(function(d, i) { return x(i) * 4; })
-				.attr("transform", function(d, i) { return "translate(100," + x(i) + ")"; })
-			      .selectAll(".cell")
-				.delay(function(d) { return x(d.x) * 4; })
-				.attr("x", function(d) { return x(d.x); });
+				    t.selectAll(".row")
+					.delay(function(d, i) { return x(i) * 4; })
+					.attr("transform", function(d, i) { return "translate(100," + x(i) + ")"; })
+				      .selectAll(".cell")
+					.delay(function(d) { return x(d.x) * 4; })
+					.attr("x", function(d) { return x(d.x); });
 
-			    t.selectAll(".column")
-				.delay(function(d, i) { return x(i) * 4; })
-				.attr("transform", function(d, i) { return "translate(" + x(i) + ")rotate(-90)"; });
-			  }
+				    t.selectAll(".column")
+					.delay(function(d, i) { return x(i) * 4; })
+					.attr("transform", function(d, i) { return "translate(" + x(i) + ")rotate(-90)"; });
+				  }
 
-			  var timeout = setTimeout(function() {
-			    order("degree");
-			    d3.select("#order").property("selectedIndex", 2).node().focus();
-			  }, 5000);
-			});
+				  var timeout = setTimeout(function() {
+				    order("degree");
+				    d3.select("#order").property("selectedIndex", 2).node().focus();
+				  }, 5000);
+				});
+			}
 
 		</script>
 	</body>
