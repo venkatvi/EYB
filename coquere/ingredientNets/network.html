@@ -22,6 +22,18 @@
 						<div id="vslider" style="width: 300px; height: 6px;"></div>	
 					</div>
 				</div>
+				<div>
+					<div style="width: 50px; float: left;">Degree: </div>
+					<div style="margin-left: 50px;">
+						<div id="vdegslider" style="width: 300px; height: 6px;"></div>	
+					</div>
+				</div>
+				<div>
+					<div style="width: 50px; float: left;">Weight: </div>
+					<div style="margin-left: 50px;">
+						<div id="vwtslider" style="width: 300px; height: 6px;"></div>	
+					</div>
+				</div>
 				<p> </p>
 			</div>
 			<div style="margin-left: 500px;" >
@@ -63,6 +75,36 @@
 						"translate(" + (-w/2) + ", " + (-h/2) + ")");
 			}
 
+			$(function() {
+			$( "#vdegslider" ).slider({
+				orientation: "horizontal",
+				range: "min",
+				min: 900,
+				max: 10000,
+				value: 1000,
+				slide: function( event, ui ) {
+					adjustDegreeWithSlider(ui.value/1000);
+				}
+			});
+			});
+			function adjustDegreeWithSlider(scale) {
+			}
+
+			$(function() {
+			$( "#vwtslider" ).slider({
+				orientation: "horizontal",
+				range: "min",
+				min: 900,
+				max: 10000,
+				value: 1000,
+				slide: function( event, ui ) {
+					adjustEdgeWithSlider(ui.value/1000);
+				}
+			});
+			});
+			function adjustEdgeWithSlider(scale) {
+			}
+
 
 			var svg = d3.select("#chart")
 			.append("svg:svg")
@@ -99,6 +141,10 @@
 			.links(json.links)
 			.start();
 
+			var maxDegree;
+			var minDegree;
+			var maxEdgeWeight;
+			var minEdgeWeight;
 			var color = d3.scale.category20();
 			
 			var nodesByIndex = new Array();
@@ -107,6 +153,12 @@
 				if (d.id ){
 					dropDownNodes.push(d.id.toLowerCase());
 					nodesByIndex.push(d);
+					if (d.degree > maxDegree){
+						maxDegree = d.degree;
+					}
+					if(d.degree < minDegree) {
+						minDegree = d.minDegree;
+					}
 				}
 			});
 			dropDownNodes.sort()
@@ -123,6 +175,12 @@
 			var linkedByIndex = {};
 			var nodesByName = {};
 			json.links.forEach(function (d) {
+					if (d.value > maxEdgeWeight){
+						maxEdgeWeight = d.value;
+					}
+					if (d.value < minEdgeWeight){
+						minEdgeWeight = d.value;
+					}
 					linkedByIndex[d.source.index + "," + d.target.index] = 1;
 					nodesByName[d.source.id] = d.source;
 					nodesByName[d.target.id] = d.target;
@@ -213,6 +271,10 @@
 				};
 
 			}
+			console.log(maxDegree);
+			console.log(minDegree);
+			console.log(maxEdgeWeight);
+			console.log(minEdgeWeight);
 			force.on("tick", function()
 			{
 				link.attr("x1", function(d) { return d.source.x; })
