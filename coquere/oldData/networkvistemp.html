@@ -1,0 +1,38 @@
+var degree = new Array();
+										var degreeCodes = new Array();
+										var delta = (maxDegree-minDegree)/10;
+										for(var i=minDegree; i<= maxDegree;i=i+delta){
+											degree.push(">=" );
+											degreeCodes.push(i);
+										}
+										console.log(degree);
+										console.log(degreeCodes);	
+										var edgeWeights = new Array();
+										var edgeWeightsCodes = new Array();
+										delta = (maxEdgeWeight - minEdgeWeight)/10;
+										for(var i=minEdgeWeight; i<=maxEdgeWeight; i=i+delta){
+											edgeWeigths.push(">=" );
+											edgeWeightsCodes.push(i);
+										}
+										var degreeDropDown = d3.select("#chooseDegree")
+										    .on("change", function() {
+												nodeId = this.selectedIndex;
+											})
+										    .selectAll("option")
+										    .data(degree)
+										    .enter()
+										    .append("option")
+										    .attr("value", function(d) { return d;} )
+										    .text(function(d) {return d;});
+
+										var edgeWeightsDropDown = d3.select("#chooseEdgeWeight")
+										    .on("change", function() {
+												nodeId = this.selectedIndex;
+											})
+										    .selectAll("option")
+										    .data(edgeWeights)
+										    .enter()
+										    .append("option")
+										    .attr("value", function(d) { return d;} )
+										    .text(function(d) {return d;});
+

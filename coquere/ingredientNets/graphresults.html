@@ -55,7 +55,7 @@
 				nodeId = this.selectedIndex;
 				netType = dropDownNetTypeCodes[nodeId];
 				codeDropDown = document.getElementById("chooseNode");
-				code = codeDropDown.options[codeDropDown.selectedIndex].value;
+				code = dropDownCodes[codeDropDown.selectedIndex];
 				document.getElementById("map").src = getUrl("graphmap.html", code, netType);
 			})
 		    .selectAll("option")
@@ -69,7 +69,7 @@
 				nodeId = this.selectedIndex;
 				code = dropDownCodes[nodeId];
 				netTypeDropDown = document.getElementById("chooseNetType");
-				netType = netTypeDropDown.options[netTypeDropDown.selectedIndex].value;
+				netType = dropDownNetTypeCodes[netTypeDropDown.selectedIndex];
 				document.getElementById("map").src = getUrl("graphmap.html", code, netType);
 			})
 		    .selectAll("option")

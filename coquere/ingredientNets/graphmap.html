@@ -47,7 +47,7 @@
 		console.log(selectedProp)
 		var selectedNetType = getQueryVariable("net");
 		console.log(selectedNetType)
-		var fileName = "data/graphmetrics_" + selectedNetType + ".tsv";
+		var fileName = "data/graphMetrics_" + selectedNetType + ".tsv";
 		console.log(fileName);
 
 		function getIndex() {
@@ -152,6 +152,7 @@
 		}
 		var j = 0;
 		function calculateStats(d) {
+			console.log(d)
 			dataArray[0][j] = parseFloat(d.assortativeCoefficient);
 			dataArray[1][j] = parseFloat(d.transitivity);
 			dataArray[2][j] = parseFloat(d.avgClusteringCoefficient);

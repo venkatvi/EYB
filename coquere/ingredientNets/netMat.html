@@ -81,7 +81,7 @@
 			var orderingParam = "name";
 			var x = d3.scale.ordinal().rangeBands([0, width]),
 			    z = d3.scale.linear().domain([0, 1]).clamp(true),
-			    c = d3.scale.ordinal().domain(d3.range(10)).range(colorbrewer.YlOrRd[9]);
+			    c = d3.scale.ordinal().domain(d3.range(0,1,0.0001)).range(colorbrewer.YlOrRd[9]);
 
 			var svg = d3.select("#chart").append("svg:svg")
 			    .attr("width", width + margin.left + margin.right)

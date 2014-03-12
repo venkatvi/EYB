@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script src = "http://d3js.org/d3.v3.min.js"></script>
+		<script src="../js/query.js"></script>
+		<link rel="stylesheet" href="css/style.css" />	
+	</head>
+	<body>
+		<div>
+			<div style="width: 600px; float: left;">
+				<label for="chooseNode" >Choose Ingredient:</label>
+				<select id="chooseNode"></select>
+				<p> </p>
+				<div>
+					<div style="width: 50px; float: left;">Zoom: </div>
+					<div style="margin-left: 50px;">
+						<div id="vslider" style="width: 300px; height: 6px;"></div>	
+					</div>
+				</div>
+				<p> </p>
+				<div>
+					<div style="width: 50px; float: left;">Degree: </div>
+					<div style="margin-left: 50px;">
+						<div id="vdegslider" style="width: 300px; height: 6px;"></div>	
+					</div>
+				</div>
+				<p> </p>
+				<div>
+					<div style="width: 50px; float: left;">Weight: </div>
+					<div style="margin-left: 50px;">
+						<div id="vwtslider" style="width: 300px; height: 6px;"></div>	
+					</div>
+				</div>
+				<p> </p>
+			</div>
+			<div style="margin-left: 500px;" >
+				<ul class="check-list">
+					<li>Pick an ingredient to see its culinary network. </li>
+					<li>Use slider to zoom in/out of network. </li>
+					<li>(Shift) double-click on a node to zoom (out)in. </li>
+				</ul>
+			</div>
+		</div>
+		<div id="chart"> </div>
+		<script>
+			var cuisine = getQueryVariable("cuisine");
+			var width = 1200,
+				height = 1200;
+			var color = d3.scale.category20();
+
+			var maxDegree = 0 ;
+			var minDegree = 0;
+			var maxEdgeWeight = 0;
+			var minEdgeWeight = 0;
+			var degreeThreshold = 0;
+			var edgeThreshold = 0;
+
+			jsonFile = "data/" + cuisine + ".json";
+			d3.json(jsonFile, function(error, json) {
+				json.nodes.forEach(function(d) {
+				if (d.id ){
+					if (d.degree > maxDegree){
+						maxDegree = d.degree;
+					}
+					if(d.degree < minDegree) {
+						minDegree = d.minDegree;
+					}
+				}
+				});
+				json.links.forEach(function (d) {
+					if (d.value > maxEdgeWeight){
+						maxEdgeWeight = d.value;
+					}
+					if (d.value < minEdgeWeight){
+						minEdgeWeight = d.value;
+					}
+				});
+			});
+			$(function() {
+			$( "#vslider" ).slider({
+				orientation: "horizontal",
+				range: "min",
+				min: 900,
+				max: 10000,
+				value: 1000,
+				slide: function( event, ui ) {
+					zoomWithSlider(ui.value/1000);
+				}
+			});
+			});
+			function zoomWithSlider(scale) {
+				var svg = d3.select("#chart").select("svg");
+				var container = svg.select("g");
+				var h = svg.attr("height"), w = svg.attr("width");
+
+				// Note: works only on the <g> element and not on the <svg> element
+				// which is a common mistake
+				container.attr("transform",
+						"translate(" + w/2 + ", " + h/2 + ") " +
+						"scale(" + scale + ") " +
+						"translate(" + (-w/2) + ", " + (-h/2) + ")");
+			}
+
+			$(function() {
+			$( "#vdegslider" ).slider({
+				orientation: "horizontal",
+				range: "min",
+				min: 900,
+				max: 10000,
+				value: 1000,
+				slide: function( event, ui ) {
+					adjustDegreeWithSlider(ui.value/(10000-900));
+				}
+			});
+			});
+			function adjustDegreeWithSlider(scale) {
+				degreeThreshold = (maxDegree - minDegree)*scale + minDegree;
+				d3.selectAll('circle')
+					.style("fill", function(d, i) { 
+						if(d.degree > degreeThreshold) {
+							return color(d.degree);
+						}
+						else { return  "#999"; }  
+
+					});
+			}
+			$(function() {
+			$( "#vwtslider" ).slider({
+				orientation: "horizontal",
+				range: "min",
+				min: 900,
+				max: 10000,
+				value: 1000,
+				slide: function( event, ui ) {
+					adjustEdgeWithSlider(ui.value/(10000-900));
+				}
+			});
+			});
+			function adjustEdgeWithSlider(scale) {
+				edgeThreshold = (maxEdgeWeight - minEdgeWeight)*scale + minEdgeWeight;
+				console.log(edgeThreshold);		
+			}
+			
+			var svg = d3.select("#chart")
+			.append("svg:svg")
+			.attr("width", width)
+			.attr("height", height)
+			.attr("pointer-events", "all")
+			.append('svg:g')
+			.call(d3.behavior.zoom().on("zoom", redraw))
+			.append('svg:g');
+
+			svg.append('svg:rect')
+			.attr('width', width)
+			.attr('height', height)
+			.attr('fill', 'white');
+
+			function redraw() {
+				console.log("here", d3.event.translate, d3.event.scale);
+				svg.attr("transform",
+						"translate(" + d3.event.translate + ")"
+						+ " scale(" + d3.event.scale + ")");
+			}
+
+			var force = d3.layout.force()
+			.distance(1000)
+			.gravity(0)
+			.charge(-100)
+			.friction(0)
+			.size([width, height]);
+
+			jsonFile = "data/" + cuisine + ".json";
+			d3.json(jsonFile, function(error, json) {
+			force
+			.nodes(json.nodes)
+			.links(json.links)
+			.start();
+
+			
+			var nodesByIndex = new Array();
+			var dropDownNodes = new Array();
+			json.nodes.forEach(function(d) {
+				if (d.id ){
+					dropDownNodes.push(d.id.toLowerCase());
+					nodesByIndex.push(d);
+				}
+			});
+			dropDownNodes.sort()
+			dropDownNodes.unshift("all");
+
+			orderedNodes = d3.range(nodesByIndex.length).sort(function(a,b) { d3.ascending(nodesByIndex[a].id, nodesByIndex[b].id)});
+			oldNodes = nodesByIndex;
+			nodesByIndex = new Array();
+			nodesByIndex.push("all");
+			for (var i=0; i<orderedNodes.length; i++){
+				nodesByIndex.push(oldNodes[i]);
+			}
+
+			var linkedByIndex = {};
+			var nodesByName = {};
+			json.links.forEach(function (d) {
+					linkedByIndex[d.source.index + "," + d.target.index] = 1;
+					nodesByName[d.source.id] = d.source;
+					nodesByName[d.target.id] = d.target;
+			});
+			function isConnected(a,b){
+				return linkedByIndex[a.index+ "," + b.index] || linkedByIndex[b.index + "," + a.index] || a.index == b.index;
+			}
+			// Build the dropdown menu
+			var dropDown = d3.select("#chooseNode")
+			    .on("change", function() {
+					nodeId = this.selectedIndex;
+					d3.selectAll('circle')
+					.style("fill", function(d, i) { 
+						if(nodeId ==  0){
+							return  color(d.degree);
+						}
+						else {
+							if(d.id.toLowerCase() == nodesByIndex[nodeId].id) {
+								return "#000";
+							}
+							else if(isConnected(d, nodesByIndex[nodeId])) {
+								return color(d.degree);
+							}
+							else { return  "#999"; }  
+						}
+					});
+					
+
+				})
+			    .selectAll("option")
+			    .data(dropDownNodes)
+			    .enter()
+			    .append("option")
+			    .attr("value", function(d) { return d;} )
+			    .text(function(d) {return d;});
+
+			var link = svg.selectAll(".link")
+			.data(json.links)
+			.enter().append("line")
+			.attr("class", "link");
+
+			var node = svg.selectAll(".node")
+			.data(json.nodes)
+			.enter().append("g")
+			.attr("class", "node")
+			.call(force.drag)
+			.on("mouseover", fade(.1))
+			.on("mouseout", fade(1));
+
+			node.append("circle")
+			.attr("r", function(d) { return Math.sqrt(d.degree+1)*1.2 } )
+			.style("fill", function(d) { return color(d.degree); });
+
+			node.append("text")
+			.attr("dx", 12)
+			.attr("dy", ".35em")
+			.attr("font-size",11)
+			.style('font-weight', 'bold');
+
+			svg.style("opacity", 1e-6)
+				.transition()
+				.duration(1000)
+				.style("opacity", 1);
+			//.text(function(d) { return d.id; });
+
+			function fade(opacity){
+				return function (d) {
+					node.style("stroke-opacity", function(o) {
+						thisOpacity = isConnected(d, o) ? 1: opacity;
+						this.setAttribute('fill-opacity', thisOpacity);
+						return thisOpacity;
+					});
+					link.style ("stroke-opacity", function(o) {
+						return o.value >= edgeThreshold && ( o.source === d || o.target === d )? 1: opacity;
+					});
+					link.style ("stroke", function(o) {
+						return opacity === 0.1 && o.value >= edgeThreshold ? (o.source === d || o.target === d ? "#000": "#fff") : "#fff";
+					});
+					d3.select(this).select("text").text(function() { 
+						return opacity === 0.1 && d.degree >= degreeThreshold ? d.id.toLowerCase() : "";
+					 });
+					d3.selectAll(".node").filter(function(o){
+							return isConnected(o, d) == 1 && o.degree >= degreeThreshold;
+						}).select("text").text(function(o) {
+							return opacity === 0.1 && o.degree >= degreeThreshold? o.id.toLowerCase() : "";
+						});
+					
+				};
+			}
+			force.on("tick", function()
+			{
+				link.attr("x1", function(d) { return d.source.x; })
+				    .attr("y1", function(d) { return d.source.y; })
+				    .attr("x2", function(d) { return d.target.x; })
+				    .attr("y2", function(d) { return d.target.y; });
+				node.attr("transform", function(d)
+				{
+					return "translate(" + d.x + "," + d.y + ")";
+				});
+			});
+
+			});
+		</script>
+	</body>
+</html>
