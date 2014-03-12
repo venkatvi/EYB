@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script src = "http://d3js.org/d3.v3.min.js"></script>
 		<script src="../js/query.js"></script>
 		<link rel="stylesheet" href="css/style.css" />	
 		<style>
@@ -16,6 +17,9 @@
 		</style>
 		 
 		<script>
+  		 var dropDownNetType = ["Cooccurence in recipes", "Positive correlation of ingredients", "Negative correlation of ingredients", "Conditional probability", "Pairwise mutual information"];
+		 var dropDownNetTypeCodes = ["cooc", "ccf_pos", "ccf_neg", "cp", "pmi"];
+
 		  $(function() {
 		    $( "#tabs" ).tabs();
 		 
@@ -31,13 +35,13 @@
 			document.getElementById("freqDist").src = getUrl("freqdist.html");
 			//we would want to use mashNetStat.html with clco evetually for clustering coefficient. 
 			//document.getElementById("cluscoeff").src = getUrl("cluscoeff.html");
-			document.getElementById("cluscoeff").src = appendUrl("mashNetStat.html?prop=clco");
-			document.getElementById("avgNDeg").src = appendUrl("mashNetStat.html?prop=and");
-			document.getElementById("degCent").src = appendUrl("mashNetStat.html?prop=dc");
-			document.getElementById("cloCent").src = appendUrl("mashNetStat.html?prop=cc");
-			document.getElementById("betCent").src = appendUrl("mashNetStat.html?prop=bc");
-			document.getElementById("eigCent").src = appendUrl("mashNetStat.html?prop=ec");
-			document.getElementById("comCent").src = appendUrl("mashNetStat.html?prop=comc");
+			document.getElementById("cluscoeff").src = appendUrl("mashNetStat.html?prop=clco&net=" + dropDownNetTypeCodes[0]);
+			document.getElementById("avgNDeg").src = appendUrl("mashNetStat.html?prop=and&net=" + dropDownNetTypeCodes[0]);
+			document.getElementById("degCent").src = appendUrl("mashNetStat.html?prop=dc&net=" + dropDownNetTypeCodes[0]);
+			document.getElementById("cloCent").src = appendUrl("mashNetStat.html?prop=cc&net=" + dropDownNetTypeCodes[0]);
+			document.getElementById("betCent").src = appendUrl("mashNetStat.html?prop=bc&net=" + dropDownNetTypeCodes[0]);
+			document.getElementById("eigCent").src = appendUrl("mashNetStat.html?prop=ec&net=" + dropDownNetTypeCodes[0]);
+			document.getElementById("comCent").src = appendUrl("mashNetStat.html?prop=comc&net=" + dropDownNetTypeCodes[0]);
 		  }
 		  function getUrl(rootUrl) {
 			var cuisine = getQueryVariable("cuisine");
@@ -46,12 +50,24 @@
 		  }	
 		  function appendUrl(rootUrl) {
 			var cuisine = getQueryVariable("cuisine");
-			var url = rootUrl + "&cuisine=" + cuisine ;
+			var url = rootUrl + "&cuisine=" + cuisine;
 			return url;
 		  }	
 		</script>
 	</head>
 	<body>
+		<div>
+			<div style="width: 500px; float: left;">
+				<label for="chooseNetType" >Choose Network Type:</label>
+				<select id="chooseNetType"></select>
+			</div>
+			<div style="margin-left: 500px;" >
+				<ul class="check-list">
+					<li>Pick a network type to see cuisine behavior. </li>
+				</ul>
+			</div>
+
+		</div>	
 		 <div id="tabs" class="tabs-bottom" style="height: 980px">
 			<ul>
 				<li class="litab"><a href="#freq">Ingredient Frequency</a></li>
@@ -90,7 +106,32 @@
 				<iframe id='comCent' scrolling="no" allowfullscreen width=100% height=820 frameborder="0"></iframe>
 			</div>
 		</div>
+	<script>
+		var dropDownNetType = ["Cooccurence in recipes", "Positive correlation of ingredients", "Negative correlation of ingredients", "Conditional probability", "Pairwise mutual information"];
+		 var dropDownNetTypeCodes = ["cooc", "ccf_pos", "ccf_neg", "cp", "pmi"];
 
+
+		 var dropDown = d3.select("#chooseNetType")
+		    .on("change", function() {
+				nodeId = this.selectedIndex;
+				netType = dropDownNetTypeCodes[nodeId];
+				document.getElementById("freqDist").src = getUrl("freqdist.html");
+				document.getElementById("cluscoeff").src = appendUrl("mashNetStat.html?prop=clco&net=" + netType);
+				document.getElementById("avgNDeg").src = appendUrl("mashNetStat.html?prop=and&net=" + netType);
+				document.getElementById("degCent").src = appendUrl("mashNetStat.html?prop=dc&net=" + netType);
+				document.getElementById("cloCent").src = appendUrl("mashNetStat.html?prop=cc&net=" + netType);
+				document.getElementById("betCent").src = appendUrl("mashNetStat.html?prop=bc&net=" + netType);
+				document.getElementById("eigCent").src = appendUrl("mashNetStat.html?prop=ec&net=" + netType);
+				document.getElementById("comCent").src = appendUrl("mashNetStat.html?prop=comc&net=" + netType);
+			})
+		    .selectAll("option")
+		    .data(dropDownNetType)
+		    .enter()
+		    .append("option")
+		    .attr("value", function(d) { return d;} )
+		    .text(function(d) {return d;});
+
+	</script>
 	</body>
 </html>
 

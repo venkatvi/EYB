@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<!--
+	Halcyonic 3.1 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Coquere</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script src = "http://d3js.org/d3.v3.min.js"></script>
+		<script src="js/query.js"></script>
+		<script src="js/config.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/skel-tabs.min.js"></script>
+		<script src = "http://d3js.org/d3.v3.min.js"></script>
+		<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
+		<script src="http://d3js.org/queue.v1.min.js"></script>
+		<script src="http://d3js.org/topojson.v1.min.js"></script>
+		<link rel="stylesheet" href="css/style.css" />	
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-tabs.css" />
+		</noscript>
+		<style>
+			.stroke {
+			  fill: none;
+			  stroke: #999;
+			  stroke-width: 1px;
+			}
+
+			.fill {
+			  fill: #fff;
+			}
+
+			.land {
+			  fill: #ddd;
+			}
+
+			.boundary {
+			  fill: none;
+			  stroke: #fff;
+			}
+		</style>
+		<script>
+			var cuisine = getQueryVariable("cuisine");
+			window.onload = function(){
+				document.getElementById("cuisineHeader").innerHTML="Ingredient Network Visualization for  " + getQueryVariable("cuisine").toUpperCase();
+				document.getElementById("netVis").src = appendUrl(cuisine, "cooc", 0, 0);
+			}
+			function appendUrl(cuisine, netType, degreeType, edgeWeightType) {
+				var url = "ingredientNets/networkVis.html?cuisine=" + cuisine +"&net=" + netType + "&deg="+degreeType +"&eWt=" + edgeWeightType ;
+				return url;
+			}	
+		</script>
+	</head>
+	<body class="subpage">
+			<!-- Header -->
+			<div id="header-wrapper">
+				<header id="header" class="container">
+					<div class="row">
+						<div class="12u">
+
+							<!-- Logo -->
+								<h1><a href="#" id="logo">Coquere</a></h1>
+							
+							<!-- Nav -->
+								<nav id="nav">
+									<a href="index.html">Homepage</a>
+									<a href="background.html">Background</a>
+									<a href="problemdesign.html">Problem Design</a>
+									<a href="results.html">Results and Analysis</a>
+									<a href="contributions.html">Our Contributions</a>
+								</nav>
+
+						</div>
+					</div>
+				</header>
+			</div>
+
+		<!-- Content -->
+			<div id="content-wrapper">
+				<div id="content" >
+					<div class="container">
+						<div class='row'>
+							<div class="12u">
+								<section>
+									<header>
+										<h2 id="cuisineHeader"></h2>
+									</header>
+									<div>
+										<div style="width: 600px; float: left;">
+											<label for="chooseNetType" >Choose Network Type:</label>
+											<select id="chooseNetType"></select>
+											<p></p>
+											<label for="chooseDegree" >Choose Degree:</label>
+											<select id="chooseDegree"></select>
+											<p></p>
+											<label for="chooseEdgeWeight">Choose Edge Weight:</label>
+											<select id="chooseEdgeWeight"></select>	
+										</div>
+										<div style="margin-left: 500px;" >
+											<ul class="check-list">
+												<li>Pick a network type. </li>
+												<li>Choose a degree lower bound </li>
+												<li>Choose an edge weight lower bound </li>
+											</ul>
+										</div>
+	
+									</div>	
+									<div>
+										<iframe id="netVis" scrolling="no" allowfullscreen width=1000 height=1000 frameborder="0"></iframe>
+									</div>
+									<script>
+										console.log(cuisine);
+								
+										var degree = new Array();
+										var degreeCodes = new Array();
+										var edgeWeights = new Array();
+										var edgeWeightsCodes = new Array();
+
+										var netType = ["Cooccurence in recipes", "Positive correlation of ingredients", "Negative correlation of ingredients", "Conditional probability", "Pairwise mutual information"];
+									 	var netTypeCodes = ["cooc", "ccf_pos", "ccf_neg", "cp", "pmi"];
+										var netChosenType = "cooc";
+										var degreeCode = "0";
+										var edgeWeightCode = "0";
+
+										loadJsonFile(cuisine, netChosenType);
+										var netDropDown = d3.select("#chooseNetType")
+										    		.on("change", function() {
+												nodeId = this.selectedIndex;
+												netChosenType = netTypeCodes[nodeId];
+												loadJsonFile(cuisine, netChosenType);
+												d3.select("#chooseDegree").select("select").selectAll("option").remove();
+												d3.select("#chooseEdgeWeight").select("select").selectAll("option").remove();
+												changeAllDegreeOptions(degree);
+												changeAllEdgeWeightOptions(edgeWeights);
+												console.log(degree);
+												console.log(edgeWeights);
+												console.log(degreeCodes);
+												console.log(edgeWeightsCodes);
+												degreeCode = 0;
+												edgeWeightCode = 0;
+												document.getElementById("netVis").src = appendUrl(cuisine, netChosenType, degreeCode, edgeWeightCode);
+											})
+										    .selectAll("option")
+										    .data(netType)
+										    .enter()
+										    .append("option")
+										    .attr("value", function(d) { return d;} )
+										    .text(function(d) {return d;});
+
+
+										var degreeDropDown = d3.select("#chooseDegree")
+											    .on("change", changeDegree)
+											    .selectAll("option")
+											    .data(degree)
+											    .enter()
+											    .append("option")
+											    .attr("value", function(d) { return d;} )
+											    .text(function(d) {return d;});
+
+										var edgeWeightsDropDown = d3.select("#chooseEdgeWeight")
+											    .on("change", changeEdgeWeight)
+											    .selectAll("option")
+											    .data(edgeWeights)
+											    .enter()
+											    .append("option")
+											    .attr("value", function(d) { return d;} )
+											    .text(function(d) {return d;});
+
+										function changeAllDegreeOptions(degreeOptions){
+											$("#chooseDegree").html("");
+											for(var i=0;i<degreeOptions.length;i++){
+												var newOption = document.createElement("option");
+												newOption.value = degreeOptions[i];
+												newOption.innerHTML = degreeOptions[i];
+												$("#chooseDegree").append(newOption);
+											}
+										}
+	
+										function changeAllEdgeWeightOptions(edgeWeightOptions){
+											$("#chooseEdgeWeight").html("");
+											for(var i=0;i<edgeWeightOptions.length;i++){
+												var newOption = document.createElement("option");
+												newOption.value = edgeWeightOptions[i];
+												newOption.innerHTML = edgeWeightOptions[i];
+												$("#chooseEdgeWeight").append(newOption);
+											}
+										}
+
+									    	function loadJsonFile(cuisine, netChosenType){
+											var maxDegree = 0 ;
+											var minDegree = 0;
+											var maxEdgeWeight = 0;
+											var minEdgeWeight = 0;
+
+											var jsonFile = "ingredientNets/data/" + cuisine + "_" + netChosenType + ".json";
+											console.log(jsonFile);
+											d3.json(jsonFile, function(error, json) {
+												json.nodes.forEach(function(d) {
+													if (d.id ){
+														if (d.degree > maxDegree){
+															maxDegree = d.degree;
+														}
+														if(d.degree < minDegree) {
+															minDegree = d.minDegree;
+														}
+													}
+												});
+												json.links.forEach(function (d) {
+													if (d.value > maxEdgeWeight){
+														maxEdgeWeight = d.value;
+													}
+													if (d.value < minEdgeWeight){
+														minEdgeWeight = d.value;
+													}
+												});
+												degree = [];
+												degreeCodes = [];
+												var delta = (maxDegree-minDegree)/10;
+												for(var i=minDegree; i<= maxDegree;i=i+delta){
+													degree.push(">= " + Math.floor(i));
+													degreeCodes.push(i);
+												}
+												edgeWeights = [];
+												edgeWeightsCodes = [];
+												delta = (maxEdgeWeight - minEdgeWeight)/10;
+												for(var i=minEdgeWeight; i<=maxEdgeWeight; i=i+delta){
+													edgeWeights.push(">=" + Math.floor(i));
+													edgeWeightsCodes.push(i);
+												}
+											});
+										}
+										function changeDegree() {
+											nodeId = this.selectedIndex;
+											degreeCode = degreeCodes[nodeId];
+											edgeWeightDropDown = document.getElementById("chooseEdgeWeight");
+											edgeWeightCode = edgeWeightsCodes[edgeWeightDropDown.selectedIndex];
+											netTypeDropDown = document.getElementById("chooseNetType");
+											netChosenType = netTypeCodes[netTypeDropDown.selectedIndex];
+											document.getElementById("netVis").src = appendUrl(cuisine, netChosenType, degreeCode, edgeWeightCode);
+										}
+										function changeEdgeWeight() {
+											nodeId = this.selectedIndex;
+											edgeWeightCode = edgeWeightsCodes[nodeId];
+											degreeDropDown = document.getElementById("chooseDegree");
+											degreeCode = degreeCodes[degreeDropDown.selectedIndex];
+											netTypeDropDown = document.getElementById("chooseNetType");
+											netChosenType = netTypeCodes[netTypeDropDown.selectedIndex];
+											document.getElementById("netVis").src = appendUrl(cuisine, netChosenType, degreeCode, edgeWeightCode);
+										}
+
+									</script>
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</body>
+</html>
+
