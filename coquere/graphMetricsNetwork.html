@@ -184,6 +184,7 @@
 											    .attr("value", function(d) { return d;} )
 											    .text(function(d) {return d;});
 
+
 										function changeAllNodeMetricsOptions(nodeMetricsOptions){
 											$("#chooseNodeMetrics").html("");
 											for(var i=0;i<nodeMetricsOptions.length;i++){
@@ -281,25 +282,21 @@
 										function changeNodeMetrics() {
 											nodeId = this.selectedIndex;
 											nodeMetricCode = nodeMetricsCodes[nodeId];
-											console.log(nodeMetricsCodes);
-											console.log(nodeMetricCode);
-											console.log(nodeId);
-
-											weightDropDown = document.getElementById("chooseWeight");
-											weightCode = weightsCodes[nodeId][weightDropDown.selectedIndex];
 											
-											netTypeDropDown = document.getElementById("chooseNetType");
-											netChosenType = netTypeCodes[netTypeDropDown.selectedIndex];
+											d3.select("#choosWeight").select("select").selectAll("option").remove();
+											changeAllWeightOptions(weights[nodeId]);
+												
+											weightCode = 0;
 											document.getElementById("netVis").src = appendUrl(cuisine, netChosenType, nodeMetricCode, weightCode);
+											
 										}
 										function changeWeight() {
 											nodeMetricDropDown = document.getElementById("chooseNodeMetrics");
 											nodeMetricCode = nodeMetricsCodes[nodeMetricsDropDown.selectedIndex];
 
+											nodeMetricId = nodeMetricsCodes.indexOf(nodeMetricCode);
 											nodeId = this.selectedIndex;
-											console.log(weightsCodes[nodeMetricsDropDown.selectedIndex]);
-											console.log(nodeMetricsDropDown.selectedIndex);
-											weightCode = weightsCodes[0][nodeId];
+											weightCode = weightsCodes[nodeMetricId][nodeId];
 											
 											netTypeDropDown = document.getElementById("chooseNetType");
 											netChosenType = netTypeCodes[netTypeDropDown.selectedIndex];
