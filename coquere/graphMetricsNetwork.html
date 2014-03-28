@@ -238,8 +238,8 @@ var nodeMetricsCodes = ["bet", "clo", "acc", "and", "comm", "eig"];
 													function adjustWeights(node, minW, maxW){
 														console.log(node);
 														adjust(node.closeness, minW, maxW, 0);
-														adjust(node.betweeness, minW, maxW, 1);
-														adjust(node.eigenvector, minW, maxW, 2);
+														adjust(node.betCentrality, minW, maxW, 1);
+														adjust(node.eigenvectorCentrality, minW, maxW, 2);
 														adjust(node.communicability, minW, maxW, 3);
 														adjust(node.avgNeigDegree, minW, maxW, 4);
 														adjust(node.clusCoeff, minW, maxW, 5);
