@@ -236,6 +236,7 @@ var nodeMetricsCodes = ["bet", "clo", "acc", "and", "comm", "eig"];
 														}
 													});
 													function adjustWeights(node, minW, maxW){
+														console.log(node);
 														adjust(node.closeness, minW, maxW, 0);
 														adjust(node.betweeness, minW, maxW, 1);
 														adjust(node.eigenvector, minW, maxW, 2);
@@ -245,8 +246,6 @@ var nodeMetricsCodes = ["bet", "clo", "acc", "and", "comm", "eig"];
 													}
 													function adjust(val, minW, maxW, index){
 														if (val == undefined || val == null || val == NaN ){
-															console.log(val);
-															console.log(index);
 															return;
 														}
 														if (isFinite(val)){
