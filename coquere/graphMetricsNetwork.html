@@ -133,11 +133,11 @@
 										var netType = ["Cooccurence in recipes", "Positive correlation of ingredients", "Negative correlation of ingredients", "Conditional probability", "Pairwise mutual information"];
 									 	var netTypeCodes = ["cooc", "ccf_pos", "ccf_neg", "cp", "pmi"];
 
-var nodeMetrics = ["Betweeness", "Closeness", "Average Clustering Coefficient", "Average Neighbor Degree", "Communicability", "Eigen vector centrality"];
+										var nodeMetrics = [ "Closeness", "Betweeness","Eigen vector centrality", "Communicability","Average Neighbor Degree",  "Average Clustering Coefficient"];
 
-var nodeMetricsCodes = ["bet", "clo", "acc", "and", "comm", "eig"];
+										var nodeMetricsCodes = ["clo", "bet", "eig", "comm", "and", "acc"];
 										var netChosenType = "cooc";
-										var nodeMetricCode = "bet";
+										var nodeMetricCode = "clo";
 										var weightCode = "0";
 
 										loadJsonFile(cuisine, netChosenType);
@@ -150,7 +150,7 @@ var nodeMetricsCodes = ["bet", "clo", "acc", "and", "comm", "eig"];
 												d3.select("#chooseNodeMetric").select("select").selectAll("option").remove();
 												d3.select("#choosWeight").select("select").selectAll("option").remove();
 												changeAllNodeMetricsOptions(nodeMetrics);
-												changeAllWeightOptions(weights);
+												changeAllWeightOptions(weights[0]);
 												console.log(nodeMetrics);
 												console.log(weights);
 												console.log(nodeMetricsCodes);
@@ -236,7 +236,6 @@ var nodeMetricsCodes = ["bet", "clo", "acc", "and", "comm", "eig"];
 														}
 													});
 													function adjustWeights(node, minW, maxW){
-														console.log(node);
 														adjust(node.closeness, minW, maxW, 0);
 														adjust(node.betCentrality, minW, maxW, 1);
 														adjust(node.eigenvectorCentrality, minW, maxW, 2);
@@ -283,20 +282,24 @@ var nodeMetricsCodes = ["bet", "clo", "acc", "and", "comm", "eig"];
 										function changeNodeMetrics() {
 											nodeId = this.selectedIndex;
 											nodeMetricCode = nodeMetricsCodes[nodeId];
+											
 											weightDropDown = document.getElementById("chooseWeight");
-											weightCode = weightsCodes[weightDropDown.selectedIndex];
+											weightCode = weightsCodes[nodeId][weightDropDown.selectedIndex];
+											
 											netTypeDropDown = document.getElementById("chooseNetType");
 											netChosenType = netTypeCodes[netTypeDropDown.selectedIndex];
-											document.getElementById("netVis").src = appendUrl(cuisine, netChosenType, nodeMetricCode, edgeWeightCode);
+											document.getElementById("netVis").src = appendUrl(cuisine, netChosenType, nodeMetricCode, weightCode);
 										}
 										function changeWeight() {
-											nodeId = this.selectedIndex;
-											weightCode = weightsCodes[nodeId];
 											nodeMetricDropDown = document.getElementById("chooseNodeMetrics");
 											nodeMetricCode = nodeMetricsCodes[nodeMetricsDropDown.selectedIndex];
+
+											nodeId = this.selectedIndex;
+											weightCode = weightsCodes[nodeMetricsDropDown.selectedIndex][nodeId];
+											
 											netTypeDropDown = document.getElementById("chooseNetType");
 											netChosenType = netTypeCodes[netTypeDropDown.selectedIndex];
-											document.getElementById("netVis").src = appendUrl(cuisine, netChosenType, nodeMetricCode, edgeWeightCode);
+											document.getElementById("netVis").src = appendUrl(cuisine, netChosenType, nodeMetricCode, weightCode);
 										}
 
 									</script>
