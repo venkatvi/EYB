@@ -245,6 +245,8 @@ var nodeMetricsCodes = ["bet", "clo", "acc", "and", "comm", "eig"];
 													}
 													function adjust(val, minW, maxW, index){
 														if (val == undefined || val == null || val == NaN ){
+															console.log(val);
+															console.log(index);
 															return;
 														}
 														if (isFinite(val)){
@@ -261,20 +263,18 @@ var nodeMetricsCodes = ["bet", "clo", "acc", "and", "comm", "eig"];
 													
 													weights = [];
 													weightsCodes = [];
-													console.log("I m here");
+													
 													for(var i =0; i< 6; i++){
 														delta = (maxWeights[i] - minWeights[i])/10;
-														console.log(delta);
-														console.log(maxWeights[i]);
-														console.log(minWeights[i]);
 														var tempWeights = [];
 														var tempWeightCodes = [];
 														for(var j=minWeights[i]; j<=maxWeights[i]; j=j+delta){
-															tempWeights.push(">=" + Math.floor(j));
+															tempWeights.push(">=" + j);
 															tempWeightCodes.push(j);
 														}
 														console.log(tempWeights);
 														console.log(tempWeightCodes);
+														
 														weights.push(tempWeights);
 														weightsCodes.push(tempWeightCodes);
 													}
