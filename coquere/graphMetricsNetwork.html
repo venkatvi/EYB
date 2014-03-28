@@ -1,0 +1,308 @@
+<!DOCTYPE HTML>
+<!--
+	Halcyonic 3.1 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Coquere</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script src = "http://d3js.org/d3.v3.min.js"></script>
+		<script src="js/query.js"></script>
+		<script src="js/config.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/skel-tabs.min.js"></script>
+		<script src = "http://d3js.org/d3.v3.min.js"></script>
+		<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
+		<script src="http://d3js.org/queue.v1.min.js"></script>
+		<script src="http://d3js.org/topojson.v1.min.js"></script>
+		<link rel="stylesheet" href="css/style.css" />	
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-tabs.css" />
+		</noscript>
+		<style>
+			.stroke {
+			  fill: none;
+			  stroke: #999;
+			  stroke-width: 1px;
+			}
+
+			.fill {
+			  fill: #fff;
+			}
+
+			.land {
+			  fill: #ddd;
+			}
+
+			.boundary {
+			  fill: none;
+			  stroke: #fff;
+			}
+		</style>
+		<script>
+			var cuisine = getQueryVariable("cuisine");
+			window.onload = function(){
+				document.getElementById("cuisineHeader").innerHTML="Ingredient Network Visualization for  " + getQueryVariable("cuisine").toUpperCase();
+				document.getElementById("netVis").src = appendUrl(cuisine, "cooc", 0, 0);
+			}
+			function appendUrl(cuisine, netType, nodeMetric, weight) {
+				var url = "ingredientNets/graphMetricsNetworkVis.html?cuisine=" + cuisine +"&net=" + netType + "&nodemetric="+ nodeMetric +"&wt=" + weight ;
+
+				return url;
+			}	
+		</script>
+	</head>
+	<body class="subpage">
+			<!-- Header -->
+			<div id="header-wrapper">
+				<header id="header" class="container">
+					<div class="row">
+						<div class="12u">
+
+							<!-- Logo -->
+								<h1><a href="#" id="logo">Coquere</a></h1>
+							
+							<!-- Nav -->
+								<nav id="nav">
+									<a href="index.html">Homepage</a>
+									<a href="background.html">Background</a>
+									<a href="problemdesign.html">Problem Design</a>
+									<a href="results.html">Results and Analysis</a>
+									<a href="contributions.html">Our Contributions</a>
+								</nav>
+
+						</div>
+					</div>
+				</header>
+			</div>
+
+		<!-- Content -->
+			<div id="content-wrapper">
+				<div id="content" >
+					<div class="container">
+						<div class='row'>
+							<div class="12u">
+								<section>
+									<header>
+										<h2 id="cuisineHeader"></h2>
+									</header>
+									<div>
+										<div style="width: 600px; float: left;">
+											<label for="chooseNetType" >Choose Network Type:</label>
+											<select id="chooseNetType"></select>
+											<p></p>
+											<label for="chooseNodeMetric">Choose Node Metric:</label>
+											<select id="chooseNodeMetric"></select>
+											<p></p>
+											<label for="chooseWeight">Choose Weight:</label>
+											<select id="chooseWeight"></select>	
+										</div>
+										<div style="margin-left: 500px;" >
+											<ul class="check-list">
+												<li>Pick a network type. </li>
+												<li>Choose a node metric. </li>
+												<li>Choose a weight lower bound </li>
+											</ul>
+										</div>
+	
+									</div>	
+									<div>
+										<iframe id="netVis" scrolling="no" allowfullscreen width=1000 height=1000 frameborder="0"></iframe>
+									</div>
+									<script>
+										console.log(cuisine);
+								
+										var nodeMetrics = new Array();
+										var nodeMetricsCodes = new Array();
+										var weights = new Array();
+										var weightsCodes = new Array();
+
+										var netType = ["Cooccurence in recipes", "Positive correlation of ingredients", "Negative correlation of ingredients", "Conditional probability", "Pairwise mutual information"];
+									 	var netTypeCodes = ["cooc", "ccf_pos", "ccf_neg", "cp", "pmi"];
+
+var nodeMetrics = ["Betweeness", "Closeness", "Average Clustering Coefficient", "Average Neighbor Degree", "Communicability", "Eigen vector centrality"];
+
+var nodeMetricsCodes = ["bet", "clo", "acc", "and", "comm", "eig"];
+										var netChosenType = "cooc";
+										var nodeMetricCode = "bet";
+										var weightCode = "0";
+
+										loadJsonFile(cuisine, netChosenType);
+										var netDropDown = d3.select("#chooseNetType")
+										    		.on("change", function() {
+												nodeId = this.selectedIndex;
+												netChosenType = netTypeCodes[nodeId];
+												loadJsonFile(cuisine, netChosenType);
+												d3.select("#chooseNodeMetric").select("select").selectAll("option").remove();
+												d3.select("#choosWeight").select("select").selectAll("option").remove();
+												changeAllNodeMetricsOptions(nodeMetrics);
+												changeAllWeightOptions(weights);
+												console.log(nodeMetrics);
+												console.log(weights);
+												console.log(nodeMetricsCodes);
+												console.log(weightsCodes);
+												nodeMetricCode = 0;
+												weightCode = 0;
+												document.getElementById("netVis").src = appendUrl(cuisine, netChosenType, nodeMetricCode, weightCode);
+											})
+										    .selectAll("option")
+										    .data(netType)
+										    .enter()
+										    .append("option")
+										    .attr("value", function(d) { return d;} )
+										    .text(function(d) {return d;});
+
+
+										var nodeMetricsDropDown = d3.select("#chooseNodeMetrics")
+											    .on("change", changeNodeMetrics)
+											    .selectAll("option")
+											    .data(nodeMetrics)
+											    .enter()
+											    .append("option")
+											    .attr("value", function(d) { return d;} )
+											    .text(function(d) {return d;});
+
+										var weightsDropDown = d3.select("#chooseWeight")
+											    .on("change", changeWeight)
+											    .selectAll("option")
+											    .data(weights)
+											    .enter()
+											    .append("option")
+											    .attr("value", function(d) { return d;} )
+											    .text(function(d) {return d;});
+
+										function changeAllNodeMetricsOptions(nodeMetricsOptions){
+											$("#chooseNodeMetrics").html("");
+											for(var i=0;i<nodeMetricsOptions.length;i++){
+												var newOption = document.createElement("option");
+												newOption.value = nodeMetricsOptions[i];
+												newOption.innerHTML = nodeMetricsOptions[i];
+												$("#chooseNodeMetrics").append(newOption);
+											}
+										}
+	
+										function changeAllWeightOptions(weightOptions){
+											$("#chooseWeight").html("");
+											for(var i=0;i<weightOptions.length;i++){
+												var newOption = document.createElement("option");
+												newOption.value = weightOptions[i];
+												newOption.innerHTML = weightOptions[i];
+												$("#chooseWeight").append(newOption);
+											}
+										}
+
+									    	function loadJsonFile(cuisine, netChosenType){
+	var minWeights = new Array();
+	minWeights[0] = 0; minWeights[1] = 0; minWeights[2] = 0; minWeights[3] = 0; minWeights[4] = 0; minWeights[5] = 0;
+	var maxWeights = new Array();
+	maxWeights[0] = 0; maxWeights[1] = 0; maxWeights[2] = 0; maxWeights[3] = 0; maxWeights[4] = 0; maxWeights[5] = 0;
+											var jsonFile = "ingredientNets/data/" + cuisine + "_" + netChosenType + ".json";
+											console.log(jsonFile);
+
+	var nodeMetricsFile = "ingredientNets/data/" + cuisine + "_" + netChosenType  + "_nodeMetrics.csv";
+       
+
+	d3.csv(nodeMetricsFile,function(d) {
+		getEdgeWeights(d);
+	});
+
+	function getEdgeWeights(rows){
+		var nodeMetricsData = new Array();
+		for(var i=0; i<rows.length;i++){
+			nodeMetricsData.push(rows[i].node);
+		}	
+		d3.json(jsonFile, function(error, json) {
+												json.nodes.forEach(function(d) {
+													if (d.id ){
+				var nodeIndex = nodeMetricsData.indexOf(d.id);
+				if (nodeIndex >= 0){
+					var node = rows[nodeIndex];
+					adjustWeights(node, minWeights, maxWeights);
+				}
+			}
+												});
+		function adjustWeights(node, minW, maxW){
+			adjust(node.closeness, minW, maxW, 0);
+			adjust(node.betweeness, minW, maxW, 1);
+			adjust(node.eigenvector, minW, maxW, 2);
+			adjust(node.communicability, minW, maxW, 3);
+			adjust(node.avgNeigDegree, minW, maxW, 4);
+			adjust(node.clusCoeff, minW, maxW, 5);
+		}
+		function adjust(val, minW, maxW, index){
+			if (val == undefined || val == null || val == NaN ){
+				return;
+			}
+			if (isFinite(val)){
+				if (val < minW[index]){
+					minW[index] = val;
+				}
+				if (val > maxW[index]){
+					maxW[index] = val;
+				}
+			}
+		}
+		console.log(maxWeights);
+		console.log(minWeights);
+		weights = [];
+												weightsCodes = [];
+		
+		for(var i =0; i< 6; i++){
+			delta = (maxWeights[i] - minWeights[i])/10;
+			var tempWeights = [];
+			var tempWeightCodes = [];
+			for(var j=minWeights[i]; j<=maxWeights[i]; j=j+delta){
+				tempWeights.push(">=" + Math.floor(j));
+				tempWeightCodes.push(j);
+			}
+			weights.push(tempWeights);
+			weightsCodes.push(tempWeightCodes);
+		}
+		console.log(weights);
+		console.log(weightsCodes);
+	});
+				
+	}
+}
+										function changeNodeMetrics() {
+											nodeId = this.selectedIndex;
+											nodeMetricCode = nodeMetricsCodes[nodeId];
+											weightDropDown = document.getElementById("chooseWeight");
+											weightCode = weightsCodes[weightDropDown.selectedIndex];
+											netTypeDropDown = document.getElementById("chooseNetType");
+											netChosenType = netTypeCodes[netTypeDropDown.selectedIndex];
+											document.getElementById("netVis").src = appendUrl(cuisine, netChosenType, nodeMetricCode, edgeWeightCode);
+										}
+										function changeWeight() {
+											nodeId = this.selectedIndex;
+											weightCode = weightsCodes[nodeId];
+											nodeMetricDropDown = document.getElementById("chooseNodeMetrics");
+											nodeMetricCode = nodeMetricsCodes[nodeMetricsDropDown.selectedIndex];
+											netTypeDropDown = document.getElementById("chooseNetType");
+											netChosenType = netTypeCodes[netTypeDropDown.selectedIndex];
+											document.getElementById("netVis").src = appendUrl(cuisine, netChosenType, nodeMetricCode, edgeWeightCode);
+										}
+
+									</script>
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</body>
+</html>
+

@@ -37,6 +37,7 @@
 				document.getElementById("cuisineStats").innerHTML=getQueryVariable("recipes") + " recipes; " + getQueryVariable("ingreds") + " ingredients; " + getQueryVariable("cookbooks") + " cookbooks.";
 			
 				document.getElementById("ingredNet").href = getUrl("network.html");
+				document.getElementById("ingredNodeNet").href = getUrl("graphMetricsNetwork.html");
 			}
 			function getUrl(rootUrl) {
 				var cuisine = getQueryVariable("cuisine");
@@ -81,7 +82,8 @@
 									<header>
 										<h2 id="cuisineHeader"></h2>
 										<h3 id="cuisineStats"></h3>
-										<a href="#" id="ingredNet">Ingredient Network</a>
+										<a href="#" id="ingredNet">Ingredient Networks for different network types</a>
+										<a href="#" id="ingredNodeNet">Ingredient Networks for graph metrics</a>
 									</header>
 									<iframe id="ingredNetResults" scrolling="no" allowfullscreen width=1100 height=1200 frameborder="0"></iframe>
 								</section>
