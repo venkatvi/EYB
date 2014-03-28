@@ -281,7 +281,10 @@
 										function changeNodeMetrics() {
 											nodeId = this.selectedIndex;
 											nodeMetricCode = nodeMetricsCodes[nodeId];
-											
+											console.log(nodeMetricsCodes);
+											console.log(nodeMetricCode);
+											console.log(nodeId);
+
 											weightDropDown = document.getElementById("chooseWeight");
 											weightCode = weightsCodes[nodeId][weightDropDown.selectedIndex];
 											
