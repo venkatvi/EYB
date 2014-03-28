@@ -178,7 +178,7 @@
 										var weightsDropDown = d3.select("#chooseWeight")
 											    .on("change", changeWeight)
 											    .selectAll("option")
-											    .data(weights)
+											    .data(weights[0])
 											    .enter()
 											    .append("option")
 											    .attr("value", function(d) { return d;} )
@@ -298,6 +298,7 @@
 
 											nodeId = this.selectedIndex;
 											console.log(weightsCodes[nodeMetricsDropDown.selectedIndex]);
+											console.log(nodeMetricsDropDown.selectedIndex);
 											weightCode = weightsCodes[0][nodeId];
 											
 											netTypeDropDown = document.getElementById("chooseNetType");
