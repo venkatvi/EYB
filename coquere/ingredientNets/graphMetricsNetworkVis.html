@@ -167,10 +167,7 @@
 					var i = 0;
 					nodes.forEach(function(d) {
 						var index = nodeMetricsData.indexOf(d.id);
-						metric  = getMetric(nodeMetricsData[index]);
-						console.log(d);
-						console.log(d.index);
-						console.log(nodeMetricsData[index]);
+						metric  = getMetric(rows[index]);
 						console.log(metric);
 						if (typeof(d) !== 'undefined' && typeof(d.id) !== 'undefined' && metric >= wtThreshold){
 							filteredNodeIds.push(d.index);
