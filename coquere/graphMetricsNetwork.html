@@ -294,7 +294,8 @@
 											nodeMetricCode = nodeMetricsCodes[nodeMetricsDropDown.selectedIndex];
 
 											nodeId = this.selectedIndex;
-											weightCode = weightsCodes[nodeMetricsDropDown.selectedIndex][nodeId];
+											console.log(weightsCodes[nodeMetricsDropDown.selectedIndex]);
+											weightCode = weightsCodes[0][nodeId];
 											
 											netTypeDropDown = document.getElementById("chooseNetType");
 											netChosenType = netTypeCodes[netTypeDropDown.selectedIndex];
