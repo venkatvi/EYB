@@ -138,34 +138,62 @@
 				.friction(1)
 				.size([width, height]);
 			d3.json(jsonFile, function(error, json) {
-				edgeThreshold = parseFloat(eWtThreshold);
-				degreeThreshold = parseFloat(degThreshold);
+				edgeThreshold = parseFloat(wtThreshold);
 
 				nodes = json.nodes;
 				links = json.links;
 
 				var filteredNodes = new Array();
 				var filteredLinks = new Array();
-				if (degThreshold > 0 && eWtThreshold == 0) {
+				if (wtThreshold > 0) {
 					filterOnNodes(nodes, links);
 				}
-				if (degThreshold == 0 && eWtThreshold > 0) {
-					filterOnLinks(nodes, links);
+				function getMetric(d){
+					if(nodeMetric == 'clo'){
+						return d.closeness;
+					}
+					if(nodeMetric == 'bet'){
+						return d.betCentrality;
+					}
+					if(nodeMetric == 'eig') {
+						return d.eigenvectorCentrality;
+					}
+					if(nodeMetric == 'and') {
+						return d.avgNeigDegree;
+					}
+					if(nodeMetric == 'acc') {
+						return d.clusCoeff;
+					}
+					if(nodeMetric == 'comm'){
+						return d.communicability;
+					}
 				}
-				
+
 				function filterOnNodes(nodes, links){
-					var filteredNodeIds = new Array();
-					filteredNodes = new Array();
-					filteredLinks = new Array();
+					var nodeMetricsFile = "ingredientNets/data/" + cuisine + "_" + netType  + "_nodeMetrics.csv";
+					d3.csv(nodeMetricsFile,function(d) {
+						getEdgeWeights(d,nodes);
+					});						       
+				}
+				var filteredNodeIds = new Array();
+				var filteredNodes = new Array();
+				var filteredLinks = new Array();
+				
+				function getEdgeWeights(rows,nodes){
+					var nodeMetricsData = new Array();
+					for(var i=0; i<rows.length;i++){
+						nodeMetricsData.push(rows[i].node);
+					}		
 					var i = 0;
 					nodes.forEach(function(d) {
-						if (typeof(d) !== 'undefined' && typeof(d.id) !== 'undefined' && d.degree >= degreeThreshold){
+						var index = nodeMetricsData.indexOf(d.id);
+						metric  = getMetric(nodeMetricsData[index]);
+						if (typeof(d) !== 'undefined' && typeof(d.id) !== 'undefined' && metric >= wtThreshold){
 							filteredNodeIds.push(d.index);
 							d.index = i;
 							filteredNodes.push(d);
 							i = i+1;
 						}
-						
 					});
 					links.forEach(function(d) {
 						if (typeof(d) !== 'undefined' && typeof(d.source) === 'number' && typeof(d.target) === 'number'){
@@ -178,40 +206,6 @@
 						}
 					});
 				}
-				function filterOnLinks(nodes, links){
-					var filteredNodeIds = new Array();
-					filteredNodes = new Array();
-					filteredLinks = new Array();
-					var i = 0;
-					links.forEach(function(d) {
-						if (typeof(d) !== 'undefined' && typeof(d.source) === 'number' && typeof(d.target) === 'number'){
-							if(d.value >= edgeThreshold){
-								sourceNode = nodes[d.source];
-								targetNode = nodes[d.target];
-								if (filteredNodeIds.indexOf(d.source) == -1) {
-									filteredNodeIds.push(d.source);
-									filteredNode = nodes[d.source];
-									d.source = filteredNodeIds.length -1;
-									filteredNode.index = d.source;
-									filteredNodes.push(filteredNode);
-								}else{
-									d.source = filteredNodeIds.indexOf(d.source);
-								}
-								if (filteredNodeIds.indexOf(d.target) == -1){
-									filteredNodeIds.push(d.target);
-									filteredNode = nodes[d.target];
-									d.target = filteredNodeIds.length -1;;
-									filteredNode.index = d.target;
-									filteredNodes.push(filteredNode);
-								}else{
-									d.target = filteredNodeIds.indexOf(d.target);
-								}
-								filteredLinks.push(d);
-							}
-						}
-					});
-				}
-			
 				console.log(filteredNodes);
 				console.log(filteredLinks);
 
