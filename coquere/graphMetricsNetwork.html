@@ -150,11 +150,8 @@
 												d3.select("#chooseNodeMetric").select("select").selectAll("option").remove();
 												d3.select("#choosWeight").select("select").selectAll("option").remove();
 												changeAllNodeMetricsOptions(nodeMetrics);
+												console.log(weights[0]);
 												changeAllWeightOptions(weights[0]);
-												console.log(nodeMetrics);
-												console.log(weights);
-												console.log(nodeMetricsCodes);
-												console.log(weightsCodes);
 												nodeMetricCode = 0;
 												weightCode = 0;
 												document.getElementById("netVis").src = appendUrl(cuisine, netChosenType, nodeMetricCode, weightCode);
