@@ -137,7 +137,8 @@
 				.gravity(0.1)
 				.friction(1)
 				.size([width, height]);
-			d3.json(jsonFile, function(error, json) {
+			d3.json(jsonFile, function(error, json,nodeMetric) {
+				console.log(nodeMetric);
 				edgeThreshold = parseFloat(wtThreshold);
 
 				nodes = json.nodes;
@@ -148,6 +149,7 @@
 				var filteredNodeIds = new Array();
 				
 				if (wtThreshold > 0) {
+					console.log(nodeMetric);
 					filterOnNodes(nodes, links);
 				}
 				
@@ -160,6 +162,7 @@
 				}
 				
 				function getEdgeWeights(rows,nodes){
+					console.log(nodeMetric);
 					var nodeMetricsData = new Array();
 					for(var i=0; i<rows.length;i++){
 						nodeMetricsData.push(rows[i].node);
@@ -188,8 +191,6 @@
 					});
 				}
 				function getMetric(d){
-					console.log(d);
-					console.log(nodeMetric);
 					if(nodeMetric == 'clo'){
 						return d.closeness;
 					}
