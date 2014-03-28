@@ -288,7 +288,7 @@
 												
 											weightCode = 0;
 											document.getElementById("netVis").src = appendUrl(cuisine, netChosenType, nodeMetricCode, weightCode);
-											
+
 										}
 										function changeWeight() {
 											nodeMetricDropDown = document.getElementById("chooseNodeMetrics");
@@ -296,6 +296,12 @@
 
 											nodeMetricId = nodeMetricsCodes.indexOf(nodeMetricCode);
 											nodeId = this.selectedIndex;
+
+											console.log(noteMetricCodes);
+											console.log(nodeMetricId);
+											console.log(nodeId);
+											console.log(nodeMetricCode);
+											
 											weightCode = weightsCodes[nodeMetricId][nodeId];
 											
 											netTypeDropDown = document.getElementById("chooseNetType");
