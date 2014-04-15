@@ -147,7 +147,7 @@
 												nodeId = this.selectedIndex;
 												netChosenType = netTypeCodes[nodeId];
 												loadJsonFile(cuisine, netChosenType);
-												d3.select("#chooseNodeMetric").select("select").selectAll("option").remove();
+												d3.select("#chooseNodeMetrics").select("select").selectAll("option").remove();
 												d3.select("#choosWeight").select("select").selectAll("option").remove();
 												changeAllNodeMetricsOptions(nodeMetrics);
 
@@ -291,21 +291,18 @@
 
 										}
 										function changeWeight() {
-											nodeMetricDropDown = document.getElementById("chooseNodeMetrics");
-											nodeMetricCode = nodeMetricsCodes[nodeMetricsDropDown.selectedIndex];
-
-											nodeMetricId = nodeMetricsCodes.indexOf(nodeMetricCode);
 											nodeId = this.selectedIndex;
 
-											console.log(nodeMetricsCodes);
-											console.log(nodeMetricId);
-											console.log(nodeId);
-											console.log(nodeMetricCode);
+											nodeMetricDropDown = document.getElementById("chooseNodeMetrics");
+											var index = nodeMetricDropDown.selectedIndex;
 
-											weightCode = weightsCodes[nodeMetricId][nodeId];
+											var nodeMetricCode = nodeMetricsCodes[index];
+											weightCode = weightsCodes[index][nodeId];
 											
 											netTypeDropDown = document.getElementById("chooseNetType");
 											netChosenType = netTypeCodes[netTypeDropDown.selectedIndex];
+											console.log(netChosenType);
+
 											document.getElementById("netVis").src = appendUrl(cuisine, netChosenType, nodeMetricCode, weightCode);
 										}
 
