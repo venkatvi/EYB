@@ -137,11 +137,11 @@ def calculateStats(json_file, stats_file):
 	print "Neighbour Connectivity..." 
 	andeg = average_neighbor_degree(G)
 	
-	print "Avg degree connectivity..." 
-	anco = average_degree_connectivity(G)
+	#print "Avg degree connectivity..." 
+	#anco = average_degree_connectivity(G)
 	
-	print "Avgf degree connectivity: k nearest neighbours" 
-	knn = k_nearest_neighbors(G)
+	#print "Avgf degree connectivity: k nearest neighbours" 
+	#knn = k_nearest_neighbors(G)
 
 	print "Clustering coefficient..." 
 	cc =  clustering(G)
@@ -154,17 +154,19 @@ def calculateStats(json_file, stats_file):
 	f = open(options.rootPath + "/coquere/ingredientNets/data/" + options.cuisine + "_" + stats_file + "_nodeMetrics.csv" , "wb");
 	f.write("node,degree,degreeCentrality,closeness,betCentrality,eigenvectorCentrality,communicability,avgNeigDegree,clusCoeff\n");
 	for key in deg.keys():
-		if key != "":
+		if key != "" and deg[key] > 0:
 			b=0 
 			e=0
-			if bet[key] > 0:
-				b = np.log10(bet[key])
-			if key in eig.keys() and eig[key] > 0:
-				e = np.log10(eig[key])
-				eCentralities.append(eig[key])
-			else:
-				e = 0;
-				eCentralities.append(0)
+			b = np.abs(bet[key]);
+			e = eig[key];
+			#if bet[key] > 0:
+			#	b = np.log10(bet[key])
+			#if key in eig.keys() and eig[key] > 0:
+			#	e = np.log10(eig[key])
+			#	eCentralities.append(eig[key])
+			#else:
+			#	e = 0;
+			#	eCentralities.append(0)
 
 			f.write(key + "," + str(deg[key])
 				+ "," + str(degC[key]) 
@@ -177,7 +179,14 @@ def calculateStats(json_file, stats_file):
 			dCentralities.append(degC[key])
 			bCentralities.append(bet[key])
 			cCentralities.append(clo[key])
+		else:
+			#remove key from G
+			G.remove_node(key);
 	f.close()
+
+	json.dump(dict(nodes=[[n, G.node[n]] for n in G.nodes()],
+	edges=[[u,v,G.edge[u][v]] for u,v in G.edges()]),
+	open(json_file, 'w'), indent=2)
 
 	print "Computing Graph level metrics..."
 	print "transitivity..."
@@ -198,6 +207,7 @@ def calculateStats(json_file, stats_file):
 	dgraph = computeDGraphCentrality(dCentralities)
 	bgraph = computeBGraphCentrality(bCentralities)
 	cgraph = computeCGraphCentrality(cCentralities)
+
 	print "assortativity..." 
 	asco = degree_assortativity_coefficient(G)
 	
@@ -234,18 +244,18 @@ if __name__ == '__main__':
         print "db name: " + options.db
 	print "cuisine: " + options.cuisine
 	
-	json_file =   options.rootPath + "/network/data/" + options.cuisine + ".json"
-	print json_file
-
+	json_file =   options.rootPath + "/network/data/" + options.cuisine + "_cooc.json"
 	calculateStats(json_file, "cooc");
 	
-	json_poscor_file =   options.rootPath + "/network/data/" + options.cuisine + "_posNet.json"
-	print json_poscor_file
+	json_poscor_file =   options.rootPath + "/network/data/" + options.cuisine + "_ccf_pos.json"
+	calculateStats(json_poscor_file, "ccf_pos");
 
-	calculateStats(json_poscor_file, "posCorr");
+	json_negcor_file =   options.rootPath + "/network/data/" + options.cuisine + "_ccf_neg.json"
+	calculateStats(json_poscor_file, "ccf_neg");
 
-	json_negcor_file =   options.rootPath + "/network/data/" + options.cuisine + "_negNet.json"
-	print json_negcor_file
+	json_negcor_file =   options.rootPath + "/network/data/" + options.cuisine + "_pmi.json"
+	calculateStats(json_negcor_file, "pmi");
 
+	json_negcor_file =   options.rootPath + "/network/data/" + options.cuisine + "_cp.json"
+	calculateStats(json_negcor_file, "cp");
 
-	calculateStats(json_negcor_file, "negCorr");

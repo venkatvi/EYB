@@ -111,7 +111,10 @@ if __name__ == '__main__':
 			pRecipesAB = A[i][j]/recipeCount;
 			pIngredI = lfreqCount[i]/recipeCount;
 			condProb[i][j] = pRecipesAB/pIngredI;
+	fileName = options.rootPath + "/network/data/" + options.cuisine + "_CP.csv"
+	numpy.savetxt(fileName,  condProb, delimiter=",");
 
+	'''
 	directedEdges = createDirectedEdgeList(ingredLeafs, condProb);
 	D = visualizeNetwork(ingredLeafs, directedEdges, 1)
 	
@@ -126,5 +129,5 @@ if __name__ == '__main__':
 	json.dump(dict(nodes=[[n, D.node[n]] for n in D.nodes()],
 		edges=[[u,v,D.edge[u][v]] for u,v in D.edges()]),
 	open(options.rootPath + "/network/data/" + options.cuisine + "_CP.json", 'w'), indent=2)
-
+	'''
 

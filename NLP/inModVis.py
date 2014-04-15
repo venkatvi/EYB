@@ -690,7 +690,7 @@ if __name__ == '__main__':
 	G = visualizeNetwork(ingredLeafs, leafEdges, filename)
 	
 	# write co-occurrence of this network  as cuisine_cooc.json
-	A = adjacency_matrix(G, ingredLeafs)
+	A = adjacency_matrix(G, ingredLeafs, weight='value')
 	A = A.tolist()
 	dim = rLMat.shape
 	recipeCount = dim[0]
@@ -719,8 +719,9 @@ if __name__ == '__main__':
 			if i!=j and i<=j:
 				pIngredJ = lfreqCount[j]/recipeCount;
 				if pIngredI > 0 and pIngredJ > 0:
-					PMI[i][j] = pRecipesAB/(pIngredI * pIngredJ)
-					PMI[j][i] = pRecipesAB/(pIngredI * pIngredJ)
+					PMI[i][j] = np.log(pRecipesAB/(pIngredI * pIngredJ))
+					PMI[j][i] = PMI[i][j];
+					
 
 	Co = appendColumns(Co, ingredIds, cuisineCol, 1);
 	PMI = appendColumns(PMI, ingredIds, cuisineCol, 2);

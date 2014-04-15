@@ -8,7 +8,6 @@ if __name__ == '__main__':
         options, arguments = parser.parse_args()
 	print "cuisine: " + options.cuisine
 	print "path: " + options.rootPath
-
 		
 	matFile = options.rootPath + "/coquere/ingredientNets/data/" + options.cuisine + "_rlmat.txt";
  	recipeLeafMat = np.loadtxt(matFile, delimiter=",")	
