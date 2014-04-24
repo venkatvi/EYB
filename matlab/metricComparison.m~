@@ -1,0 +1,56 @@
+function metricComparison(net)
+    for i=1:6 %degree, betweeness, closeness, eigenvector, avgNeigDegree, clusCoeff, comm
+        for j=1:6
+            if i~=j
+                figure;
+                subplot(3,2,1);
+                fileName = strcat(indian, '_', net, '.mat');
+                [x,y] = getComparisonData(fileName, i, j);
+                plot(x,y,'.');
+                subplot(3,2,2);
+                fileName = strcat(italian, '_', net, '.mat');
+                [x,y] = getComparisonData(fileName, i, j);
+                plot(x,y,'k.');
+                subplot(3,2,3);
+                fileName = strcat(spanish, '_', net, '.mat');
+                [x,y] = getComparisonData(fileName, i, j);
+                plot(x,y,'k.');
+                subplot(3,2,4);
+                fileName = strcat(mexican, '_', net, '.mat');
+                [x,y] = getComparisonData(fileName, i, j);
+                plot(x,y,'k.');
+                subplot(3,2,5);
+                fileName = strcat(chinese, '_', net, '.mat');
+                [x,y] = getComparisonData(fileName, i, j);
+                plot(x,y,'k.');
+                subplot(3,2,6);
+                fileName = strcat(french, '_', net, '.mat');
+                [x,y] = getComparisonData(fileName, i, j);
+                plot(x,y,'k.');
+            end
+        end
+    end
+end
+function [x,y]=getComparisonData(fileName, i, j)
+    load(fileName);
+    x = getData(i);
+    y = getData(j);
+end
+function x=getData(i)
+    switch(i)
+        case 1
+            x=degree;
+        case 2
+            x=closeness;
+        case 3
+            x=betCentrality;
+        case 4
+            x=eigenvectorCentrality;
+        case 5
+            x=avgNeigDegree;
+        case 6
+            x=clusCoeff;
+        case 7
+            x=communicability;
+    end
+end

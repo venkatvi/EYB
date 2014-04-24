@@ -5,36 +5,30 @@
 % betweenesss, closeness.
 
 % clear all
-clear all; close all;
+%clear all; close all;
 
 % load graphMetrics data
 load('graphMetricsData.mat');
 
-% normalize matrix
-for i = 2:size(M, 2)-1
-    col = M(:, i);
-    col = col/ max(abs(col));
-    M(:,i) = col;
-end
-
-M = sortrows(M, 1);
+%M = sortrows(M, 1);
 
 startIndex = 0;
-colormap('Lines');
+%colormap('Lines');
 figure(1)
-for i=1:6
-    K = M(startIndex + 1:startIndex + 5, 1:8);
+for i=1:5
+    K = M(startIndex + 1:startIndex + 6, 1:8);
     K
-    netTypeWiseData = K(:,2:7)';
-    netTypeIds = K(:,8)*5';
-    subplot(6,1,i);
-    h = bar(netTypeWiseData);
+    data = K(:,2:7)';
+    plotId = M(startIndex+1, 8)*5;
+    cuisineIds = K(:,1);
+    subplot(6,1,plotId);
+    h = bar(data);
     hold on;
     
-    legend(netType(netTypeIds));
-    title(cuisines(1,i));
+    legend(cuisines(cuisineIds));
+    title(netType(1,i));
     set(gca, 'XTickLabel', metricsType); 
-    startIndex = startIndex + 5;
+    startIndex = startIndex + 6;
     
 end
 startIndex

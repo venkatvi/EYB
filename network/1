@@ -1,0 +1,31 @@
+from optparse import OptionParser
+import numpy as np
+import simplejson as json
+import networkx as nx
+if __name__ == '__main__':
+	cuisine = ""
+	netType = "";
+	parser	= OptionParser()
+	parser.add_option("-c", "--cuisine", dest="cuisine", help="cuisine type", default="indian")
+	parser.add_option("-t", "--nettype", dest="netType", help="network type", default="cooc")
+	options, arguments = parser.parse_args()
+	print "cuisine:" + options.cuisine
+	print "net type:" + options.netType
+
+	matFile = "/home/hduser/EYB/coquere/ingredientNets/data/" + options.cuisine + "_rlmat.txt";
+ 	recipeLeafMat = np.loadtxt(matFile, delimiter=",")	
+	dim = recipeLeafMat.shape
+	recipeCount = dim[0]
+	
+	json_file = "data/" + options.cuisine + "_" + options.netType + ".json"
+	G = nx.Graph()
+	d = json.load(open(json_file))
+	G.add_nodes_from(d['nodes'])
+	G.add_edges_from(d['edges'])
+	G.edges()
+	for edge in d['edges']:
+		edgeWt = edge[2]['value']/recipeCount
+		G[edge[0]][edge[1]]['weight']=edgeWt 
+	G.edges()
+	
+	
