@@ -1,0 +1,32 @@
+function plotDegreeDegree(netType)
+    figure;
+    data = getCuisineData('indian', netType);
+    subplot(3,2,1
+    getCuisineData('italian', netType);
+    getCuisineData('spanish', netType);
+    getCuisineData('mexican', netType);
+    getCuisineData('chinese', netType);
+    getCuisineData('french', netType);
+    
+end
+function data = getCuisineData(cuisine, netType)
+    edgWtFile = strcat(cuisine , '_' , netType , '_wtDist.csv');
+    nodeMetricsFile = strcat(cuisine, '_', netType, '_nodeMetrics.csv');
+    [src, dest, wt] =  loadFile(edgWtFile);
+    [node, degree] = loadFile(nodeMetricsFile);
+    
+    data = [];
+    for i=1:numel(wt)
+        s = src(i);
+        ind = find(ismember(node, s) ==1);
+        sdegree = str2double(degree(ind));
+        
+        d = dest(i);
+        ind = find(ismember(node, d)==1);
+        ddegree = str2double(degree(ind));
+        
+        k = [sdegree, ddegree, wt(i)];
+        data = [data; k];
+        
+    end
+end

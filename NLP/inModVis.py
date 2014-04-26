@@ -682,8 +682,15 @@ if __name__ == '__main__':
 	rLMat = np.matrix(recipeLeafMat)
 	freqCount = rLMat.sum(axis=0)
 	lfreqCount = np.array(freqCount)[0].tolist()
+	dim = rLMat.shape
+	recipeCount = dim[0]
+	
 
-
+	recipeFile = options.rootPath + "/network/data/recipeCounts.csv";
+	rf = open(recipeFile, 'a');
+	rf.write(options.cuisine + "," + str(recipeCount) + "\n");
+	rf.close();
+'''
 	print "------------------------- Network json on ingredient co-occurences-------------------------------"
 	leafEdges = createEdgeList(ingredLeafs, recipeLeafMat);
 	filename = options.rootPath + "/coquere/ingredientNets/data/" +  options.cuisine + ".json"
@@ -747,4 +754,4 @@ if __name__ == '__main__':
 	open(options.rootPath + "/network/data/" + options.cuisine + ".json", 'w'), indent=2)
 
 	print "-------------------------------------Over------------------------------------------------"
-	
+'''	
