@@ -1,4 +1,4 @@
-function plotDegreeDegreeNetPrune(netType)
+function plotDegreeDegreeNormalized(netType)
     thresholds = [0, 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1, 0.2, 0.3];
 %     plotCuisine('indian', netType, threshold);
 %     plotCuisine('italian', netType, threshold);
@@ -6,9 +6,10 @@ function plotDegreeDegreeNetPrune(netType)
 %     plotCuisine('mexican', netType, threshold);
 %     plotCuisine('chinese', netType, threshold);
 %     plotCuisine('french', netType, threshold);
+    maxDegree = 0;
     for i=1:numel(thresholds)
         %plotEdgeWtsAcrossCuisines('cooc', thresholds(i));
-        plotCuisine('cooc', thresholds(i))
+        maxDegree = plotCuisine('cooc', thresholds(i), maxDegree);
     end
 end
 function plotEdgeWtsAcrossCuisines(netType, threshold)
@@ -32,11 +33,12 @@ function plotEdgeWtsAcrossCuisines(netType, threshold)
     title(plotTitle);
     print(h, '-dpng', strcat(plotTitle, '.png'));
 end
-function plotCuisine(netType, threshold)
+function maxDegree = plotCuisine(netType, threshold, inMaxDegree)
     allEdgeDist = {};
     nodeCounts = [];
     plotTitle = strcat('Degree-DegreePlot-PruneNet-Normalized-', num2str(threshold));
     cuisines = {'indian', 'italian', 'chinese', 'french', 'spanish', 'mexican'};
+    maxDegree = inMaxDegree;
     for i=1:numel(cuisines)
         cuisine = cuisines{i};
         [data, node, nodeDegrees] = getCuisineData(cuisine, netType, threshold );
@@ -46,29 +48,37 @@ function plotCuisine(netType, threshold)
         else
             nodeCounts = [nodeCounts, 0];
         end
-        if numel(data) > 1
+        if threshold == 0
+            td = max(max(data(:,1)), max(data(:,2)));
+            if td > maxDegree
+                maxDegree = td;
+            end
+        end
+        if numel(data) > 1 && threshold > 0
             %maxDegree = max(max(data(:,1)),max(data(:,2)) );
             %scaleUp = scaleUpMultiple /maxDegree;
-            matrix = getMatrixNormalized(data, nodeCounts(i));
+            %matrix = getMatrixNormalized(data, nodeCounts(i));
             %matrix = getMatrixNormalized(data, maxDegree, nodeCounts(i));
-            subplotTitle = strcat(plotTitle, '-', cuisine, '-normalized');
-            m = unique(sort(matrix(:,3)));
+            matrix = getMatFormMatrix(data, inMaxDegree, nodeCounts(i));
+            subplotTitle = strcat(plotTitle, '-', cuisine, '-normalizedMat');
+            %m = unique(sort(matrix(:,3)));
             h = figure;
-            k = colormap(hot(size(m,1)));
-            %imagesc(matrix);
-            colormapNew = zeros(size(matrix,1), 3);
-            for i1=1:size(matrix,1)
-                ind = find(m == matrix(i1,3));
-                colormapNew(i1,:) = k(ind(1),:);
-                h(i1) = plot(matrix(i1,1), matrix(i1,2), '.');
-                set(h(i1), 'Color', colormapNew(i1,:));
-                hold on;
-            end
-            
-            set(gcf, 'Colormap', colormapNew);
+            %k = colormap(hot(size(m,1)));
+            colormap(hot);
+            imagesc(matrix);
+%             colormapNew = zeros(size(matrix,1), 3);
+%             for i1=1:size(matrix,1)
+%                 ind = find(m == matrix(i1,3));
+%                 colormapNew(i1,:) = k(ind(1),:);
+%                 h(i1) = plot(matrix(i1,1), matrix(i1,2), '.');
+%                 set(h(i1), 'Color', colormapNew(i1,:));
+%                 hold on;
+%             end
+%             
+%             set(gcf, 'Colormap', colormapNew);
             title(subplotTitle);
-            print(gcf, '-dpng', strcat(subplotTitle, '.png'));
-            close(gcf);
+            print(h, '-dpng', strcat(subplotTitle, '.png'));
+            close(h);
             save(strcat(subplotTitle, '.mat'), 'matrix', 'node', 'nodeDegrees', 'data'); 
         end
     end
@@ -167,6 +177,22 @@ function mat = getMatrixNormalized(data, nodeCount)
         mat(i, 3) = mat(i, 3)/nodeCount;
     end
             
+end
+function mat = getMatFormMatrix(data, maxDegree, nodeCount)
+    mat = zeros(500, 500);
+    for i=1:size(data,1)
+        x = data(i,1);
+        y = data(i,2);
+        xInd = ceil((x*1000)/maxDegree);
+        yInd = ceil((y*1000)/maxDegree);
+        if xInd > 500 || yInd > 500
+            continue;
+        end
+        if xInd > 1000 || yInd > 1000
+            disp i;
+        end
+        mat(xInd,yInd) = mat(xInd,yInd) + (1/nodeCount);
+    end
 end
 function mat = getMatrix(data, scaleUp, nodeCount)
     mat = zeros(scaleUp, scaleUp);
