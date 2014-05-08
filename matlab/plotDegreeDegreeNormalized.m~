@@ -61,14 +61,13 @@ function plotCuisine(netType, threshold)
                 ind = find(m == matrix(i1,3));
                 colormapNew(i1,:) = k(ind(1),:);
                 h(i1) = plot(matrix(i1,1), matrix(i1,2), '.');
-                set(h(i1), 'Color', colormapNew(i1,:));
-                hold on;
+                set(h(i1), 'Color', colormapNew(i1,:
             end
             
             set(gcf, 'Colormap', colormapNew);
             title(subplotTitle);
-            print(gcf, '-dpng', strcat(subplotTitle, '.png'));
-            close(gcf);
+            print(h, '-dpng', strcat(subplotTitle, '.png'));
+            close(h);
             save(strcat(subplotTitle, '.mat'), 'matrix', 'node', 'nodeDegrees', 'data'); 
         end
     end
