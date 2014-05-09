@@ -1,14 +1,9 @@
 function plotDegreeDegreeNormalized(netType)
     thresholds = [0, 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1, 0.2, 0.3];
-%     plotCuisine('indian', netType, threshold);
-%     plotCuisine('italian', netType, threshold);
-%     plotCuisine('spanish', netType, threshold);
-%     plotCuisine('mexican', netType, threshold);
-%     plotCuisine('chinese', netType, threshold);
-%     plotCuisine('french', netType, threshold);
+    maxDegree = 0;
     for i=1:numel(thresholds)
         %plotEdgeWtsAcrossCuisines('cooc', thresholds(i));
-        plotCuisine('cooc', thresholds(i))
+        maxDegree = plotCuisine('cooc', thresholds(i), maxDegree);
     end
 end
 function plotEdgeWtsAcrossCuisines(netType, threshold)
@@ -32,12 +27,12 @@ function plotEdgeWtsAcrossCuisines(netType, threshold)
     title(plotTitle);
     print(h, '-dpng', strcat(plotTitle, '.png'));
 end
-function plotCuisine(netType, threshold)
+function maxDegree = plotCuisine(netType, threshold, inMaxDegree)
     allEdgeDist = {};
     nodeCounts = [];
     plotTitle = strcat('Degree-DegreePlot-PruneNet-Normalized-', num2str(threshold));
     cuisines = {'indian', 'italian', 'chinese', 'french', 'spanish', 'mexican'};
-    maxDegree = 0;
+    maxDegree = inMaxDegree;
     for i=1:numel(cuisines)
         cuisine = cuisines{i};
         [data, node, nodeDegrees] = getCuisineData(cuisine, netType, threshold );
@@ -53,28 +48,12 @@ function plotCuisine(netType, threshold)
                 maxDegree = td;
             end
         end
-        if numel(data) > 1 && thr > 1
-            %maxDegree = max(max(data(:,1)),max(data(:,2)) );
-            %scaleUp = scaleUpMultiple /maxDegree;
-            %matrix = getMatrixNormalized(data, nodeCounts(i));
-            %matrix = getMatrixNormalized(data, maxDegree, nodeCounts(i));
-            matrix = getMatFormMatrix(data, maxDegree, nodeCounts(i));
+        if numel(data) > 1 && threshold > 0
+            matrix = getMatFormMatrix(data, inMaxDegree, nodeCounts(i));
             subplotTitle = strcat(plotTitle, '-', cuisine, '-normalizedMat');
-            %m = unique(sort(matrix(:,3)));
             h = figure;
-            %k = colormap(hot(size(m,1)));
             colormap(hot);
             imagesc(matrix);
-%             colormapNew = zeros(size(matrix,1), 3);
-%             for i1=1:size(matrix,1)
-%                 ind = find(m == matrix(i1,3));
-%                 colormapNew(i1,:) = k(ind(1),:);
-%                 h(i1) = plot(matrix(i1,1), matrix(i1,2), '.');
-%                 set(h(i1), 'Color', colormapNew(i1,:));
-%                 hold on;
-%             end
-%             
-%             set(gcf, 'Colormap', colormapNew);
             title(subplotTitle);
             print(h, '-dpng', strcat(subplotTitle, '.png'));
             close(h);
@@ -185,10 +164,17 @@ function mat = getMatFormMatrix(data, maxDegree, nodeCount)
         xInd = ceil((x*1000)/maxDegree);
         yInd = ceil((y*1000)/maxDegree);
         if xInd > 1000 || yInd > 1000
-            disp i;
+            continue;
         end
         mat(xInd,yInd) = mat(xInd,yInd) + (1/nodeCount);
     end
+    c = zeros(1000);
+    for i=1:1000
+        c(i) = numel(find(mat(i,:) ~=0));
+    end
+    h = figure;
+    plot(sort(c),'k.');
+    
 end
 function mat = getMatrix(data, scaleUp, nodeCount)
     mat = zeros(scaleUp, scaleUp);
