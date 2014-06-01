@@ -1,13 +1,13 @@
 function plotDegreeDegreeNormalized(netType)
-    thresholds = [0.05, 0.1, 0.2, 0.3]; %0, 0.0001, 0.0005, 0.001, 0.005, 0.01, 
-    maxDegree = 0;
+    thresholds = [0, 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1, 0.2]; %[0.005, 0.01, 0.05, 0.1]; % 0.2, 0.3]; %0, 0.0001, 0.0005, 0.001, 0.005, 0.01, 
+    %maxDegree = 0;
     for i=1:numel(thresholds)
-        %plotEdgeWtsAcrossCuisines('cooc', thresholds(i));
-        maxDegree = plotCuisine('cooc', thresholds(i), maxDegree);
+        plotEdgeWtsAcrossCuisines('cooc', thresholds(i));
+        %maxDegree = plotCuisine('cooc', thresholds(i), maxDegree);
     end
 end
 function plotEdgeWtsAcrossCuisines(netType, threshold)
-    plotTitle = strcat('EdgeDistributions-', num2str(threshold));
+    plotTitle = strcat('RNormalized-EdgeDistributions-', num2str(threshold));
     allEdgeDist = {};
     cuisines = {'indian', 'italian', 'mexican', 'spanish', 'chinese', 'french'};
     for i=1:numel(cuisines)
@@ -15,6 +15,8 @@ function plotEdgeWtsAcrossCuisines(netType, threshold)
         [data, node, nodeDegrees] = getCuisineData(cuisine, netType, threshold );
         if numel(data)> 1
             allEdgeDist{i} = data(:,3);
+            maxEdgeWt = max(data(:,3));
+            allEdgeDist{i} = allEdgeDist{i};%/maxEdgeWt;
         end
     end
     h = figure;
@@ -143,7 +145,7 @@ function [data, node, nodeDegrees] = getCuisineData(cuisine, netType, threshold)
     end
     for i=1:size(prunedNetSrcDest,1)
         k = prunedNetSrcDest(i,:);
-        degData = [nodeDegrees(k(1))/numel(node), nodeDegrees(k(2))/numel(node), k(3)/numel(node)];
+        degData = [nodeDegrees(k(1))/numel(node), nodeDegrees(k(2))/numel(node), k(3)];
         data = [data; degData];
     end
 end

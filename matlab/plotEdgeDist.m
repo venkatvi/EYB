@@ -1,4 +1,4 @@
-function allData = plotEdgeDist(netType)
+function allData = plotEdgeDist(netType, threshold)
     allData=struct();
     allData = loadData('indian', netType, allData);
     allData = loadData('italian', netType, allData);
@@ -9,7 +9,7 @@ function allData = plotEdgeDist(netType)
     
     %plotData(allData);
     %plotRF(allData);
-    plotHist(allData, 0.1);
+    plotHist(allData, threshold);
 end
 function plotHist(allData, threshold)
     figure;
