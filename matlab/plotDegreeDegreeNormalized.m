@@ -1,13 +1,13 @@
-function plotDegreeDegreeNormalized(netType)
+function plotDegreeDegreeNormalized(netType, lthreshold, hthreshold)
     thresholds = [0, 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1, 0.2]; %[0.005, 0.01, 0.05, 0.1]; % 0.2, 0.3]; %0, 0.0001, 0.0005, 0.001, 0.005, 0.01, 
     %maxDegree = 0;
     for i=1:numel(thresholds)
-        plotEdgeWtsAcrossCuisines('cooc', thresholds(i));
+        plotEdgeWtsAcrossCuisines('cooc', thresholds(i),lthreshold, hthreshold);
         %maxDegree = plotCuisine('cooc', thresholds(i), maxDegree);
     end
 end
-function plotEdgeWtsAcrossCuisines(netType, threshold)
-    plotTitle = strcat('RNormalized-EdgeDistributions-', num2str(threshold));
+function plotEdgeWtsAcrossCuisines(netType, threshold, lthreshold, hthreshold)
+    plotTitle = strcat('RNormalized-EdgeDistributions-', num2str(threshold), '-', num2str(lthreshold), ':', num2str(hthreshold));
     allEdgeDist = {};
     cuisines = {'indian', 'italian', 'mexican', 'spanish', 'chinese', 'french'};
     for i=1:numel(cuisines)
@@ -22,7 +22,16 @@ function plotEdgeWtsAcrossCuisines(netType, threshold)
     h = figure;
     col = lines(10);
     for i=1:numel(allEdgeDist)
-        loglog(sort(allEdgeDist{i},'descend'), '.', 'color',col(i,:));
+        sortedList = sort(allEdgeDist{i}, 'descend');
+        candidates = sortedList;
+        if lthreshold < numel(sortedList) 
+            if hthreshold < numel(sortedList)
+                candidates = sortedList(lthreshold:hthreshold, :);
+            else
+                candidates = sortedList(lthreshold:numel(sortedList), :);
+            end
+        end
+        loglog(candidates, '.', 'color',col(i,:));
         hold on;
     end
     legend(cuisines);
