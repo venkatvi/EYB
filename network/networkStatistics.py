@@ -96,13 +96,46 @@ if __name__ == '__main__':
         print "db name: " + options.db
 	print "cuisine: " + options.cuisine
 	
-	json_file =   options.cuisine + ".json"
+	json_file =   "data/" + options.cuisine + "_dbg.json"
 	G = nx.Graph()
 	d = json.load(open(json_file));
+	
+	edges = [el[2]['value'] for el in d['edges']];
+
+	sortedIndices = np.argsort(edges);
+	siList = sortedIndices.tolist()
+	siList.reverse()
+	
+	toRemoveList = siList[min(10000, len(siList)):]
+	toRemoveList.sort()
+	toRemoveList.reverse()
+
+	toRemoveNodes = {}
+	for index in toRemoveList: # remove all other edges
+		edge = d['edges'][index]
+		if edge[0] not in toRemoveNodes:
+			toRemoveNodes[edge[0]] = 1
+		else:
+			degToRemove = toRemoveNodes.get(edge[0])
+			toRemoveNodes[edge[0]] = degToRemove + 1;
+
+		if edge[1] not in toRemoveNodes:
+			toRemoveNodes[edge[1]] = 1
+		else:
+			degToRemove = toRemoveNodes.get(edge[1])
+			toRemoveNodes[edge[1]] = degToRemove + 1;
+
+		d['edges'].pop(index)
+
+	for node in d['nodes']:
+		if node[0] in toRemoveNodes:
+			node[1]['degree'] = node[1]['degree']-toRemoveNodes[node[0]]
+			if node[1]['degree'] == 0:
+				d['nodes'].remove(node)
+
 	G.add_nodes_from(d['nodes'])
 	G.add_edges_from(d['edges'])
 	
-
 
 	#Centrality Measures:
 	print "Node wise metrics: "
@@ -250,5 +283,4 @@ if __name__ == '__main__':
 	print closeness_centrality
  
 	#7d. eigen vector centrality - node wise, graph wise
-
 		

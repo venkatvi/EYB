@@ -359,7 +359,6 @@ ice
 ice_cream
 iceberg_lettuce
 icing_sugar
-ingredient
 instant_coffee
 italian_bread
 jack
@@ -509,7 +508,6 @@ parsley
 parsnip
 passion_fruit
 pasta
-paste
 pastry
 patty
 pattypan_squash
@@ -658,7 +656,6 @@ sandwich
 sardine
 sashimi
 sassafras
-sauce
 sauerkraut
 sausage
 sausage_meat
@@ -736,7 +733,6 @@ steak_sauce
 steamer_clam
 stem_ginger
 stew_meat
-stick
 stock
 stock_cube
 stone_crab
