@@ -10,28 +10,45 @@ function plotEdgeWtsAcrossCuisines(netType, threshold, lthreshold, hthreshold, t
     plotTitle = strcat(titleStr, '-EdgeDistributions-', num2str(threshold), '-', num2str(lthreshold), ':', num2str(hthreshold));
     allEdgeDist = {};
     cuisines = {'indian', 'italian', 'mexican', 'spanish', 'chinese', 'french'};
+    
     for i=1:numel(cuisines)
         cuisine = cuisines{i};
-        [data, node, nodeDegrees] = getCuisineData(cuisine, netType, threshold );
+        [data, edges, node, nodeDegrees] = getCuisineData(cuisine, netType, 0 );
         if numel(data)> 1
             allEdgeDist{i} = data(:,3);
             maxEdgeWt = max(data(:,3));
             allEdgeDist{i} = allEdgeDist{i};%/maxEdgeWt;
+            links{i} = edges;
         end
     end
     h = figure;
     col = lines(10);
     for i=1:numel(allEdgeDist)
-        sortedList = sort(allEdgeDist{i}, 'descend');
+        fileName = strcat(cuisines{i}, '- linkAnalysis.csv');
+        [sortedList, ind] = sort(allEdgeDist{i}, 'descend');
         candidates = sortedList;
+        sortedLinks = links{i};
+        sortedLinks = sortedLinks(ind, 1:2);
+        candidateLinks = sortedLinks;
         if lthreshold < numel(sortedList) 
             if hthreshold < numel(sortedList)
                 candidates = sortedList(lthreshold:hthreshold, :);
+                candidateLinks = sortedLinks(lthreshold:hthreshold, :);
             else
                 candidates = sortedList(lthreshold:numel(sortedList), :);
+                candidateLinks = sortedLinks(lthreshold:numel(sortedList), :);
             end
             loglog(candidates, '.', 'color',col(i,:));
             hold on;
+            % save candidates, candidateLinks for this network. 
+            fileID = fopen(fileName, 'a');
+           
+            formatSpec = '%f, %s, %s \n';
+            for row = 1:numel(candidates)
+                rowData = [candidates(row), candidateLinks(row, 1:2)];
+                fprintf(fileID, formatSpec, rowData{:});
+            end
+            fclose(fileID);
         else
             %do nothing. 
         end
@@ -111,7 +128,7 @@ function [scaleUpMultiple, maxOfDegrees] = getScaleUpFactor(allData)
     maxOfDegrees = max(degrees);
     scaleUpMultiple  = maxOfDegrees ./degrees;
 end
-function [data, node, nodeDegrees] = getCuisineData(cuisine, netType, threshold)
+function [data, prunedLinks, node, nodeDegrees] = getCuisineData(cuisine, netType, threshold)
     edgWtFile = strcat(cuisine , '_' , netType , '_wtDist.csv');
     nodeMetricsFile = strcat(cuisine, '_', netType, '_nodeMetrics.csv');
     [src, dest, wt] =  loadFile(edgWtFile);
@@ -134,6 +151,7 @@ function [data, node, nodeDegrees] = getCuisineData(cuisine, netType, threshold)
     nodeDegrees = zeros(numel(node), 1);
     loops = 0;
     prunedNetSrcDest = [];
+    prunedLinks = [];
     for i=1:numel(wt)
         eWt = wt(i); %percent of all recipes in which this edge occurs
         
@@ -152,6 +170,8 @@ function [data, node, nodeDegrees] = getCuisineData(cuisine, netType, threshold)
                 nodeDegrees(dind) = nodeDegrees(dind) + 1;
                 k = [sind,dind, eWt];
                 prunedNetSrcDest = [prunedNetSrcDest; k];
+                link = [s, d];
+                prunedLinks = [prunedLinks; link];
             end
         end
     end

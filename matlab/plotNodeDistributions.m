@@ -2,14 +2,16 @@ function plotNodeDistributions(metric, net)
     data = cell(6);
     edges = cell(6);
     binHeights = cell(6);
-    cuisineName = {'chinese', 'french', 'indian', 'italian', 'mexican', 'spanish'};
+    cuisineName = {'spanish', 'mexican', 'indian', 'chinese', 'italian', 'french'};
     
-    [data{1}, edges{1}, binHeights{1}] = getCuisineData(metric, net, 'chinese');
-    [data{2}, edges{2}, binHeights{2}] = getCuisineData(metric, net, 'french');
+    
+    
+    [data{1}, edges{1}, binHeights{1}] = getCuisineData(metric, net, 'spanish');
+    [data{2}, edges{2}, binHeights{2}] = getCuisineData(metric, net, 'mexican');
     [data{3}, edges{3}, binHeights{3}] = getCuisineData(metric, net, 'indian');
-    [data{4}, edges{4}, binHeights{4}] = getCuisineData(metric, net, 'italian');
-    [data{5}, edges{5}, binHeights{5}] = getCuisineData(metric, net, 'mexican');
-    [data{6}, edges{6}, binHeights{6}] = getCuisineData(metric, net, 'spanish');
+    [data{4}, edges{4}, binHeights{4}] = getCuisineData(metric, net, 'chinese');
+    [data{5}, edges{5}, binHeights{5}] = getCuisineData(metric, net, 'italian');
+    [data{6}, edges{6}, binHeights{6}] = getCuisineData(metric, net, 'french');
     
     
     figure;
@@ -25,7 +27,7 @@ function plotNodeDistributions(metric, net)
         set(gca, 'XTickLabel', tickLabels);
         hold on;
     end
-    colormap(hot);
+    
     
     combinedData = zeros(6,21);
     for i=1:6
@@ -34,9 +36,14 @@ function plotNodeDistributions(metric, net)
     figure;
     bar(combinedData');
     xlabel('cuisines');
-    legend('chinese', 'french', 'indian', 'italian', 'mexican', 'spanish');
+    legend('spanish', 'mexican', 'indian', 'chinese', 'italian', 'french');
     title(metric);
-    colormap(hot);
+    
+    figure;
+    bar(combinedData', 'stacked');
+    xlabel('cuisines');
+    legend('spanish', 'mexican', 'indian', 'chinese', 'italian', 'french');
+    title(metric);
     
 end
 function [data, edges, binHeights] = getCuisineData(metric, net, cuisineStr)

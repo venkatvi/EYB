@@ -1,65 +1,75 @@
-function plotRFDegree(netType)
+function plotRFDegree(netType, mode, lt, ht, isNormalizedToNodeCount, isNormalizedToMaxDegree)
+    titleStr = '';
+    if isNormalizedToNodeCount
+        titleStr = strcat(titleStr, '-norm by nodeCount');
+    end
+    if isNormalizedToMaxDegree
+        titleStr = strcat(titleStr, '-norm by max degree');
+    end
+    cuisines = {'spanish', 'mexican', 'indian', 'chinese', 'italian', 'french'};
     h = figure;
-    plotTitle = 'Degree RF Plot';
-    subplot(3,2,1);
-    [r, n] = plotDegreeRF('indian', netType);
-    loglog(r,n, '.');
-    xlabel('indian');
-    hold on;
-    subplot(3,2,2);
-    [r, n] = plotDegreeRF('italian', netType);
-    loglog(r,n, 'k.');
-    xlabel('italian');
-    subplot(3,2,3);
-    [r, n] = plotDegreeRF('spanish', netType);
-    loglog(r,n, 'r.');
-    xlabel('spanish');
-    subplot(3,2,4);
-    [r, n] = plotDegreeRF('mexican', netType);
-    loglog(r,n, 'g.');
-    xlabel('mexican');
-    subplot(3,2,5);
-    [r, n] = plotDegreeRF('chinese', netType);
-    loglog(r,n, 'm.');
-    xlabel('chinese');
-    subplot(3,2,6);
-    [r, n] = plotDegreeRF('french', netType);
-    loglog(r,n, 'c.');
-    xlabel('french');
+    plotTitle = strcat('Degree RF Plot-', mode, titleStr);
+    for i=1:numel(cuisines)
+        subplot(3,2,i);
+        sortedDegree = plotDegreeRF(cuisines{i}, netType, isNormalizedToNodeCount, isNormalizedToMaxDegree);
+        if strcmpi(mode, 'log')
+            loglog(sortedDegree, '.');
+        else
+            plot(sortedDegree, '.');
+        end
+        xlabel(cuisines{i});
+        hold on;
+    end
     annotation('textbox', [0 0.9 1 0.1], ...
                     'String', plotTitle, ...
                     'EdgeColor', 'none', ...
                     'HorizontalAlignment', 'center');
-    print(h, strcat(plotTitle, '.png'));
+    saveas(h, plotTitle, 'png');
+    
+    colorIndex = [1, 8, 25, 40, 56, 64]; 
+    c = colormap(jet);
+    h = figure;
+    
+        
+    plotTitle = strcat('Degree RF Plot-', mode, '-all cuisines', titleStr);
+    for i=1:numel(cuisines)
+        
+        sortedDegree = plotDegreeRF(cuisines{i}, netType, isNormalizedToNodeCount, isNormalizedToMaxDegree);
+        plt = 1;
+        pht = numel(sortedDegree);
+        if lt ~= -1
+            plt = lt;
+        end
+        if ht ~= -1
+            pht = ht;
+        end
+        if strcmpi(mode, 'log')
+            loglog(sortedDegree(plt:pht), '.', 'color', c(colorIndex(i),:));
+        else
+            plot(sortedDegree(plt:pht), '.', 'color', c(colorIndex(i),:));
+        end
+        hold on;
+        
+    end
+    legend(cuisines);
+    title(plotTitle);
+    saveas(h, plotTitle, 'png');
 end
-function [rank, numDegreesWithRank] = plotDegreeRF(cuisine, netType)
-     matFile = strcat(cuisine, '_', netType, '.mat');
-     load(matFile);
-     data = degree;
-     nDegree = degree;
-     [numDegreesWithRank, sindices] = sort(nDegree, 'descend');
-     rank = 1:numel(nDegree);
-     
-     nodesInDecreasingDegree = node(sindices);
-     f = strcat(cuisine, '_', netType , '_nodeOrder.csv');
-     ff = fopen(f, 'w');
-     for i=1:numel(nodesInDecreasingDegree)
-         line = strcat(nodesInDecreasingDegree{i} , ',' , num2str(numDegreesWithRank(i))  );
-         fprintf(ff,'%s\n',line);
+function sortedDegree = plotDegreeRF(cuisine, netType, isNormalizedToNodeCount, isNormalizedToMaxDegree)
+     nodeMetricsFile = strcat(cuisine, '_', netType , '_nodeOrder.csv');
+     [node, degree] = loadFile(nodeMetricsFile);
+        
+     dDegree = zeros(numel(degree),1);
+     for i=1:numel(degree)
+        dDegree(i) = str2double(degree{i});
      end
-     fclose(ff);
-%      mulFactor = 1000;
-%      numNodesWithDeg = zeros(ceil(max(abs(data))*mulFactor)+1, 1);
-%      for i = 1:numel(data)
-%          deg = ceil(abs(data(i,1))*mulFactor);
-%          numNodesWithDeg(deg+1) = numNodesWithDeg(deg+1) + 1;
-%      end
-%      rank = sort(unique(numNodesWithDeg), 'descend');
-%      numDegreesWithRank = zeros(numel(rank),1);
-%      for i=1:numel(numNodesWithDeg)
-%          deg = i;
-%          freq = numNodesWithDeg(i);
-%          rankId = find(rank == freq);
-%          numDegreesWithRank(rankId) = numDegreesWithRank(rankId)+1;
-%      end
+     
+     if(isNormalizedToNodeCount)
+         dDegree = dDegree / numel(node);
+     end
+     if(isNormalizedToMaxDegree)
+         dDegree = dDegree / max(dDegree);
+     end
+     
+     sortedDegree = sort(dDegree, 'descend');
 end

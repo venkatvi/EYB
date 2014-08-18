@@ -1,38 +1,43 @@
-function metricComparison(netType)
-    for i=1:6 %degree, betweeness, closeness, eigenvector, avgNeigDegree, clusCoeff, comm
-        for j=1:6
+function metricComparison(netType, mode)
+    cuisines = {'spanish', 'mexican', 'chinese', 'indian', 'italian', 'french'};
+    colorIndex = [1, 8, 25, 40, 56, 64]; 
+    for i=1:3 %degree, betweeness, closeness, eigenvector, avgNeigDegree, clusCoeff, comm
+        for j=1:3
             if i~=j
                 h = figure;
-                plotTitle = getTitle(i,j);
-                subplot(3,2,1);
-                [x,y] = getComparisonData('indian', netType, i, j);
-                plot(x,y,'.');
-                xlabel('indian');
-                hold on;
-                subplot(3,2,2);
-                [x,y] = getComparisonData('italian', netType, i, j);
-                plot(x,y,'k.');
-                xlabel('italian');
-                subplot(3,2,3);
-                [x,y] = getComparisonData('spanish', netType, i, j);
-                plot(x,y,'r.');
-                xlabel('spanish');
-                subplot(3,2,4);
-                [x,y] = getComparisonData('mexican', netType, i, j);
-                plot(x,y,'g.');
-                xlabel('mexican');
-                subplot(3,2,5);
-                [x,y] = getComparisonData('chinese', netType, i, j);
-                plot(x,y,'m.');
-                xlabel('chinese');
-                subplot(3,2,6);
-                [x,y] = getComparisonData('french', netType, i, j);
-                plot(x,y,'c.');
-                xlabel('french');
+                [xtitle, ytitle, plotTitle] = getTitle(i,j);
+                plotTitle = strcat(plotTitle, '-', mode);
+                c = colormap(jet);
+                for k =1:6
+                    subplot(3,2,k);
+                    [x,y] = getComparisonData(cuisines{k}, netType, i, j);
+                    if strcmpi(mode, 'normal')
+                        plot(x,y,'.', 'color',  c(colorIndex(k),:));
+                    else
+                        loglog(x,y,'.', 'color',  c(colorIndex(k),:));
+                    end
+                    xlabel(cuisines{k});
+                end
                 annotation('textbox', [0 0.9 1 0.1], ...
                     'String', plotTitle, ...
                     'EdgeColor', 'none', ...
                     'HorizontalAlignment', 'center');
+                print(h, strcat(plotTitle, '.png'));
+                
+                h = figure;
+                for k=1:6
+                    [x,y] = getComparisonData(cuisines{k}, netType, i, j);
+                    if strcmpi(mode, 'log')
+                        loglog(x,y,'.', 'color',  c(colorIndex(k),:));
+                    else
+                        plot(x,y,'.', 'color',  c(colorIndex(k),:));
+                    end
+                    hold on;
+                end
+                title(plotTitle);
+                xlabel(xtitle);
+                ylabel(ytitle);
+                legend(cuisines);
                 print(h, strcat(plotTitle, '.png'));
             end
         end
@@ -62,7 +67,7 @@ function [x, node]=getData(i, fileName)
             x=communicability;
     end
 end
-function plotTitle = getTitle(i,j)
+function [xtitle, ytitle, plotTitle] = getTitle(i,j)
     xtitle = getTitleStr(i);
     ytitle = getTitleStr(j);
     plotTitle = strcat(ytitle , '-' , xtitle);

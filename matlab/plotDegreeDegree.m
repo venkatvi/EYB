@@ -1,44 +1,19 @@
 function plotDegreeDegree(netType, threshold )
+    cuisines = {'spanish', 'mexican', 'indian', 'chinese', 'italian', 'french'};
+    colorIndex = [1, 8, 25, 40, 56, 64]; 
     h = figure;
     plotTitle = strcat('Degree-DegreePlot-', num2str(threshold));
-    subplot(3,2,1);
-    data = getCuisineData('indian', netType, threshold );
-    matrix = createMatrix(data);
-    if numel(data) > 1
-        plot(data(:,1),data(:,2), '.');
+    c = colormap(jet);
+    for i=1:6
+        subplot(3,2,i);
+        data = getCuisineData(cuisines{i}, netType, threshold );
+        
+        if numel(data) > 1
+            plot(data(:,1),data(:,2), '.', 'color', c(colorIndex(i),:));
+        end
+        xlabel(cuisines{i});
+        hold on;
     end
-    xlabel('indian');
-    hold on;
-    subplot(3,2,2);
-    data = getCuisineData('italian', netType, threshold );
-    if numel(data) > 1
-        plot(data(:,1),data(:,2), 'k.');
-    end
-    xlabel('italian');
-    subplot(3,2,3);
-    data = getCuisineData('spanish', netType, threshold );
-    if numel(data) > 1
-        plot(data(:,1),data(:,2), 'r.');
-    end
-    xlabel('spanish');
-    subplot(3,2,4);
-    data = getCuisineData('mexican', netType, threshold );
-    if numel(data) > 1
-        plot(data(:,1),data(:,2), 'g.');
-    end
-    xlabel('mexican');
-    subplot(3,2,5);
-    data = getCuisineData('chinese', netType, threshold);
-    if numel(data) > 1
-        plot(data(:,1),data(:,2), 'm.');
-    end
-    xlabel('chinese');
-    subplot(3,2,6);
-    data = getCuisineData('french', netType, threshold);
-    if numel(data) > 1
-        plot(data(:,1),data(:,2), 'c.');
-    end
-    xlabel('french');
     annotation('textbox', [0 0.9 1 0.1], ...
                     'String', plotTitle, ...
                     'EdgeColor', 'none', ...
