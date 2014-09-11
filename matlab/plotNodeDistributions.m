@@ -1,30 +1,36 @@
-function plotNodeDistributions(metric, net)
+function plotNodeDistributions(metric, net, mode)
     data = cell(6);
     edges = cell(6);
     binHeights = cell(6);
-    cuisineName = {'spanish', 'mexican', 'indian', 'chinese', 'italian', 'french'};
+    cuisineNames = {'indian', 'chinese', 'mexican', 'spanish',  'italian', 'french'};
     
     
     
-    [data{1}, edges{1}, binHeights{1}] = getCuisineData(metric, net, 'spanish');
-    [data{2}, edges{2}, binHeights{2}] = getCuisineData(metric, net, 'mexican');
-    [data{3}, edges{3}, binHeights{3}] = getCuisineData(metric, net, 'indian');
-    [data{4}, edges{4}, binHeights{4}] = getCuisineData(metric, net, 'chinese');
+    [data{1}, edges{1}, binHeights{1}] = getCuisineData(metric, net, 'indian');
+    [data{2}, edges{2}, binHeights{2}] = getCuisineData(metric, net, 'chinese');
+    [data{3}, edges{3}, binHeights{3}] = getCuisineData(metric, net, 'mexican');
+    [data{4}, edges{4}, binHeights{4}] = getCuisineData(metric, net, 'spanish');
     [data{5}, edges{5}, binHeights{5}] = getCuisineData(metric, net, 'italian');
     [data{6}, edges{6}, binHeights{6}] = getCuisineData(metric, net, 'french');
     
     
+    maxVal = max(abs(data{1}));
+    for i=2:6
+        maxVal = max(max(abs(data{i})), maxVal);
+    end
+    
     figure;
     for i=1:6
         subplot(3,2, i);
-        bar(binHeights{i});
+        hist(data{i}, 10);
         xlabel(metric)
-        title(cuisineName{i});
-        tickLabels = cell(1,20);
-        for j=1:20
-            tickLabels{j} = num2str(edges{i}(j));
-        end
-        set(gca, 'XTickLabel', tickLabels);
+        title(cuisineNames{i});
+%         tickLabels = cell(1,20);
+%         for j=1:20
+%             tickLabels{j} = num2str(ceil(edges{i}(j)));
+%         end
+%        xlim([1, maxVal]);
+%        set(gca, 'XTickLabel', tickLabels);
         hold on;
     end
     
@@ -36,14 +42,28 @@ function plotNodeDistributions(metric, net)
     figure;
     bar(combinedData');
     xlabel('cuisines');
-    legend('spanish', 'mexican', 'indian', 'chinese', 'italian', 'french');
+    legend(cuisineNames);
     title(metric);
     
     figure;
     bar(combinedData', 'stacked');
     xlabel('cuisines');
-    legend('spanish', 'mexican', 'indian', 'chinese', 'italian', 'french');
+    legend(cuisineNames);
     title(metric);
+    
+    figure;
+    colorIndex = [1, 8, 25, 40, 56, 64]; 
+    c = colormap(jet);
+    for i=1:6
+        if strcmp(mode, 'log')
+            loglog(sort(data{i}, 'descend'), '.', 'Color', c(colorIndex(i), :));
+        else
+            plot(sort(data{i}, 'descend'), '.', 'Color', c(colorIndex(i), :));
+        end
+        hold on;
+    end
+    title(strcat('Node distributions of ', metric, ' for all cuisines'));
+    legend(cuisineNames);
     
 end
 function [data, edges, binHeights] = getCuisineData(metric, net, cuisineStr)
@@ -72,10 +92,10 @@ function [data, edges, binHeights] = getCuisineData(metric, net, cuisineStr)
     tDataIndices = find(degree ~= 0);
        
     data = data(tDataIndices);
-    if isBetweeness || isComm
-        ind = (data~=0);
-        data = log10(data(ind));
-    end
+%     if isBetweeness || isComm
+%         ind = (data~=0);
+%         data = log10(data(ind));
+%     end
     
     
     a = min(data);

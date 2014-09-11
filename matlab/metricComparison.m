@@ -1,9 +1,15 @@
-function metricComparison(netType, mode)
-    cuisines = {'spanish', 'mexican', 'chinese', 'indian', 'italian', 'french'};
+function metricComparison(netType, mode, metric1, metric2)
+    cuisines = {'indian', 'chinese', 'mexican', 'spanish', 'italian', 'french'};
     colorIndex = [1, 8, 25, 40, 56, 64]; 
-    for i=1:3 %degree, betweeness, closeness, eigenvector, avgNeigDegree, clusCoeff, comm
-        for j=1:3
-            if i~=j
+    metricIndexA = -1;
+    metricIndexB = -1;
+    if ~isempty(metric1) && ~isempty(metric2)
+        metricIndexA = getIndex(metric1);
+        metricIndexB = getIndex(metric2);
+    end
+    for i=1:7 %degree, betweeness, closeness, eigenvector, avgNeigDegree, clusCoeff, comm
+        for j=1:7
+            if i~=j && i==metricIndexA && j==metricIndexB
                 h = figure;
                 [xtitle, ytitle, plotTitle] = getTitle(i,j);
                 plotTitle = strcat(plotTitle, '-', mode);
@@ -41,6 +47,23 @@ function metricComparison(netType, mode)
                 print(h, strcat(plotTitle, '.png'));
             end
         end
+    end
+end
+function metricIndex = getIndex(metric)
+    if strcmp(metric, 'degree')
+        metricIndex = 1;
+    elseif strcmp(metric, 'closeness')
+        metricIndex = 2;
+    elseif strcmp(metric, 'betweeness')
+        metricIndex = 3;
+    elseif strcmp(metric, 'eigen')
+        metricIndex = 4;
+    elseif strcmp(metric, 'avgNeigDegree')
+        metricIndex = 5;
+    elseif strcmp(metric, 'clusCoeff')
+        metricIndex = 6;
+    elseif strcmp(metric, 'comm')
+        metricIndex = 7;
     end
 end
 function [x,y]=getComparisonData(cuisine, netType, i, j)

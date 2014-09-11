@@ -6,7 +6,7 @@ function plotRFDegree(netType, mode, lt, ht, isNormalizedToNodeCount, isNormaliz
     if isNormalizedToMaxDegree
         titleStr = strcat(titleStr, '-norm by max degree');
     end
-    cuisines = {'spanish', 'mexican', 'indian', 'chinese', 'italian', 'french'};
+    cuisines = {'indian', 'chinese', 'mexican', 'spanish', 'french', 'italian'};
     h = figure;
     plotTitle = strcat('Degree RF Plot-', mode, titleStr);
     for i=1:numel(cuisines)

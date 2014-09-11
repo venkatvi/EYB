@@ -1,10 +1,10 @@
 function allData = plotEdgeDist(netType, threshold)
     allData=struct();
     allData = loadData('indian', netType, allData);
-    allData = loadData('italian', netType, allData);
+    allData = loadData('chinese', netType, allData);
     allData = loadData('spanish', netType, allData);
     allData = loadData('mexican', netType, allData);
-    allData = loadData('chinese', netType, allData);
+    allData = loadData('italian', netType, allData);
     allData = loadData('french', netType, allData);
     
     %plotData(allData);

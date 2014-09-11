@@ -1,28 +1,16 @@
-function plotDegreeDegree(netType, threshold )
-    cuisines = {'spanish', 'mexican', 'indian', 'chinese', 'italian', 'french'};
-    colorIndex = [1, 8, 25, 40, 56, 64]; 
-    h = figure;
-    plotTitle = strcat('Degree-DegreePlot-', num2str(threshold));
-    c = colormap(jet);
-    for i=1:6
-        subplot(3,2,i);
-        data = getCuisineData(cuisines{i}, netType, threshold );
-        
-        if numel(data) > 1
-            plot(data(:,1),data(:,2), '.', 'color', c(colorIndex(i),:));
-        end
-        xlabel(cuisines{i});
-        hold on;
-    end
-    annotation('textbox', [0 0.9 1 0.1], ...
-                    'String', plotTitle, ...
-                    'EdgeColor', 'none', ...
-                    'HorizontalAlignment', 'center');
-   % print(h, '-dpng', strcat(plotTitle, '.png'));
-   % close(h);
+function plotDegreeDegree(netType, edgeThreshold )
+    cuisines = {'indian', 'chinese', 'mexican', 'spanish',  'italian', 'french'};
     
+    for i=1:6
+        figure;
+        colormap(hot);
+        data = getCuisineData(cuisines{i}, netType, edgeThreshold);
+        imagesc(data);
+        xlabel(cuisines{i});
+        title(strcat('Degree Degree Plot - ', cuisines{i}));
+    end
 end
-function data = getCuisineData(cuisine, netType, threshold)
+function degreeDegreeMat = getCuisineData(cuisine, netType, edgeThreshold)
     edgWtFile = strcat(cuisine , '_' , netType , '_wtDist.csv');
     nodeMetricsFile = strcat(cuisine, '_', netType, '_nodeMetrics.csv');
     [src, dest, wt] =  loadFile(edgWtFile);
@@ -33,30 +21,33 @@ function data = getCuisineData(cuisine, netType, threshold)
         oldDeg(i) = str2double(degree{i});
     end
     
-    newDeg = zeros(numel(node), 1);
-    minWt = min(wt);
-    maxWt = max(wt);
+%    newDeg = zeros(numel(node), 1);
     
-    data = [];
-    for i=1:numel(wt)
+    maxDeg = max(oldDeg);
+    degreeDegreeMat = zeros(maxDeg, maxDeg);
+    
+%    data = [];
+    [wt, orderedIndices] = sort(wt, 'descend');
+    for i=1:edgeThreshold
         eWt = wt(i); %percent of all recipes in which this edge occurs
-        s = src(i);
+        s = src(orderedIndices(i));
         sind = find(ismember(node, s) ==1);     
         
-        d = dest(i);
+        d = dest(orderedIndices(i));
         dind = find(ismember(node, d)==1);
         
         if sind ~= dind
-            newDeg(sind) = newDeg(sind) + 1;
-            newDeg(dind) = newDeg(dind) + 1;
-            k = [sind, dind, eWt];
-            data = [data; k];
+%             newDeg(sind) = newDeg(sind) + 1;
+%             newDeg(dind) = newDeg(dind) + 1;
+%             k = [sind, dind, eWt];
+%             data = [data; k];
+            degreeDegreeMat(oldDeg(sind), oldDeg(dind)) = degreeDegreeMat(oldDeg(sind), oldDeg(dind)) + 1;
         end
     end
     
-    diff = oldDeg-newDeg;
-    ind = find(diff > 0);
-    if numel(ind) > 0
-        j = 1;
-    end
+%     diff = oldDeg-newDeg;
+%     ind = find(diff > 0);
+%     if numel(ind) > 0
+%         j = 1;
+%     end
 end
