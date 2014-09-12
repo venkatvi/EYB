@@ -446,8 +446,6 @@ halibut,445,halibut,439,1
 hard_wheat,446,hard_wheat,453,1
 hock,447,hock,442,1
 jam,448,jam,461,1
-knockwurst,449, ,485,1
-lasagne,450, ,485,1
 littleneck_clam,451,littleneck_clam,460,1
 marc,452,marc,468,1
 mignonette,453,mignonette,474,1
@@ -455,10 +453,8 @@ napa,454,napa,469,1
 octopus,455,octopus,479,1
 orzo,456,orzo,431,1
 phyllo,457,phyllo,472,1
-poi,458, ,485,1
 polenta,459,polenta,462,1
 pomegranate,460,pomegranate,473,1
-poppy_seed,461, ,485,1
 pot_roast,462,pot_roast,438,1
 rack_of_lamb,463,rack_of_lamb,450,1
 radicchio,464,radicchio,457,1
@@ -483,7 +479,11 @@ tournedos,482,tournedos,429,1
 vodka,483,vodka,436,1
 wheat_flour,484,wheat_flour,444,1
 wild_rice,485,wild_rice,482,1
- ,485,winter_savory,449,1
- ,485,gravy,454,1
- ,485,perch,458,1
- ,485,tenderloin,480,1
+ ,486,winter_savory,449,1
+ ,486,gravy,454,1
+ ,486,perch,458,1
+ ,486,tenderloin,480,1
+knockwurst,449, ,486,1
+lasagne,450, ,486,1
+poi,458, ,486,1
+poppy_seed,461, ,486,1

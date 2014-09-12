@@ -58,29 +58,29 @@ spinach,57,spinach,56,1
 sugar,58,sugar,42,1
 wonton,59,wonton,71,1
 lemongrass,60,lemongrass,63,1
-napa,61, ,76,1
 snow_pea,62,snow_pea,75,1
 stock,63,stock,62,1
-crabmeat,64, ,76,1
-flank_steak,65, ,76,1
-green_pepper,66, ,76,1
-fillet,67, ,76,1
 grain,68,grain,73,1
-juice,69, ,76,1
 lemon,70,lemon,46,1
 lime,71,lime,50,1
-malt,72, ,76,1
-pork_belly,73, ,76,1
-pork_loin,74, ,76,1
-sparerib,75, ,76,1
- ,75,coconut_milk,55,1
- ,75,red_onion,61,1
- ,75,mint,64,1
- ,75,lettuce,65,1
- ,75,parsley,66,1
- ,75,sweet_basil,68,1
- ,75,scallop,69,1
- ,75,radish,70,1
- ,75,potato,72,1
- ,75,sweet,74,1
- ,75,cumin_seed,76,1
+ ,76,coconut_milk,55,1
+ ,76,red_onion,61,1
+ ,76,mint,64,1
+ ,76,lettuce,65,1
+ ,76,parsley,66,1
+ ,76,sweet_basil,68,1
+ ,76,scallop,69,1
+ ,76,radish,70,1
+ ,76,potato,72,1
+ ,76,sweet,74,1
+ ,76,cumin_seed,76,1
+napa,61, ,77,1
+crabmeat,64, ,77,1
+flank_steak,65, ,77,1
+green_pepper,66, ,77,1
+fillet,67, ,77,1
+juice,69, ,77,1
+malt,72, ,77,1
+pork_belly,73, ,77,1
+pork_loin,74, ,77,1
+sparerib,75, ,77,1

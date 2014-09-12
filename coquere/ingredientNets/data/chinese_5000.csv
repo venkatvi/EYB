@@ -229,15 +229,12 @@ pear,228,pear,230,1
 roast_pork,229,roast_pork,203,1
 allspice,230,allspice,195,1
 brisket,231,brisket,268,1
-condensed_milk,232, ,305,1
 curry,233,curry,201,1
 dark_chocolate,234,dark_chocolate,257,1
 fava_bean,235,fava_bean,287,1
-granulated_sugar,236, ,305,1
 grape,237,grape,256,1
 kaffir,238,kaffir,249,1
 lobster_tail,239,lobster_tail,217,1
-mix,240, ,305,1
 nutmeg,241,nutmeg,158,1
 olive_oil,242,olive_oil,209,1
 plain_flour,243,plain_flour,278,1
@@ -253,78 +250,81 @@ bitter,252,bitter,269,1
 blue_crab,253,blue_crab,245,1
 cheese,254,cheese,235,1
 cornmeal,255,cornmeal,254,1
-fatback,256, ,305,1
 rabbit,257,rabbit,305,1
 raspberry,258,raspberry,244,1
 rump_steak,259,rump_steak,263,1
-snapper,260, ,305,1
-steak,261, ,305,1
-anchovy,262, ,305,1
 cherry,263,cherry,265,1
 chow_mein,264,chow_mein,286,1
 dried_apricot,265,dried_apricot,222,1
 evaporated_milk,266,evaporated_milk,246,1
 gem,267,gem,271,1
-kosher,268, ,305,1
-littleneck_clam,269, ,305,1
 plum,270,plum,252,1
 red_cabbage,271,red_cabbage,260,1
-short_ribs,272, ,305,1
 string_bean,273,string_bean,291,1
 syrup,274,syrup,261,1
 tarragon,275,tarragon,267,1
 tortilla,276,tortilla,280,1
 yam,277,yam,283,1
 yogurt,278,yogurt,185,1
-adzuki_bean,279, ,305,1
-apricot,280, ,305,1
 artichoke,281,artichoke,285,1
-brown_rice,282, ,305,1
 caper,283,caper,243,1
-cocoa,284, ,305,1
-cocoa_powder,285, ,305,1
-corn_syrup,286, ,305,1
 cranberry,287,cranberry,288,1
-crystallized_ginger,288, ,305,1
 fettuccine,289,fettuccine,276,1
 ghee,290,ghee,275,1
-halibut,291, ,305,1
 mayonnaise,292,mayonnaise,186,1
-molasses,293, ,305,1
-penne,294, ,305,1
-salad,295, ,305,1
-semolina,296, ,305,1
 soft-shell_crab,297,soft-shell_crab,294,1
-sole,298, ,305,1
 soybean_flour,299,soybean_flour,292,1
 strawberry,300,strawberry,253,1
-tahini,301, ,305,1
 tuna,302,tuna,248,1
-vanilla_bean,303, ,305,1
 wasabi,304,wasabi,279,1
- ,304,wild_rice,219,1
- ,304,sour_cream,226,1
- ,304,fenugreek_seed,237,1
- ,304,rocket,238,1
- ,304,pastry,241,1
- ,304,chuck,247,1
- ,304,chili_powder,250,1
- ,304,rum,251,1
- ,304,citrus,259,1
- ,304,swiss_chard,264,1
- ,304,grapefruit,266,1
- ,304,lamb_chop,273,1
- ,304,papaya,274,1
- ,304,tamarind,281,1
- ,304,veal,282,1
- ,304,parsnip,289,1
- ,304,saffron,290,1
- ,304,navel_orange,295,1
- ,304,pomegranate,296,1
- ,304,persian_melons,297,1
- ,304,snap,298,1
- ,304,jujube,299,1
- ,304,medium,301,1
- ,304,peach,302,1
- ,304,green_tea,303,1
- ,304,round,304,1
+ ,305,wild_rice,219,1
+ ,305,sour_cream,226,1
+ ,305,fenugreek_seed,237,1
+ ,305,rocket,238,1
+ ,305,pastry,241,1
+ ,305,chuck,247,1
+ ,305,chili_powder,250,1
+ ,305,rum,251,1
+ ,305,citrus,259,1
+ ,305,swiss_chard,264,1
+ ,305,grapefruit,266,1
+ ,305,lamb_chop,273,1
+ ,305,papaya,274,1
+ ,305,tamarind,281,1
+ ,305,veal,282,1
+ ,305,parsnip,289,1
+ ,305,saffron,290,1
+ ,305,navel_orange,295,1
+ ,305,pomegranate,296,1
+ ,305,persian_melons,297,1
+ ,305,snap,298,1
+ ,305,jujube,299,1
+ ,305,medium,301,1
+ ,305,peach,302,1
+ ,305,green_tea,303,1
+ ,305,round,304,1
+condensed_milk,232, ,306,1
+granulated_sugar,236, ,306,1
+mix,240, ,306,1
+fatback,256, ,306,1
+snapper,260, ,306,1
+steak,261, ,306,1
+anchovy,262, ,306,1
+kosher,268, ,306,1
+littleneck_clam,269, ,306,1
+short_ribs,272, ,306,1
+adzuki_bean,279, ,306,1
+apricot,280, ,306,1
+brown_rice,282, ,306,1
+cocoa,284, ,306,1
+cocoa_powder,285, ,306,1
+corn_syrup,286, ,306,1
+crystallized_ginger,288, ,306,1
+halibut,291, ,306,1
+molasses,293, ,306,1
+penne,294, ,306,1
+salad,295, ,306,1
+semolina,296, ,306,1
+sole,298, ,306,1
+tahini,301, ,306,1
+vanilla_bean,303, ,306,1

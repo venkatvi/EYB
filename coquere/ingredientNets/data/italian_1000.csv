@@ -90,9 +90,6 @@ green_bean,89,green_bean,103,1
 olive,90,olive,106,1
 plain_flour,91,plain_flour,77,1
 rabbit,92,rabbit,119,1
-vanilla_bean,93, ,119,1
-garbanzo,94, ,119,1
-linguine,95, ,119,1
 rocket,96,rocket,68,1
 salt,97,salt,88,1
 vegetable,98,vegetable,97,1
@@ -101,32 +98,35 @@ chive,100,chive,69,1
 cocoa_powder,101,cocoa_powder,107,1
 cornmeal,102,cornmeal,118,1
 fennel_seed,103,fennel_seed,71,1
-fettuccine,104, ,119,1
 ham,105,ham,95,1
-hard_wheat,106, ,119,1
-kosher,107, ,119,1
 lard,108,lard,110,1
-orange_peel,109, ,119,1
-patty,110, ,119,1
-rigatoni,111, ,119,1
 rum,112,rum,113,1
-sherry,113, ,119,1
-spaghettini,114, ,119,1
-tagliatelle,115, ,119,1
 tomato_sauce,116,tomato_sauce,93,1
 walnut,117,walnut,67,1
-wheat_flour,118, ,119,1
- ,118,cream,76,1
- ,118,mascarpone,81,1
- ,118,brandy,85,1
- ,118,asparagus,86,1
- ,118,apple,87,1
- ,118,coriander_seed,92,1
- ,118,sausage,98,1
- ,118,polenta,104,1
- ,118,white_bread,105,1
- ,118,double_cream,108,1
- ,118,chicken_liver,109,1
- ,118,truffle,111,1
- ,118,radicchio,115,1
- ,118,chestnut,116,1
+ ,119,cream,76,1
+ ,119,mascarpone,81,1
+ ,119,brandy,85,1
+ ,119,asparagus,86,1
+ ,119,apple,87,1
+ ,119,coriander_seed,92,1
+ ,119,sausage,98,1
+ ,119,polenta,104,1
+ ,119,white_bread,105,1
+ ,119,double_cream,108,1
+ ,119,chicken_liver,109,1
+ ,119,truffle,111,1
+ ,119,radicchio,115,1
+ ,119,chestnut,116,1
+vanilla_bean,93, ,120,1
+garbanzo,94, ,120,1
+linguine,95, ,120,1
+fettuccine,104, ,120,1
+hard_wheat,106, ,120,1
+kosher,107, ,120,1
+orange_peel,109, ,120,1
+patty,110, ,120,1
+rigatoni,111, ,120,1
+sherry,113, ,120,1
+spaghettini,114, ,120,1
+tagliatelle,115, ,120,1
+wheat_flour,118, ,120,1

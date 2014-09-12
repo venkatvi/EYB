@@ -146,7 +146,6 @@ galangal,145,galangal,186,1
 kaffir,146,kaffir,192,1
 lamb_chop,147,lamb_chop,178,1
 lettuce,148,lettuce,152,1
-meat,149, ,195,1
 mutton,150,mutton,190,1
 beetroot,151,beetroot,163,1
 bitter,152,bitter,188,1
@@ -160,7 +159,6 @@ water,159,water,123,1
 wheat_berry,160,wheat_berry,127,1
 white_bread,161,white_bread,146,1
 yellow_pea,162,yellow_pea,191,1
-butternut_squash,163, ,195,1
 dried_apricot,164,dried_apricot,140,1
 duck,165,duck,157,1
 noodle,166,noodle,101,1
@@ -168,7 +166,6 @@ orange_juice,167,orange_juice,137,1
 whipping_cream,168,whipping_cream,153,1
 yam,169,yam,174,1
 allspice,170,allspice,160,1
-avocado,171, ,195,1
 bean_sprout,172,bean_sprout,134,1
 cheddar_cheese,173,cheddar_cheese,195,1
 cod,174,cod,184,1
@@ -177,30 +174,33 @@ pineapple,176,pineapple,104,1
 plantain,177,plantain,193,1
 sesame,178,sesame,181,1
 white_pepper,179,white_pepper,164,1
-canola_oil,180, ,195,1
-chicken leg,181, ,195,1
-condensed_milk,182, ,195,1
 curd,183,curd,182,1
-daikon,184, ,195,1
 herb,185,herb,139,1
-mackerel,186, ,195,1
-mussel,187, ,195,1
 pasta,188,pasta,165,1
 pine_nut,189,pine_nut,161,1
 powdered_milk,190,powdered_milk,189,1
 rose,191,rose,176,1
-sherry,192, ,195,1
 squid,193,squid,175,1
-sweet,194, ,195,1
- ,194,grape,147,1
- ,194,pigeon_pea,154,1
- ,194,peach,162,1
- ,194,brown_sugar,166,1
- ,194,pear,167,1
- ,194,fig,169,1
- ,194,tarragon,172,1
- ,194,farmer's_cheese,177,1
- ,194,oregano,180,1
- ,194,ricotta,183,1
- ,194,cream_cheese,185,1
- ,194,sunflower_oil,194,1
+ ,195,grape,147,1
+ ,195,pigeon_pea,154,1
+ ,195,peach,162,1
+ ,195,brown_sugar,166,1
+ ,195,pear,167,1
+ ,195,fig,169,1
+ ,195,tarragon,172,1
+ ,195,farmer's_cheese,177,1
+ ,195,oregano,180,1
+ ,195,ricotta,183,1
+ ,195,cream_cheese,185,1
+ ,195,sunflower_oil,194,1
+meat,149, ,196,1
+butternut_squash,163, ,196,1
+avocado,171, ,196,1
+canola_oil,180, ,196,1
+chicken leg,181, ,196,1
+condensed_milk,182, ,196,1
+daikon,184, ,196,1
+mackerel,186, ,196,1
+mussel,187, ,196,1
+sherry,192, ,196,1
+sweet,194, ,196,1

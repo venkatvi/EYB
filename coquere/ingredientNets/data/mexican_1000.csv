@@ -101,44 +101,44 @@ tequila,100,tequila,84,1
 tomato_paste,101,tomato_paste,100,1
 turkey,102,turkey,107,1
 basil,103,basil,95,1
-chilli,104, ,133,1
 cream_cheese,105,cream_cheese,96,1
 fillet,106,fillet,109,1
 honey,107,honey,57,1
-mango,108, ,133,1
 red_wine,109,red_wine,105,1
 shallot,110,shallot,87,1
 tomato_sauce,111,tomato_sauce,122,1
 vegetable,112,vegetable,126,1
 bean,113,bean,131,1
-beer,114, ,133,1
 black_olive,115,black_olive,130,1
-brisket,116, ,133,1
 chive,117,chive,115,1
-crabmeat,118, ,133,1
-flank_steak,119, ,133,1
 goat_cheese,120,goat_cheese,128,1
-margarine,121, ,133,1
 nutmeg,122,nutmeg,88,1
 pasta,123,pasta,132,1
-patty,124, ,133,1
 pork_loin,125,pork_loin,121,1
 pumpkin,126,pumpkin,118,1
-rib,127, ,133,1
 soy_sauce,128,soy_sauce,123,1
-sparerib,129, ,133,1
 spinach,130,spinach,113,1
-squash,131, ,133,1
 sweet,132,sweet,106,1
- ,132,cream,91,1
- ,132,brown_sugar,93,1
- ,132,dark_chocolate,102,1
- ,132,ham,110,1
- ,132,pine_nut,111,1
- ,132,walnut,112,1
- ,132,pear,114,1
- ,132,bread,120,1
- ,132,wine_vinegar,124,1
- ,132,prune,125,1
- ,132,white_pepper,127,1
- ,132,rosemary,133,1
+ ,133,cream,91,1
+ ,133,brown_sugar,93,1
+ ,133,dark_chocolate,102,1
+ ,133,ham,110,1
+ ,133,pine_nut,111,1
+ ,133,walnut,112,1
+ ,133,pear,114,1
+ ,133,bread,120,1
+ ,133,wine_vinegar,124,1
+ ,133,prune,125,1
+ ,133,white_pepper,127,1
+ ,133,rosemary,133,1
+chilli,104, ,134,1
+mango,108, ,134,1
+beer,114, ,134,1
+brisket,116, ,134,1
+crabmeat,118, ,134,1
+flank_steak,119, ,134,1
+margarine,121, ,134,1
+patty,124, ,134,1
+rib,127, ,134,1
+sparerib,129, ,134,1
+squash,131, ,134,1

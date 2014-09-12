@@ -15,22 +15,22 @@ thyme,14,thyme,20,1
 tortilla,15,tortilla,22,1
 avocado,16,avocado,24,1
 carrot,17,carrot,23,1
-lard,18, ,30,1
-pork,19, ,30,1
 parsley,20,parsley,12,1
-tomatillo,21, ,30,1
 potato,22,potato,25,1
 red_onion,23,red_onion,30,1
 red_pepper,24,red_pepper,14,1
-adobo,25, ,30,1
-beef,26, ,30,1
-cider_vinegar,27, ,30,1
 cinnamon,28,cinnamon,11,1
 spring_onion,29,spring_onion,18,1
- ,29,orange,15,1
- ,29,flour,17,1
- ,29,vinegar,21,1
- ,29,egg,26,1
- ,29,sugar,27,1
- ,29,sweet_pepper,28,1
- ,29,butter,29,1
+ ,30,orange,15,1
+ ,30,flour,17,1
+ ,30,vinegar,21,1
+ ,30,egg,26,1
+ ,30,sugar,27,1
+ ,30,sweet_pepper,28,1
+ ,30,butter,29,1
+lard,18, ,31,1
+pork,19, ,31,1
+tomatillo,21, ,31,1
+adobo,25, ,31,1
+beef,26, ,31,1
+cider_vinegar,27, ,31,1

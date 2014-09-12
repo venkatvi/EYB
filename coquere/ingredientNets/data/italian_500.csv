@@ -62,30 +62,30 @@ shrimp,61,shrimp,60,1
 spinach,62,spinach,64,1
 castor_sugar,63,castor_sugar,70,1
 globe_artichoke,64,globe_artichoke,80,1
-mussel,65, ,83,1
 raisin,66,raisin,57,1
 rice,67,rice,58,1
-squid,68, ,83,1
 vegetable_oil,69,vegetable_oil,54,1
 wine_vinegar,70,wine_vinegar,65,1
 cherry tomato,71,cherry tomato,78,1
-clam,72, ,83,1
-fish,73, ,83,1
 honey,74,honey,59,1
 lamb,75,lamb,83,1
-linguine,76, ,83,1
-penne,77, ,83,1
-rigatoni,78, ,83,1
 semolina,79,semolina,73,1
 shallot,80,shallot,50,1
 sweet_pepper,81,sweet_pepper,72,1
-tuna,82, ,83,1
- ,82,vinegar,40,1
- ,82,walnut,67,1
- ,82,rocket,68,1
- ,82,chive,69,1
- ,82,fennel_seed,71,1
- ,82,saffron,75,1
- ,82,cream,76,1
- ,82,plain_flour,77,1
- ,82,mascarpone,81,1
+ ,83,vinegar,40,1
+ ,83,walnut,67,1
+ ,83,rocket,68,1
+ ,83,chive,69,1
+ ,83,fennel_seed,71,1
+ ,83,saffron,75,1
+ ,83,cream,76,1
+ ,83,plain_flour,77,1
+ ,83,mascarpone,81,1
+mussel,65, ,84,1
+squid,68, ,84,1
+clam,72, ,84,1
+fish,73, ,84,1
+linguine,76, ,84,1
+penne,77, ,84,1
+rigatoni,78, ,84,1
+tuna,82, ,84,1

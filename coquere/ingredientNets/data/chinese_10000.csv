@@ -339,7 +339,6 @@ anchovy,338,anchovy,333,1
 apricot,339,apricot,348,1
 celery_root,340,celery_root,343,1
 condensed_milk,341,condensed_milk,338,1
-couscous,342, ,468,1
 lentil,343,lentil,327,1
 mackerel,344,mackerel,415,1
 pickle,345,pickle,355,1
@@ -372,7 +371,6 @@ bottled_water,371,bottled_water,353,1
 buttermilk,372,buttermilk,332,1
 cheddar_cheese,373,cheddar_cheese,372,1
 cocoa_powder,374,cocoa_powder,358,1
-cress,375, ,468,1
 demerara_sugar,376,demerara_sugar,410,1
 fatback,377,fatback,382,1
 garlic_salt,378,garlic_salt,375,1
@@ -422,7 +420,6 @@ kumquat,421,kumquat,436,1
 lemon_sole,422,lemon_sole,425,1
 linguine,423,linguine,426,1
 milk_powder,424,milk_powder,421,1
-ouzo,425, ,468,1
 penne,426,penne,440,1
 potato_chip,427,potato_chip,432,1
 runner_bean,428,runner_bean,431,1
@@ -450,31 +447,34 @@ orange_marmalade,449,orange_marmalade,413,1
 orzo,450,orzo,442,1
 pearl_barley,451,pearl_barley,446,1
 phyllo,452,phyllo,462,1
-picnic,453, ,468,1
-picnic_shoulder,454, ,468,1
-pie,455, ,468,1
-pie_shell,456, ,468,1
 puff,457,puff,459,1
-purple_amaranth,458, ,468,1
 red_ginger,459,red_ginger,406,1
-sashimi,460, ,468,1
 shrimp_sauce,461,shrimp_sauce,451,1
 sour_cherry,462,sour_cherry,455,1
 spaghetti,463,spaghetti,443,1
-sultana,464, ,468,1
 truffle,465,truffle,417,1
-vegetable_marrow,466, ,468,1
-wafer,467, ,468,1
- ,467,horseradish,403,1
- ,467,adobo,424,1
- ,467,golden_syrup,427,1
- ,467,haricot_vert,428,1
- ,467,margarine,435,1
- ,467,stem_lettuce,448,1
- ,467,savory,449,1
- ,467,hard-shell_clam,458,1
- ,467,sweetbread,460,1
- ,467,liver_sausage,461,1
- ,467,black_bass,463,1
- ,467,walnut_oil,467,1
- ,467,grouper,468,1
+ ,468,horseradish,403,1
+ ,468,adobo,424,1
+ ,468,golden_syrup,427,1
+ ,468,haricot_vert,428,1
+ ,468,margarine,435,1
+ ,468,stem_lettuce,448,1
+ ,468,savory,449,1
+ ,468,hard-shell_clam,458,1
+ ,468,sweetbread,460,1
+ ,468,liver_sausage,461,1
+ ,468,black_bass,463,1
+ ,468,walnut_oil,467,1
+ ,468,grouper,468,1
+couscous,342, ,469,1
+cress,375, ,469,1
+ouzo,425, ,469,1
+picnic,453, ,469,1
+picnic_shoulder,454, ,469,1
+pie,455, ,469,1
+pie_shell,456, ,469,1
+purple_amaranth,458, ,469,1
+sashimi,460, ,469,1
+sultana,464, ,469,1
+vegetable_marrow,466, ,469,1
+wafer,467, ,469,1

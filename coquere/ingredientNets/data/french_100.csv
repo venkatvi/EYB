@@ -22,12 +22,12 @@ veal,21,veal,28,1
 bacon,22,bacon,30,1
 egg_yolk,23,egg_yolk,18,1
 lemon,24,lemon,11,1
-poulet,25, ,30,1
-tarragon,26, ,30,1
-basil,27, ,30,1
 chicken_stock,28,chicken_stock,24,1
 red_pepper,29,red_pepper,23,1
- ,29,heavy_cream,19,1
- ,29,vinegar,25,1
- ,29,nutmeg,27,1
- ,29,cream,29,1
+ ,30,heavy_cream,19,1
+ ,30,vinegar,25,1
+ ,30,nutmeg,27,1
+ ,30,cream,29,1
+poulet,25, ,31,1
+tarragon,26, ,31,1
+basil,27, ,31,1

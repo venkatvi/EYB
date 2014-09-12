@@ -46,46 +46,46 @@ chervil,45,chervil,50,1
 jambon,46,jambon,54,1
 lamb,47,lamb,68,1
 rosemary,48,rosemary,64,1
-shoulder,49, ,78,1
 apple,50,apple,38,1
-beef_stock,51, ,78,1
 duck,52,duck,52,1
 bread,53,bread,42,1
 cinnamon,54,cinnamon,41,1
 coriander_seed,55,coriander_seed,45,1
-dark_chocolate,56, ,78,1
-mussel,57, ,78,1
 saffron,58,saffron,57,1
 stock,59,stock,61,1
-vanilla_bean,60, ,78,1
-vanilla_extract,61, ,78,1
-anchovy,62, ,78,1
 caper,63,caper,67,1
 juniper_berry,64,juniper_berry,74,1
 olive_oil,65,olive_oil,53,1
 pea,66,pea,76,1
 rice,67,rice,43,1
-black_olive,68, ,78,1
-chou,69, ,78,1
-eggplant,70, ,78,1
-grain,71, ,78,1
 oregano,72,oregano,71,1
-rum,73, ,78,1
-sage,74, ,78,1
 sherry,75,sherry,51,1
 truffle,76,truffle,56,1
 vegetable_oil,77,vegetable_oil,46,1
- ,77,ginger,49,1
- ,77,jelly,55,1
- ,77,lime,58,1
- ,77,honey,60,1
- ,77,double_cream,62,1
- ,77,sweet_pepper,63,1
- ,77,chilli,65,1
- ,77,white_pepper,66,1
- ,77,herb,69,1
- ,77,mint,70,1
- ,77,brandy,72,1
- ,77,spinach,75,1
- ,77,allspice,77,1
- ,77,shrimp,78,1
+ ,78,ginger,49,1
+ ,78,jelly,55,1
+ ,78,lime,58,1
+ ,78,honey,60,1
+ ,78,double_cream,62,1
+ ,78,sweet_pepper,63,1
+ ,78,chilli,65,1
+ ,78,white_pepper,66,1
+ ,78,herb,69,1
+ ,78,mint,70,1
+ ,78,brandy,72,1
+ ,78,spinach,75,1
+ ,78,allspice,77,1
+ ,78,shrimp,78,1
+shoulder,49, ,79,1
+beef_stock,51, ,79,1
+dark_chocolate,56, ,79,1
+mussel,57, ,79,1
+vanilla_bean,60, ,79,1
+vanilla_extract,61, ,79,1
+anchovy,62, ,79,1
+black_olive,68, ,79,1
+chou,69, ,79,1
+eggplant,70, ,79,1
+grain,71, ,79,1
+rum,73, ,79,1
+sage,74, ,79,1

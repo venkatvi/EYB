@@ -40,30 +40,30 @@ ricotta,39,ricotta,34,1
 spring_onion,40,spring_onion,24,1
 sugar,41,sugar,43,1
 pork,42,pork,53,1
-spaghetti,43, ,60,1
 zucchini,44,zucchini,56,1
-bean,45, ,60,1
 egg_yolk,46,egg_yolk,37,1
-eggplant,47, ,60,1
 mozzarella,48,mozzarella,55,1
-wine_vinegar,49, ,60,1
-black_olive,50, ,60,1
-globe_artichoke,51, ,60,1
 mint,52,mint,47,1
-mussel,53, ,60,1
-penne,54, ,60,1
 pine_nut,55,pine_nut,41,1
 prosciutto,56,prosciutto,51,1
 raisin,57,raisin,57,1
-semolina,58, ,60,1
 shrimp,59,shrimp,60,1
- ,59,heavy_cream,20,1
- ,59,orange,29,1
- ,59,cinnamon,33,1
- ,59,vinegar,40,1
- ,59,florence_fennel,44,1
- ,59,shallot,50,1
- ,59,almond,52,1
- ,59,vegetable_oil,54,1
- ,59,rice,58,1
- ,59,honey,59,1
+ ,60,heavy_cream,20,1
+ ,60,orange,29,1
+ ,60,cinnamon,33,1
+ ,60,vinegar,40,1
+ ,60,florence_fennel,44,1
+ ,60,shallot,50,1
+ ,60,almond,52,1
+ ,60,vegetable_oil,54,1
+ ,60,rice,58,1
+ ,60,honey,59,1
+spaghetti,43, ,61,1
+bean,45, ,61,1
+eggplant,47, ,61,1
+wine_vinegar,49, ,61,1
+black_olive,50, ,61,1
+globe_artichoke,51, ,61,1
+mussel,53, ,61,1
+penne,54, ,61,1
+semolina,58, ,61,1

@@ -125,7 +125,6 @@ avocado,124,avocado,135,1
 cucumber,125,cucumber,119,1
 dark_chocolate,126,dark_chocolate,113,1
 duck,127,duck,108,1
-granulated_sugar,128, ,204,1
 meat,129,meat,136,1
 noodle,130,noodle,146,1
 tomato_sauce,131,tomato_sauce,114,1
@@ -140,7 +139,6 @@ ground_beef,139,ground_beef,140,1
 herb,140,herb,130,1
 leg,141,leg,158,1
 liver,142,liver,128,1
-octopus,143, ,204,1
 radish,144,radish,175,1
 artichoke_heart,145,artichoke_heart,157,1
 bean,146,bean,147,1
@@ -150,7 +148,6 @@ sardine,149,sardine,164,1
 scallop,150,scallop,161,1
 cod,151,cod,150,1
 crabmeat,152,crabmeat,137,1
-kosher,153, ,204,1
 lentil,154,lentil,181,1
 lima_bean,155,lima_bean,162,1
 prosciutto,156,prosciutto,154,1
@@ -158,66 +155,69 @@ prune,157,prune,133,1
 truffle,158,truffle,153,1
 vegetable,159,vegetable,134,1
 aioli,160,aioli,202,1
-cake,161, ,204,1
 cardamom,162,cardamom,131,1
 dill,163,dill,165,1
 fig,164,fig,155,1
 jelly,165,jelly,143,1
 orange_juice,166,orange_juice,109,1
-paella,167, ,204,1
 peach,168,peach,182,1
 pork_sausage,169,pork_sausage,151,1
 rum,170,rum,177,1
 single_cream,171,single_cream,163,1
-tomatillo,172, ,204,1
 watercress,173,watercress,173,1
 cheese,174,cheese,156,1
 cider,175,cider,197,1
-cornmeal,176, ,204,1
-double_cream,177, ,204,1
 hard-cooked_egg,178,hard-cooked_egg,176,1
 langoustine,179,langoustine,152,1
-liqueur,180, ,204,1
-littleneck_clam,181, ,204,1
-manzanilla,182, ,204,1
-mustard_seed,183, ,204,1
 oyster mushroom,184,oyster mushroom,190,1
 paste,185,paste,116,1
 pear,186,pear,138,1
 pumpkin,187,pumpkin,166,1
 rib,188,rib,199,1
-rock,189, ,204,1
 romaine_lettuce,190,romaine_lettuce,184,1
 salmon,191,salmon,148,1
-semolina,192, ,204,1
 snail,193,snail,185,1
-sole,194, ,204,1
 sparerib,195,sparerib,187,1
-sparkling_water,196, ,204,1
-spiny_lobster,197, ,204,1
 striped_bass,198,striped_bass,172,1
-tripe,199, ,204,1
 turmeric,200,turmeric,188,1
-vanilla_extract,201, ,204,1
 walnut,202,walnut,99,1
 whipping_cream,203,whipping_cream,186,1
- ,203,pastry,149,1
- ,203,allspice,168,1
- ,203,mullet,169,1
- ,203,chestnut,171,1
- ,203,salvia,178,1
- ,203,soy_sauce,179,1
- ,203,plain_flour,180,1
- ,203,escarole,183,1
- ,203,goat_cheese,189,1
- ,203,salt_pork,191,1
- ,203,sesame_seed,192,1
- ,203,rocket,193,1
- ,203,white_pepper,194,1
- ,203,trout,195,1
- ,203,dried_apricot,196,1
- ,203,beetroot,198,1
- ,203,liquorice,200,1
- ,203,drinking_chocolate,201,1
- ,203,sweet potato,203,1
- ,203,pastis,204,1
+ ,204,pastry,149,1
+ ,204,allspice,168,1
+ ,204,mullet,169,1
+ ,204,chestnut,171,1
+ ,204,salvia,178,1
+ ,204,soy_sauce,179,1
+ ,204,plain_flour,180,1
+ ,204,escarole,183,1
+ ,204,goat_cheese,189,1
+ ,204,salt_pork,191,1
+ ,204,sesame_seed,192,1
+ ,204,rocket,193,1
+ ,204,white_pepper,194,1
+ ,204,trout,195,1
+ ,204,dried_apricot,196,1
+ ,204,beetroot,198,1
+ ,204,liquorice,200,1
+ ,204,drinking_chocolate,201,1
+ ,204,sweet potato,203,1
+ ,204,pastis,204,1
+granulated_sugar,128, ,205,1
+octopus,143, ,205,1
+kosher,153, ,205,1
+cake,161, ,205,1
+paella,167, ,205,1
+tomatillo,172, ,205,1
+cornmeal,176, ,205,1
+double_cream,177, ,205,1
+liqueur,180, ,205,1
+littleneck_clam,181, ,205,1
+manzanilla,182, ,205,1
+mustard_seed,183, ,205,1
+rock,189, ,205,1
+semolina,192, ,205,1
+sole,194, ,205,1
+sparkling_water,196, ,205,1
+spiny_lobster,197, ,205,1
+tripe,199, ,205,1
+vanilla_extract,201, ,205,1

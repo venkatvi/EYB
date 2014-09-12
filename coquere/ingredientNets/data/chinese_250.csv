@@ -44,14 +44,14 @@ corn_oil,43,corn_oil,54,1
 cucumber,44,cucumber,45,1
 onion,45,onion,26,1
 shallot,46,shallot,22,1
-grain,47, ,54,1
-green_pepper,48, ,54,1
 honey,49,honey,38,1
 orange,50,orange,39,1
 sesame_seed,51,sesame_seed,44,1
-spinach,52, ,54,1
 tomato,53,tomato,25,1
- ,53,sugar,42,1
- ,53,lemon,46,1
- ,53,lime,50,1
- ,53,pimiento,51,1
+ ,54,sugar,42,1
+ ,54,lemon,46,1
+ ,54,lime,50,1
+ ,54,pimiento,51,1
+grain,47, ,55,1
+green_pepper,48, ,55,1
+spinach,52, ,55,1

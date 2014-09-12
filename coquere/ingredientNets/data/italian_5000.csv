@@ -251,7 +251,6 @@ marrow,250,marrow,247,1
 pork_sausage,251,pork_sausage,232,1
 romaine_lettuce,252,romaine_lettuce,215,1
 sirloin,253,sirloin,285,1
-vermicelli,254, ,317,1
 blueberry,255,blueberry,260,1
 buckwheat,256,buckwheat,301,1
 chuck,257,chuck,315,1
@@ -265,7 +264,6 @@ lemon_peel,264,lemon_peel,307,1
 plum,265,plum,252,1
 prune,266,prune,196,1
 red_snapper,267,red_snapper,265,1
-rye,268, ,317,1
 single_cream,269,single_cream,220,1
 star_anise,270,star_anise,217,1
 syrup,271,syrup,303,1
@@ -275,38 +273,21 @@ wheat_berry,274,wheat_berry,237,1
 anchovy_paste,275,anchovy_paste,271,1
 avocado,276,avocado,274,1
 barley,277,barley,275,1
-beer,278, ,317,1
 blackberry,279,blackberry,284,1
 brain,280,brain,263,1
-buttermilk,281, ,317,1
 cardamom,282,cardamom,262,1
 cardoon,283,cardoon,253,1
-cherry pepper,284, ,317,1
 chervil,285,chervil,223,1
 farfalle,286,farfalle,302,1
-grapefruit,287, ,317,1
-grouper,288, ,317,1
 halibut,289,halibut,292,1
-instant_coffee,290, ,317,1
-lamb_chop,291, ,317,1
-leg_of_lamb,292, ,317,1
-lemon_extract,293, ,317,1
-mackerel,294, ,317,1
 orange_juice,295,orange_juice,266,1
-orzo,296, ,317,1
-oyster,297, ,317,1
-oyster mushroom,298, ,317,1
 parsnip,299,parsnip,270,1
 peanut_oil,300,peanut_oil,314,1
 pork_belly,301,pork_belly,231,1
-puff,302, ,317,1
 quince,303,quince,298,1
 sausage_meat,304,sausage_meat,310,1
 scampi,305,scampi,287,1
 sea_bream,306,sea_bream,282,1
-self-rising_flour,307, ,317,1
-sesame_seed,308, ,317,1
-snail,309, ,317,1
 snapper,310,snapper,269,1
 sweetbread,311,sweetbread,227,1
 top_round,312,top_round,305,1
@@ -314,23 +295,42 @@ trout,313,trout,295,1
 vodka,314,vodka,273,1
 whole_wheat_flour,315,whole_wheat_flour,286,1
 yellow_squash,316,yellow_squash,308,1
- ,316,squab,249,1
- ,316,curry_powder,250,1
- ,316,watercress,258,1
- ,316,soured_cream,264,1
- ,316,mustard_greens,276,1
- ,316,banana,278,1
- ,316,yogurt,279,1
- ,316,bouillon_cube,281,1
- ,316,langoustine,283,1
- ,316,horseradish,289,1
- ,316,sponge_cake,296,1
- ,316,soy_sauce,299,1
- ,316,string_bean,300,1
- ,316,fowl,304,1
- ,316,mustard_seed,306,1
- ,316,cider_vinegar,309,1
- ,316,borage,311,1
- ,316,dried_apricot,313,1
- ,316,orange_liqueur,316,1
- ,316,vermouth,317,1
+ ,317,squab,249,1
+ ,317,curry_powder,250,1
+ ,317,watercress,258,1
+ ,317,soured_cream,264,1
+ ,317,mustard_greens,276,1
+ ,317,banana,278,1
+ ,317,yogurt,279,1
+ ,317,bouillon_cube,281,1
+ ,317,langoustine,283,1
+ ,317,horseradish,289,1
+ ,317,sponge_cake,296,1
+ ,317,soy_sauce,299,1
+ ,317,string_bean,300,1
+ ,317,fowl,304,1
+ ,317,mustard_seed,306,1
+ ,317,cider_vinegar,309,1
+ ,317,borage,311,1
+ ,317,dried_apricot,313,1
+ ,317,orange_liqueur,316,1
+ ,317,vermouth,317,1
+vermicelli,254, ,318,1
+rye,268, ,318,1
+beer,278, ,318,1
+buttermilk,281, ,318,1
+cherry pepper,284, ,318,1
+grapefruit,287, ,318,1
+grouper,288, ,318,1
+instant_coffee,290, ,318,1
+lamb_chop,291, ,318,1
+leg_of_lamb,292, ,318,1
+lemon_extract,293, ,318,1
+mackerel,294, ,318,1
+orzo,296, ,318,1
+oyster,297, ,318,1
+oyster mushroom,298, ,318,1
+puff,302, ,318,1
+self-rising_flour,307, ,318,1
+sesame_seed,308, ,318,1
+snail,309, ,318,1

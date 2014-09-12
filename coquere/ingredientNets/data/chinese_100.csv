@@ -20,17 +20,17 @@ sherry,19,sherry,19,1
 white_pepper,20,white_pepper,24,1
 bean,21,bean,30,1
 red_pepper,22,red_pepper,16,1
-sesame,23, ,31,1
 star_anise,24,star_anise,31,1
-bamboo_shoot,25, ,31,1
-beef,26, ,31,1
-noodle,27, ,31,1
 peppercorn,28,peppercorn,27,1
-tofu,29, ,31,1
 vegetable_oil,30,vegetable_oil,21,1
- ,30,flour,15,1
- ,30,shallot,22,1
- ,30,tomato,25,1
- ,30,onion,26,1
- ,30,white,28,1
- ,30,celery,29,1
+ ,31,flour,15,1
+ ,31,shallot,22,1
+ ,31,tomato,25,1
+ ,31,onion,26,1
+ ,31,white,28,1
+ ,31,celery,29,1
+sesame,23, ,32,1
+bamboo_shoot,25, ,32,1
+beef,26, ,32,1
+noodle,27, ,32,1
+tofu,29, ,32,1

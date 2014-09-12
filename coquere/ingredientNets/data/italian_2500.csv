@@ -140,9 +140,7 @@ double_cream,139,double_cream,108,1
 pastry,140,pastry,172,1
 pear,141,pear,122,1
 salami,142,salami,133,1
-white_turnip,143, ,216,1
 apricot,144,apricot,180,1
-buffalo,145, ,216,1
 citron,146,citron,208,1
 escarole,147,escarole,139,1
 hard_wheat,148,hard_wheat,168,1
@@ -153,7 +151,6 @@ scallop,152,scallop,146,1
 strawberry,153,strawberry,189,1
 sweet,154,sweet,124,1
 tagliatelle,155,tagliatelle,163,1
-broccoli_rabe,156, ,216,1
 cherry,157,cherry,128,1
 chestnut,158,chestnut,116,1
 cooky,159,cooky,154,1
@@ -171,66 +168,69 @@ radicchio,170,radicchio,115,1
 rock,171,rock,194,1
 salt_cod,172,salt_cod,205,1
 sherry,173,sherry,134,1
-spaghettini,174, ,216,1
 tarragon,175,tarragon,126,1
-tripe,176, ,216,1
 white_bean,177,white_bean,211,1
 white_pepper,178,white_pepper,135,1
-almond_extract,179, ,216,1
-aniseed,180, ,216,1
-buckwheat,181, ,216,1
 butternut_squash,182,butternut_squash,176,1
 cod,183,cod,192,1
 corn,184,corn,149,1
-corn_syrup,185, ,216,1
 crabmeat,186,crabmeat,191,1
 currant,187,currant,165,1
-espresso,188, ,216,1
-farfalle,189, ,216,1
 ginger,190,ginger,140,1
 hard-cooked_egg,191,hard-cooked_egg,174,1
 lasagne,192,lasagne,199,1
 littleneck_clam,193,littleneck_clam,216,1
-macaroni,194, ,216,1
-marrow,195, ,216,1
 monkfish,196,monkfish,188,1
-orange_juice,197, ,216,1
 patty,198,patty,206,1
 peach,199,peach,187,1
 pork_loin,200,pork_loin,147,1
 pumpkin,201,pumpkin,158,1
 raspberry,202,raspberry,204,1
 rib,203,rib,203,1
-rump,204, ,216,1
-rye,205, ,216,1
 sea_bass,206,sea_bass,197,1
-sparerib,207, ,216,1
 sultana,208,sultana,153,1
 sunflower_oil,209,sunflower_oil,157,1
-tart,210, ,216,1
-vermicelli,211, ,216,1
 wheat_flour,212,wheat_flour,175,1
 whipping_cream,213,whipping_cream,148,1
-whole_wheat_flour,214, ,216,1
 wine,215,wine,123,1
- ,215,pistachio_nut,129,1
- ,215,herb,161,1
- ,215,beetroot,162,1
- ,215,goat_cheese,167,1
- ,215,grape,171,1
- ,215,cumin_seed,173,1
- ,215,grappa,178,1
- ,215,artichoke_heart,179,1
- ,215,lime,181,1
- ,215,salmon,190,1
- ,215,dill_weed,195,1
- ,215,prune,196,1
- ,215,baguette,198,1
- ,215,coffee,200,1
- ,215,berry,202,1
- ,215,cranberry,207,1
- ,215,loin,209,1
- ,215,radish,210,1
- ,215,celery_root,212,1
- ,215,sourdough_bread,213,1
- ,215,romaine_lettuce,215,1
+ ,216,pistachio_nut,129,1
+ ,216,herb,161,1
+ ,216,beetroot,162,1
+ ,216,goat_cheese,167,1
+ ,216,grape,171,1
+ ,216,cumin_seed,173,1
+ ,216,grappa,178,1
+ ,216,artichoke_heart,179,1
+ ,216,lime,181,1
+ ,216,salmon,190,1
+ ,216,dill_weed,195,1
+ ,216,prune,196,1
+ ,216,baguette,198,1
+ ,216,coffee,200,1
+ ,216,berry,202,1
+ ,216,cranberry,207,1
+ ,216,loin,209,1
+ ,216,radish,210,1
+ ,216,celery_root,212,1
+ ,216,sourdough_bread,213,1
+ ,216,romaine_lettuce,215,1
+white_turnip,143, ,217,1
+buffalo,145, ,217,1
+broccoli_rabe,156, ,217,1
+spaghettini,174, ,217,1
+tripe,176, ,217,1
+almond_extract,179, ,217,1
+aniseed,180, ,217,1
+buckwheat,181, ,217,1
+corn_syrup,185, ,217,1
+espresso,188, ,217,1
+farfalle,189, ,217,1
+macaroni,194, ,217,1
+marrow,195, ,217,1
+orange_juice,197, ,217,1
+rump,204, ,217,1
+rye,205, ,217,1
+sparerib,207, ,217,1
+tart,210, ,217,1
+vermicelli,211, ,217,1
+whole_wheat_flour,214, ,217,1

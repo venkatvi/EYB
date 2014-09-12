@@ -361,7 +361,6 @@ walnut_oil,360,walnut_oil,334,1
 white_rice,361,white_rice,348,1
 bonito,362,bonito,373,1
 caraway,363,caraway,411,1
-celery_seed,364, ,453,1
 coffee,365,coffee,372,1
 demerara_sugar,366,demerara_sugar,367,1
 flounder,367,flounder,365,1
@@ -393,7 +392,6 @@ cress,392,cress,388,1
 durum_wheat,393,durum_wheat,389,1
 edible,394,edible,439,1
 gooseberry,395,gooseberry,399,1
-hamburger_bun,396, ,453,1
 kosher,397,kosher,408,1
 nectar,398,nectar,436,1
 pinto_bean,399,pinto_bean,387,1
@@ -422,43 +420,45 @@ moth_bean,421,moth_bean,364,1
 oyster mushroom,422,oyster mushroom,402,1
 pita,423,pita,426,1
 pork_sausage,424,pork_sausage,419,1
-roast_beef,425, ,453,1
 sea_scallop,426,sea_scallop,361,1
-sea_trout,427, ,453,1
 soft-shell_crab,428,soft-shell_crab,421,1
-sponge_cake,429, ,453,1
 steak,430,steak,359,1
 wafer,431,wafer,433,1
 wheat_flour,432,wheat_flour,398,1
 whole_wheat_bread,433,whole_wheat_bread,431,1
-wine,434, ,453,1
-anchovy_paste,435, ,453,1
 collard_greens,436,collard_greens,452,1
 corn cob,437,corn cob,435,1
 dill_seed,438,dill_seed,412,1
 dragee,439,dragee,445,1
-flank_steak,440, ,453,1
 ice_cream,441,ice_cream,443,1
 mint_sauce,442,mint_sauce,409,1
 naan,443,naan,430,1
 neck,444,neck,371,1
 nectarine,445,nectarine,448,1
-orzo,446, ,453,1
 passion_fruit,447,passion_fruit,406,1
-pollock,448, ,453,1
 roe,449,roe,434,1
-rolled_oats,450, ,453,1
 swiss_chard,451,swiss_chard,449,1
 tomatillo,452,tomatillo,349,1
- ,452,adzuki_bean,423,1
- ,452,cake,424,1
- ,452,whitebait,425,1
- ,452,sardine,432,1
- ,452,vodka,440,1
- ,452,mangosteen,441,1
- ,452,carp,442,1
- ,452,sourdough_bread,444,1
- ,452,radicchio,446,1
- ,452,sage,447,1
- ,452,soy_flour,450,1
- ,452,globe_artichoke,453,1
+ ,453,adzuki_bean,423,1
+ ,453,cake,424,1
+ ,453,whitebait,425,1
+ ,453,sardine,432,1
+ ,453,vodka,440,1
+ ,453,mangosteen,441,1
+ ,453,carp,442,1
+ ,453,sourdough_bread,444,1
+ ,453,radicchio,446,1
+ ,453,sage,447,1
+ ,453,soy_flour,450,1
+ ,453,globe_artichoke,453,1
+celery_seed,364, ,454,1
+hamburger_bun,396, ,454,1
+roast_beef,425, ,454,1
+sea_trout,427, ,454,1
+sponge_cake,429, ,454,1
+wine,434, ,454,1
+anchovy_paste,435, ,454,1
+flank_steak,440, ,454,1
+orzo,446, ,454,1
+pollock,448, ,454,1
+rolled_oats,450, ,454,1

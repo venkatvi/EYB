@@ -364,7 +364,6 @@ corn_syrup,363,corn_syrup,382,1
 cranberry_juice,364,cranberry_juice,385,1
 curd,365,curd,359,1
 edible,366,edible,365,1
-fish_steak,367, ,454,1
 galangal,368,galangal,364,1
 gin,369,gin,383,1
 grenadine,370,grenadine,370,1
@@ -404,7 +403,6 @@ suckling_pig,403,suckling_pig,387,1
 swiss_chard,404,swiss_chard,404,1
 vinaigrette,405,vinaigrette,378,1
 watermelon,406,watermelon,402,1
-aquavit,407, ,454,1
 blackberry,408,blackberry,448,1
 breakfast,409,breakfast,430,1
 buffalo,410,buffalo,454,1
@@ -431,7 +429,6 @@ mace,430,mace,431,1
 margarine,431,margarine,379,1
 mascarpone,432,mascarpone,414,1
 mozzarella,433,mozzarella,416,1
-pheasant,434, ,454,1
 pinto_bean,435,pinto_bean,384,1
 pita,436,pita,355,1
 puff,437,puff,437,1
@@ -452,6 +449,9 @@ tartlet,451,tartlet,443,1
 terrine,452,terrine,434,1
 white_chocolate,453,white_chocolate,422,1
 winter_squash,454,winter_squash,436,1
- ,454,grappa,398,1
- ,454,ice_cream,425,1
- ,454,yellow_squash,435,1
+ ,455,grappa,398,1
+ ,455,ice_cream,425,1
+ ,455,yellow_squash,435,1
+fish_steak,367, ,455,1
+aquavit,407, ,455,1
+pheasant,434, ,455,1

@@ -152,7 +152,6 @@ brandy,151,brandy,146,1
 cardamom,152,cardamom,163,1
 chicken_liver,153,chicken_liver,174,1
 curd,154,curd,183,1
-hot_pepper,155, ,208,1
 turkey,156,turkey,204,1
 watercress,157,watercress,149,1
 butter,158,butter,118,1
@@ -161,15 +160,11 @@ melon,160,melon,169,1
 mussel,161,mussel,176,1
 orange_peel,162,orange_peel,193,1
 pasta,163,pasta,104,1
-squab,164, ,208,1
 sugar_snap_pea,165,sugar_snap_pea,165,1
 white_turnip,166,white_turnip,181,1
-almond_extract,167, ,208,1
-aniseed,168, ,208,1
 cake,169,cake,205,1
 cauliflower,170,cauliflower,128,1
 chicken leg,171,chicken leg,200,1
-cod,172, ,208,1
 dry_mustard,173,dry_mustard,188,1
 food_coloring,174,food_coloring,159,1
 liver,175,liver,199,1
@@ -177,46 +172,51 @@ mango,176,mango,119,1
 meat,177,meat,191,1
 nutmeg,178,nutmeg,158,1
 oregano,179,oregano,144,1
-pineapple_juice,180, ,208,1
 rump,181,rump,187,1
 sake,182,sake,184,1
-sirloin,183, ,208,1
 tomato_sauce,184,tomato_sauce,102,1
 white_bread,185,white_bread,182,1
 allspice,186,allspice,195,1
 apple,187,apple,192,1
 bay_leaf,188,bay_leaf,111,1
 beef_stock,189,beef_stock,189,1
-black_tea,190, ,208,1
 bread,191,bread,168,1
-chili_sauce,192, ,208,1
-chinese_celery,193, ,208,1
 coconut,194,coconut,153,1
-dumpling,195, ,208,1
 fennel,196,fennel,155,1
-flounder,197, ,208,1
-loin,198, ,208,1
 lychee,199,lychee,124,1
 mustard_seed,200,mustard_seed,179,1
-olive_oil,201, ,208,1
 quail,202,quail,190,1
 raisin,203,raisin,157,1
 red_wine,204,red_wine,166,1
 roast_pork,205,roast_pork,203,1
 tea_leaf,206,tea_leaf,180,1
 thyme,207,thyme,131,1
- ,207,white_wine,129,1
- ,207,cream,150,1
- ,207,rosemary,171,1
- ,207,banana,173,1
- ,207,cherry tomato,178,1
- ,207,yogurt,185,1
- ,207,mayonnaise,186,1
- ,207,dill_weed,194,1
- ,207,sweet_potato,196,1
- ,207,jelly,198,1
- ,207,curry,201,1
- ,207,bouillon,202,1
- ,207,romaine_lettuce,206,1
- ,207,squash,207,1
- ,207,taro_root,208,1
+ ,208,white_wine,129,1
+ ,208,cream,150,1
+ ,208,rosemary,171,1
+ ,208,banana,173,1
+ ,208,cherry tomato,178,1
+ ,208,yogurt,185,1
+ ,208,mayonnaise,186,1
+ ,208,dill_weed,194,1
+ ,208,sweet_potato,196,1
+ ,208,jelly,198,1
+ ,208,curry,201,1
+ ,208,bouillon,202,1
+ ,208,romaine_lettuce,206,1
+ ,208,squash,207,1
+ ,208,taro_root,208,1
+hot_pepper,155, ,209,1
+squab,164, ,209,1
+almond_extract,167, ,209,1
+aniseed,168, ,209,1
+cod,172, ,209,1
+pineapple_juice,180, ,209,1
+sirloin,183, ,209,1
+black_tea,190, ,209,1
+chili_sauce,192, ,209,1
+chinese_celery,193, ,209,1
+dumpling,195, ,209,1
+flounder,197, ,209,1
+loin,198, ,209,1
+olive_oil,201, ,209,1

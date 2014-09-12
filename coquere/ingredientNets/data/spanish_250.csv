@@ -37,33 +37,33 @@ ham,36,ham,28,1
 pork,37,pork,33,1
 cinnamon,38,cinnamon,23,1
 egg,39,egg,24,1
-clam,40, ,59,1
-green,41, ,59,1
 red_onion,42,red_onion,49,1
-squid,43, ,59,1
-stock,44, ,59,1
 sunflower_oil,45,sunflower_oil,50,1
-anchovy,46, ,59,1
 bacon,47,bacon,44,1
 brandy,48,brandy,51,1
-caper,49, ,59,1
-garbanzo,50, ,59,1
-grain,51, ,59,1
 milk,52,milk,46,1
 mushroom,53,mushroom,40,1
-mussel,54, ,59,1
 pea,55,pea,55,1
 pine_nut,56,pine_nut,39,1
 shallot,57,shallot,45,1
-sweet,58, ,59,1
- ,58,orange,29,1
- ,58,mint,34,1
- ,58,flour,36,1
- ,58,egg_yolk,47,1
- ,58,vegetable_oil,48,1
- ,58,apple,52,1
- ,58,nutmeg,53,1
- ,58,lime,54,1
- ,58,heavy_cream,56,1
- ,58,fennel,58,1
- ,58,beef,59,1
+ ,59,orange,29,1
+ ,59,mint,34,1
+ ,59,flour,36,1
+ ,59,egg_yolk,47,1
+ ,59,vegetable_oil,48,1
+ ,59,apple,52,1
+ ,59,nutmeg,53,1
+ ,59,lime,54,1
+ ,59,heavy_cream,56,1
+ ,59,fennel,58,1
+ ,59,beef,59,1
+clam,40, ,60,1
+green,41, ,60,1
+squid,43, ,60,1
+stock,44, ,60,1
+anchovy,46, ,60,1
+caper,49, ,60,1
+garbanzo,50, ,60,1
+grain,51, ,60,1
+mussel,54, ,60,1
+sweet,58, ,60,1

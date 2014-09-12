@@ -49,7 +49,6 @@ sour_cream,48,sour_cream,39,1
 berry,49,berry,58,1
 caper,50,caper,65,1
 cheddar_cheese,51,cheddar_cheese,61,1
-safflower_oil,52, ,86,1
 sesame_seed,53,sesame_seed,78,1
 cheese,54,cheese,52,1
 grain,55,grain,67,1
@@ -59,35 +58,36 @@ olive_oil,58,olive_oil,53,1
 plantain,59,plantain,59,1
 shoulder,60,shoulder,86,1
 bacon,61,bacon,55,1
-beef_stock,62, ,86,1
 ground_beef,63,ground_beef,83,1
 peanut_oil,64,peanut_oil,60,1
 vegetable_oil,65,vegetable_oil,69,1
 buttermilk,66,buttermilk,75,1
 green_pepper,67,green_pepper,80,1
 orange_juice,68,orange_juice,71,1
-pinto_bean,69, ,86,1
 radish,70,radish,70,1
-sausage,71, ,86,1
 white,72,white,47,1
 white_wine,73,white_wine,73,1
 banana,74,banana,62,1
-chorizo,75, ,86,1
 egg_yolk,76,egg_yolk,76,1
-green_bean,77, ,86,1
 mayonnaise,78,mayonnaise,79,1
 mint,79,mint,51,1
 mushroom,80,mushroom,63,1
 paste,81,paste,74,1
 peanut,82,peanut,82,1
 pineapple,83,pineapple,64,1
-pumpkin_seed,84, ,86,1
 romaine_lettuce,85,romaine_lettuce,81,1
- ,85,lemon,50,1
- ,85,apple,56,1
- ,85,honey,57,1
- ,85,ginger,66,1
- ,85,sherry,72,1
- ,85,pecan,77,1
- ,85,tequila,84,1
- ,85,pea,85,1
+ ,86,lemon,50,1
+ ,86,apple,56,1
+ ,86,honey,57,1
+ ,86,ginger,66,1
+ ,86,sherry,72,1
+ ,86,pecan,77,1
+ ,86,tequila,84,1
+ ,86,pea,85,1
+safflower_oil,52, ,87,1
+beef_stock,62, ,87,1
+pinto_bean,69, ,87,1
+sausage,71, ,87,1
+chorizo,75, ,87,1
+green_bean,77, ,87,1
+pumpkin_seed,84, ,87,1

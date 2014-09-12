@@ -15,16 +15,16 @@ curry,14,curry,19,1
 coconut,15,coconut,24,1
 peppercorn,16,peppercorn,13,1
 potato,17,potato,16,1
-fenugreek_seed,18, ,26,1
 ghee,19,ghee,22,1
 bay_leaf,20,bay_leaf,20,1
-tamarind,21, ,26,1
-chicken,22, ,26,1
 flour,23,flour,17,1
-lamb,24, ,26,1
 lime,25,lime,15,1
- ,25,paprika,18,1
- ,25,mint,21,1
- ,25,red_onion,23,1
- ,25,rice,25,1
- ,25,fennel_seed,26,1
+ ,26,paprika,18,1
+ ,26,mint,21,1
+ ,26,red_onion,23,1
+ ,26,rice,25,1
+ ,26,fennel_seed,26,1
+fenugreek_seed,18, ,27,1
+tamarind,21, ,27,1
+chicken,22, ,27,1
+lamb,24, ,27,1

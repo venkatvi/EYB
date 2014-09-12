@@ -73,7 +73,6 @@ napa,72,napa,84,1
 red_onion,73,red_onion,61,1
 scallop,74,scallop,69,1
 sweet,75,sweet,74,1
-yellow_bean,76, ,120,1
 asparagus,77,asparagus,82,1
 chive,78,chive,80,1
 corn,79,corn,79,1
@@ -93,39 +92,40 @@ lettuce,92,lettuce,65,1
 pak_choi,93,pak_choi,105,1
 pork_belly,94,pork_belly,107,1
 potato,95,potato,72,1
-rib,96, ,120,1
 salt,97,salt,97,1
-sparerib,98, ,120,1
 tangerine,99,tangerine,103,1
 fennel_seed,100,fennel_seed,112,1
 pineapple,101,pineapple,89,1
-sea_bass,102, ,120,1
 squid,103,squid,99,1
 sweet_basil,104,sweet_basil,68,1
 bacon,105,bacon,109,1
 butter,106,butter,118,1
 caster_sugar,107,caster_sugar,115,1
-chestnut,108, ,120,1
 coconut_milk,109,coconut_milk,55,1
 curry_powder,110,curry_powder,86,1
 egg_noodle,111,egg_noodle,120,1
-ground_beef,112, ,120,1
 mint,113,mint,64,1
 orange_juice,114,orange_juice,117,1
-peanut_butter,115, ,120,1
-plum_sauce,116, ,120,1
-roll,117, ,120,1
-soybean,118, ,120,1
-spring_roll,119, ,120,1
- ,119,parsley,66,1
- ,119,egg_yolk,78,1
- ,119,almond,83,1
- ,119,turmeric,92,1
- ,119,heavy_cream,94,1
- ,119,walnut,95,1
- ,119,milk,100,1
- ,119,soybean_oil,101,1
- ,119,tomato_sauce,102,1
- ,119,pasta,104,1
- ,119,bay_leaf,111,1
- ,119,mango,119,1
+ ,120,parsley,66,1
+ ,120,egg_yolk,78,1
+ ,120,almond,83,1
+ ,120,turmeric,92,1
+ ,120,heavy_cream,94,1
+ ,120,walnut,95,1
+ ,120,milk,100,1
+ ,120,soybean_oil,101,1
+ ,120,tomato_sauce,102,1
+ ,120,pasta,104,1
+ ,120,bay_leaf,111,1
+ ,120,mango,119,1
+yellow_bean,76, ,121,1
+rib,96, ,121,1
+sparerib,98, ,121,1
+sea_bass,102, ,121,1
+chestnut,108, ,121,1
+ground_beef,112, ,121,1
+peanut_butter,115, ,121,1
+plum_sauce,116, ,121,1
+roll,117, ,121,1
+soybean,118, ,121,1
+spring_roll,119, ,121,1

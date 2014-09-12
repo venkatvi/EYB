@@ -36,23 +36,23 @@ red_wine,35,red_wine,44,1
 almond,36,almond,40,1
 cream,37,cream,29,1
 vinegar,38,vinegar,25,1
-white_turnip,39, ,51,1
 chervil,40,chervil,50,1
 chive,41,chive,32,1
 orange,42,orange,31,1
 bread,43,bread,42,1
-caper,44, ,51,1
-eggplant,45, ,51,1
-jambon,46, ,51,1
-rosemary,47, ,51,1
 sherry,48,sherry,51,1
-stock,49, ,51,1
-vanilla_bean,50, ,51,1
- ,50,fennel,36,1
- ,50,apple,38,1
- ,50,cinnamon,41,1
- ,50,rice,43,1
- ,50,coriander_seed,45,1
- ,50,vegetable_oil,46,1
- ,50,fish,48,1
- ,50,ginger,49,1
+ ,51,fennel,36,1
+ ,51,apple,38,1
+ ,51,cinnamon,41,1
+ ,51,rice,43,1
+ ,51,coriander_seed,45,1
+ ,51,vegetable_oil,46,1
+ ,51,fish,48,1
+ ,51,ginger,49,1
+white_turnip,39, ,52,1
+caper,44, ,52,1
+eggplant,45, ,52,1
+jambon,46, ,52,1
+rosemary,47, ,52,1
+stock,49, ,52,1
+vanilla_bean,50, ,52,1

@@ -15,7 +15,6 @@ peppercorn,14,peppercorn,13,1
 curry,15,curry,19,1
 ghee,16,ghee,22,1
 chicken,17,chicken,35,1
-lamb,18, ,43,1
 rice,19,rice,25,1
 bay_leaf,20,bay_leaf,20,1
 potato,21,potato,16,1
@@ -34,13 +33,14 @@ nutmeg,33,nutmeg,36,1
 pea,34,pea,39,1
 red_onion,35,red_onion,23,1
 mango,36,mango,34,1
-peanut_oil,37, ,43,1
 carrot,38,carrot,27,1
 almond,39,almond,32,1
-black_mustard,40, ,43,1
 lemon,41,lemon,28,1
 milk,42,milk,29,1
- ,42,spring_onion,37,1
- ,42,saffron,38,1
- ,42,raisin,42,1
- ,42,cashew_nut,43,1
+ ,43,spring_onion,37,1
+ ,43,saffron,38,1
+ ,43,raisin,42,1
+ ,43,cashew_nut,43,1
+lamb,18, ,44,1
+peanut_oil,37, ,44,1
+black_mustard,40, ,44,1

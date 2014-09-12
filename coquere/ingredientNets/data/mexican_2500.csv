@@ -189,56 +189,56 @@ molasses,188,molasses,161,1
 mussel,189,mussel,163,1
 mustard_greens,190,mustard_greens,160,1
 olive,191,olive,175,1
-oyster,192, ,229,1
 rabbit,193,rabbit,224,1
 refried_beans,194,refried_beans,220,1
 roll,195,roll,165,1
 salt,196,salt,183,1
-salt_cod,197, ,229,1
 squid,198,squid,192,1
 tarragon,199,tarragon,146,1
 tart,200,tart,186,1
 white_rice,201,white_rice,188,1
 wine,202,wine,196,1
 yogurt,203,yogurt,149,1
-almond_extract,204, ,229,1
 cider,205,cider,228,1
 duck,206,duck,189,1
-eggplant,207, ,229,1
-fava_bean,208, ,229,1
 garlic_salt,209,garlic_salt,221,1
-grenadine,210, ,229,1
-grit,211, ,229,1
-hot_pepper,212, ,229,1
 iceberg_lettuce,213,iceberg_lettuce,213,1
 peach,214,peach,154,1
-pepper_sauce,215, ,229,1
 pomegranate,216,pomegranate,168,1
-pork_tenderloin,217, ,229,1
 raspberry,218,raspberry,222,1
-sea_bass,219, ,229,1
-sparkling_water,220, ,229,1
 strawberry,221,strawberry,179,1
 sweet_potato,222,sweet_potato,171,1
-taco,223, ,229,1
 tuna,224,tuna,201,1
-vermicelli,225, ,229,1
-watermelon,226, ,229,1
 whipping_cream,227,whipping_cream,185,1
 white_bean,228,white_bean,214,1
- ,228,sage,184,1
- ,228,beetroot,191,1
- ,228,hard-cooked_egg,193,1
- ,228,baguette,194,1
- ,228,dried_apricot,195,1
- ,228,fennel,198,1
- ,228,pineapple_juice,205,1
- ,228,herb,206,1
- ,228,ricotta,208,1
- ,228,yellow_squash,216,1
- ,228,scallop,217,1
- ,228,demerara_sugar,218,1
- ,228,chicken leg,223,1
- ,228,tamarind,225,1
- ,228,dill_weed,227,1
- ,228,quail,229,1
+ ,229,sage,184,1
+ ,229,beetroot,191,1
+ ,229,hard-cooked_egg,193,1
+ ,229,baguette,194,1
+ ,229,dried_apricot,195,1
+ ,229,fennel,198,1
+ ,229,pineapple_juice,205,1
+ ,229,herb,206,1
+ ,229,ricotta,208,1
+ ,229,yellow_squash,216,1
+ ,229,scallop,217,1
+ ,229,demerara_sugar,218,1
+ ,229,chicken leg,223,1
+ ,229,tamarind,225,1
+ ,229,dill_weed,227,1
+ ,229,quail,229,1
+oyster,192, ,230,1
+salt_cod,197, ,230,1
+almond_extract,204, ,230,1
+eggplant,207, ,230,1
+fava_bean,208, ,230,1
+grenadine,210, ,230,1
+grit,211, ,230,1
+hot_pepper,212, ,230,1
+pepper_sauce,215, ,230,1
+pork_tenderloin,217, ,230,1
+sea_bass,219, ,230,1
+sparkling_water,220, ,230,1
+taco,223, ,230,1
+vermicelli,225, ,230,1
+watermelon,226, ,230,1

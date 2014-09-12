@@ -262,22 +262,15 @@ ground_beef,261,ground_beef,290,1
 ladyfinger,262,ladyfinger,277,1
 langoustine,263,langoustine,233,1
 leg_of_lamb,264,leg_of_lamb,323,1
-liquor,265, ,345,1
 mustard_seed,266,mustard_seed,222,1
-pie,267, ,345,1
 red_currant,268,red_currant,292,1
 smoked_salmon,269,smoked_salmon,252,1
-steak,270, ,345,1
 sweet,271,sweet,241,1
 tripe,272,tripe,288,1
-blackberry,273, ,345,1
-buckwheat,274, ,345,1
 escarole,275,escarole,245,1
 ham_hock,276,ham_hock,279,1
 hard-cooked_egg,277,hard-cooked_egg,249,1
 juice,278,juice,200,1
-margarine,279, ,345,1
-mozzarella,280, ,345,1
 powdered_milk,281,powdered_milk,283,1
 red_cabbage,282,red_cabbage,332,1
 roe,283,roe,185,1
@@ -288,91 +281,98 @@ spice,287,spice,308,1
 syrup,288,syrup,247,1
 trout,289,trout,251,1
 angelica,290,angelica,313,1
-apple_juice,291, ,345,1
 aspic,292,aspic,302,1
 beef_tenderloin,293,beef_tenderloin,298,1
 beef_tongue,294,beef_tongue,338,1
-bitter,295, ,345,1
 blade,296,blade,330,1
 brioche,297,brioche,255,1
-brown_sauce,298, ,345,1
-cane_sugar,299, ,345,1
-carp,300, ,345,1
-caviar,301, ,345,1
-chipolata,302, ,345,1
 chorizo,303,chorizo,304,1
 chuck,304,chuck,317,1
-claret,305, ,345,1
 coconut,306,coconut,310,1
 coconut_water,307,coconut_water,266,1
-couverture,308, ,345,1
-crouton,309, ,345,1
-fettuccine,310, ,345,1
-frog_legs,311, ,345,1
-grated_cheese,312, ,345,1
-grenadine,313, ,345,1
-kaffir,314, ,345,1
-kosher,315, ,345,1
 liqueur,316,liqueur,291,1
 macaroon,317,macaroon,344,1
 mango,318,mango,311,1
-meal,319, ,345,1
 oyster mushroom,320,oyster mushroom,345,1
 pecan,321,pecan,340,1
-penne,322, ,345,1
-phyllo,323, ,345,1
 pickle,324,pickle,293,1
-puff,325, ,345,1
 quince,326,quince,328,1
 rhubarb,327,rhubarb,331,1
 rib,328,rib,278,1
 rock_candy,329,rock_candy,322,1
 romaine_lettuce,330,romaine_lettuce,284,1
-rye_whiskey,331, ,345,1
-salad_green,332, ,345,1
 sea_bream,333,sea_bream,324,1
 sea_scallop,334,sea_scallop,223,1
-sesame,335, ,345,1
-sirloin,336, ,345,1
 snapper,337,snapper,307,1
 sourdough_bread,338,sourdough_bread,260,1
-tagliatelle,339, ,345,1
 tomato_ketchup,340,tomato_ketchup,237,1
-tournedos,341, ,345,1
 vermicelli,342,vermicelli,309,1
 whole_wheat_flour,343,whole_wheat_flour,341,1
 wiener,344,wiener,335,1
- ,344,grape,169,1
- ,344,horseradish,234,1
- ,344,yogurt,240,1
- ,344,clarified_butter,246,1
- ,344,sweet potato,263,1
- ,344,sultana,270,1
- ,344,ricotta,272,1
- ,344,striped_bass,276,1
- ,344,dry_mustard,282,1
- ,344,noodle,287,1
- ,344,sunflower_oil,289,1
- ,344,sardine,295,1
- ,344,espresso,297,1
- ,344,squab,299,1
- ,344,turbot,301,1
- ,344,broccoli,305,1
- ,344,gum,306,1
- ,344,sesame_seed,312,1
- ,344,kidney_bean,314,1
- ,344,tapioca,315,1
- ,344,red_snapper,316,1
- ,344,butternut_squash,318,1
- ,344,fowl,319,1
- ,344,top_round,320,1
- ,344,bouillon,321,1
- ,344,game,325,1
- ,344,haricots_verts,327,1
- ,344,chicken leg,329,1
- ,344,cheddar_cheese,333,1
- ,344,cranberry,336,1
- ,344,stock_cube,337,1
- ,344,flank_steak,339,1
- ,344,pearl_barley,342,1
- ,344,tomato_juice,343,1
+ ,345,grape,169,1
+ ,345,horseradish,234,1
+ ,345,yogurt,240,1
+ ,345,clarified_butter,246,1
+ ,345,sweet potato,263,1
+ ,345,sultana,270,1
+ ,345,ricotta,272,1
+ ,345,striped_bass,276,1
+ ,345,dry_mustard,282,1
+ ,345,noodle,287,1
+ ,345,sunflower_oil,289,1
+ ,345,sardine,295,1
+ ,345,espresso,297,1
+ ,345,squab,299,1
+ ,345,turbot,301,1
+ ,345,broccoli,305,1
+ ,345,gum,306,1
+ ,345,sesame_seed,312,1
+ ,345,kidney_bean,314,1
+ ,345,tapioca,315,1
+ ,345,red_snapper,316,1
+ ,345,butternut_squash,318,1
+ ,345,fowl,319,1
+ ,345,top_round,320,1
+ ,345,bouillon,321,1
+ ,345,game,325,1
+ ,345,haricots_verts,327,1
+ ,345,chicken leg,329,1
+ ,345,cheddar_cheese,333,1
+ ,345,cranberry,336,1
+ ,345,stock_cube,337,1
+ ,345,flank_steak,339,1
+ ,345,pearl_barley,342,1
+ ,345,tomato_juice,343,1
+liquor,265, ,346,1
+pie,267, ,346,1
+steak,270, ,346,1
+blackberry,273, ,346,1
+buckwheat,274, ,346,1
+margarine,279, ,346,1
+mozzarella,280, ,346,1
+apple_juice,291, ,346,1
+bitter,295, ,346,1
+brown_sauce,298, ,346,1
+cane_sugar,299, ,346,1
+carp,300, ,346,1
+caviar,301, ,346,1
+chipolata,302, ,346,1
+claret,305, ,346,1
+couverture,308, ,346,1
+crouton,309, ,346,1
+fettuccine,310, ,346,1
+frog_legs,311, ,346,1
+grated_cheese,312, ,346,1
+grenadine,313, ,346,1
+kaffir,314, ,346,1
+kosher,315, ,346,1
+meal,319, ,346,1
+penne,322, ,346,1
+phyllo,323, ,346,1
+puff,325, ,346,1
+rye_whiskey,331, ,346,1
+salad_green,332, ,346,1
+sesame,335, ,346,1
+sirloin,336, ,346,1
+tagliatelle,339, ,346,1
+tournedos,341, ,346,1

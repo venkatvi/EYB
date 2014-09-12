@@ -85,7 +85,6 @@ tomato_paste,84,tomato_paste,77,1
 black_olive,85,black_olive,81,1
 hazelnut,86,hazelnut,86,1
 heavy_cream,87,heavy_cream,56,1
-juice,88, ,118,1
 lard,89,lard,75,1
 mayonnaise,90,mayonnaise,91,1
 baguette,91,baguette,118,1
@@ -95,33 +94,34 @@ fennel_seed,94,fennel_seed,102,1
 ginger,95,ginger,83,1
 green_olive,96,green_olive,94,1
 lobster,97,lobster,117,1
-sour_cream,98, ,118,1
-white_bean,99, ,118,1
 white_turnip,100,white_turnip,103,1
-wine_vinegar,101, ,118,1
 apple,102,apple,52,1
 basil,103,basil,98,1
 cider_vinegar,104,cider_vinegar,106,1
-cucumber,105, ,118,1
-ground_beef,106, ,118,1
-hake,107, ,118,1
 honey,108,honey,60,1
-olive,109, ,118,1
 orange_juice,110,orange_juice,109,1
 pasta,111,pasta,92,1
-peanut_oil,112, ,118,1
 pork_loin,113,pork_loin,115,1
 raisin,114,raisin,67,1
 salt,115,salt,110,1
 tarragon,116,tarragon,105,1
 tomato_sauce,117,tomato_sauce,114,1
- ,117,chive,90,1
- ,117,aniseed,93,1
- ,117,cabbage,97,1
- ,117,walnut,99,1
- ,117,fava_bean,107,1
- ,117,duck,108,1
- ,117,cream,111,1
- ,117,star_anise,112,1
- ,117,dark_chocolate,113,1
- ,117,paste,116,1
+ ,118,chive,90,1
+ ,118,aniseed,93,1
+ ,118,cabbage,97,1
+ ,118,walnut,99,1
+ ,118,fava_bean,107,1
+ ,118,duck,108,1
+ ,118,cream,111,1
+ ,118,star_anise,112,1
+ ,118,dark_chocolate,113,1
+ ,118,paste,116,1
+juice,88, ,119,1
+sour_cream,98, ,119,1
+white_bean,99, ,119,1
+wine_vinegar,101, ,119,1
+cucumber,105, ,119,1
+ground_beef,106, ,119,1
+hake,107, ,119,1
+olive,109, ,119,1
+peanut_oil,112, ,119,1
