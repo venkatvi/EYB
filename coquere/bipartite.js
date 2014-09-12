@@ -1,3 +1,17 @@
+!function(){
+	var bP={};	
+	var b=30, bb=150, height=600, buffMargin=1, minHeight=14;
+	var c1=[-130, 40], c2=[-50, 100], c3=[-10, 140]; //Column positions of labels.
+	var colors =["#3366CC", "#DC3912",  "#FF9900","#109618", "#990099"];
+	
+	bP.partData = function(data,p){
+		var sData={};
+		
+		sData.keys=[
+			d3.set(data.map(function(d){ return d[0];})).values().sort(function(a,b){ return ( a<b? -1 : a>b ? 1 : 0);}),
+			d3.set(data.map(function(d){ return d[1];})).values().sort(function(a,b){ return ( a<b? -1 : a>b ? 1 : 0);})		
+		];
+		
 		sData.data = [	sData.keys[0].map( function(d){ return sData.keys[1].map( function(v){ return 0; }); }),
 						sData.keys[1].map( function(d){ return sData.keys[0].map( function(v){ return 0; }); }) 
 		];
@@ -262,3 +276,4 @@
 	
 	this.bP = bP;
 }();
+
