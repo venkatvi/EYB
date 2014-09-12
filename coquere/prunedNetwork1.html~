@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<!--
+	Halcyonic 3.1 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Coquere</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script src = "http://d3js.org/d3.v3.min.js"></script>
+		<script src="js/query.js"></script>
+		<script src="js/config.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/skel-tabs.min.js"></script>
+		<script src = "http://d3js.org/d3.v3.min.js"></script>
+		<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
+		<script src="http://d3js.org/queue.v1.min.js"></script>
+		<script src="http://d3js.org/topojson.v1.min.js"></script>
+		<link rel="stylesheet" href="css/style.css" />	
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-tabs.css" />
+		</noscript>
+		<style>
+			.stroke {
+			  fill: none;
+			  stroke: #999;
+			  stroke-width: 1px;
+			}
+
+			.fill {
+			  fill: #fff;
+			}
+
+			.land {
+			  fill: #ddd;
+			}
+
+			.boundary {
+			  fill: none;
+			  stroke: #fff;
+			}
+		</style>
+		<script>
+			var cuisine = getQueryVariable("cuisine");
+			window.onload = function(){
+				document.getElementById("cuisineHeader").innerHTML="Ingredient Network Visualization for  " + getQueryVariable("cuisine").toUpperCase();
+				document.getElementById("netVis").src = appendUrl(cuisine, "cooc", 100);
+			}
+			function appendUrl(cuisine, netType, edgeThreshold) {
+				var url = "ingredientNets/prunedNetworkVis.html?cuisine=" + cuisine +"&net=" + netType + "&links=" + edgeThreshold ;
+				return url;
+			}	
+		</script>
+	</head>
+	<body class="subpage">
+			<!-- Header -->
+			<div id="header-wrapper">
+				<header id="header" class="container">
+					<div class="row">
+						<div class="12u">
+
+							<!-- Logo -->
+								<h1><a href="#" id="logo">Coquere</a></h1>
+							
+							<!-- Nav -->
+								<nav id="nav">
+									<a href="index.html">Homepage</a>
+									<a href="background.html">Background</a>
+									<a href="problemdesign.html">Problem Design</a>
+									<a href="results.html">Results and Analysis</a>
+									<a href="contributions.html">Our Contributions</a>
+								</nav>
+
+						</div>
+					</div>
+				</header>
+			</div>
+
+		<!-- Content -->
+			<div id="content-wrapper">
+				<div id="content" >
+					<div class="container">
+						<div class='row'>
+							<div class="12u">
+								<section>
+									<header>
+										<h2 id="cuisineHeader"></h2>
+									</header>
+									<div>
+										<div style="width: 600px; float: left;">
+											<label for="chooseEdgeThreshold">Choose Edge Threshold:</label>
+											<select id="chooseEdgeThreshold"></select>	
+										</div>
+										<div style="margin-left: 500px;" >
+											<ul class="check-list">
+												<li>Choose a threshold on top x% links to construct the network on </li>
+											</ul>
+										</div>
+	
+									</div>	
+									<div>
+										<iframe id="netVis" scrolling="no" allowfullscreen width=1000 height=1000 frameborder="0"></iframe>
+									</div>
+									<script>
+										console.log(cuisine);
+							
+										var edgeThreshold = ["100", "250", "500", "1000", "2500", "5000", "10000"];
+										var chosenEdgeThresholdType = "100";
+
+										var edgeDropDown = d3.select("#chooseEdgeThreshold")
+										    		.on("change", function() {
+												nodeId = this.selectedIndex;
+												chosenEdgeThreshold = edgeThreshold[nodeId];
+												document.getElementById("netVis").src = appendUrl(cuisine, chosenEdgeThreshold);
+											})
+										    .selectAll("option")
+										    .data(netType)
+										    .enter()
+										    .append("option")
+										    .attr("value", function(d) { return d;} )
+										    .text(function(d) {return d;});
+										
+										function loadJsonFile(cuisine, chosenEdgeThreshold){
+
+											var width = 960,
+											  height = 500;
+
+											var svg = d3.select("body").append("svg")
+											  .attr("width", width)
+											  .attr("height", height);
+
+											var force = d3.layout.force()
+											  .size([width, height]);
+
+											var csvFile = "ingredientNets/data/" + cuisine + chosenEdgeThreshold + ".csv";
+											console.log(jsonFile);
+											d3.csv(csvFile, function(links) {
+												var nodesByName = {};
+
+												// Create nodes for each unique source and target.
+												links.forEach(function(link) {
+												  link.source = nodeByName(link.source);
+												  link.target = nodeByName(link.target);
+												});
+
+												// Extract the array of nodes from the map by name.
+												var nodes = d3.values(nodesByName);
+
+												// Create the link lines.
+												var link = svg.selectAll(".link")
+												    .data(links)
+												  .enter().append("line")
+												    .attr("class", "link");
+
+												// Create the node circles.
+												var node = svg.selectAll(".node")
+												    .data(nodes)
+												  .enter().append("circle")
+												    .attr("class", "node")
+												    .attr("r", 4.5)
+												    .call(force.drag);
+
+												// Start the force layout.
+												force
+												    .nodes(nodes)
+												    .links(links)
+												    .on("tick", tick)
+												    .start();
+
+												function tick() {
+												  link.attr("x1", function(d) { return d.source.x; })
+												      .attr("y1", function(d) { return d.source.y; })
+												      .attr("x2", function(d) { return d.target.x; })
+												      .attr("y2", function(d) { return d.target.y; });
+
+												  node.attr("cx", function(d) { return d.x; })
+												      .attr("cy", function(d) { return d.y; });
+												}
+
+												function nodeByName(name) {
+												  return nodesByName[name] || (nodesByName[name] = {name: name});
+												}
+												});
+											}
+
+									</script>
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</body>
+</html>
+
