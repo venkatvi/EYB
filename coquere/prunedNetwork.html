@@ -56,10 +56,10 @@
 			var cuisine = getQueryVariable("cuisine");
 			window.onload = function(){
 				document.getElementById("cuisineHeader").innerHTML="Ingredient Network Visualization for  " + getQueryVariable("cuisine").toUpperCase();
-				document.getElementById("netVis").src = appendUrl(cuisine, "cooc", 100);
+				document.getElementById("netVis").src = appendUrl(cuisine, 100);
 			}
-			function appendUrl(cuisine, netType, edgeThreshold) {
-				var url = "ingredientNets/prunedNetworkVis.html?cuisine=" + cuisine +"&net=" + netType + "&links=" + edgeThreshold ;
+			function appendUrl(cuisine, edgeThreshold) {
+				var url = "ingredientNets/prunedNetworkVis.html?cuisine=" + cuisine +"&links=" + edgeThreshold ;
 				return url;
 			}	
 		</script>
@@ -126,7 +126,7 @@
 												document.getElementById("netVis").src = appendUrl(cuisine, chosenEdgeThreshold);
 											})
 										    .selectAll("option")
-										    .data(netType)
+										    .data(edgeThreshold)
 										    .enter()
 										    .append("option")
 										    .attr("value", function(d) { return d;} )

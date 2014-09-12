@@ -67,8 +67,8 @@
 			var force = d3.layout.force()
 			  .size([width, height]);
 
-			var csvFile = "ingredientNets/data/" + cuisine + chosenEdgeThreshold + ".csv";
-			console.log(jsonFile);
+			var csvFile = "data/" + cuisine + links + ".csv";
+			console.log(csvFile);
 			d3.csv(csvFile, function(links) {
 				var nodesByName = {};
 
@@ -116,8 +116,6 @@
 				  return nodesByName[name] || (nodesByName[name] = {name: name});
 				}
 				});
-			}
-
 		</script>
 			
 	</body>
