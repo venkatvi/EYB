@@ -123,16 +123,6 @@
 			.text(function(d,i){ return data.keys[p][i];})
 			.attr("text-anchor","start" );
 			
-		mainbar.append("text").attr("class","barvalue")
-			.attr("x", c2[p]).attr("y",function(d){ return d.middle+5;})
-			.text(function(d,i){ return d.value ;})
-			.attr("text-anchor","end");
-			
-		mainbar.append("text").attr("class","barpercent")
-			.attr("x", c3[p]).attr("y",function(d){ return d.middle+5;})
-			.text(function(d,i){ return "( "+Math.round(100*d.percent)+"%)" ;})
-			.attr("text-anchor","end").style("fill","grey");
-			
 		d3.select("#"+id).select(".part"+p).select(".subbars")
 			.selectAll(".subbar").data(data.subBars[p]).enter()
 			.append("rect").attr("class","subbar")
@@ -161,9 +151,6 @@
 			h.append("text").text(header[d]).attr("x", (c1[d]-5))
 				.attr("y", -5).style("fill","grey");
 			
-			h.append("text").text("Count").attr("x", (c2[d]-10))
-				.attr("y", -5).style("fill","grey");
-			
 			h.append("line").attr("x1",c1[d]-10).attr("y1", -2)
 				.attr("x2",c3[d]+10).attr("y2", -2).style("stroke","black")
 				.style("stroke-width","1").style("shape-rendering","crispEdges");
@@ -184,13 +171,6 @@
 			
 		mainbar.select(".barlabel").transition().duration(500)
 			.attr("y",function(d){ return d.middle+5;});
-			
-		mainbar.select(".barvalue").transition().duration(500)
-			.attr("y",function(d){ return d.middle+5;}).text(function(d,i){ return d.value ;});
-			
-		mainbar.select(".barpercent").transition().duration(500)
-			.attr("y",function(d){ return d.middle+5;})
-			.text(function(d,i){ return "( "+Math.round(100*d.percent)+"%)" ;});
 			
 		d3.select("#"+id).select(".part"+p).select(".subbars")
 			.selectAll(".subbar").data(data.subBars[p])
@@ -255,8 +235,6 @@
 			
 			selectedBar.select(".mainrect").style("stroke-opacity",1);			
 			selectedBar.select(".barlabel").style('font-weight','bold');
-			selectedBar.select(".barvalue").style('font-weight','bold');
-			selectedBar.select(".barpercent").style('font-weight','bold');
 		});
 	}	
 	
@@ -269,8 +247,6 @@
 			
 			selectedBar.select(".mainrect").style("stroke-opacity",0);			
 			selectedBar.select(".barlabel").style('font-weight','normal');
-			selectedBar.select(".barvalue").style('font-weight','normal');
-			selectedBar.select(".barpercent").style('font-weight','normal');
 		});		
 	}
 	
