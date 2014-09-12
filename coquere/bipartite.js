@@ -128,7 +128,7 @@
 			.append("rect").attr("class","subbar")
 			.attr("x", 0).attr("y",function(d){ return d.y})
 			.attr("width",b).attr("height",function(d){ return d.h})
-			.style("fill",function(d){ return colors[d.key1];});
+			.style("fill",function(d){ return colors[1];});
 	}
 	
 	function drawEdges(data, id){
@@ -136,7 +136,7 @@
 
 		d3.select("#"+id).select(".edges").selectAll(".edge")
 			.data(data.edges).enter().append("polygon").attr("class","edge")
-			.attr("points", edgePolygon).style("fill",function(d){ return colors[d.key1];})
+			.attr("points", edgePolygon).style("fill",function(d){ return colors[1];})
 			.style("opacity",0.5).each(function(d) { this._current = d; });	
 	}	
 	
