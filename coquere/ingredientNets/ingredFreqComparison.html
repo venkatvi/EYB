@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script src = "http://d3js.org/d3.v3.min.js"></script>
+		<script src="http://d3js.org/d3.v2.min.js?2.8.1"></script>
+		<script src="../js/query.js"></script>
+		<script src="http://static.cybercommons.org/js/d3/lib/colorbrewer/colorbrewer.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="css/style.css" />	
+		<link rel="stylesheet" href="http://static.cybercommons.org/js/d3/lib/colorbrewer/colorbrewer.css" />	
+	</head>
+	<body>
+		<div id="chart"> </div>
+		<script>
+			var csvFile = getQueryVariable("file");
+			var margin = {top: 50, right: 150, bottom: 50, left: 50},
+			    width = 700,
+			    height = 700;
+
+			var rowsData;
+			d3.csv(csvFile, function(rows) {
+			  rowsData = rows;
+			});
+			console.log(rowsData);
+		</script>
+	</body>
+</html>

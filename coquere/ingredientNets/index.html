@@ -16,6 +16,7 @@
 	document.getElementById("icooc").src = getUrl("iCooc.html");
 	document.getElementById("datastats").src = getUrl("datastats.html");
 	document.getElementById("netstats").src = getUrl("networkstats.html");
+	document.getElementById("disloc").src = getUrl("dislocationIndex.html");
  }
   function getUrl(rootUrl) {
 	var cuisine = getQueryVariable("cuisine");
@@ -39,6 +40,9 @@
   </div>
   <div id="data">
 	<iframe id='datastats' scrolling="no" allowfullscreen width=100% height=1000 frameborder="0"></iframe>
+  </div>
+  <div id="disLoc">
+	<iframe id='disloc' scrolling="no" allowfullscreen width=100% height=1000 frameborder="0"></iframe>
   </div>
 </div>
 </body>
