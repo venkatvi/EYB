@@ -5,22 +5,23 @@
 	var colors =["#3366CC", "#DC3912",  "#FF9900","#109618", "#990099"];
 	
 	bP.partData = function(data,p){
+		p = 4;
 		var sData={};
 		
 		sData.keys=[
-			d3.set(data.map(function(d){ return d[0];})).values().sort(function(a,b){ return ( a<b? -1 : a>b ? 1 : 0);}),
-			d3.set(data.map(function(d){ return d[1];})).values().sort(function(a,b){ return ( a<b? -1 : a>b ? 1 : 0);})		
+			d3.set(data.map(function(d){ return d.slice(0,2);})).values().sort(function(a,b){ a1=a.split(',')[1]; b1=b.split(',')[1]; return (a1-b1);}),
+			d3.set(data.map(function(d){ return d.slice(2,4);})).values().sort(function(a,b){ a1=a.split(',')[1]; b1=b.split(',')[1]; return ( a1-b1);})
 		];
-		
 		sData.data = [	sData.keys[0].map( function(d){ return sData.keys[1].map( function(v){ return 0; }); }),
 						sData.keys[1].map( function(d){ return sData.keys[0].map( function(v){ return 0; }); }) 
 		];
-		
 		data.forEach(function(d){ 
-			sData.data[0][sData.keys[0].indexOf(d[0])][sData.keys[1].indexOf(d[1])]=d[p];
-			sData.data[1][sData.keys[1].indexOf(d[1])][sData.keys[0].indexOf(d[0])]=d[p]; 
+			key1 = d.slice(0,2).join();
+			key2 = d.slice(2,4).join();
+			sData.data[0][sData.keys[0].indexOf(key1)][sData.keys[1].indexOf(key2)]=d[4];
+			sData.data[1][sData.keys[1].indexOf(key2)][sData.keys[0].indexOf(key1)]=d[4]; 
 		});
-		
+		console.log(sData);
 		return sData;
 	}
 	
@@ -113,14 +114,14 @@
 
 		mainbar.append("rect").attr("class","mainrect")
 			.attr("x", 0).attr("y",function(d){ return d.middle-d.height/2; })
-			.attr("width",b).attr("height",function(d){ return d.height; })
+			.attr("width",b).attr("height",function(d){ return d.height+1; })
 			.style("shape-rendering","auto")
 			.style("fill-opacity",0).style("stroke-width","0.5")
 			.style("stroke","black").style("stroke-opacity",0);
 			
 		mainbar.append("text").attr("class","barlabel")
-			.attr("x", c1[p]).attr("y",function(d){ return d.middle+5;})
-			.text(function(d,i){ return data.keys[p][i];})
+			.attr("x", c1[p]).attr("y",function(d){  return d.middle+5;})
+			.text(function(d,i){ return data.keys[p][i].split(',')[0];})
 			.attr("text-anchor","start" );
 			
 		d3.select("#"+id).select(".part"+p).select(".subbars")
@@ -128,7 +129,7 @@
 			.append("rect").attr("class","subbar")
 			.attr("x", 0).attr("y",function(d){ return d.y})
 			.attr("width",b).attr("height",function(d){ return d.h})
-			.style("fill",function(d){ return colors[1];});
+			.style("fill",function(d){ if(d.key1==6 ) {return colors[2];} else if(d.key2==6){return colors[3];} else {return colors[1];} });
 	}
 	
 	function drawEdges(data, id){
@@ -136,7 +137,7 @@
 
 		d3.select("#"+id).select(".edges").selectAll(".edge")
 			.data(data.edges).enter().append("polygon").attr("class","edge")
-			.attr("points", edgePolygon).style("fill",function(d){ return colors[1];})
+			.attr("points", edgePolygon).style("fill",function(d){ if(d.key1 == 6){ return colors[5];} else if(d.key2 == 6) { return colors[4];} else {return colors[1];}})
 			.style("opacity",0.5).each(function(d) { this._current = d; });	
 	}	
 	
@@ -199,7 +200,6 @@
 			svg.append("g")
 				.attr("id", biP.id)
 				.attr("transform","translate("+ (550*s)+",0)");
-				
 			var visData = visualize(biP.data);
 			drawPart(visData, biP.id, 0);
 			drawPart(visData, biP.id, 1); 
