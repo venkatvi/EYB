@@ -17,8 +17,8 @@
 			var dropDownLinkType = ["100", "250", "500", "1000", "2500", "5000", "10000"];
 			var dropDownLinkTypeCodes = ["100", "250", "500", "1000", "2500", "5000", "10000"];
 			window.onload = function(){
-				var jsonFile = "data/" + cuisine + "_" + dropDownLinkTypeCodes[0] + ".json";
-				var url = "ingredFreqComparison.html?file=" + jsonFile;
+				var csvFile = "data/" + cuisine + "_" + dropDownLinkTypeCodes[0] + ".csv";
+				var url = "ingredFreqComparison.html?file=" + csvFile;
 				document.getElementById("map").src = url;
 			}	
 
