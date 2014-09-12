@@ -1,0 +1,338 @@
+parsley,1,parsley,1,1
+tomato,2,tomato,2,1
+bay_leaf,3,bay_leaf,3,1
+onion,4,onion,5,1
+garlic,5,garlic,4,1
+carrot,6,carrot,6,1
+thyme,7,thyme,8,1
+sweet_pepper,8,sweet_pepper,7,1
+peppercorn,9,peppercorn,11,1
+chilli,10,chilli,12,1
+spring_onion,11,spring_onion,9,1
+sherry,12,sherry,13,1
+saffron,13,saffron,16,1
+potato,14,potato,17,1
+red_pepper,15,red_pepper,15,1
+lemon,16,lemon,10,1
+white_wine,17,white_wine,18,1
+white,18,white,14,1
+olive_oil,19,olive_oil,22,1
+almond,20,almond,19,1
+cinnamon,21,cinnamon,23,1
+coriander_seed,22,coriander_seed,20,1
+rice,23,rice,25,1
+vinegar,24,vinegar,21,1
+egg,25,egg,24,1
+ham,26,ham,28,1
+bread,27,bread,26,1
+shrimp,28,shrimp,37,1
+chicken,29,chicken,27,1
+cumin_seed,30,cumin_seed,32,1
+sausage,31,sausage,42,1
+chicken_stock,32,chicken_stock,30,1
+green_pepper,33,green_pepper,41,1
+wild_marjoram,34,wild_marjoram,38,1
+flour,35,flour,36,1
+orange,36,orange,29,1
+celery,37,celery,31,1
+pork,38,pork,33,1
+rosemary,39,rosemary,35,1
+sunflower_oil,40,sunflower_oil,50,1
+fish,41,fish,43,1
+brandy,42,brandy,51,1
+shallot,43,shallot,45,1
+red_onion,44,red_onion,49,1
+bacon,45,bacon,44,1
+mushroom,46,mushroom,40,1
+pine_nut,47,pine_nut,39,1
+milk,48,milk,46,1
+mint,49,mint,34,1
+pea,50,pea,55,1
+chorizo,51,chorizo,57,1
+egg_yolk,52,egg_yolk,47,1
+vegetable_oil,53,vegetable_oil,48,1
+nutmeg,54,nutmeg,53,1
+heavy_cream,55,heavy_cream,56,1
+squid,56,squid,71,1
+apple,57,apple,52,1
+green,58,green,61,1
+garbanzo,59,garbanzo,65,1
+stock,60,stock,66,1
+sugar,61,sugar,62,1
+lime,62,lime,54,1
+mussel,63,mussel,64,1
+beef,64,beef,59,1
+fennel,65,fennel,58,1
+sweet,66,sweet,63,1
+caper,67,caper,73,1
+anchovy,68,anchovy,68,1
+lamb,69,lamb,72,1
+tuna,70,tuna,79,1
+honey,71,honey,60,1
+veal,72,veal,84,1
+asparagus,73,asparagus,76,1
+clam,74,clam,82,1
+red_wine,75,red_wine,70,1
+globe_artichoke,76,globe_artichoke,88,1
+monkfish,77,monkfish,89,1
+lard,78,lard,75,1
+lettuce,79,lettuce,69,1
+raisin,80,raisin,67,1
+spinach,81,spinach,78,1
+tortilla,82,tortilla,85,1
+aniseed,83,aniseed,93,1
+green_olive,84,green_olive,94,1
+caster_sugar,85,caster_sugar,80,1
+rabbit,86,rabbit,95,1
+green_bean,87,green_bean,87,1
+tomato_paste,88,tomato_paste,77,1
+butter,89,butter,74,1
+ginger,90,ginger,83,1
+eggplant,91,eggplant,96,1
+mayonnaise,92,mayonnaise,91,1
+pasta,93,pasta,92,1
+fava_bean,94,fava_bean,107,1
+white_bread,95,white_bread,104,1
+black_olive,96,black_olive,81,1
+fennel_seed,97,fennel_seed,102,1
+hazelnut,98,hazelnut,86,1
+salt_cod,99,salt_cod,100,1
+star_anise,100,star_anise,112,1
+white_turnip,101,white_turnip,103,1
+pork_loin,102,pork_loin,115,1
+cabbage,103,cabbage,97,1
+tomato_sauce,104,tomato_sauce,114,1
+baguette,105,baguette,118,1
+hake,106,hake,125,1
+tarragon,107,tarragon,105,1
+grain,108,grain,101,1
+basil,109,basil,98,1
+chive,110,chive,90,1
+lobster,111,lobster,117,1
+cucumber,112,cucumber,119,1
+fillet,113,fillet,145,1
+olive,114,olive,120,1
+shoulder,115,shoulder,132,1
+juice,116,juice,124,1
+quail,117,quail,139,1
+beef_stock,118,beef_stock,126,1
+cream,119,cream,111,1
+langoustine,120,langoustine,152,1
+white_bean,121,white_bean,127,1
+cider_vinegar,122,cider_vinegar,106,1
+crabmeat,123,crabmeat,137,1
+dark_chocolate,124,dark_chocolate,113,1
+ground_beef,125,ground_beef,140,1
+sour_cream,126,sour_cream,142,1
+avocado,127,avocado,135,1
+peanut_oil,128,peanut_oil,121,1
+salt,129,salt,110,1
+wine_vinegar,130,wine_vinegar,123,1
+bean,131,bean,147,1
+cherry tomato,132,cherry tomato,141,1
+lemongrass,133,lemongrass,159,1
+herb,134,herb,130,1
+lima_bean,135,lima_bean,162,1
+noodle,136,noodle,146,1
+partridge,137,partridge,170,1
+scallop,138,scallop,161,1
+cauliflower,139,cauliflower,122,1
+duck,140,duck,108,1
+meat,141,meat,136,1
+vegetable,142,vegetable,134,1
+cod,143,cod,150,1
+dill_pickle,144,dill_pickle,160,1
+liquorice,145,liquorice,200,1
+snail,146,snail,185,1
+walnut,147,walnut,99,1
+cardamom,148,cardamom,131,1
+dill,149,dill,165,1
+pear,150,pear,138,1
+sardine,151,sardine,164,1
+striped_bass,152,striped_bass,172,1
+whipping_cream,153,whipping_cream,186,1
+artichoke_heart,154,artichoke_heart,157,1
+chicken_liver,155,chicken_liver,174,1
+leg,156,leg,158,1
+liver,157,liver,128,1
+corn,158,corn,129,1
+grape,159,grape,144,1
+hard-cooked_egg,160,hard-cooked_egg,176,1
+lentil,161,lentil,181,1
+octopus,162,octopus,215,1
+paste,163,paste,116,1
+pastry,164,pastry,149,1
+prune,165,prune,133,1
+rum,166,rum,177,1
+truffle,167,truffle,153,1
+vanilla_bean,168,vanilla_bean,167,1
+cheese,169,cheese,156,1
+peach,170,peach,182,1
+prosciutto,171,prosciutto,154,1
+pumpkin,172,pumpkin,166,1
+single_cream,173,single_cream,163,1
+sparerib,174,sparerib,187,1
+radish,175,radish,175,1
+salt_pork,176,salt_pork,191,1
+watercress,177,watercress,173,1
+escarole,178,escarole,183,1
+jelly,179,jelly,143,1
+mullet,180,mullet,169,1
+orange_juice,181,orange_juice,109,1
+pork_sausage,182,pork_sausage,151,1
+rib,183,rib,199,1
+turmeric,184,turmeric,188,1
+aioli,185,aioli,202,1
+granulated_sugar,186,granulated_sugar,216,1
+kosher,187,kosher,222,1
+pastis,188,pastis,204,1
+salmon,189,salmon,148,1
+tripe,190,tripe,230,1
+white_pepper,191,white_pepper,194,1
+allspice,192,allspice,168,1
+blood_sausage,193,blood_sausage,220,1
+chestnut,194,chestnut,171,1
+fig,195,fig,155,1
+ham_hock,196,ham_hock,208,1
+mustard_seed,197,mustard_seed,224,1
+oyster mushroom,198,oyster mushroom,190,1
+romaine_lettuce,199,romaine_lettuce,184,1
+sesame_seed,200,sesame_seed,192,1
+spiny_lobster,201,spiny_lobster,229,1
+cider,202,cider,197,1
+cornmeal,203,cornmeal,217,1
+paella,204,paella,207,1
+plain_flour,205,plain_flour,180,1
+sparkling_water,206,sparkling_water,238,1
+trout,207,trout,195,1
+vanilla_extract,208,vanilla_extract,240,1
+whiting,209,whiting,241,1
+bay_scallop,210,bay_scallop,245,1
+black_bean,211,black_bean,258,1
+goat_cheese,212,goat_cheese,189,1
+littleneck_clam,213,littleneck_clam,206,1
+salvia,214,salvia,178,1
+strawberry,215,strawberry,209,1
+caraway_seed,216,caraway_seed,263,1
+coffee,217,coffee,255,1
+juniper_berry,218,juniper_berry,211,1
+manzanilla,219,manzanilla,214,1
+navel_orange,220,navel_orange,249,1
+swordfish,221,swordfish,234,1
+tequila,222,tequila,268,1
+berry,223,berry,250,1
+cake,224,cake,210,1
+curry_powder,225,curry_powder,221,1
+double_cream,226,double_cream,269,1
+dried_apricot,227,dried_apricot,196,1
+drinking_chocolate,228,drinking_chocolate,201,1
+gherkin,229,gherkin,233,1
+liqueur,230,liqueur,205,1
+pork_belly,231,pork_belly,218,1
+pumpkin_seed,232,pumpkin_seed,225,1
+quince,233,quince,242,1
+rock,234,rock,257,1
+rocket,235,rocket,193,1
+soy_sauce,236,soy_sauce,179,1
+tomatillo,237,tomatillo,252,1
+tomato_ketchup,238,tomato_ketchup,275,1
+water,239,water,243,1
+bonito,240,bonito,223,1
+cheddar_cheese,241,cheddar_cheese,246,1
+cockle,242,cockle,272,1
+cocoa_powder,243,cocoa_powder,266,1
+currant,244,currant,231,1
+mackerel,245,mackerel,287,1
+marrow,246,marrow,260,1
+pomegranate,247,pomegranate,251,1
+sea_bream,248,sea_bream,270,1
+sole,249,sole,248,1
+spaghetti,250,spaghetti,289,1
+turkey,251,turkey,213,1
+turnip_greens,252,turnip_greens,294,1
+yam,253, ,313,1
+banana,254,banana,261,1
+beer,255,beer,212,1
+beetroot,256,beetroot,198,1
+brain,257,brain,292,1
+cherry,258,cherry,226,1
+grouper,259,grouper,264,1
+haricot,260,haricot,253,1
+muscatel,261,muscatel,281,1
+pickle,262,pickle,244,1
+raspberry,263,raspberry,239,1
+smoked_salmon,264,smoked_salmon,273,1
+steak,265,steak,267,1
+venison,266,venison,308,1
+vodka,267,vodka,254,1
+wine,268,wine,227,1
+almond_extract,269, ,313,1
+apple_juice,270, ,313,1
+brisket,271,brisket,247,1
+brown_sugar,272, ,313,1
+cannelloni,273, ,313,1
+cardoon,274, ,313,1
+chervil,275,chervil,277,1
+chicken leg,276,chicken leg,311,1
+date,277,date,259,1
+eel,278,eel,305,1
+flounder,279, ,313,1
+frankfurter,280, ,313,1
+gem,281, ,313,1
+grenadine,282, ,313,1
+heart,283,heart,282,1
+icing_sugar,284, ,313,1
+instant_coffee,285, ,313,1
+ladyfinger,286, ,313,1
+lamb_chop,287, ,313,1
+lasagne,288,lasagne,298,1
+macaroni,289, ,313,1
+molasses,290, ,313,1
+mustard_greens,291,mustard_greens,313,1
+nectar,292, ,313,1
+orange_liqueur,293,orange_liqueur,285,1
+phyllo,294, ,313,1
+pineapple,295,pineapple,295,1
+porgy,296,porgy,310,1
+pork_tenderloin,297,pork_tenderloin,232,1
+puff,298, ,313,1
+roe,299, ,313,1
+sandwich,300,sandwich,271,1
+sashimi,301, ,313,1
+sea_bass,302,sea_bass,280,1
+sea_scallop,303, ,313,1
+semolina,304,semolina,237,1
+sirloin,305, ,313,1
+sourdough_bread,306,sourdough_bread,276,1
+sweet potato,307,sweet potato,203,1
+syrup,308, ,313,1
+tart,309, ,313,1
+tomato_juice,310,tomato_juice,290,1
+vermicelli,311,vermicelli,256,1
+white_rice,312,white_rice,278,1
+ ,312,sultana,219,1
+ ,312,shellfish,228,1
+ ,312,sesame_oil,235,1
+ ,312,yogurt,236,1
+ ,312,horseradish,262,1
+ ,312,halibut,265,1
+ ,312,kidney_bean,274,1
+ ,312,plantain,279,1
+ ,312,sugar_snap_pea,283,1
+ ,312,beefsteak tomato,284,1
+ ,312,pistachio_nut,286,1
+ ,312,peanut,288,1
+ ,312,foie_gras,291,1
+ ,312,yellowfin_tuna,293,1
+ ,312,turbot,296,1
+ ,312,snapper,297,1
+ ,312,mango,299,1
+ ,312,ricotta,300,1
+ ,312,anisette,301,1
+ ,312,red_cabbage,302,1
+ ,312,butternut_squash,303,1
+ ,312,leg_of_lamb,304,1
+ ,312,cream_cheese,306,1
+ ,312,peppermint,307,1
+ ,312,coconut_water,309,1
+ ,312,salad_green,312,1

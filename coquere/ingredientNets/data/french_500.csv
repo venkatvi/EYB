@@ -1,0 +1,91 @@
+onion,1,onion,1,1
+parsley,2,parsley,2,1
+thyme,3,thyme,3,1
+carrot,4,carrot,4,1
+bay_leaf,5,bay_leaf,5,1
+shallot,6,shallot,7,1
+tomato,7,tomato,8,1
+butter,8,butter,6,1
+white,9,white,9,1
+white_wine,10,white_wine,16,1
+mushroom,11,mushroom,17,1
+spring_onion,12,spring_onion,10,1
+celery,13,celery,13,1
+garlic,14,garlic,14,1
+heavy_cream,15,heavy_cream,19,1
+potato,16,potato,21,1
+egg_yolk,17,egg_yolk,18,1
+egg,18,egg,12,1
+peppercorn,19,peppercorn,20,1
+tarragon,20,tarragon,33,1
+lemon,21,lemon,11,1
+veal,22,veal,28,1
+poulet,23,poulet,35,1
+chicken_stock,24,chicken_stock,24,1
+milk,25,milk,22,1
+sugar,26,sugar,26,1
+nutmeg,27,nutmeg,27,1
+red_pepper,28,red_pepper,23,1
+flour,29,flour,15,1
+bacon,30,bacon,30,1
+tomato_paste,31,tomato_paste,47,1
+chive,32,chive,32,1
+boeuf,33,boeuf,39,1
+fennel,34,fennel,36,1
+fish,35,fish,48,1
+pork,36,pork,37,1
+orange,37,orange,31,1
+vinegar,38,vinegar,25,1
+red_wine,39,red_wine,44,1
+white_turnip,40,white_turnip,59,1
+basil,41,basil,34,1
+cream,42,cream,29,1
+almond,43,almond,40,1
+castor_sugar,44,castor_sugar,73,1
+chervil,45,chervil,50,1
+jambon,46,jambon,54,1
+lamb,47,lamb,68,1
+rosemary,48,rosemary,64,1
+shoulder,49, ,78,1
+apple,50,apple,38,1
+beef_stock,51, ,78,1
+duck,52,duck,52,1
+bread,53,bread,42,1
+cinnamon,54,cinnamon,41,1
+coriander_seed,55,coriander_seed,45,1
+dark_chocolate,56, ,78,1
+mussel,57, ,78,1
+saffron,58,saffron,57,1
+stock,59,stock,61,1
+vanilla_bean,60, ,78,1
+vanilla_extract,61, ,78,1
+anchovy,62, ,78,1
+caper,63,caper,67,1
+juniper_berry,64,juniper_berry,74,1
+olive_oil,65,olive_oil,53,1
+pea,66,pea,76,1
+rice,67,rice,43,1
+black_olive,68, ,78,1
+chou,69, ,78,1
+eggplant,70, ,78,1
+grain,71, ,78,1
+oregano,72,oregano,71,1
+rum,73, ,78,1
+sage,74, ,78,1
+sherry,75,sherry,51,1
+truffle,76,truffle,56,1
+vegetable_oil,77,vegetable_oil,46,1
+ ,77,ginger,49,1
+ ,77,jelly,55,1
+ ,77,lime,58,1
+ ,77,honey,60,1
+ ,77,double_cream,62,1
+ ,77,sweet_pepper,63,1
+ ,77,chilli,65,1
+ ,77,white_pepper,66,1
+ ,77,herb,69,1
+ ,77,mint,70,1
+ ,77,brandy,72,1
+ ,77,spinach,75,1
+ ,77,allspice,77,1
+ ,77,shrimp,78,1

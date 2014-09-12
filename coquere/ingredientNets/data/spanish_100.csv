@@ -1,0 +1,42 @@
+parsley,1,parsley,1,1
+tomato,2,tomato,2,1
+garlic,3,garlic,4,1
+bay_leaf,4,bay_leaf,3,1
+onion,5,onion,5,1
+carrot,6,carrot,6,1
+peppercorn,7,peppercorn,11,1
+sweet_pepper,8,sweet_pepper,7,1
+saffron,9,saffron,16,1
+thyme,10,thyme,8,1
+red_pepper,11,red_pepper,15,1
+white,12,white,14,1
+white_wine,13,white_wine,18,1
+chilli,14,chilli,12,1
+potato,15,potato,17,1
+sherry,16,sherry,13,1
+spring_onion,17,spring_onion,9,1
+bread,18,bread,26,1
+celery,19,celery,31,1
+chicken,20,chicken,27,1
+fish,21, ,36,1
+olive_oil,22,olive_oil,22,1
+rice,23,rice,25,1
+shrimp,24, ,36,1
+almond,25,almond,19,1
+chicken_stock,26,chicken_stock,30,1
+chorizo,27, ,36,1
+coriander_seed,28,coriander_seed,20,1
+cumin_seed,29,cumin_seed,32,1
+egg,30,egg,24,1
+green_pepper,31, ,36,1
+ham,32,ham,28,1
+lemon,33,lemon,10,1
+mushroom,34, ,36,1
+sausage,35, ,36,1
+ ,35,vinegar,21,1
+ ,35,cinnamon,23,1
+ ,35,orange,29,1
+ ,35,pork,33,1
+ ,35,mint,34,1
+ ,35,rosemary,35,1
+ ,35,flour,36,1

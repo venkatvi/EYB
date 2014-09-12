@@ -1,0 +1,91 @@
+parsley,1,parsley,1,1
+tomato,2,tomato,3,1
+onion,3,onion,2,1
+celery,4,celery,5,1
+carrot,5,carrot,6,1
+pasta,6,pasta,18,1
+basil,7,basil,14,1
+flour,8,flour,7,1
+lemon,9,lemon,4,1
+rosemary,10,rosemary,16,1
+white_wine,11,white_wine,9,1
+garlic,12,garlic,11,1
+bay_leaf,13,bay_leaf,15,1
+peppercorn,14,peppercorn,8,1
+white,15,white,10,1
+oregano,16,oregano,26,1
+egg,17,egg,12,1
+red_pepper,18,red_pepper,13,1
+thyme,19,thyme,19,1
+chicken_stock,20,chicken_stock,31,1
+sage,21,sage,25,1
+olive_oil,22,olive_oil,22,1
+potato,23,potato,21,1
+anchovy,24,anchovy,38,1
+chilli,25,chilli,23,1
+mushroom,26,mushroom,32,1
+nutmeg,27,nutmeg,35,1
+butter,28,butter,17,1
+caper,29,caper,39,1
+chicken,30,chicken,45,1
+milk,31,milk,28,1
+red_onion,32,red_onion,30,1
+ricotta,33,ricotta,34,1
+sugar,34,sugar,43,1
+red_wine,35,red_wine,36,1
+spring_onion,36,spring_onion,24,1
+tomato_paste,37,tomato_paste,46,1
+veal,38,veal,49,1
+bread,39,bread,27,1
+cheese,40,cheese,42,1
+heavy_cream,41,heavy_cream,20,1
+zucchini,42,zucchini,56,1
+almond,43,almond,52,1
+bean,44,bean,66,1
+beef,45,beef,48,1
+egg_yolk,46,egg_yolk,37,1
+mozzarella,47,mozzarella,55,1
+orange,48,orange,29,1
+pork,49,pork,53,1
+pine_nut,50,pine_nut,41,1
+prosciutto,51,prosciutto,51,1
+black_olive,52,black_olive,61,1
+cinnamon,53,cinnamon,33,1
+florence_fennel,54,florence_fennel,44,1
+spaghetti,55,spaghetti,82,1
+stock,56,stock,63,1
+eggplant,57,eggplant,74,1
+meat,58,meat,79,1
+mint,59,mint,47,1
+pea,60,pea,62,1
+shrimp,61,shrimp,60,1
+spinach,62,spinach,64,1
+castor_sugar,63,castor_sugar,70,1
+globe_artichoke,64,globe_artichoke,80,1
+mussel,65, ,83,1
+raisin,66,raisin,57,1
+rice,67,rice,58,1
+squid,68, ,83,1
+vegetable_oil,69,vegetable_oil,54,1
+wine_vinegar,70,wine_vinegar,65,1
+cherry tomato,71,cherry tomato,78,1
+clam,72, ,83,1
+fish,73, ,83,1
+honey,74,honey,59,1
+lamb,75,lamb,83,1
+linguine,76, ,83,1
+penne,77, ,83,1
+rigatoni,78, ,83,1
+semolina,79,semolina,73,1
+shallot,80,shallot,50,1
+sweet_pepper,81,sweet_pepper,72,1
+tuna,82, ,83,1
+ ,82,vinegar,40,1
+ ,82,walnut,67,1
+ ,82,rocket,68,1
+ ,82,chive,69,1
+ ,82,fennel_seed,71,1
+ ,82,saffron,75,1
+ ,82,cream,76,1
+ ,82,plain_flour,77,1
+ ,82,mascarpone,81,1

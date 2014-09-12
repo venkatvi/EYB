@@ -1,0 +1,36 @@
+chili_con_carne,1,chili_con_carne,1,1
+onion,2,onion,2,1
+tomato,3,tomato,3,1
+coriander_seed,4,coriander_seed,4,1
+garlic,5,garlic,6,1
+corn,6,corn,7,1
+cumin_seed,7,cumin_seed,9,1
+oregano,8,oregano,8,1
+bay_leaf,9,bay_leaf,10,1
+lime,10,lime,5,1
+peppercorn,11,peppercorn,16,1
+chicken,12,chicken,19,1
+chicken_stock,13,chicken_stock,13,1
+thyme,14,thyme,20,1
+tortilla,15,tortilla,22,1
+avocado,16,avocado,24,1
+carrot,17,carrot,23,1
+lard,18, ,30,1
+pork,19, ,30,1
+parsley,20,parsley,12,1
+tomatillo,21, ,30,1
+potato,22,potato,25,1
+red_onion,23,red_onion,30,1
+red_pepper,24,red_pepper,14,1
+adobo,25, ,30,1
+beef,26, ,30,1
+cider_vinegar,27, ,30,1
+cinnamon,28,cinnamon,11,1
+spring_onion,29,spring_onion,18,1
+ ,29,orange,15,1
+ ,29,flour,17,1
+ ,29,vinegar,21,1
+ ,29,egg,26,1
+ ,29,sugar,27,1
+ ,29,sweet_pepper,28,1
+ ,29,butter,29,1

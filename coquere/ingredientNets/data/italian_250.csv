@@ -1,0 +1,69 @@
+parsley,1,parsley,1,1
+tomato,2,tomato,3,1
+onion,3,onion,2,1
+celery,4,celery,5,1
+carrot,5,carrot,6,1
+basil,6,basil,14,1
+garlic,7,garlic,11,1
+pasta,8,pasta,18,1
+white_wine,9,white_wine,9,1
+flour,10,flour,7,1
+peppercorn,11,peppercorn,8,1
+rosemary,12,rosemary,16,1
+white,13,white,10,1
+bay_leaf,14,bay_leaf,15,1
+lemon,15,lemon,4,1
+egg,16,egg,12,1
+red_pepper,17,red_pepper,13,1
+thyme,18,thyme,19,1
+oregano,19,oregano,26,1
+potato,20,potato,21,1
+chicken_stock,21,chicken_stock,31,1
+sage,22,sage,25,1
+butter,23,butter,17,1
+nutmeg,24,nutmeg,35,1
+olive_oil,25,olive_oil,22,1
+red_wine,26,red_wine,36,1
+beef,27,beef,48,1
+chicken,28,chicken,45,1
+chilli,29,chilli,23,1
+milk,30,milk,28,1
+mushroom,31,mushroom,32,1
+red_onion,32,red_onion,30,1
+tomato_paste,33,tomato_paste,46,1
+veal,34,veal,49,1
+anchovy,35,anchovy,38,1
+bread,36,bread,27,1
+caper,37,caper,39,1
+cheese,38,cheese,42,1
+ricotta,39,ricotta,34,1
+spring_onion,40,spring_onion,24,1
+sugar,41,sugar,43,1
+pork,42,pork,53,1
+spaghetti,43, ,60,1
+zucchini,44,zucchini,56,1
+bean,45, ,60,1
+egg_yolk,46,egg_yolk,37,1
+eggplant,47, ,60,1
+mozzarella,48,mozzarella,55,1
+wine_vinegar,49, ,60,1
+black_olive,50, ,60,1
+globe_artichoke,51, ,60,1
+mint,52,mint,47,1
+mussel,53, ,60,1
+penne,54, ,60,1
+pine_nut,55,pine_nut,41,1
+prosciutto,56,prosciutto,51,1
+raisin,57,raisin,57,1
+semolina,58, ,60,1
+shrimp,59,shrimp,60,1
+ ,59,heavy_cream,20,1
+ ,59,orange,29,1
+ ,59,cinnamon,33,1
+ ,59,vinegar,40,1
+ ,59,florence_fennel,44,1
+ ,59,shallot,50,1
+ ,59,almond,52,1
+ ,59,vegetable_oil,54,1
+ ,59,rice,58,1
+ ,59,honey,59,1

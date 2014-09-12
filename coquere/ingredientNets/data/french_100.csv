@@ -1,0 +1,33 @@
+carrot,1,carrot,4,1
+onion,2,onion,1,1
+parsley,3,parsley,2,1
+thyme,4,thyme,3,1
+bay_leaf,5,bay_leaf,5,1
+tomato,6,tomato,8,1
+shallot,7,shallot,7,1
+white_wine,8,white_wine,16,1
+celery,9,celery,13,1
+white,10,white,9,1
+butter,11,butter,6,1
+spring_onion,12,spring_onion,10,1
+garlic,13,garlic,14,1
+mushroom,14,mushroom,17,1
+milk,15,milk,22,1
+peppercorn,16,peppercorn,20,1
+sugar,17,sugar,26,1
+egg,18,egg,12,1
+flour,19,flour,15,1
+potato,20,potato,21,1
+veal,21,veal,28,1
+bacon,22,bacon,30,1
+egg_yolk,23,egg_yolk,18,1
+lemon,24,lemon,11,1
+poulet,25, ,30,1
+tarragon,26, ,30,1
+basil,27, ,30,1
+chicken_stock,28,chicken_stock,24,1
+red_pepper,29,red_pepper,23,1
+ ,29,heavy_cream,19,1
+ ,29,vinegar,25,1
+ ,29,nutmeg,27,1
+ ,29,cream,29,1
