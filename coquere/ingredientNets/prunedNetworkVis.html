@@ -59,13 +59,45 @@
 			var links = getQueryVariable("links");
 		
 
-											
-			var svg = d3.select("body").append("svg")
-			  .attr("width", width)
-			  .attr("height", height);
+			var svg = d3.select("#chart").append("svg")
+		.attr("width", width)
+		.attr("height", height)
+		.attr("viewBox", "0 0 " + width + " " + height)
+		.attr("preserveAspectRatio", "xMidYMid meet")
+		.attr("pointer-events", "all")
+		.append('svg:g')
+		.call(d3.behavior.zoom().on("zoom", redraw))
+		.append('svg:g');
 
-			var force = d3.layout.force()
-			  .size([width, height]);
+		svg.append('svg:rect')
+		.attr('width', width)
+		.attr('height', height)
+		.attr('fill', 'white');
+
+		function redraw() {
+			console.log("here", d3.event.translate, d3.event.scale);
+			svg.attr("transform",
+					"translate(" + d3.event.translate + ")"
+					+ " scale(" + d3.event.scale + ")");
+		}
+		
+		var color = d3.scale.category20();
+
+		var loading = svg.append("text")
+		.attr("x", width / 2)
+		.attr("y", height / 2)
+		.attr("dy", ".35em")
+		.style("text-anchor", "middle")
+		.text("Simulating. One moment please…");
+
+		var force = d3.layout.force()
+			.gravity(0)
+			.distance(1)
+			.charge(-0.4)
+			.friction(1)
+			.size([width, height]);
+
+									
 
 			var csvFile = "data/" + cuisine + links + ".csv";
 			console.log(csvFile);
@@ -81,41 +113,90 @@
 				// Extract the array of nodes from the map by name.
 				var nodes = d3.values(nodesByName);
 
-				// Create the link lines.
-				var link = svg.selectAll(".link")
-				    .data(links)
-				  .enter().append("line")
-				    .attr("class", "link");
-
-				// Create the node circles.
-				var node = svg.selectAll(".node")
-				    .data(nodes)
-				  .enter().append("circle")
-				    .attr("class", "node")
-				    .attr("r", 4.5)
-				    .call(force.drag);
-
 				// Start the force layout.
 				force
 				    .nodes(nodes)
-				    .links(links)
-				    .on("tick", tick)
-				    .start();
-
-				function tick() {
-				  link.attr("x1", function(d) { return d.source.x; })
-				      .attr("y1", function(d) { return d.source.y; })
-				      .attr("x2", function(d) { return d.target.x; })
-				      .attr("y2", function(d) { return d.target.y; });
-
-				  node.attr("cx", function(d) { return d.x; })
-				      .attr("cy", function(d) { return d.y; });
-				}
+				    .links(links);
 
 				function nodeByName(name) {
 				  return nodesByName[name] || (nodesByName[name] = {name: name});
 				}
-				});
+      
+		    	// Use a timeout to allow the rest of the page to load first.
+    			setTimeout(function() {
+
+						n=100; 
+						// Run the layout a fixed number of times.
+						// The ideal number of times scales with graph complexity.
+						// Of course, don't run too long—you'll hang the page!
+						force.start();
+						for (var i = n * n; i > 0; --i) force.tick();
+						force.stop();
+
+						var link = svg.selectAll(".link")
+							.data(json.links)
+							.enter().append("line")
+							.attr("class", "link")
+							.attr("x1", function(d) { return d.source.x; })
+							.attr("y1", function(d) { return d.source.y; })
+							.attr("x2", function(d) { return d.target.x; })
+							.attr("y2", function(d) { return d.target.y; });
+
+						var node = svg.selectAll(".node")
+							.data(json.nodes)
+							.enter().append("g")
+							.attr("class", "node")
+							.attr("cx", function(d) { return d.x; })
+							.attr("cy", function(d) { return d.y; })
+							.attr("r", 4.5)
+							.on("mouseover", fade(.1))
+							.on("mouseout", fade(1));
+
+						node.append("circle")
+							.attr("r", function(d) { return Math.sqrt(d.children+1)*2; })
+							.style("fill", function(d) { return color(d.children+1); })
+							.attr("cx", function(d) { return d.x; })
+							.attr("cy", function(d) { return d.y; });
+
+						node.append("text")
+							.attr("dx", function(d) { return d.x; })
+							.attr("dy", function(d) { return d.y; })
+							.attr("font-size",10)
+							.style("font-weight", "bold");
+
+
+						function fade(opacity){
+
+							return function (d) {
+								node.style("stroke-opacity", function(o) {
+										thisOpacity = isConnected(d, o) ? 1: opacity;
+										this.setAttribute('fill-opacity', thisOpacity);
+										return thisOpacity;
+										});
+								link.style ("stroke-opacity", function(o) {
+										return o.source === d || o.target === d ? 1: opacity;
+										});
+								link.style ("stroke", function(o) {
+										return opacity === 0.1 ? (o.source === d || o.target === d ? "#999": "#fff") : "#fff";
+										});
+								d3.select(this).select("text").text(function() { 
+										return opacity === 0.1 ? d.id.toLowerCase() : "";
+										});
+								d3.selectAll(".node").filter(function(o){
+										return isConnected(o, d) == 1;
+										}).select("text").text(function(o) {
+											return opacity === 0.1 ? o.id.toLowerCase() : "";
+											})
+											.attr("dx", function(d) { return opacity === 0.1 ? d.x + 1:  0; })
+											.attr("dy", function(d) { return opacity === 0.1 ? d.y + 0.5 : 0; });
+							};
+
+						}
+
+						loading.remove();
+
+					}, 5);
+      });
 		</script>
 			
 	</body>
