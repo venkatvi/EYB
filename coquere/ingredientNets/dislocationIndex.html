@@ -18,7 +18,7 @@
 			var dropDownLinkTypeCodes = ["100", "250", "500", "1000", "2500", "5000", "10000"];
 			window.onload = function(){
 				var csvFile = "data/" + cuisine + "_" + dropDownLinkTypeCodes[0] + ".csv";
-				var url = "ingredFreqComparison.html?file=" + csvFile;
+				var url = "ingredFreqComparison.html?file=" + csvFile + "&links=" + dropDownLinkTypeCodes[0];
 				document.getElementById("map").src = url;
 			}	
 
@@ -37,7 +37,7 @@
 			</div>
 		</div>
 		<div id="gNetMat">
-			<iframe id='map' scrolling="no" allowfullscreen width=100% height=900 frameborder="0"></iframe>
+			<iframe id='map' scrolling="no" allowfullscreen width=100% height=1000 frameborder="0"></iframe>
 		</div>
 
 		<script>
@@ -45,8 +45,8 @@
 			    .on("change", function() {
 					nodeId = this.selectedIndex;
 					linkType = dropDownLinkTypeCodes[nodeId];
-					var jsonFile = "data/" + cuisine + "_" + linkType + ".json";
-					var url = "ingredFreqComparison.html?file=" + jsonFile;
+					var csvFile = "data/" + cuisine + "_" + linkType + ".csv";
+					var url = "ingredFreqComparison.html?file=" + csvFile + "&links=" + linkType;
 					document.getElementById("map").src = url;
 				})
 			    .selectAll("option")

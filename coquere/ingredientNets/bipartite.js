@@ -1,16 +1,14 @@
 !function(){
 	var bP={};	
-	var b=30, bb=150, height=600, buffMargin=1, minHeight=14;
+	var b=30, bb=150, height=600, buffMargin=1, minHeight=0.1;
 	var c1=[-130, 40], c2=[-50, 100], c3=[-10, 140]; //Column positions of labels.
 	var colors =["#3366CC", "#DC3912",  "#FF9900","#109618", "#990099"];
 	
 	bP.partData = function(data,p){
-		p = 4;
 		var sData={};
-		
 		sData.keys=[
-			d3.set(data.map(function(d){ return d.slice(0,2);})).values().sort(function(a,b){ a1=a.split(',')[1]; b1=b.split(',')[1]; return (a1-b1);}),
-			d3.set(data.map(function(d){ return d.slice(2,4);})).values().sort(function(a,b){ a1=a.split(',')[1]; b1=b.split(',')[1]; return ( a1-b1);})
+			d3.set(data.map(function(d){ return d.slice(0,2).join(',');})).values().sort(function(a,b){ a1=a.split(',')[1]; b1=b.split(',')[1]; return (a1-b1)}),
+			d3.set(data.map(function(d){ return d.slice(2,4).join(',');})).values().sort(function(a,b){ a1=a.split(',')[1]; b1=b.split(',')[1]; return ( a1-b1);})
 		];
 		sData.data = [	sData.keys[0].map( function(d){ return sData.keys[1].map( function(v){ return 0; }); }),
 						sData.keys[1].map( function(d){ return sData.keys[0].map( function(v){ return 0; }); }) 
@@ -103,6 +101,7 @@
 	}
 	
 	function drawPart(data, id, p){
+		console.log(data.keys);
 		d3.select("#"+id).append("g").attr("class","part"+p)
 			.attr("transform","translate("+( p*(bb+b))+",0)");
 		d3.select("#"+id).select(".part"+p).append("g").attr("class","subbars");
@@ -129,7 +128,7 @@
 			.append("rect").attr("class","subbar")
 			.attr("x", 0).attr("y",function(d){ return d.y})
 			.attr("width",b).attr("height",function(d){ return d.h})
-			.style("fill",function(d){ if(d.key1==6 ) {return colors[2];} else if(d.key2==6){return colors[3];} else {return colors[1];} });
+			.style("fill",function(d){ if(d.key1==data.keys[0].length-1 ) {return colors[2];} else if(d.key2==data.keys[1].length-1){return colors[3];} else {return colors[1];} });
 	}
 	
 	function drawEdges(data, id){
@@ -137,7 +136,7 @@
 
 		d3.select("#"+id).select(".edges").selectAll(".edge")
 			.data(data.edges).enter().append("polygon").attr("class","edge")
-			.attr("points", edgePolygon).style("fill",function(d){ if(d.key1 == 6){ return colors[5];} else if(d.key2 == 6) { return colors[4];} else {return colors[1];}})
+			.attr("points", edgePolygon).style("fill",function(d){ if(d.key1 == data.keys[0].length-1){ return colors[5];} else if(d.key2 == data.keys[1].length-1) { return colors[4];} else {return colors[1];}})
 			.style("opacity",0.5).each(function(d) { this._current = d; });	
 	}	
 	

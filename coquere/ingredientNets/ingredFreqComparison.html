@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
 <html>
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -6,26 +7,57 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-		<script src = "http://d3js.org/d3.v3.min.js"></script>
-		<script src="http://d3js.org/d3.v2.min.js?2.8.1"></script>
 		<script src="../js/query.js"></script>
 		<script src="http://static.cybercommons.org/js/d3/lib/colorbrewer/colorbrewer.js" type="text/javascript"></script>
 		<link rel="stylesheet" href="css/style.css" />	
 		<link rel="stylesheet" href="http://static.cybercommons.org/js/d3/lib/colorbrewer/colorbrewer.css" />	
 	</head>
+	<style>
+	body{
+		width:1000px;
+		margin:100px auto;
+	}
+	svg text{
+		font-size:12px;
+	}
+	rect{
+		shape-rendering:crispEdges;
+	}
+	</style>
 	<body>
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<script src="bipartite.js"></script>
+
 		<div id="chart"> </div>
 		<script>
 			var csvFile = getQueryVariable("file");
+			var links = getQueryVariable("links");
 			var margin = {top: 50, right: 150, bottom: 50, left: 50},
-			    width = 700,
-			    height = 700;
+			    width = 900,
+			    height = 1000;
 
-			var rowsData;
-			d3.csv(csvFile, function(rows) {
-			  rowsData = rows;
+			d3.text(csvFile, function(unparsedData) {
+			  var dataRows = d3.csv.parseRows(unparsedData);
+			  parseData(dataRows, links);
 			});
-			console.log(rowsData);
+			function parseData(dataRows, links){
+				console.log(dataRows);
+				var width = 1000, height = 1000, margin ={b:0, t:40, l:170, r:50};
+
+				var svg = d3.select("body")
+					.append("svg").attr('width',width).attr('height',(height+margin.b+margin.t))
+					.append("g").attr("transform","translate("+ margin.l+","+margin.t+")");
+
+				var data = [ 
+					{data:bP.partData(dataRows,4), 
+					id:'DislocationIndex', 
+					header:["Ingredients in top " + links + " links"  ,"Ingredients ordered by degree", "Dislocation Index"]},
+];
+
+				bP.draw(data, svg);
+
+
+			}
 		</script>
 	</body>
 </html>
