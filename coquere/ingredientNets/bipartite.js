@@ -1,8 +1,9 @@
 !function(){
 	var bP={};	
-	var b=30, bb=150, height=600, buffMargin=1, minHeight=0.1;
+	var b=30, bb=150, height=800, buffMargin=1, minHeight=0.1;
 	var c1=[-130, 40], c2=[-50, 100], c3=[-10, 140]; //Column positions of labels.
-	var colors =["#3366CC", "#DC3912",  "#FF9900","#109618", "#990099"];
+	//var colors =["#3366CC", "#DC3912",  "#FF9900","#109618", "#990099"];
+	var colors =["#4daf4a", "#969696", "#377eb8", "#e41a1c", "#f7f7f7"];
 	
 	bP.partData = function(data,p){
 		var sData={};
@@ -121,6 +122,7 @@
 		mainbar.append("text").attr("class","barlabel")
 			.attr("x", c1[p]).attr("y",function(d){  return d.middle+5;})
 			.text(function(d,i){ return data.keys[p][i].split(',')[0];})
+			.attr("font-size", "0.5px")
 			.attr("text-anchor","start" );
 			
 		d3.select("#"+id).select(".part"+p).select(".subbars")
@@ -136,7 +138,7 @@
 
 		d3.select("#"+id).select(".edges").selectAll(".edge")
 			.data(data.edges).enter().append("polygon").attr("class","edge")
-			.attr("points", edgePolygon).style("fill",function(d){ if(d.key1 == data.keys[0].length-1){ return colors[5];} else if(d.key2 == data.keys[1].length-1) { return colors[4];} else {return colors[1];}})
+			.attr("points", edgePolygon).style("fill",function(d){ if(d.key1 == data.keys[0].length-1){ return colors[4];} else if(d.key2 == data.keys[1].length-1) { return colors[4];} else {return colors[1];}})
 			.style("opacity",0.5).each(function(d) { this._current = d; });	
 	}	
 	
