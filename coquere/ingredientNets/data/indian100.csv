@@ -21,7 +21,6 @@ ginger,onion,7.8579e-05
 chilli,onion,7.8579e-05
 coriander_seed,onion,7.8579e-05
 ginger,garlic,7.8579e-05
-cinnamon,stick,0.00055006
 ginger,red_pepper,7.8579e-05
 mustard_seed,coriander_seed,7.8579e-05
 mustard_seed,turmeric,7.8579e-05
@@ -31,11 +30,9 @@ ginger,yogurt,7.8579e-05
 cinnamon,ginger,0.00055006
 red_pepper,turmeric,7.8579e-05
 chilli,curry,7.8579e-05
-stick,ginger,0.00031432
 cumin_seed,onion,7.8579e-05
 cardamon,ginger,0.00023574
 yogurt,coriander_seed,7.8579e-05
-stick,cardamon,0.00031432
 chilli,yogurt,7.8579e-05
 turmeric,onion,7.8579e-05
 garlic,coriander_seed,7.8579e-05
@@ -43,13 +40,10 @@ mustard_seed,cumin_seed,7.8579e-05
 yogurt,cumin_seed,7.8579e-05
 cinnamon,cumin_seed,0.00047148
 cinnamon,coriander_seed,0.00047148
-stick,coriander_seed,0.00031432
-stick,cumin_seed,0.00031432
 cardamon,coriander_seed,0.00023574
 cardamon,cumin_seed,0.00023574
 mustard_seed,curry,7.8579e-05
 chilli,coconut,7.8579e-05
-stick,chilli,0.00031432
 cinnamon,chilli,0.00055006
 cumin_seed,garlic,7.8579e-05
 coriander_seed,potato,7.8579e-05
@@ -65,7 +59,6 @@ cinnamon,turmeric,0.00055006
 chilli,red_pepper,7.8579e-05
 garlic,onion,7.8579e-05
 peppercorn,cumin_seed,7.8579e-05
-stick,turmeric,0.00031432
 cumin_seed,potato,7.8579e-05
 coconut,coriander_seed,7.8579e-05
 tomato,red_pepper,0.00023574
@@ -92,7 +85,6 @@ coconut,mustard_seed,7.8579e-05
 cinnamon,onion,0.00047148
 cardamon,yogurt,0.00023574
 flour,chilli,0.00015716
-stick,onion,0.00031432
 ginger,ghee,7.8579e-05
 lamb,ginger,0.00023574
 coconut,cumin_seed,7.8579e-05

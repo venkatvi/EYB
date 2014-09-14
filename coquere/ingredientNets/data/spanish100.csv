@@ -36,7 +36,6 @@ carrot,onion,0.0002442
 sweet_pepper,onion,0.0001221
 thyme,garlic,0.0001221
 bay_leaf,white_wine,0.0001221
-ingredient,parsley,0.0023199
 sweet_pepper,saffron,0.0001221
 chilli,parsley,0.0003663
 tomato,green_pepper,0.0002442
@@ -81,7 +80,6 @@ bay_leaf,potato,0.0001221
 white,garlic,0.0034188
 thyme,peppercorn,0.0001221
 chicken,parsley,0.0001221
-sunflower_oil,ingredient,0.017216
 carrot,peppercorn,0.0003663
 sweet_pepper,red_pepper,0.0001221
 garlic,potato,0.0001221
@@ -90,7 +88,6 @@ carrot,garlic,0.0003663
 bay_leaf,sherry,0.0001221
 celery,bay_leaf,0.0001221
 rice,saffron,0.0001221
-ingredient,tomato,0.0025641
 chilli,onion,0.0003663
 almond,parsley,0.0010989
 sweet_pepper,cumin_seed,0.0001221

@@ -24,7 +24,6 @@ chili_con_carne,chicken,9.2302e-05
 lime,tomato,0.00046151
 cumin_seed,garlic,9.2302e-05
 chili_con_carne,bay_leaf,9.2302e-05
-stick,chili_con_carne,0.00036921
 peppercorn,chili_con_carne,9.2302e-05
 chicken_stock,chili_con_carne,9.2302e-05
 garlic,coriander_seed,9.2302e-05
@@ -52,7 +51,6 @@ bay_leaf,garlic,9.2302e-05
 tomato,peppercorn,0.0001846
 coriander_seed,tomatillo,9.2302e-05
 tomato,chicken_stock,0.0001846
-cinnamon,stick,0.00073842
 chili_con_carne,potato,9.2302e-05
 tortilla,coriander_seed,9.2302e-05
 avocado,coriander_seed,0.0001846
@@ -64,9 +62,7 @@ carrot,onion,0.00027691
 tomato,avocado,0.0001846
 lime,garlic,0.00046151
 garlic,corn,9.2302e-05
-stick,onion,0.00036921
 chili_con_carne,parsley,9.2302e-05
-stick,tomato,0.00036921
 red_onion,chili_con_carne,0.0013845
 thyme,bay_leaf,0.0001846
 parsley,onion,9.2302e-05
@@ -80,10 +76,7 @@ lime,avocado,0.00046151
 peppercorn,oregano,9.2302e-05
 pork,onion,0.0023999
 adobo,chili_con_carne,9.2302e-05
-stick,garlic,0.00036921
-stick,peppercorn,0.00036921
 thyme,onion,0.0001846
-ingredient,chili_con_carne,0.0044305
 chili_con_carne,cider_vinegar,9.2302e-05
 chicken_stock,coriander_seed,9.2302e-05
 chicken_stock,corn,9.2302e-05

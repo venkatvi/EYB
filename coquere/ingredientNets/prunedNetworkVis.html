@@ -52,8 +52,8 @@
 		<script>
 			var color = d3.scale.category20();
 
-			var width = 900,
-			height = 900;
+			var width = 1000,
+			height = 1000;
 
 			var cuisine = getQueryVariable("cuisine");
 			var links = getQueryVariable("links");
@@ -90,112 +90,111 @@
 		.style("text-anchor", "middle")
 		.text("Simulating. One moment please…");
 
-		var force = d3.layout.force()
+								
+
+		var csvFile = "data/" + cuisine + links + ".csv";
+		console.log(csvFile);
+		d3.csv(csvFile, function(links) {
+			var nodesByName = {};
+	
+			// Create nodes for each unique source and target.
+			links.forEach(function(link) {
+			  link.source = nodeByName(link.source);
+			  link.target = nodeByName(link.target);
+			});
+
+			// Extract the array of nodes from the map by name.
+			var nodes = d3.values(nodesByName);
+
+			function nodeByName(name) {
+			  if (nodesByName[name] != undefined){
+				nodesByName[name].degree = nodesByName[name].degree + 1;
+			  }
+			   
+			  return nodesByName[name] || (nodesByName[name] = {name: name, degree:1});
+			}
+			
+			var force = d3.layout.force()
 			.gravity(0)
-			.distance(1)
-			.charge(-0.4)
+			.charge(function(node) { return Math.sqrt(node.degree)*-10;})
 			.friction(1)
+			.linkDistance(height/6)
+			.linkStrength(0.5)
 			.size([width, height]);
 
-									
+			// Start the force layout.
+			force
+			    .nodes(nodes)
+			    .links(links);
 
-			var csvFile = "data/" + cuisine + links + ".csv";
-			console.log(csvFile);
-			d3.csv(csvFile, function(links) {
-				var nodesByName = {};
+	
+			// Use a timeout to allow the rest of the page to load first.
+			setTimeout(function() {
 
-				// Create nodes for each unique source and target.
-				links.forEach(function(link) {
-				  link.source = nodeByName(link.source);
-				  link.target = nodeByName(link.target);
-				});
+					n=200; 
+					// Run the layout a fixed number of times.
+					// The ideal number of times scales with graph complexity.
+					// Of course, don't run too long—you'll hang the page!
+					force.start();
+					for (var i = n * n; i > 0; --i) force.tick();
+					force.stop();
 
-				// Extract the array of nodes from the map by name.
-				var nodes = d3.values(nodesByName);
+					var link = svg.selectAll(".link")
+						.data(links)
+						.enter().append("line")
+						.attr("class", "link")
+						.attr("x1", function(d) { return d.source.x; })
+						.attr("y1", function(d) { return d.source.y; })
+						.attr("x2", function(d) { return d.target.x; })
+						.attr("y2", function(d) { return d.target.y; });
 
-				// Start the force layout.
-				force
-				    .nodes(nodes)
-				    .links(links);
+					var node = svg.selectAll(".node")
+						.data(nodes)
+						.enter().append("g")
+						.attr("class", "node")
+						.attr("cx", function(d) { return d.x; })
+						.attr("cy", function(d) { return d.y; })
+						.attr("r", 4.5)
+						.on("mouseover", fade(.1))
+						.on("mouseout", fade(1));
 
-				function nodeByName(name) {
-				  return nodesByName[name] || (nodesByName[name] = {name: name});
-				}
-      
-		    	// Use a timeout to allow the rest of the page to load first.
-    			setTimeout(function() {
+					node.append("circle")
+						.attr("r", function(d){ 
+							return Math.log(d.degree) *30 /Math.sqrt(nodes.length);})
+						.attr("fill", function(d){return color(d.degree);})
+						.attr("cx", function(d) { return d.x; })
+						.attr("cy", function(d) { return d.y; });
 
-						n=100; 
-						// Run the layout a fixed number of times.
-						// The ideal number of times scales with graph complexity.
-						// Of course, don't run too long—you'll hang the page!
-						force.start();
-						for (var i = n * n; i > 0; --i) force.tick();
-						force.stop();
-
-						var link = svg.selectAll(".link")
-							.data(json.links)
-							.enter().append("line")
-							.attr("class", "link")
-							.attr("x1", function(d) { return d.source.x; })
-							.attr("y1", function(d) { return d.source.y; })
-							.attr("x2", function(d) { return d.target.x; })
-							.attr("y2", function(d) { return d.target.y; });
-
-						var node = svg.selectAll(".node")
-							.data(json.nodes)
-							.enter().append("g")
-							.attr("class", "node")
-							.attr("cx", function(d) { return d.x; })
-							.attr("cy", function(d) { return d.y; })
-							.attr("r", 4.5)
-							.on("mouseover", fade(.1))
-							.on("mouseout", fade(1));
-
-						node.append("circle")
-							.attr("r", function(d) { return Math.sqrt(d.children+1)*2; })
-							.style("fill", function(d) { return color(d.children+1); })
-							.attr("cx", function(d) { return d.x; })
-							.attr("cy", function(d) { return d.y; });
-
-						node.append("text")
-							.attr("dx", function(d) { return d.x; })
-							.attr("dy", function(d) { return d.y; })
-							.attr("font-size",10)
-							.style("font-weight", "bold");
+					node.append("text")
+						.attr("dx", function(d) { return d.x; })
+						.attr("dy", function(d) { return d.y; })
+						.attr("font-size",10)
+						.style("font-weight", "bold");
 
 
-						function fade(opacity){
+					function fade(opacity){
 
-							return function (d) {
-								node.style("stroke-opacity", function(o) {
-										thisOpacity = isConnected(d, o) ? 1: opacity;
-										this.setAttribute('fill-opacity', thisOpacity);
-										return thisOpacity;
-										});
-								link.style ("stroke-opacity", function(o) {
-										return o.source === d || o.target === d ? 1: opacity;
-										});
-								link.style ("stroke", function(o) {
-										return opacity === 0.1 ? (o.source === d || o.target === d ? "#999": "#fff") : "#fff";
-										});
-								d3.select(this).select("text").text(function() { 
-										return opacity === 0.1 ? d.id.toLowerCase() : "";
-										});
-								d3.selectAll(".node").filter(function(o){
-										return isConnected(o, d) == 1;
-										}).select("text").text(function(o) {
-											return opacity === 0.1 ? o.id.toLowerCase() : "";
-											})
-											.attr("dx", function(d) { return opacity === 0.1 ? d.x + 1:  0; })
-											.attr("dy", function(d) { return opacity === 0.1 ? d.y + 0.5 : 0; });
-							};
+						return function (d) {
+							node.style("stroke-opacity", function(o) {
+									thisOpacity = 1;//isConnected(d, o) ? 1: opacity;
+									this.setAttribute('fill-opacity', thisOpacity);
+									return thisOpacity;
+									});
+							link.style ("stroke-opacity", 1)
+							link.style ("stroke", "#999")
 
-						}
+							d3.selectAll(".node").select("text").text(function(o) {
+										return  o.name.toLowerCase() ;
+										})
+										.attr("dx", function(d) { return d.x + 1; })
+										.attr("dy", function(d) { return d.y + 0.5; });
+						};
 
-						loading.remove();
+					}
 
-					}, 5);
+					loading.remove();
+
+				}, 10);
       });
 		</script>
 			
