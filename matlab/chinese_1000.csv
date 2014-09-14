@@ -1,0 +1,131 @@
+soy_sauce,1,soy_sauce,3,1
+ginger,2,ginger,1,1
+spring_onion,3,spring_onion,2,1
+sesame_oil,4,sesame_oil,4,1
+rice,5,rice,5,1
+peanut_oil,6,peanut_oil,6,1
+chilli,7,chilli,7,1
+chicken,8,chicken,11,1
+pork,9,pork,12,1
+vinegar,10,vinegar,8,1
+coriander_seed,11,coriander_seed,9,1
+chicken_stock,12,chicken_stock,13,1
+shrimp,13,shrimp,17,1
+carrot,14,carrot,10,1
+mushroom,15,mushroom,18,1
+garlic,16,garlic,14,1
+oyster,17,oyster,20,1
+sherry,18,sherry,19,1
+red_pepper,19,red_pepper,16,1
+wine,20,wine,23,1
+bean,21,bean,30,1
+white_pepper,22,white_pepper,24,1
+sesame,23,sesame,34,1
+vegetable_oil,24,vegetable_oil,21,1
+tofu,25,tofu,32,1
+white,26,white,28,1
+bamboo_shoot,27,bamboo_shoot,48,1
+flour,28,flour,15,1
+noodle,29,noodle,36,1
+peppercorn,30,peppercorn,27,1
+celery,31,celery,29,1
+beef,32,beef,35,1
+star_anise,33,star_anise,31,1
+hoisin_sauce,34,hoisin_sauce,37,1
+water,35,water,41,1
+onion,36,onion,26,1
+bean_sprout,37,bean_sprout,49,1
+black_bean,38,black_bean,52,1
+cabbage,39,cabbage,53,1
+corn_oil,40,corn_oil,54,1
+fish,41,fish,47,1
+shallot,42,shallot,22,1
+honey,43,honey,38,1
+lemongrass,44,lemongrass,63,1
+egg,45,egg,40,1
+orange,46,orange,39,1
+tomato,47,tomato,25,1
+ham,48,ham,59,1
+sesame_seed,49,sesame_seed,44,1
+cucumber,50,cucumber,45,1
+spinach,51,spinach,56,1
+tomato_ketchup,52,tomato_ketchup,57,1
+bamboo,53,bamboo,67,1
+duck,54,duck,43,1
+green_pepper,55,green_pepper,77,1
+pea,56,pea,60,1
+snow_pea,57,snow_pea,75,1
+sugar,58,sugar,42,1
+cinnamon,59,cinnamon,33,1
+peanut,60,peanut,58,1
+lard,61,lard,87,1
+stock,62,stock,62,1
+flank_steak,63,flank_steak,114,1
+lime,64,lime,50,1
+pimiento,65,pimiento,51,1
+pork_loin,66,pork_loin,85,1
+radish,67,radish,70,1
+wonton,68,wonton,71,1
+cider_vinegar,69,cider_vinegar,98,1
+grain,70,grain,73,1
+malt,71,malt,110,1
+napa,72,napa,84,1
+red_onion,73,red_onion,61,1
+scallop,74,scallop,69,1
+sweet,75,sweet,74,1
+asparagus,77,asparagus,82,1
+chive,78,chive,80,1
+corn,79,corn,79,1
+crabmeat,80,crabmeat,88,1
+fillet,81,fillet,93,1
+iceberg_lettuce,82,iceberg_lettuce,106,1
+juice,83,juice,96,1
+lamb,84,lamb,81,1
+mustard_greens,85,mustard_greens,90,1
+shoulder,86,shoulder,108,1
+vegetable,87,vegetable,91,1
+broccoli,88,broccoli,116,1
+cumin_seed,89,cumin_seed,76,1
+eggplant,90,eggplant,113,1
+lemon,91,lemon,46,1
+lettuce,92,lettuce,65,1
+pak_choi,93,pak_choi,105,1
+pork_belly,94,pork_belly,107,1
+potato,95,potato,72,1
+salt,97,salt,97,1
+tangerine,99,tangerine,103,1
+fennel_seed,100,fennel_seed,112,1
+pineapple,101,pineapple,89,1
+squid,103,squid,99,1
+sweet_basil,104,sweet_basil,68,1
+bacon,105,bacon,109,1
+butter,106,butter,118,1
+caster_sugar,107,caster_sugar,115,1
+coconut_milk,109,coconut_milk,55,1
+curry_powder,110,curry_powder,86,1
+egg_noodle,111,egg_noodle,120,1
+mint,113,mint,64,1
+orange_juice,114,orange_juice,117,1
+ ,120,parsley,66,1
+ ,120,egg_yolk,78,1
+ ,120,almond,83,1
+ ,120,turmeric,92,1
+ ,120,heavy_cream,94,1
+ ,120,walnut,95,1
+ ,120,milk,100,1
+ ,120,soybean_oil,101,1
+ ,120,tomato_sauce,102,1
+ ,120,pasta,104,1
+ ,120,bay_leaf,111,1
+ ,120,mango,119,1
+yellow_bean,76, ,121,1
+rib,96, ,121,1
+sparerib,98, ,121,1
+sea_bass,102, ,121,1
+chestnut,108, ,121,1
+ground_beef,112, ,121,1
+peanut_butter,115, ,121,1
+plum_sauce,116, ,121,1
+roll,117, ,121,1
+soybean,118, ,121,1
+spring_roll,119, ,121,1

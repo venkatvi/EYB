@@ -1,4 +1,4 @@
-function plotNodeDistributions(metric, net, mode)
+function plotNodeDistributions(metric, net, mode, ymin, ymax)
     data = cell(6);
     edges = cell(6);
     binHeights = cell(6);
@@ -19,39 +19,39 @@ function plotNodeDistributions(metric, net, mode)
         maxVal = max(max(abs(data{i})), maxVal);
     end
     
-    figure;
-    for i=1:6
-        subplot(3,2, i);
-        hist(data{i}, 10);
-        xlabel(metric)
-        title(cuisineNames{i});
-%         tickLabels = cell(1,20);
-%         for j=1:20
-%             tickLabels{j} = num2str(ceil(edges{i}(j)));
-%         end
-%        xlim([1, maxVal]);
-%        set(gca, 'XTickLabel', tickLabels);
-        hold on;
-    end
-    
+%     figure;
+%     for i=1:6
+%         subplot(3,2, i);
+%         hist(data{i}, 10);
+%         xlabel(metric)
+%         title(cuisineNames{i});
+% %         tickLabels = cell(1,20);
+% %         for j=1:20
+% %             tickLabels{j} = num2str(ceil(edges{i}(j)));
+% %         end
+% %        xlim([1, maxVal]);
+% %        set(gca, 'XTickLabel', tickLabels);
+%         hold on;
+%     end
+%     
     
     combinedData = zeros(6,21);
     for i=1:6
         combinedData(i,:) = binHeights{i};
     end
-    figure;
-    bar(combinedData');
-    xlabel('cuisines');
-    legend(cuisineNames);
-    title(metric);
-    
-    figure;
-    bar(combinedData', 'stacked');
-    xlabel('cuisines');
-    legend(cuisineNames);
-    title(metric);
-    
-    figure;
+%     figure;
+%     bar(combinedData');
+%     xlabel('cuisines');
+%     legend(cuisineNames);
+%     title(metric);
+%     
+%     figure;
+%     bar(combinedData', 'stacked');
+%     xlabel('cuisines');
+%     legend(cuisineNames);
+%     title(metric);
+%     
+    h = figure;
     colorIndex = [1, 8, 25, 40, 56, 64]; 
     c = colormap(jet);
     for i=1:6
@@ -62,8 +62,16 @@ function plotNodeDistributions(metric, net, mode)
         end
         hold on;
     end
-    title(strcat('Node distributions of ', metric, ' for all cuisines'));
+    if ~isempty(ymin) && ~isempty(ymax)
+        ylim([ymin, ymax]);
+        fileName = strcat(metric, '_cooc_rv_',mode,'_[',num2str(ymin),',', num2str(ymax),']');
+    else
+        fileName = strcat(metric, '_cooc_rv_',mode);
+    end
+    title(strcat('Node distributions of ', metric, ' for all cuisines-',mode));
     legend(cuisineNames);
+    
+    saveas(h, fileName, 'png');
     
 end
 function [data, edges, binHeights] = getCuisineData(metric, net, cuisineStr)

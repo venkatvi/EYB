@@ -57,7 +57,7 @@ function plotCCDFIngredPerRecipe(fileName)
     
     figure;
     for i=1:6
-        plot(ccdf(i,:),  'Color', c(colorIndex(i),:));
+        loglog(ccdf(i,:),  'Color', c(colorIndex(i),:));
         hold on;
     end
     legend(cuisines);
