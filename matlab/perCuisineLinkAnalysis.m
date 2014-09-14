@@ -8,7 +8,7 @@ for i=1:numel(thresholds)
     
     for i1=1:numel(cuisines)
         ingreds = perThresholdContainer(cuisines{i1});
-        yvalues(threshold, i1) = length(ingreds);
+        yvalues(i, i1) = length(ingreds);
     end
 end
 
@@ -17,7 +17,7 @@ c = colormap(jet);
 
 figure;
 for i=1:6
-    plot(yvalues(:,i), '.', 'Color', c(colorIndex(i), :));
+    plot(yvalues(:,i)', 'Marker', '*', 'Color', c(colorIndex(i), :));
     hold on;
 end
 legend(cuisines);
@@ -28,7 +28,7 @@ title('Growth of ingredient count in networks with links per cuisine');
 
 figure;
 for i=1:6
-    loglog(yvalues(:,i), '.', 'Color', c(colorIndex(i), :));
+    loglog(yvalues(:,i)', 'Marker', '*', 'Color', c(colorIndex(i), :));
     hold on;
 end
 legend(cuisines);

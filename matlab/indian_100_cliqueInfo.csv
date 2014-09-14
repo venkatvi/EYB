@@ -1,0 +1,27 @@
+Ingredient,Rank,Degree,NumberOfCliques,Size of Largest Maximal Clique
+chilli,0,21,16,7
+coriander_seed,1,19,14,7
+ginger,2,19,23,7
+cumin_seed,3,19,26,7
+turmeric,4,17,22,7
+onion,5,9,4,7
+tomato,6,9,6,7
+cinnamon,7,8,3,7
+mustard_seed,8,8,6,6
+cardamon,9,8,4,7
+yogurt,10,7,4,6
+red_pepper,11,7,4,6
+garlic,12,7,2,7
+curry,13,6,2,6
+coconut,14,5,2,5
+peppercorn,15,5,2,5
+potato,16,5,2,5
+ghee,17,4,2,4
+fenugreek_seed,18,4,2,4
+tamarind,19,3,2,3
+bay_leaf,20,3,1,4
+rice,21,1,1,2
+flour,22,1,1,2
+lamb,23,1,1,2
+lime,24,1,1,2
+chicken,25,1,1,2
