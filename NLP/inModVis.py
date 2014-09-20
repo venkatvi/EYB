@@ -671,8 +671,17 @@ if __name__ == '__main__':
 					
 		recipeLeafMat.append(leafVec)
 		rowIndex = rowIndex+1
-		
 
+	rLMat = np.matrix(recipeLeafMat);
+	freqCount = rLMat.sum(axis=0)
+	lfreqCount = np.array(freqCount)[0].tolist()
+	ingredFreqFile = options.rootPath + "/matlab/" + options.cuisine + "_ingredFreq.csv"
+	iwf = open(ingredFreqFile, 'w');
+	for i in range(0, len(lfreqCount)):
+		iwf.write(ingredLeafs[i] + "," + str(lfreqCount[i]) + "\n")
+	
+	iwf.close();	
+'''
 	#get cuisineId
 	cuisineId = getCuisineId(options.cuisine)
 	ingredFile = options.rootPath + "/coquere/ingredientNets/data/" + options.cuisine + "_ingredLeafs.txt"
@@ -690,7 +699,7 @@ if __name__ == '__main__':
 	rf = open(recipeFile, 'a');
 	rf.write(options.cuisine + "," + str(recipeCount) + "\n");
 	rf.close();
-'''
+
 	print "------------------------- Network json on ingredient co-occurences-------------------------------"
 	leafEdges = createEdgeList(ingredLeafs, recipeLeafMat);
 	filename = options.rootPath + "/coquere/ingredientNets/data/" +  options.cuisine + ".json"
