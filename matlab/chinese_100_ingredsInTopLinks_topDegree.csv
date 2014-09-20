@@ -1,0 +1,36 @@
+soy_sauce,1,soy_sauce,3,1
+ginger,2,ginger,1,1
+spring_onion,3,spring_onion,2,1
+sesame_oil,4,sesame_oil,4,1
+peanut_oil,5,peanut_oil,6,1
+chilli,6,chilli,7,1
+rice,7,rice,5,1
+chicken,8,chicken,11,1
+garlic,9,garlic,14,1
+vinegar,10,vinegar,8,1
+pork,11,pork,12,1
+shrimp,12,shrimp,17,1
+wine,13,wine,23,1
+carrot,14,carrot,10,1
+chicken_stock,15,chicken_stock,13,1
+coriander_seed,16,coriander_seed,9,1
+mushroom,17,mushroom,18,1
+oyster,18,oyster,20,1
+sherry,19,sherry,19,1
+white_pepper,20,white_pepper,24,1
+bean,21,bean,30,1
+red_pepper,22,red_pepper,16,1
+star_anise,24,star_anise,31,1
+peppercorn,28,peppercorn,27,1
+vegetable_oil,30,vegetable_oil,21,1
+ ,31,flour,15,1
+ ,31,shallot,22,1
+ ,31,tomato,25,1
+ ,31,onion,26,1
+ ,31,white,28,1
+ ,31,celery,29,1
+sesame,23, ,32,1
+bamboo_shoot,25, ,32,1
+beef,26, ,32,1
+noodle,27, ,32,1
+tofu,29, ,32,1

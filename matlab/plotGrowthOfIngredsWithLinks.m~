@@ -1,0 +1,19 @@
+function plotGrowthOfIngredsWithLinks()
+    cuisines = {'indian', 'chinese', 'spanish', 'mexican', 'italian', 'mexican'};
+    thresholds = [100, 250, 500, 1000, 2500, 5000, 10000];
+    for i=1:numel(cuisines)
+        fileName = strcat(cuisines{i}, '_edgeDist_dbg.csv');
+        [src, dest, wt] = loadFile(fileName);
+        [orderedWt, orderedIndices] = sort(wt, 'descend');
+        orderedSrc = src(orderedIndices);
+        orderedDest = dest(orderedIndices);
+        pThresholds = thresholds;
+        if numel(wt) > p
+        
+        for j=1:numel(thresholds)
+            
+        end
+        
+    end
+    
+end

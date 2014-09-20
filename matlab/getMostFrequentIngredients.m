@@ -66,7 +66,7 @@ function getMostFrequentIngredients(numEdges, mode)
         value = data(links);
         cuisines = {'indian', 'chinese', 'mexican', 'spanish', 'italian', 'french'};
         for j=1:6
-            fileName = strcat(cuisines{j}, '_', num2str(links), '.csv');
+            fileName = strcat(cuisines{j}, '_', num2str(links), '_ingredsInTopLinks_topDegree.csv');
             fid = fopen(fileName, 'wt');
             topIngredsInLinks = value{j,1};
             topIngredsBydegree = value{j,3};

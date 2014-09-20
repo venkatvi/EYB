@@ -1,4 +1,4 @@
-function plotCCDFIngredPerRecipe(fileName)
+function plotCCDFIngredPerRecipe(fileName, mode)
     load(fileName);
     cuisines = {'indian', 'chinese', 'mexican', 'spanish', 'french', 'italian'};
     allData = cell(numel(cuisines, 1));
@@ -20,11 +20,11 @@ function plotCCDFIngredPerRecipe(fileName)
         end
     end
     for i=1:6
-        histbins(i,:) = histbins(i,:)/numel(allData{i});
+        histbins(i,:) = histbins(i,:)/sum(histbins(i,:));
     end
     cdf = zeros(6, size(histbins,2));
     for j=1:6
-        for i=1:size(histbins,2)
+        for i=2:size(histbins,2)
             cdf(j,i) = sum(histbins(j,1:i));
         end
     end
@@ -34,6 +34,7 @@ function plotCCDFIngredPerRecipe(fileName)
     bar(ccdf');
     title('CCDF of Ingredients Per Recipe');
     legend(cuisines);
+    ylim([0,1]);
     xlabel('Number of ingredients per recipe');
     ylabel('Number of recipes');
     
@@ -41,7 +42,8 @@ function plotCCDFIngredPerRecipe(fileName)
     for i=1:6
         subplot(3,2,i)
         bar(ccdf(i,:))
-        xlabel(strcat(cuisines{i}, '- Number of ingredients per recipe'));
+        ylim([0, 1]);
+        xlabel(strcat(cuisines{i}));
         ylabel('Number of recipes');
     end
     title('CCDF of Ingredients Per Recipe');
@@ -57,7 +59,12 @@ function plotCCDFIngredPerRecipe(fileName)
     
     figure;
     for i=1:6
-        loglog(ccdf(i,:),  'Color', c(colorIndex(i),:));
+        if strcmp(mode, 'log')
+            loglog(ccdf(i,:),  'Color', c(colorIndex(i),:));         
+            ylim([10^-6, 1])
+        else
+            plot(ccdf(i,:),  'Color', c(colorIndex(i),:));
+        end
         hold on;
     end
     legend(cuisines);
