@@ -158,34 +158,27 @@ end
 function [nodeNames, data] = removeIngredients(nodeNames, data)
     indicesToRemove = [];
     indicesToRemove = addIndexOf(nodeNames, 'stick', indicesToRemove);
-    indicesToRemove = addIndexOf(nodeNames, 'ingredient', indicesToRemove);
-    indicesToRemove = addIndexOf(nodeNames, 'paste', indicesToRemove);
-    indicesToRemove = addIndexOf(nodeNames, 'split', indicesToRemove);
-    if ~isempty(indicesToRemove)
-        nodeNames(indicesToRemove) = [];
-        data(indicesToRemove) = [];
-    end
+    indiaddIndexOf(nodeNames, 'ingredient')];
+    indicesToRemove = [indicesToRemove addIndexOf(nodeNames, 'paste')];
+    indicesToRemove = [indicesToRemove addIndexOf(nodeNames, 'split')];
+    nodeNames(indicesToRemove) = [];
+    data(indicesToRemove) = [];
 end
-function indicesToRemove = addIndexOf(nodeNames, nodeToRemove, indicesToRemove)
+function index = addIndexOf(nodeNames, nodeToRemove)
+    index = [];
     index =strmatch(nodeToRemove, nodeNames, 'exact');
-    if ~isempty(index)
-        indicesToRemove = [indicesToRemove;index];
-    end
 end
 function [ingred1, ingred2, cooc] = removeIngredientsInLinks(ingred1, ingred2, cooc)
     indicesToRemove = [];
-    indicesToRemove = addIndexOf(ingred1, 'stick', indicesToRemove);
-    indicesToRemove = addIndexOf(ingred1, 'ingredient', indicesToRemove);
-    indicesToRemove = addIndexOf(ingred1, 'paste', indicesToRemove);
-    indicesToRemove = addIndexOf(ingred1, 'split', indicesToRemove);
-    indicesToRemove = addIndexOf(ingred2, 'stick', indicesToRemove);
-    indicesToRemove = addIndexOf(ingred2, 'ingredient', indicesToRemove);
-    indicesToRemove = addIndexOf(ingred2, 'paste', indicesToRemove);
-    indicesToRemove = addIndexOf(ingred2, 'split', indicesToRemove);
-    if ~isempty(indicesToRemove)
-        indicesToRemove = unique(indicesToRemove);
-        ingred1(indicesToRemove) = [];
-        ingred2(indicesToRemove) = [];
-        cooc(indicesToRemove) = [];
-    end
+    indicesToRemove = [indicesToRemove addIndexOf(ingred1, 'stick')];
+    indicesToRemove = [indicesToRemove addIndexOf(ingred1, 'ingredient')];
+    indicesToRemove = [indicesToRemove addIndexOf(ingred1, 'paste')];
+    indicesToRemove = [indicesToRemove addIndexOf(ingred1, 'split')];
+    indicesToRemove = [indicesToRemove addIndexOf(ingred2, 'stick')];
+    indicesToRemove = [indicesToRemove addIndexOf(ingred2, 'ingredient')];
+    indicesToRemove = [indicesToRemove addIndexOf(ingred2, 'paste')];
+    indicesToRemove = [indicesToRemove addIndexOf(ingred2, 'split')];
+    ingred1(indicesToRemove) = [];
+    ingred2(indicesToRemove) = [];
+    cooc(indicesToRemove) = [];
 end
