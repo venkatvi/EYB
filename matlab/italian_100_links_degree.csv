@@ -1,0 +1,37 @@
+parsley,1,parsley,1,1
+tomato,2,tomato,3,1
+onion,3,onion,2,1
+celery,4,celery,5,1
+basil,5,basil,14,1
+carrot,6,carrot,6,1
+peppercorn,7,peppercorn,8,1
+garlic,8,garlic,11,1
+rosemary,9,rosemary,16,1
+bay_leaf,10,bay_leaf,15,1
+pasta,11,pasta,18,1
+white_wine,12,white_wine,9,1
+red_pepper,13,red_pepper,13,1
+white,14,white,10,1
+flour,15,flour,7,1
+thyme,16,thyme,19,1
+egg,18,egg,12,1
+oregano,19,oregano,26,1
+potato,20,potato,21,1
+bread,22,bread,27,1
+butter,23,butter,17,1
+chicken_stock,24,chicken_stock,31,1
+chilli,25,chilli,23,1
+olive_oil,27,olive_oil,22,1
+red_onion,28,red_onion,30,1
+sage,29,sage,25,1
+lemon,30,lemon,4,1
+mushroom,31,mushroom,32,1
+ ,33,heavy_cream,20,1
+ ,33,spring_onion,24,1
+ ,33,milk,28,1
+ ,33,orange,29,1
+ ,33,cinnamon,33,1
+caper,17, ,34,1
+anchovy,21, ,34,1
+mozzarella,26, ,34,1
+spaghetti,32, ,34,1

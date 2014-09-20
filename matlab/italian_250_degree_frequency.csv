@@ -1,0 +1,66 @@
+parsley,1,parsley,1,1
+onion,2,onion,3,1
+tomato,3,tomato,2,1
+lemon,4,lemon,8,1
+celery,5,celery,7,1
+carrot,6,carrot,9,1
+flour,7,flour,4,1
+peppercorn,8,peppercorn,12,1
+white_wine,9,white_wine,14,1
+white,10,white,15,1
+garlic,11,garlic,11,1
+egg,12,egg,10,1
+red_pepper,13,red_pepper,17,1
+basil,14,basil,6,1
+bay_leaf,15,bay_leaf,19,1
+rosemary,16,rosemary,16,1
+butter,17,butter,21,1
+pasta,18,pasta,5,1
+thyme,19,thyme,28,1
+heavy_cream,20,heavy_cream,30,1
+potato,21,potato,18,1
+olive_oil,22,olive_oil,20,1
+chilli,23,chilli,24,1
+spring_onion,24,spring_onion,40,1
+sage,25,sage,23,1
+oregano,26,oregano,22,1
+bread,27,bread,25,1
+milk,28,milk,32,1
+orange,29,orange,42,1
+red_onion,30,red_onion,36,1
+chicken_stock,31,chicken_stock,29,1
+mushroom,32,mushroom,27,1
+cinnamon,33,cinnamon,50,1
+ricotta,34,ricotta,35,1
+nutmeg,35,nutmeg,31,1
+red_wine,36,red_wine,46,1
+egg_yolk,37,egg_yolk,38,1
+anchovy,38,anchovy,26,1
+caper,39,caper,33,1
+vinegar,40,vinegar,53,1
+pine_nut,41,pine_nut,48,1
+cheese,42,cheese,37,1
+sugar,43,sugar,34,1
+florence_fennel,44,florence_fennel,55,1
+chicken,45,chicken,43,1
+tomato_paste,46,tomato_paste,52,1
+mint,47,mint,47,1
+beef,48,beef,49,1
+veal,49,veal,39,1
+prosciutto,51,prosciutto,44,1
+almond,52,almond,51,1
+pork,53,pork,54,1
+mozzarella,55,mozzarella,41,1
+zucchini,56,zucchini,45,1
+ ,61,ingredient,13,1
+ ,61,eggplant,56,1
+ ,61,spinach,57,1
+ ,61,bean,58,1
+ ,61,spaghetti,59,1
+ ,61,black_olive,60,1
+shallot,50, ,61,1
+vegetable_oil,54, ,61,1
+raisin,57, ,61,1
+rice,58, ,61,1
+honey,59, ,61,1
+shrimp,60, ,61,1

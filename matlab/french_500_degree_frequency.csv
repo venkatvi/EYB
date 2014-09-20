@@ -1,0 +1,87 @@
+onion,1,onion,2,1
+parsley,2,parsley,1,1
+thyme,3,thyme,3,1
+carrot,4,carrot,5,1
+bay_leaf,5,bay_leaf,6,1
+butter,6,butter,4,1
+shallot,7,shallot,9,1
+tomato,8,tomato,8,1
+white,9,white,12,1
+spring_onion,10,spring_onion,20,1
+lemon,11,lemon,21,1
+egg,12,egg,7,1
+celery,13,celery,23,1
+garlic,14,garlic,19,1
+flour,15,flour,10,1
+white_wine,16,white_wine,14,1
+mushroom,17,mushroom,17,1
+egg_yolk,18,egg_yolk,18,1
+heavy_cream,19,heavy_cream,22,1
+peppercorn,20,peppercorn,27,1
+potato,21,potato,16,1
+milk,22,milk,11,1
+red_pepper,23,red_pepper,28,1
+chicken_stock,24,chicken_stock,29,1
+vinegar,25,vinegar,36,1
+sugar,26,sugar,13,1
+nutmeg,27,nutmeg,24,1
+veal,28,veal,25,1
+cream,29,cream,30,1
+bacon,30,bacon,26,1
+orange,31,orange,33,1
+chive,32,chive,34,1
+tarragon,33,tarragon,32,1
+basil,34,basil,37,1
+poulet,35,poulet,31,1
+fennel,36,fennel,52,1
+pork,37,pork,40,1
+apple,38,apple,42,1
+boeuf,39,boeuf,38,1
+almond,40,almond,35,1
+cinnamon,41,cinnamon,48,1
+bread,42,bread,41,1
+rice,43,rice,51,1
+red_wine,44,red_wine,45,1
+coriander_seed,45,coriander_seed,56,1
+vegetable_oil,46,vegetable_oil,49,1
+tomato_paste,47,tomato_paste,54,1
+fish,48,fish,47,1
+ginger,49,ginger,71,1
+chervil,50,chervil,44,1
+sherry,51,sherry,74,1
+duck,52,duck,60,1
+olive_oil,53,olive_oil,57,1
+jambon,54,jambon,46,1
+jelly,55,jelly,73,1
+truffle,56,truffle,53,1
+white_turnip,59,white_turnip,61,1
+honey,60,honey,70,1
+stock,61,stock,50,1
+double_cream,62,double_cream,62,1
+rosemary,64,rosemary,55,1
+white_pepper,66,white_pepper,68,1
+caper,67,caper,65,1
+lamb,68,lamb,66,1
+herb,69,herb,69,1
+brandy,72,brandy,72,1
+castor_sugar,73,castor_sugar,43,1
+spinach,75,spinach,64,1
+pea,76,pea,76,1
+ ,79,ingredient,15,1
+ ,79,stick,39,1
+ ,79,vanilla_bean,58,1
+ ,79,zucchini,59,1
+ ,79,anchovy,63,1
+ ,79,dark_chocolate,67,1
+ ,79,pastry,75,1
+ ,79,vanilla_extract,77,1
+ ,79,rum,78,1
+saffron,57, ,79,1
+lime,58, ,79,1
+sweet_pepper,63, ,79,1
+chilli,65, ,79,1
+mint,70, ,79,1
+oregano,71, ,79,1
+juniper_berry,74, ,79,1
+allspice,77, ,79,1
+shrimp,78, ,79,1

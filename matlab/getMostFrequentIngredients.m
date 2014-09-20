@@ -1,4 +1,4 @@
-function getMostFrequentIngredients(numEdges, mode)
+function getMostFrequentIngredients(numEdges, mode, dim1, dim2)
     cuisines = {'indian', 'chinese', 'mexican', 'spanish', 'italian', 'french'};
     dataPerLinkThreshold = containers.Map(int32(0), ?handle);
     for j=1:length(numEdges)
@@ -18,6 +18,16 @@ function getMostFrequentIngredients(numEdges, mode)
             sortedIngred1 = ingred1(sortedIndices);
             sortedIngred2 = ingred2(sortedIndices);
 
+            fileName3 = strcat(cuisines{i}, '_ingredFreq.csv');
+            [ingredients, freq] = loadFile(fileName3);
+            nFreq = zeros(1, numel(freq));
+            for i1=1:length(freq)
+                nFreq(i1) = str2num(freq{i1});
+            end
+            [sortedFrequencies, sortedIndices] = sort(nFreq, 'descend');
+            sortedFreqIngreds = ingredients(sortedIndices);
+            
+            % get map(ingredName, #edges its a part of top x links
             sortedIngreds = containers.Map(char('a'), int32(0));
             for i1=1:links
                 if (sortedIngreds.isKey(sortedIngred1{i1}))
@@ -32,6 +42,7 @@ function getMostFrequentIngredients(numEdges, mode)
                 end
             end
             sortedIngreds.remove('a');
+            
             temp = sortedIngreds.values;
             sortedIngredsFrequency = zeros(numel(temp), 1);
             for i1=1:numel(temp)
@@ -39,20 +50,30 @@ function getMostFrequentIngredients(numEdges, mode)
             end
             [sortedFrequencies, sortedIndices] = sort(sortedIngredsFrequency, 'descend');
             sortedIngredKeys = sortedIngreds.keys;
+            
+            % ingredients ordered by the freq of occur in top x links
             sortedIngreds = sortedIngredKeys(sortedIndices);
             
             cnt = numel(sortedIngreds);
             if numel(sortedIngreds) > length(sortedDegree)
                 cnt = length(sortedDegree);
             end
+            
+            % c = count the number of ingredients in top x links
+            % get c ingredients ordered by degree
             topDegree = sortedDegree(1:cnt);
             topIngreds = sortedNodeNames(1:cnt);
 
+            % get c ingredients ordered by frequency
+            topFrequency = sortedFrequencies(1:cnt);
+            topFreqIngreds = sortedFreqIngreds(1:cnt);
 
             frequentIngredients{i,1} = sortedIngreds(1:numel(sortedIngreds)-1)';
             frequentIngredients{i,2} = sortedFrequencies(1:numel(sortedIngreds)-1);
             frequentIngredients{i,3} = topIngreds;
             frequentIngredients{i,4} = topDegree;
+            frequentIngredients{i,5} = topFreqIngreds;
+            frequentIngredients{i,6} = topFrequency;
         end
         dataPerLinkThreshold(links) = frequentIngredients;
     end
@@ -61,24 +82,26 @@ function getMostFrequentIngredients(numEdges, mode)
     data = dataPerLinkThreshold;
     data.remove(0);
     keys = data.keys;
+    index1 = getIndex(dim1);
+    index2 = getIndex(dim2);
     for i=1:length(keys)
         links = keys{i};
         value = data(links);
         cuisines = {'indian', 'chinese', 'mexican', 'spanish', 'italian', 'french'};
         for j=1:6
-            fileName = strcat(cuisines{j}, '_', num2str(links), '_ingredsInTopLinks_topDegree.csv');
+            fileName = strcat(cuisines{j}, '_', num2str(links), '_' , dim1, '_', dim2, '.csv'); 
             fid = fopen(fileName, 'wt');
-            topIngredsInLinks = value{j,1};
-            topIngredsBydegree = value{j,3};
-            alreadyHitForDest = zeros(1, length(topIngredsBydegree));
-            alreadyHitForSrc = zeros(1, length(topIngredsInLinks));
-            for k =1:numel(topIngredsInLinks)
+            topIngredsA = value{j,index1};
+            topIngredsB = value{j,index2};
+            alreadyHitForDest = zeros(1, length(topIngredsB));
+            alreadyHitForSrc = zeros(1, length(topIngredsA));
+            for k =1:numel(topIngredsA)
                 alreadyHit = 0;
-                for l = 1:numel(topIngredsBydegree)
-                    if strcmp(topIngredsInLinks{k}, topIngredsBydegree{l})
+                for l = 1:numel(topIngredsB)
+                    if strcmp(topIngredsA{k}, topIngredsB{l})
                         alreadyHitForSrc(k) =alreadyHitForSrc(k) + 1;
                         alreadyHitForDest(l) = alreadyHitForDest(l) + 1;
-                        line = strcat(topIngredsInLinks{k}, ',', num2str(k), ',' , topIngredsBydegree{l}, ',', num2str(l), ',1\n');
+                        line = strcat(topIngredsA{k}, ',', num2str(k), ',' , topIngredsB{l}, ',', num2str(l), ',1\n');
                         fprintf(fid, line);
                         
                     end
@@ -88,7 +111,7 @@ function getMostFrequentIngredients(numEdges, mode)
             if ~isempty(ind)
                 for k = 1:length(ind)
                     l = ind(k);
-                    line = strcat(' ,', num2str(length(topIngredsInLinks)+1), ',', topIngredsBydegree{l}, ',' , num2str(l), ',1\n');
+                    line = strcat(' ,', num2str(length(topIngredsA)+1), ',', topIngredsB{l}, ',' , num2str(l), ',1\n');
                     fprintf(fid, line);
                 end
             end
@@ -96,7 +119,7 @@ function getMostFrequentIngredients(numEdges, mode)
             if ~isempty(ind)
                 for k = 1:length(ind)
                     l = ind(k);
-                    line = strcat(topIngredsInLinks{l}, ',', num2str(l), ', ,', num2str(length(topIngredsBydegree)+1), ',1\n');
+                    line = strcat(topIngredsA{l}, ',', num2str(l), ', ,', num2str(length(topIngredsB)+1), ',1\n');
                     fprintf(fid,line);
                 end
             end
@@ -165,4 +188,13 @@ function getMostFrequentIngredients(numEdges, mode)
 %     legend(cuisines);
 %     xlabel('Number of edges in which ingredients in top 100 edges are incident on');
 %     ylabel('Degree of top x frequent ingredients'); 
+end
+function ind = getIndex(dimStr)
+    if strcmp(dimStr, 'links')
+        ind = 1;
+    elseif strcmp(dimStr, 'degree')
+        ind = 3;
+    elseif strcmp(dimStr, 'frequency')
+        ind = 5;
+    end
 end
