@@ -6,31 +6,31 @@ basil,5,basil,6,1
 carrot,6,carrot,9,1
 peppercorn,7,peppercorn,12,1
 garlic,8,garlic,11,1
-rosemary,9,rosemary,16,1
-bay_leaf,10,bay_leaf,19,1
+rosemary,9,rosemary,15,1
+bay_leaf,10,bay_leaf,18,1
 pasta,11,pasta,5,1
-white_wine,12,white_wine,14,1
-red_pepper,13,red_pepper,17,1
-white,14,white,15,1
+white_wine,12,white_wine,13,1
+red_pepper,13,red_pepper,16,1
+white,14,white,14,1
 flour,15,flour,4,1
-thyme,16,thyme,28,1
-caper,17,caper,33,1
+thyme,16,thyme,27,1
+caper,17,caper,32,1
 egg,18,egg,10,1
-oregano,19,oregano,22,1
-potato,20,potato,18,1
-anchovy,21,anchovy,26,1
-bread,22,bread,25,1
-butter,23,butter,21,1
-chicken_stock,24,chicken_stock,29,1
-chilli,25,chilli,24,1
-olive_oil,27,olive_oil,20,1
-sage,29,sage,23,1
+oregano,19,oregano,21,1
+potato,20,potato,17,1
+anchovy,21,anchovy,25,1
+bread,22,bread,24,1
+butter,23,butter,20,1
+chicken_stock,24,chicken_stock,28,1
+chilli,25,chilli,23,1
+olive_oil,27,olive_oil,19,1
+sage,29,sage,22,1
 lemon,30,lemon,8,1
-mushroom,31,mushroom,27,1
- ,33,ingredient,13,1
- ,33,heavy_cream,30,1
- ,33,nutmeg,31,1
- ,33,milk,32,1
+mushroom,31,mushroom,26,1
+ ,33,heavy_cream,29,1
+ ,33,nutmeg,30,1
+ ,33,milk,31,1
+ ,33,sugar,33,1
 mozzarella,26, ,34,1
 red_onion,28, ,34,1
 spaghetti,32, ,34,1

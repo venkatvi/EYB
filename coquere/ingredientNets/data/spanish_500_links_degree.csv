@@ -1,0 +1,94 @@
+parsley,1,parsley,1,1
+tomato,2,tomato,2,1
+bay_leaf,3,bay_leaf,3,1
+onion,4,onion,5,1
+sweet_pepper,5,sweet_pepper,7,1
+garlic,6,garlic,4,1
+saffron,7,saffron,16,1
+carrot,8,carrot,6,1
+thyme,9,thyme,8,1
+peppercorn,10,peppercorn,11,1
+sherry,11,sherry,13,1
+chilli,12,chilli,12,1
+spring_onion,13,spring_onion,9,1
+potato,14,potato,17,1
+red_pepper,15,red_pepper,15,1
+white_wine,16,white_wine,18,1
+shrimp,17,shrimp,37,1
+lemon,18,lemon,10,1
+olive_oil,19,olive_oil,22,1
+white,20,white,14,1
+almond,21,almond,19,1
+fish,22,fish,43,1
+sausage,23,sausage,42,1
+celery,24,celery,31,1
+chicken_stock,25,chicken_stock,30,1
+coriander_seed,26,coriander_seed,20,1
+cumin_seed,27,cumin_seed,32,1
+ham,28,ham,28,1
+rice,29,rice,25,1
+rosemary,30,rosemary,35,1
+vinegar,31,vinegar,21,1
+chicken,32,chicken,27,1
+cinnamon,33,cinnamon,23,1
+egg,34,egg,24,1
+green_pepper,35,green_pepper,41,1
+chorizo,36,chorizo,57,1
+pork,37,pork,33,1
+bread,38,bread,26,1
+wild_marjoram,39,wild_marjoram,38,1
+clam,40,clam,82,1
+squid,41,squid,71,1
+bacon,42,bacon,44,1
+garbanzo,43,garbanzo,65,1
+mushroom,44,mushroom,40,1
+brandy,45,brandy,51,1
+fennel,46,fennel,58,1
+flour,47,flour,36,1
+stock,48,stock,66,1
+pea,49,pea,55,1
+red_onion,50,red_onion,49,1
+milk,51,milk,46,1
+mussel,53,mussel,64,1
+pine_nut,54,pine_nut,39,1
+shallot,55,shallot,45,1
+sugar,56,sugar,62,1
+sunflower_oil,57,sunflower_oil,50,1
+egg_yolk,58,egg_yolk,47,1
+green,59,green,61,1
+sweet,61,sweet,63,1
+lime,63,lime,54,1
+nutmeg,64,nutmeg,53,1
+orange,65,orange,29,1
+red_wine,66,red_wine,70,1
+tuna,68,tuna,79,1
+anchovy,69,anchovy,68,1
+asparagus,70,asparagus,76,1
+butter,71,butter,74,1
+caper,72,caper,73,1
+caster_sugar,73,caster_sugar,80,1
+lamb,78,lamb,72,1
+mint,80,mint,34,1
+raisin,82,raisin,67,1
+veal,83,veal,84,1
+ ,84,vegetable_oil,48,1
+ ,84,apple,52,1
+ ,84,heavy_cream,56,1
+ ,84,beef,59,1
+ ,84,honey,60,1
+ ,84,lettuce,69,1
+ ,84,lard,75,1
+ ,84,tomato_paste,77,1
+ ,84,spinach,78,1
+ ,84,black_olive,81,1
+ ,84,ginger,83,1
+monkfish,52, ,85,1
+salt_cod,60, ,85,1
+eggplant,62, ,85,1
+tortilla,67, ,85,1
+globe_artichoke,74, ,85,1
+grain,75, ,85,1
+green_bean,76, ,85,1
+hake,77, ,85,1
+mayonnaise,79, ,85,1
+orange_juice,81, ,85,1

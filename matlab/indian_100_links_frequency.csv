@@ -11,18 +11,17 @@ mustard_seed,10,mustard_seed,9,1
 garlic,11,garlic,13,1
 red_pepper,12,red_pepper,7,1
 yogurt,13,yogurt,11,1
-curry,14,curry,15,1
-coconut,15,coconut,16,1
-peppercorn,16,peppercorn,17,1
-potato,17,potato,18,1
-fenugreek_seed,18,fenugreek_seed,22,1
-ghee,19,ghee,19,1
-bay_leaf,20,bay_leaf,25,1
-tamarind,21,tamarind,24,1
-flour,23,flour,21,1
-lime,25,lime,23,1
- ,26,stick,14,1
- ,26,rice,20,1
- ,26,mint,26,1
-chicken,22, ,27,1
+curry,14,curry,14,1
+coconut,15,coconut,15,1
+peppercorn,16,peppercorn,16,1
+potato,17,potato,17,1
+fenugreek_seed,18,fenugreek_seed,21,1
+ghee,19,ghee,18,1
+bay_leaf,20,bay_leaf,24,1
+tamarind,21,tamarind,23,1
+chicken,22,chicken,26,1
+flour,23,flour,20,1
+lime,25,lime,22,1
+ ,26,rice,19,1
+ ,26,mint,25,1
 lamb,24, ,27,1

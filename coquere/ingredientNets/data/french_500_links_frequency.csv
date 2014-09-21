@@ -1,0 +1,88 @@
+onion,1,onion,2,1
+parsley,2,parsley,1,1
+thyme,3,thyme,3,1
+carrot,4,carrot,5,1
+bay_leaf,5,bay_leaf,6,1
+shallot,6,shallot,9,1
+tomato,7,tomato,8,1
+butter,8,butter,4,1
+white,9,white,12,1
+white_wine,10,white_wine,14,1
+mushroom,11,mushroom,16,1
+spring_onion,12,spring_onion,19,1
+celery,13,celery,22,1
+garlic,14,garlic,18,1
+heavy_cream,15,heavy_cream,21,1
+potato,16,potato,15,1
+egg_yolk,17,egg_yolk,17,1
+egg,18,egg,7,1
+peppercorn,19,peppercorn,26,1
+tarragon,20,tarragon,31,1
+lemon,21,lemon,20,1
+veal,22,veal,24,1
+poulet,23,poulet,30,1
+chicken_stock,24,chicken_stock,28,1
+milk,25,milk,11,1
+sugar,26,sugar,13,1
+nutmeg,27,nutmeg,23,1
+red_pepper,28,red_pepper,27,1
+flour,29,flour,10,1
+bacon,30,bacon,25,1
+tomato_paste,31,tomato_paste,52,1
+chive,32,chive,33,1
+boeuf,33,boeuf,37,1
+fennel,34,fennel,50,1
+fish,35,fish,45,1
+pork,36,pork,38,1
+orange,37,orange,32,1
+vinegar,38,vinegar,35,1
+red_wine,39,red_wine,43,1
+white_turnip,40,white_turnip,59,1
+basil,41,basil,36,1
+cream,42,cream,29,1
+almond,43,almond,34,1
+castor_sugar,44,castor_sugar,41,1
+chervil,45,chervil,42,1
+jambon,46,jambon,44,1
+lamb,47,lamb,64,1
+rosemary,48,rosemary,53,1
+apple,50,apple,40,1
+duck,52,duck,58,1
+bread,53,bread,39,1
+cinnamon,54,cinnamon,46,1
+coriander_seed,55,coriander_seed,54,1
+dark_chocolate,56,dark_chocolate,65,1
+saffron,58,saffron,78,1
+stock,59,stock,48,1
+vanilla_bean,60,vanilla_bean,56,1
+vanilla_extract,61,vanilla_extract,75,1
+anchovy,62,anchovy,61,1
+caper,63,caper,63,1
+olive_oil,65,olive_oil,55,1
+pea,66,pea,74,1
+rice,67,rice,49,1
+rum,73,rum,76,1
+sherry,75,sherry,72,1
+truffle,76,truffle,51,1
+vegetable_oil,77,vegetable_oil,47,1
+ ,78,zucchini,57,1
+ ,78,double_cream,60,1
+ ,78,spinach,62,1
+ ,78,white_pepper,66,1
+ ,78,herb,67,1
+ ,78,honey,68,1
+ ,78,ginger,69,1
+ ,78,brandy,70,1
+ ,78,jelly,71,1
+ ,78,pastry,73,1
+ ,78,sweet_pepper,77,1
+shoulder,49, ,79,1
+beef_stock,51, ,79,1
+mussel,57, ,79,1
+juniper_berry,64, ,79,1
+black_olive,68, ,79,1
+chou,69, ,79,1
+eggplant,70, ,79,1
+grain,71, ,79,1
+oregano,72, ,79,1
+sage,74, ,79,1

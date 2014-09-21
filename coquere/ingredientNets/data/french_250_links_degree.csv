@@ -1,0 +1,58 @@
+parsley,1,parsley,2,1
+onion,2,onion,1,1
+thyme,3,thyme,3,1
+carrot,4,carrot,4,1
+bay_leaf,5,bay_leaf,5,1
+shallot,6,shallot,7,1
+butter,7,butter,6,1
+white,8,white,9,1
+celery,9,celery,13,1
+tomato,10,tomato,8,1
+white_wine,11,white_wine,16,1
+mushroom,12,mushroom,17,1
+spring_onion,13,spring_onion,10,1
+garlic,14,garlic,14,1
+heavy_cream,15,heavy_cream,19,1
+peppercorn,16,peppercorn,20,1
+sugar,17,sugar,26,1
+chicken_stock,18,chicken_stock,24,1
+egg_yolk,19,egg_yolk,18,1
+egg,20,egg,12,1
+milk,21,milk,22,1
+potato,22,potato,21,1
+tarragon,23,tarragon,33,1
+veal,24,veal,28,1
+flour,25,flour,15,1
+poulet,26,poulet,35,1
+bacon,27,bacon,30,1
+lemon,28,lemon,11,1
+nutmeg,29,nutmeg,27,1
+red_pepper,30,red_pepper,23,1
+tomato_paste,31,tomato_paste,47,1
+boeuf,32,boeuf,39,1
+pork,33,pork,37,1
+basil,34,basil,34,1
+red_wine,35,red_wine,44,1
+almond,36,almond,40,1
+cream,37,cream,29,1
+vinegar,38,vinegar,25,1
+chervil,40,chervil,50,1
+chive,41,chive,32,1
+orange,42,orange,31,1
+bread,43,bread,42,1
+sherry,48,sherry,51,1
+ ,51,fennel,36,1
+ ,51,apple,38,1
+ ,51,cinnamon,41,1
+ ,51,rice,43,1
+ ,51,coriander_seed,45,1
+ ,51,vegetable_oil,46,1
+ ,51,fish,48,1
+ ,51,ginger,49,1
+white_turnip,39, ,52,1
+caper,44, ,52,1
+eggplant,45, ,52,1
+jambon,46, ,52,1
+rosemary,47, ,52,1
+stock,49, ,52,1
+vanilla_bean,50, ,52,1

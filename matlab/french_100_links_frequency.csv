@@ -6,28 +6,27 @@ bay_leaf,5,bay_leaf,6,1
 tomato,6,tomato,8,1
 shallot,7,shallot,9,1
 white_wine,8,white_wine,14,1
-celery,9,celery,23,1
+celery,9,celery,22,1
 white,10,white,12,1
 butter,11,butter,4,1
-spring_onion,12,spring_onion,20,1
-garlic,13,garlic,19,1
-mushroom,14,mushroom,17,1
+spring_onion,12,spring_onion,19,1
+garlic,13,garlic,18,1
+mushroom,14,mushroom,16,1
 milk,15,milk,11,1
-peppercorn,16,peppercorn,27,1
+peppercorn,16,peppercorn,26,1
 sugar,17,sugar,13,1
 egg,18,egg,7,1
 flour,19,flour,10,1
-potato,20,potato,16,1
-veal,21,veal,25,1
-bacon,22,bacon,26,1
-egg_yolk,23,egg_yolk,18,1
-lemon,24,lemon,21,1
-chicken_stock,28,chicken_stock,29,1
-red_pepper,29,red_pepper,28,1
- ,30,ingredient,15,1
- ,30,heavy_cream,22,1
- ,30,nutmeg,24,1
- ,30,cream,30,1
-poulet,25, ,31,1
+potato,20,potato,15,1
+veal,21,veal,24,1
+bacon,22,bacon,25,1
+egg_yolk,23,egg_yolk,17,1
+lemon,24,lemon,20,1
+poulet,25,poulet,30,1
+chicken_stock,28,chicken_stock,28,1
+red_pepper,29,red_pepper,27,1
+ ,30,heavy_cream,21,1
+ ,30,nutmeg,23,1
+ ,30,cream,29,1
 tarragon,26, ,31,1
 basil,27, ,31,1

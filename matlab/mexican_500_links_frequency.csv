@@ -1,0 +1,91 @@
+chili_con_carne,1,chili_con_carne,1,1
+onion,2,onion,3,1
+tomato,3,tomato,2,1
+garlic,4,garlic,6,1
+coriander_seed,5,coriander_seed,4,1
+corn,6,corn,7,1
+cumin_seed,7,cumin_seed,9,1
+lime,8,lime,5,1
+oregano,9,oregano,8,1
+bay_leaf,10,bay_leaf,13,1
+cinnamon,11,cinnamon,15,1
+peppercorn,12,peppercorn,14,1
+tortilla,13,tortilla,10,1
+chicken,14,chicken,12,1
+chicken_stock,15,chicken_stock,11,1
+lard,16,lard,17,1
+carrot,17,carrot,27,1
+pork,18,pork,21,1
+parsley,19,parsley,20,1
+thyme,20,thyme,23,1
+potato,21,potato,25,1
+tomatillo,22,tomatillo,24,1
+flour,23,flour,16,1
+avocado,24,avocado,18,1
+red_pepper,25,red_pepper,22,1
+allspice,26,allspice,39,1
+beef,27,beef,36,1
+orange,28,orange,28,1
+raisin,29,raisin,41,1
+almond,30,almond,38,1
+egg,31,egg,26,1
+sweet_pepper,32,sweet_pepper,35,1
+vinegar,33,vinegar,32,1
+red_onion,34,red_onion,31,1
+cider_vinegar,35,cider_vinegar,40,1
+green_olive,36,green_olive,58,1
+spring_onion,37,spring_onion,30,1
+sugar,38,sugar,19,1
+turtle_bean,39,turtle_bean,44,1
+celery,40,celery,49,1
+rice,41,rice,33,1
+adobo,42,adobo,47,1
+butter,43,butter,34,1
+chipotle,44,chipotle,43,1
+green,45,green,48,1
+milk,46,milk,29,1
+shrimp,47,shrimp,42,1
+sour_cream,48,sour_cream,45,1
+berry,49,berry,66,1
+caper,50,caper,80,1
+cheddar_cheese,51,cheddar_cheese,59,1
+safflower_oil,52,safflower_oil,63,1
+sesame_seed,53,sesame_seed,68,1
+cheese,54,cheese,46,1
+grain,55,grain,61,1
+heavy_cream,56,heavy_cream,37,1
+lettuce,57,lettuce,57,1
+olive_oil,58,olive_oil,69,1
+plantain,59,plantain,67,1
+shoulder,60,shoulder,76,1
+bacon,61,bacon,56,1
+beef_stock,62,beef_stock,85,1
+peanut_oil,64,peanut_oil,55,1
+vegetable_oil,65,vegetable_oil,50,1
+buttermilk,66,buttermilk,72,1
+orange_juice,68,orange_juice,75,1
+radish,70,radish,77,1
+sausage,71,sausage,78,1
+white,72,white,51,1
+white_wine,73,white_wine,84,1
+banana,74,banana,70,1
+egg_yolk,76,egg_yolk,64,1
+mayonnaise,78,mayonnaise,81,1
+mint,79,mint,60,1
+mushroom,80,mushroom,65,1
+pineapple,82,pineapple,62,1
+pumpkin_seed,83,pumpkin_seed,79,1
+romaine_lettuce,84,romaine_lettuce,82,1
+ ,85,zucchini,52,1
+ ,85,lemon,53,1
+ ,85,tequila,54,1
+ ,85,pecan,71,1
+ ,85,apple,73,1
+ ,85,honey,74,1
+ ,85,sherry,83,1
+ground_beef,63, ,86,1
+green_pepper,67, ,86,1
+pinto_bean,69, ,86,1
+chorizo,75, ,86,1
+green_bean,77, ,86,1
+peanut,81, ,86,1

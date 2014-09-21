@@ -3,37 +3,37 @@ tomato,2,tomato,2,1
 garlic,3,garlic,3,1
 bay_leaf,4,bay_leaf,4,1
 onion,5,onion,5,1
-carrot,6,carrot,12,1
-peppercorn,7,peppercorn,11,1
-sweet_pepper,8,sweet_pepper,7,1
-saffron,9,saffron,16,1
-thyme,10,thyme,9,1
-red_pepper,11,red_pepper,13,1
-white,12,white,24,1
-white_wine,13,white_wine,20,1
-chilli,14,chilli,14,1
-potato,15,potato,8,1
-sherry,16,sherry,10,1
-spring_onion,17,spring_onion,19,1
-bread,18,bread,23,1
-chicken,20,chicken,31,1
-olive_oil,22,olive_oil,17,1
-rice,23,rice,33,1
-shrimp,24,shrimp,28,1
-almond,25,almond,21,1
-coriander_seed,28,coriander_seed,34,1
-cumin_seed,29,cumin_seed,32,1
-egg,30,egg,15,1
-green_pepper,31,green_pepper,35,1
-ham,32,ham,26,1
-lemon,33,lemon,18,1
-mushroom,34,mushroom,36,1
-sausage,35,sausage,30,1
- ,36,ingredient,6,1
- ,36,cinnamon,22,1
- ,36,sunflower_oil,25,1
- ,36,vinegar,27,1
- ,36,flour,29,1
+carrot,6,carrot,11,1
+peppercorn,7,peppercorn,10,1
+sweet_pepper,8,sweet_pepper,6,1
+saffron,9,saffron,15,1
+thyme,10,thyme,8,1
+red_pepper,11,red_pepper,12,1
+white,12,white,23,1
+white_wine,13,white_wine,19,1
+chilli,14,chilli,13,1
+potato,15,potato,7,1
+sherry,16,sherry,9,1
+spring_onion,17,spring_onion,18,1
+bread,18,bread,22,1
+chicken,20,chicken,30,1
+olive_oil,22,olive_oil,16,1
+rice,23,rice,32,1
+shrimp,24,shrimp,27,1
+almond,25,almond,20,1
+coriander_seed,28,coriander_seed,33,1
+cumin_seed,29,cumin_seed,31,1
+egg,30,egg,14,1
+green_pepper,31,green_pepper,34,1
+ham,32,ham,25,1
+lemon,33,lemon,17,1
+mushroom,34,mushroom,35,1
+sausage,35,sausage,29,1
+ ,36,cinnamon,21,1
+ ,36,sunflower_oil,24,1
+ ,36,vinegar,26,1
+ ,36,flour,28,1
+ ,36,sugar,36,1
 celery,19, ,37,1
 fish,21, ,37,1
 chicken_stock,26, ,37,1

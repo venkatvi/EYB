@@ -1,0 +1,132 @@
+parsley,1,parsley,1,1
+tomato,2,tomato,3,1
+onion,3,onion,2,1
+celery,4,celery,5,1
+carrot,5,carrot,6,1
+pasta,6,pasta,18,1
+basil,7,basil,14,1
+flour,8,flour,7,1
+lemon,9,lemon,4,1
+peppercorn,10,peppercorn,8,1
+white_wine,11,white_wine,9,1
+egg,12,egg,12,1
+garlic,13,garlic,11,1
+white,14,white,10,1
+red_pepper,15,red_pepper,13,1
+rosemary,16,rosemary,16,1
+bay_leaf,17,bay_leaf,15,1
+oregano,18,oregano,26,1
+potato,19,potato,21,1
+chicken_stock,20,chicken_stock,31,1
+sage,21,sage,25,1
+thyme,22,thyme,19,1
+mushroom,23,mushroom,32,1
+olive_oil,24,olive_oil,22,1
+butter,25,butter,17,1
+chilli,26,chilli,23,1
+nutmeg,27,nutmeg,35,1
+red_onion,28,red_onion,30,1
+anchovy,29,anchovy,38,1
+bread,30,bread,27,1
+caper,31,caper,39,1
+tomato_paste,32,tomato_paste,46,1
+heavy_cream,33,heavy_cream,20,1
+veal,34,veal,49,1
+milk,35,milk,28,1
+pork,36,pork,53,1
+spring_onion,37,spring_onion,24,1
+ricotta,38,ricotta,34,1
+chicken,39,chicken,45,1
+prosciutto,40,prosciutto,51,1
+red_wine,41,red_wine,36,1
+beef,42,beef,48,1
+shrimp,43,shrimp,60,1
+cinnamon,44,cinnamon,33,1
+cheese,45,cheese,42,1
+mozzarella,46,mozzarella,55,1
+zucchini,47,zucchini,56,1
+orange,48,orange,29,1
+sugar,49,sugar,43,1
+bean,50,bean,66,1
+eggplant,51,eggplant,74,1
+florence_fennel,52,florence_fennel,44,1
+vinegar,53,vinegar,40,1
+almond,54,almond,52,1
+black_olive,55,black_olive,61,1
+egg_yolk,56,egg_yolk,37,1
+mint,57,mint,47,1
+pine_nut,58,pine_nut,41,1
+spinach,59,spinach,64,1
+pea,60,pea,62,1
+spaghetti,61,spaghetti,82,1
+castor_sugar,62,castor_sugar,70,1
+dark_chocolate,63,dark_chocolate,84,1
+shallot,64,shallot,50,1
+stock,65,stock,63,1
+wine_vinegar,66,wine_vinegar,65,1
+fish,67,fish,94,1
+lamb,68,lamb,83,1
+mussel,69,mussel,96,1
+raisin,70,raisin,57,1
+shoulder,71,shoulder,99,1
+vegetable_oil,72,vegetable_oil,54,1
+meat,73,meat,79,1
+rice,74,rice,58,1
+tuna,75,tuna,91,1
+clam,76,clam,117,1
+ground_beef,77,ground_beef,102,1
+juniper_berry,78,juniper_berry,112,1
+squid,79,squid,89,1
+beef_stock,80,beef_stock,114,1
+green_olive,81,green_olive,90,1
+honey,82,honey,59,1
+penne,83,penne,100,1
+saffron,84,saffron,75,1
+semolina,85,semolina,73,1
+sweet_pepper,86,sweet_pepper,72,1
+cherry tomato,87,cherry tomato,78,1
+globe_artichoke,88,globe_artichoke,80,1
+green_bean,89,green_bean,103,1
+olive,90,olive,106,1
+plain_flour,91,plain_flour,77,1
+rabbit,92,rabbit,119,1
+rocket,96,rocket,68,1
+salt,97,salt,88,1
+vegetable,98,vegetable,97,1
+bacon,99,bacon,101,1
+chive,100,chive,69,1
+cocoa_powder,101,cocoa_powder,107,1
+cornmeal,102,cornmeal,118,1
+fennel_seed,103,fennel_seed,71,1
+ham,105,ham,95,1
+lard,108,lard,110,1
+rum,112,rum,113,1
+tomato_sauce,116,tomato_sauce,93,1
+walnut,117,walnut,67,1
+ ,119,cream,76,1
+ ,119,mascarpone,81,1
+ ,119,brandy,85,1
+ ,119,asparagus,86,1
+ ,119,apple,87,1
+ ,119,coriander_seed,92,1
+ ,119,sausage,98,1
+ ,119,polenta,104,1
+ ,119,white_bread,105,1
+ ,119,double_cream,108,1
+ ,119,chicken_liver,109,1
+ ,119,truffle,111,1
+ ,119,radicchio,115,1
+ ,119,chestnut,116,1
+vanilla_bean,93, ,120,1
+garbanzo,94, ,120,1
+linguine,95, ,120,1
+fettuccine,104, ,120,1
+hard_wheat,106, ,120,1
+kosher,107, ,120,1
+orange_peel,109, ,120,1
+patty,110, ,120,1
+rigatoni,111, ,120,1
+sherry,113, ,120,1
+spaghettini,114, ,120,1
+tagliatelle,115, ,120,1
+wheat_flour,118, ,120,1

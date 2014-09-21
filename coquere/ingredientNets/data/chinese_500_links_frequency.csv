@@ -1,0 +1,81 @@
+ginger,1,ginger,2,1
+soy_sauce,2,soy_sauce,1,1
+spring_onion,3,spring_onion,3,1
+sesame_oil,4,sesame_oil,4,1
+rice,5,rice,6,1
+chilli,6,chilli,7,1
+peanut_oil,7,peanut_oil,5,1
+chicken,8,chicken,8,1
+pork,9,pork,9,1
+vinegar,10,vinegar,13,1
+chicken_stock,11,chicken_stock,12,1
+shrimp,12,shrimp,14,1
+coriander_seed,13,coriander_seed,16,1
+oyster,14,oyster,17,1
+mushroom,15,mushroom,18,1
+carrot,16,carrot,19,1
+sherry,17,sherry,11,1
+wine,18,wine,21,1
+garlic,19,garlic,15,1
+red_pepper,20,red_pepper,24,1
+white_pepper,21,white_pepper,20,1
+bamboo_shoot,22,bamboo_shoot,29,1
+bean,23,bean,25,1
+white,24,white,26,1
+celery,25,celery,37,1
+noodle,26,noodle,34,1
+peppercorn,27,peppercorn,32,1
+tofu,28,tofu,28,1
+water,29,water,35,1
+sesame,30,sesame,27,1
+vegetable_oil,31,vegetable_oil,23,1
+beef,32,beef,30,1
+corn_oil,33,corn_oil,55,1
+star_anise,34,star_anise,33,1
+flour,35,flour,22,1
+cucumber,36,cucumber,41,1
+hoisin_sauce,37,hoisin_sauce,39,1
+shallot,38,shallot,38,1
+black_bean,39,black_bean,45,1
+cabbage,40,cabbage,44,1
+egg,41,egg,31,1
+fish,42,fish,43,1
+bean_sprout,43,bean_sprout,46,1
+onion,44,onion,36,1
+sesame_seed,45,sesame_seed,50,1
+duck,46,duck,47,1
+ham,47,ham,49,1
+pea,48,pea,57,1
+tomato,49,tomato,40,1
+tomato_ketchup,50,tomato_ketchup,56,1
+bamboo,51,bamboo,65,1
+cinnamon,52,cinnamon,51,1
+honey,53,honey,48,1
+orange,54,orange,54,1
+peanut,55,peanut,60,1
+pimiento,56,pimiento,61,1
+spinach,57,spinach,52,1
+sugar,58,sugar,42,1
+wonton,59,wonton,68,1
+lemongrass,60,lemongrass,70,1
+napa,61,napa,73,1
+snow_pea,62,snow_pea,63,1
+stock,63,stock,53,1
+crabmeat,64,crabmeat,69,1
+green_pepper,66,green_pepper,59,1
+fillet,67,fillet,75,1
+grain,68,grain,66,1
+lemon,70,lemon,58,1
+lime,71,lime,64,1
+pork_loin,74,pork_loin,72,1
+ ,76,sauce,10,1
+ ,76,lard,62,1
+ ,76,potato,67,1
+ ,76,parsley,71,1
+ ,76,red_onion,74,1
+ ,76,salt,76,1
+flank_steak,65, ,77,1
+juice,69, ,77,1
+malt,72, ,77,1
+pork_belly,73, ,77,1
+sparerib,75, ,77,1
