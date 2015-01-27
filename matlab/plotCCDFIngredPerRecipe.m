@@ -53,12 +53,17 @@ function plotCCDFIngredPerRecipe(fileName, mode)
 %     imagesc(ccdf);
 %     title('CCDF of Ingredients Per Recipes');
 %     set(gca,'YTickLabel',cuisines)
-%     
+%   
+    fileId = fopen('CCDF_IngredsPerRecipe.txt', 'w');
+    fprintf(fileId, '%s\n', 'Cuisine, IngredsPerRecipe, CCDF');
     colorIndex = [1, 8, 25, 40, 56, 64]; 
     c = colormap(jet);
     
     figure;
     for i=1:6
+        for j=1:numel(ccdf(i,:))
+            fprintf(fileId, '%s\n', strcat(cuisines{i}, ',', num2str(j), ',', num2str(ccdf(i,j))));
+        end
         if strcmp(mode, 'log')
             loglog(ccdf(i,:),  'Color', c(colorIndex(i),:));         
             ylim([10^-6, 1])
@@ -67,6 +72,7 @@ function plotCCDFIngredPerRecipe(fileName, mode)
         end
         hold on;
     end
+    fclose(fileId);
     legend(cuisines);
     title('CCDF of Ingredients Per Recipe');
     xlabel('Ingredients Per Recipe');

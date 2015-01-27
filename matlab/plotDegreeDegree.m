@@ -1,6 +1,9 @@
-function plotDegreeDegree(netType, edgeThreshold )
+function PlotDegreeDegree(netType, edgeThreshold )
     cuisines = {'indian', 'chinese', 'mexican', 'spanish',  'italian', 'french'};
     cuisineText = {'Indian', 'Chinese', 'Mexican', 'Spanish', 'Italian', 'French'};
+    
+    
+
     origDegreeDegreeAllCuisines = cell(6,1);
     prunedDegreeDegreeAllCuisines = cell(6,1);
     ingredCountInCore = zeros(6,1);
@@ -10,16 +13,40 @@ function plotDegreeDegree(netType, edgeThreshold )
     end
     maxOfAllDegrees = max(maxDegree);
     for i=1:6
-         prunedData = prunedDegreeDegreeAllCuisines{i}; 
-         olddim = size(prunedData, 1);
-         prunedData = appendExtraColumnsIfRequired(maxOfAllDegrees, prunedData);
-         h = figure;
-         colormap(hot);
-         imagesc(prunedData);
-         title(strcat('Degree Degree Plot - ', cuisines{i}, '-', num2str(edgeThreshold), 'links'));
-         xlabel(strcat('Nodes:', num2str(ingredCountInCore(i)), '; MaxDegree:', num2str(maxDegree(i))));
-         fileName = strcat('DegreeDegree', cuisineText{i}, num2str(edgeThreshold));
-         saveas(h, fileName, 'png');
+        prunedData = prunedDegreeDegreeAllCuisines{i}; 
+        olddim = size(prunedData, 1);
+        prunedData = appendExtraColumnsIfRequired(maxOfAllDegrees, prunedData);
+        
+            
+        h = figure;
+        axes('position',[0.3 0.1 0.6 0.8])
+        colormap(hot);
+        imagesc(prunedData);
+        title(['Degree Degree Plot for',' ', cuisineText{i}, ' ', 'network with', ' ', num2str(edgeThreshold), ' ', 'edges'], 'FontWeight', 'bold', 'FontName', 'Trebuchet MS', 'FontSize', 12);
+        xlabel('degree d _{u} of node u in any edge e _{uv}', 'FontSize', 11, 'FontName', 'Arial', 'FontWeight', 'bold'); 
+        ylabel('degree d _{v} of node v in any edge e _{uv}', 'FontSize', 11, 'FontName', 'Arial', 'FontWeight', 'bold');
+        
+        axes('position',[0 0 1 1], 'Visible', 'off');
+        descr = {'Each cell C_{d_{u}d_{v}}';
+            'in the matrix ';
+            'denotes the no. of ';
+            'edges e_{uv} ';
+            'where,';
+            ' degree of u = d_{u},';
+            ' degree of v = d_{v}';
+            ' ';
+            'Network has ';
+            [num2str(ingredCountInCore(i)), ' ', 'nodes'];
+            'with a max degree of';
+            num2str(maxDegree(i))};
+        text(.025,0.6,descr, 'FontName', 'Trebuchet MS', 'FontSize', 12);
+        
+        
+       
+       
+        %xlabel(strcat('Nodes:', num2str(ingredCountInCore(i)), '; MaxDegree:', num2str(maxDegree(i))));
+        fileName = strcat('DegreeDegree', cuisineText{i}, num2str(edgeThreshold));
+        saveas(h, fileName, 'png');
    end
         
 end

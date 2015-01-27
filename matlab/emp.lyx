@@ -1,0 +1,1451 @@
+\date{17 November 2014}
+
+\maketitle
+
+\part{Data Source}
+
+EatYourBooks.com is the source of data for this study. This website
+contains a database of recipes of different categories found in online
+resources like allrecipes.com, foodnetwork.com, epicurious.com etc.
+along with recipes parsed out from world cookbooks authored by famous
+chefs around the world. The cookbooks are indexed and parsed for details
+like preparation time, ingredients, directions etc. and enlisted as
+a recipe entry in the website. Each recipe, both from online source
+and from an indexed cookbook, are further tagged by keywords related
+to their cuisine, type of recipe, ingredients etc. We have chosen
+recipes indexed from cookbooks of six cuisines for our analysis. Indian,
+Chinese, Spanish, Mexican, French and Italian cuisines are used for
+this study. Table \ref{tab:eyb} below lists the number of recipes,
+cookbooks and unique ingredients found in each of these cuisines from
+this website. Following section describes how recipes from this websites
+are mined and used for this study. The proposed technique can be easily
+extended to mine structured data from any other relevant website as
+well.
+
+\begin{table}
+\begin{centering}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+ & No. of Cookbooks & No. of Recipes & No. of Ingredients\tabularnewline
+\hline 
+\hline 
+Indian & 1163 & 12726 & 2585\tabularnewline
+\hline 
+Chinese & 1022 & 10372 & 2619\tabularnewline
+\hline 
+Mexican & 701 & 10834 & 2899\tabularnewline
+\hline 
+Spanish & 617 & 8190 & 2665\tabularnewline
+\hline 
+French & 1569 & 37216 & 4895\tabularnewline
+\hline 
+Italian & 2730 & 48880 & 4882\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+
+\protect\caption{Data from EatYourBooks.com \label{tab:eyb}}
+\end{table}
+
+
+
+\part{Data Extraction}
+
+EatYourBooks.com is crawled using a templated crawler for mining recipe
+entries from cookbooks of the specified six cuisines. Such mined recipe
+entry is further parsed for the list of ingredients. The obtained
+list of ingredients is then fed through a natural language processing
+engine specifically programmed to identify unique ingredient from
+different representations (e.g. garlic cloves and garlic, turnips
+and turnip). The natural language processing engine thus provides
+a resolved set of ingredients for each recipe which is further used
+to collect a global list of ingredients for every cuisine. All algorithms
+are written in Python\cite{key-5}. MongoDB\cite{key-6} is used to
+store the recipe records in a NO-SQL format. NLTK library is used
+for the natural language processing engine. mongopy is used for accessing
+the MongoDB database.
+
+
+\part{Analytical Model}
+
+This section showcases a generic analytical model to represent this
+database comprising of cuisines, recipes and ingredients. Each cuisine,
+$cuisine_{i}\in\{indian,chinese,spanish,mexican,italian,french\},1\leq i\leq6$;
+has $R_{i}$ recipe entries listed in this website. Each recipe entry
+$r\in R_{i}$, has a list of ingredients, directions to cook and other
+details like number of servings, cook time, preparation time etc.
+List of ingredients across all recipes of a cuisine are collected
+together to get a unique global list of $n_{i}$ ingredients for the
+respective cuisine, $cuisine_{i}$. 
+
+A network of a specific cuisine, $G_{cuisine_{i}}(V,E)$, is constructed
+with nodes $v_{i}\in V$, being ingredients. Two nodes $u,v\in V$
+are connected by an edge $e_{uv}\in E$, if they occur together in
+a recipe. An edge between two nodes is weighted by $w_{uv}=\frac{\{|r\in R_{i}||u,v\in r\}}{R_{i}}$
+i.e. the fraction of recipes in which two ingredients co-occur wrt
+to all the recipes in a cuisine network. Table \ref{tab:Cuisine-Networks}
+lists the number of nodes and edges of the constructed cuisine networks. 
+
+\begin{table}
+\begin{centering}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+ & Recipes & Nodes & Edges\tabularnewline
+\hline 
+\hline 
+Indian & 12726 & 745 & 27649\tabularnewline
+\hline 
+Chinese & 10372 & 766 & 24743\tabularnewline
+\hline 
+Mexican & 10834 & 874 & 31499\tabularnewline
+\hline 
+Spanish & 8190 & 792 & 27222\tabularnewline
+\hline 
+French & 37216 & 1093 & 57286\tabularnewline
+\hline 
+Italian & 48880 & 1024 & 51218\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+
+\protect\caption{Cuisine Networks - Node and Edge Count\label{tab:Cuisine-Networks}}
+\end{table}
+
+
+The following sections present results observed by analyzing the underlying
+statistical and graphical properties of these cuisine networks. 
+
+\pagebreak{}
+
+
+\part{Results}
+
+We present our analysis of cuisines represented as networks in four
+parts. We first discuss and present the results on frequency distribution
+of ingredients in recipes and average recipe size found in our data
+sources in section \ref{sec:IngredFreqDist}. Section \ref{sec:nodeEdgeDist}
+and \ref{sec: networkgrowth} present results by representing culinary
+recipes as networks of ingredient nodes connected by edges (based
+on their occurences in recipes). Section \ref{sec:nodeEdgeDist} present
+node degree and edge distributions. Section \ref{sec: networkgrowth}
+presents a set of results related to trend in increase in ingredient
+nodes, cliques observed and maximal clique size in culinary networks
+as more edges are added to the network. This section additionally
+presents a study on dislocation of ranks of ingredient nodes in constructued
+cuisine networks while comparing the degree order vs. frequency order
+illustrating interesting network structures. 
+
+
+\section{Ingredient Distributions \label{sec:IngredFreqDist}}
+
+In this section, we present two results - distribution of number of
+ingredients per recipe in cuisines and distribution of frequency of
+ingredients in recipes from our data sources. We see that the mean
+size (no. of ingredients ) of a recipe between 5 and 8 with a standard
+deviation of 4. Ingredients occur atmost at 30\% of the total number
+of recipes in a cuisine. While Italian and French cuisines drop in
+ingredient frequency more gradually, the drop is seen to be sharper
+in other four cuisines. 
+
+
+\subsection{Recipe Size}
+
+The following figures (figure \ref{fig:CCDF_IngredDist}, figure \ref{fig:CCDF_IngredDist_log}
+and figure \ref{fig:CCDF_IngredDist_log_1}) illustrate the complementary
+cumulative distribution function of number of ingredients in recipes
+across different cuisines. Average number of ingredients in Asian
+cuisines is higher than that of European cuisines as seen from the
+figure. 
+
+\begin{center}
+\begin{figure}
+\centering{}\includegraphics[scale=0.45]{TableuPlots/CCDF-1}\protect\caption{CCDF of ingredient distribution in recipes\label{fig:CCDF_IngredDist}}
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.45]{TableuPlots/CCDF-log-2}
+\par\end{centering}
+
+\centering{}\protect\caption{log-log plot of CCDF of ingredient distribution in recipes\label{fig:CCDF_IngredDist_log_1}}
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.45]{TableuPlots/CCDF-log-trimmed-1}
+\par\end{centering}
+
+\centering{}\protect\caption{CCDF of ingredient distribution in recipes (y-axis range trimmed to
+$10^{-6}$ in the lower bound)\label{fig:CCDF_IngredDist_log}}
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.45]{TableuPlots/RecipeSize}\protect\caption{Mean, Std Deviation statistic of ingredients per recipe in cuisines\label{fig:AvgIngredSize}}
+
+\par\end{centering}
+
+Average size of a recipe is highest in Indian amounting to 8. The
+size is around 6 for European cuisines like French and Italian. The
+standard deviation of the size is around 3.5
+\end{figure}
+
+\par\end{center}
+
+\pagebreak{}
+
+
+\subsection{Ingredient Frequency Distrbution}
+
+Rank value plots in log-log scale of frequency of ingredient occurrences
+in recipes of the six cuisines are shown in figure \ref{fig:freq}.
+In this figure, the plot where in the number of recipes in which an
+ingredient occurs is used to rank the ingredients. The trends of Italian
+and French cuisines are observed to be higher than that of other four
+cuisines which can be attributed to the large number of recipes available
+compared to others. Though the number of recipes in each of the other
+four cuisines are different, the frequency distribution of ingredients
+has a very similar trend. In all cuisines, we also notice a drop in
+frequency value as rank becomes greater than 100. Since, the number
+of recipes for each cuisine is different, we analyzed by the ingredient
+frequency distribution by normalizing the frequencies by total number
+of recipes of each cuisine. Figure \ref{fig:freq-2} shows the normalized
+ingredient frequencies. In this figure, ingredients from rank 10 to
+100 have very similar frequency distributions across six cuisines.
+On comparing the ingredients under rank 10, the proportion of recipes
+in which an ingredient occurs is larger in Indian and Chinese cuisines
+compared to the European cuisines, although, this trend gets reversed
+as the rank crosses 100. Figure \ref{fig:binnedFreq} presents another
+view of the ingredient frequencies. The plot shows the number of ingredients
+(in the y-axis) which occur in a certain number of recipes (in x-axis)
+in log-log scale. We observed a power law trend with an exponent of
+-0.9 on combining data from all cuisines. However, individual cuisines
+have different exponents as shown in the figure. 
+
+\begin{center}
+\emph{}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.45]{TableuPlots/RV-Frequency-log}
+\par\end{centering}
+
+\centering{}\emph{\protect\caption{Rank Value plots of ingredient frequencies in recipes of different
+cuisines\label{fig:freq}}
+}
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\emph{}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.45]{TableuPlots/RV-Frequency-log-norm}
+\par\end{centering}
+
+\centering{}\emph{\protect\caption{Rank Value plots of normalized (by total no. of recipes per cuisine)
+ingredient frequencies in recipes of six cuisines\label{fig:freq-2}}
+}
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\emph{}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.45]{TableuPlots/BinnedFreq-1}
+\par\end{centering}
+
+\begin{centering}
+\emph{\protect\caption{Rank Value plots of degree distributions of ingredient nodes in cuisine
+networks\label{fig:binnedFreq}}
+}
+\par\end{centering}
+
+\centering{}Exponents of the trendlines: Spanish: -1.27839, Mexican:
+-0.813147, Chinese: -0.67536, French: -0.633575, Indian: -0.578417,
+Italian: -0.397361
+\end{figure}
+
+\par\end{center}
+
+\pagebreak{}
+
+
+\section{Distributions of Nodes and Edges in Cuisine Networks \label{sec:nodeEdgeDist}}
+
+In this section, we summarize the node and edge distributions of cuisine
+networks constructed form the recipe entries of world cookbooks. We
+observe that degree distribution of nodes in all six cuisine networks
+have striking similarity despite having different number of nodes
+and edges and data sources. Edge weight distributions are in similar
+trend for all cuisines except Indian. Edge weight distribution of
+cuisine networks indicate that there are a large number of edges with
+very small weight indicating ingredients which occur very rarely in
+recipes of a given cuisine. Such nodes and edges affect the mean statistic
+of any network property. To analyze the statistical properties of
+networks without the effect of these rare nodes and edges, we prune
+networks of edges greater than a $rank>10000$. 
+
+
+\subsection{Node degree distribution}
+
+Figure \ref{fig:degreeDist} and \ref{fig:degreeDistLog} show the
+rank value plot of node degree distributions in cuisine networks.
+We observe that the distribution has an identical trend across all
+cuisines irrespective of the differences in individual nodes, size
+of the networks and connectivity patterns in each of the six cuisines.
+This illustrates that the inherent ingredient co-occurence pattern
+is very similar across recipes of different world cuisines.
+
+\begin{center}
+\emph{}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.45]{TableuPlots/RV-Degree}
+\par\end{centering}
+
+\centering{}\emph{\protect\caption{Rank Value plots of degree distributions of ingredient nodes in cuisine
+networks\label{fig:degreeDist}}
+}
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\emph{}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.45]{TableuPlots/RV-Degree-log}
+\par\end{centering}
+
+\emph{\protect\caption{log-log plot of Figure 1\label{fig:degreeDistLog}}
+}
+\end{figure}
+
+\par\end{center}
+
+\pagebreak{}
+
+
+\subsection{Edge weight Distributions}
+
+Edge weight distributions of cuisine networks in log-log scale are
+shown in figure \ref{fig:edgeDistAll}. It can be observed that distribution
+of Indian cuisine has higher range of values compared to other cuisines.
+Italian and French cuisines share similar trends while Chinese, Spanish
+and Mexican distributions have overlapping trends for $rank>100$
+(as seen in figure\ref{fig:edgeDist10000}, figure\ref{fig:edgeDist1000}).
+As edges of lower weights (with $rank>100$) are added to the network,
+distribution of Chinese crosses over that of Mexican and distribution
+changes to be similar to Italian and French cuisines. 
+
+\begin{center}
+\begin{figure}
+\centering{}\includegraphics[scale=0.45]{TableuPlots/RV-Edge-Log}\protect\caption{log-log plot of Edge Weight distribution of cuisine networks\label{fig:edgeDistAll}}
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\begin{figure}
+\centering{}\includegraphics[scale=0.45]{TableuPlots/RV-Edge-Log-10000}\protect\caption{log-log plot of Edge Weight distribution of cuisine networks\label{fig:edgeDist10000}}
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.45]{TableuPlots/RV-Edge-Log-1000}
+\par\end{centering}
+
+\centering{}\protect\caption{log-log plot of Edge Weight distribution of cuisine networks\label{fig:edgeDist1000}}
+\end{figure}
+
+\par\end{center}
+
+\pagebreak{}
+
+
+\section{Cuisine network growth and analysis\label{sec: networkgrowth}}
+
+In order to understand and analyze the impact of most frequently occurring
+ingredients and distinguish them from other ingredients and links
+which are not very characteristic of a cuisine, cuisine networks are
+constructed by adding edges in decreasing order of edge weights. This
+approach of constructing networks, creates a core with ingredients
+which form the most important links in the network (identified as
+most commonly co-occurring nodes and their edges) and then gradually
+adds ingredient nodes as edges of smaller edge weights are added.
+A number of analysis has been done with this approach of growing culinary
+networks. The following sections illustrate the impact of adding edges
+and expanding cuisine networks on node growth, number of cliques observed
+in the cuisine network, pattern of core networks identified by top
+100 edges (ranked by edge weights), and a comparison of n ingredients
+present in ``core'' networks constructed out of top m edges with
+the top n ingredients (ranked by degree and frequency of occurrence
+in recipes). 
+
+\pagebreak{}
+
+
+\subsection{Node Growth}
+
+On constructing cuisine networks by adding edges in decreasing order
+of edge weights, the trend in growth of number of nodes in the network
+has been analyzed. As seen from the following figures (figure \ref{fig:nodeGrowthWithEdges}
+and figure \ref{fig:nodeGrowthWithEdges_log} ), the growth of ingredient
+nodes is linear in log-log scale to the addition of edges in the network.
+The size of the network as edges grow also seems to be very similar
+across cuisines. 
+
+\begin{center}
+\begin{figure}
+\centering{}\includegraphics[scale=0.45]{TableuPlots/GrowthOfIngredsWithLinks}\protect\caption{Growth of ingredient nodes wrt edges in cuisine networks\label{fig:nodeGrowthWithEdges}}
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\begin{figure}
+\centering{}\includegraphics[scale=0.45]{TableuPlots/GrowthOfIngredsWithLinks-log}\protect\caption{log-log plot of growth of ingredient nodes wrt edges in cuisine networks\label{fig:nodeGrowthWithEdges_log}}
+\end{figure}
+
+\par\end{center}
+
+\pagebreak{}
+
+
+\subsection{Clique Growth}
+
+Figure \ref{fig:cliqueCount} and \ref{fig:cliqueCountLog} presents
+the growth in observed cliques in cuisine networks with addition of
+edges in a cuisine network. Log-log scale plot indicates a linear
+growth in number of cliques observed for all cuisines. Chinese, Mexican
+and Spanish cuisines have an interesting explosion in the number of
+cliques observed when edges with rank greater than 5000 are added.
+This is indicative of presence of less frequent ingredients being
+used in recipes with large number of ingredient participants. 
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.45]{TableuPlots/cliqueCount}
+\par\end{centering}
+
+\centering{}\protect\caption{No. of cliques observed in cuisine networks with increase in network
+edges\label{fig:cliqueCount}}
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.45]{TableuPlots/cliqueCount-log}
+\par\end{centering}
+
+\centering{}\protect\caption{log-log plot of no. of cliques observed in cuisine networks with increase
+in network edges\label{fig:cliqueCountLog}}
+\end{figure}
+
+\par\end{center}
+
+\pagebreak{}
+
+Figures \ref{fig:maximalcliqueSize} and \ref{fig:maximalcliqueSizelog}
+present similar information about the size of the maximal clique observed
+in cuisine networks as they were expanded by adding more edges. Maximal
+clique size can be interpreted as the maximal recipe size across cuisines.
+As shown from the figure, the maximal recipe size grows linearly with
+increase in edges in the log scale. Also, the maximal recipe size
+across cuisines is very similar to one another.
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.45]{TableuPlots/maxCliqueSize}
+\par\end{centering}
+
+\centering{}\protect\caption{maximal clique size observed in cuisine networks with increase in
+network edges\label{fig:maximalcliqueSize}}
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.45]{TableuPlots/maxCliqueSize-log}
+\par\end{centering}
+
+\centering{}\protect\caption{log-log plot of maximal clique size observed in cuisine networks with
+increase in network edges\label{fig:maximalcliqueSizelog}}
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\pagebreak{}
+\par\end{center}
+
+
+\subsection{Node Dislocation Index}
+
+Using the idea of constructing ``core'' networks with top m edges
+ordered by edge weights, a comparison of rank order of ingredients
+based on different criteria has been done to analyze the significance
+and pattern of presence of ingredients in recipes. 
+
+Following are three different metrics used to order the ingredients.
+\begin{enumerate}
+\item $degree$ - degree of an ingredient in a cuisine network i.e. number
+of fellow ingredients one is connected to
+\item $frequency$ - frequency of occurrence (i.e. number of recipes in
+which the ingredient is present out of all the recipes of a given
+cuisine) of an ingredient in a cuisine
+\item $coreDegree$ - degree of an ingredient in a core network constructed
+by using top m edges where $m\in\{100,250,500,1000\}$ ordered by
+edge weights. 
+\end{enumerate}
+Defining $m\in\{100,250,500,1000\}$ and choosing $m'$ from $m$,
+a core network is first constructed by using top $m'$ edges. Size
+of the core network $n'$ (i.e. number of nodes in the core network)
+is used as the thresholding criteria to compare ingredients. Ingredient
+nodes in cuisine network (including all edges) are ordered by degree
+and frequency of occurrence in recipes individually. Top $n'$ ingredients
+in degree rank order and frequency rank oder are chosen. 
+
+For an ingredient in a cuisine network, the following comparisons
+are done:
+\begin{enumerate}
+\item $crit_{degree\_frequency}$ : rank of the ingredient in degree rank
+order vs. frequency rank order
+\item $crit_{coreDegree\_degree}$ : rank of the ingredient in core network's
+degree rank order vs. degree rank order in the entire cuisine network
+(including all edges)m
+\item $crit_{coreDegree\_frequency}$: rank of the ingredient in core network's
+degree rank order vs. frequency rank order 
+\end{enumerate}
+Analysis was performed for all cuisines and we present some of the
+more interesting observations here. Figure \ref{fig:IndianDislocation}
+shows $crit_{12}$ comparison for Indian cuisine by using top 500
+edges ordered by edge weights. i.e. a core network is constructed
+using top 500 edges of indian cuisine. Size of the constructed core
+network is 67. Thus, top 67 ingredients ranked by degree and frequency
+are listed in the right and left columns of the figure respectively.
+An ingredient name in left column is matched with that of right column
+using a gray bar. If an ingredient in left (right) column is not present
+in the right (left), a red (blue) bar is used to indicate its absence.
+For example, in the figure \ref{fig:IndianDislocation}, spinach is
+not present in the right column and hence highlighted with a red bar.
+Similarly, black mustard is not present in the left column and hence
+highlighted by a blue bar. 
+
+As observed in the figure, some ingredients hold the same rank in
+both right and left columns (like chilli, coriander\_seed, turmeric
+etc.) while some nodes are offset in rank by one position (like ginger,
+cumin\_seed, red\_pepper, tomato). One interesting observation in
+this experiment is, for a given cuisine, there exists a set of ingredients,
+which we define as ``core'' ingredients, who hold the same rank
+/ position across three comparison criteria and four core networks
+of different sizes (100, 250, 500, 1000). Figure \ref{fig:IndianDislocationCore}
+shows how this is observed in indian cuisine. The ``core'' ingredients
+of this cuisine and others are listed in table \ref{tab:CoreIngredDisloc}. 
+
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.5]{Results_4/DislocationIndex/Indian_500_degree_frequency}
+\par\end{centering}
+
+\protect\caption{Ingredient dislocation based on degree vs. frequency for Indian cuisine
+using top 500 edges\label{fig:IndianDislocation}}
+\end{figure}
+
+
+\begin{figure}
+\begin{centering}
+\subfloat[$crit_{12}$ - degree vs. frequency]{\begin{centering}
+\includegraphics[scale=0.3]{Results_4/DislocationIndex/indian_100_degree_frequency}
+\par\end{centering}
+
+}\subfloat[$crit_{31}$ - degree in core network vs. degree]{\begin{centering}
+\includegraphics[scale=0.3]{Results_4/DislocationIndex/Indian_100_links_degree}
+\par\end{centering}
+
+}\subfloat[$crit_{32}$ - degree in core network vs. frequency]{\begin{centering}
+\includegraphics[scale=0.3]{Results_4/DislocationIndex/Indian_100_links_frequency}
+\par\end{centering}
+
+}\protect\caption{Indian cuisine - Ingredient Dislocation computed for core network
+of 100 edges. \label{fig:IndianDislocationCore}}
+
+\par\end{centering}
+
+\end{figure}
+
+
+\begin{table}
+\begin{centering}
+\begin{tabular}{|l|l|}
+\hline 
+Cuisine & ``Core'' ingredients\tabularnewline
+\hline 
+\hline 
+Indian & chilli, coriander\_seed, ginger, cumin\_seed, turmeric, red\_pepper,
+tomato \tabularnewline
+\hline 
+\hline 
+Chinese & ginger, spring\_onion, soy\_sauce, sesame\_oil, rice, peanut\_oil,
+chilli \tabularnewline
+\hline 
+\hline 
+Mexican & chili\_corn\_carne, onion, tomato, coriander, lime, garlic, corn,
+oregano, cumin\_seed\tabularnewline
+\hline 
+\hline 
+Spanish & parsley, tomato, bay\_leaf, garlic, onion\tabularnewline
+\hline 
+\hline 
+French & onion, parsley, thyme, carrot, bay\_leaf, butter,shallot, tomato\tabularnewline
+\hline 
+\hline 
+Italian & parsley, onion, tomato\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+
+\protect\caption{Core ingredients observed in ingredient dislocation study \label{tab:CoreIngredDisloc}}
+
+
+\end{table}
+
+
+\pagebreak{}
+
+
+\subsubsection{Dislocation Index Metric }
+
+To compare an ingredients rank in the left and right columns of a
+comparison criteria, a dislocation index is defined. Dislocation index
+$DI_{jk}^{ingred_{i}}$ of an ingredient $ingred_{i},i\in\{1,2...n'\}$
+in a comparison criteria $crit_{j\_k},\thinspace j\_k\in\{degree\_frequency,\ coreDegree\_degree,\ coreDegree\_frequency\}$
+is defined as 
+
+\[
+DI_{jk}^{ingred_{i}}=\frac{rank_{j}^{ingred_{i}}-rank_{k}^{ingred_{i}}}{n'}
+\]
+where $rank_{ip}$ is defined as the rank of ingredient $ingred_{i},i\in\{1,2,...n'\}$
+in rank order of criteria $p$ where p can be degree of an ingredient
+node in overall network, frequency of an ingredient in recipes of
+the cuisine or degree of the ingredient node in the core network.
+For example, using figure \ref{fig:IndianDislocation}, $n'=67$ and
+\[
+DI_{degree\_frequency}^{chilli}=\frac{rank_{degree}^{chilli}-rank_{frequency}^{chilli}}{67}
+\]
+
+
+\[
+DI_{degree\_frequency}^{chilli}=\frac{1-1}{67}=0
+\]
+
+
+Similarly, 
+
+\[
+DI_{degree\_frequency}^{cucumber}=\frac{rank_{degree}^{cucumber}-rank_{frequency}^{cucumber}}{67}=\frac{67-61}{67}=0.0896
+\]
+
+
+
+\subsubsection{Impact of dislocated ingredients in network structure}
+
+In each of the above three comparisons, we set a threshold of 0.33
+to consider an ingredient's dislocation in rank as significant. This
+threshold can be set to any value in range $[0,1]$ to observe the
+resulting dislocations. If $|DI_{jk}^{ingred_{i}}|$ is within allowable
+threshold (set to 0.33 in the experiment), the dislocation is not
+significant enough to be a analytical measure and hence the dislocation
+can be ignored. Otherwise, the ingredient is dislocated considerably.
+In each of the comparison criteria above, a dislocation indicates
+the ingredient's presence in the cuisine via network structure and
+pattern of occurrence in recipes which is shown in the tables\ref{tab:degreeFrequencyDislocPattern}
+and \ref{tab:linksvsdegreeFreqDislocPattern} below. A detailed list
+of all dislocated nodes is listed in table \ref{tab:DislocatedIngredientsDegreeFreq}.
+
+\begin{center}
+\begin{table}
+\begin{centering}
+{\small{}}%
+\begin{tabular}{|l|>{\raggedright}p{0.4\columnwidth}|>{\raggedright}m{0.4\columnwidth}|}
+\hline 
+ & \centering{}{\small{}high degree in overall network} & \centering{}{\small{}low degree in overall network}\tabularnewline
+\hline 
+\hline 
+\multirow{2}{*}{{\small{}high frequency }} & \multirow{2}{0.4\columnwidth}{\centering{}} & \begin{enumerate}
+\item {\small{}Node occurs in large number of recipes }{\small \par}
+\item {\small{}In such recipes, node consistently occurs with a select few
+siblings resulting in lower degree. }\end{enumerate}
+\tabularnewline
+\cline{3-3} 
+ &  & {\small{}e.g. sugar ($DI=0.433$) in french network using top 100
+edges. Sugar, milk, flour and egg is an ingredient combination which
+occur in a large number of recipes.}\tabularnewline
+\hline 
+\multirow{2}{*}{{\small{}low frequency}} & \begin{enumerate}
+\item {\small{}Node occurs in recipes of large number of ingredients. }{\small \par}
+\item {\small{}Combination of node with its siblings occurs in fewer recipes
+in the cuisine. }\end{enumerate}
+ & \multirow{2}{0.4\columnwidth}{\centering{}}\tabularnewline
+\cline{2-2} 
+ & {\small{}e.g. orange ($DI=-0.433$) in mexican network using top 100
+edges} & \tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}{\small \par}
+
+{\small{}\protect\caption{Pattern of ingredient's presence in a cuisine based on dislocation
+index\,\label{tab:degreeFrequencyDislocPattern}}
+}
+\end{table}
+
+\par\end{center}
+
+\begin{center}
+\begin{table}
+\begin{centering}
+\subfloat[Core network formed with top 100 edges]{\begin{centering}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Cuisine  & No. of nodes compared & Ingredient & Dislocation Index\tabularnewline
+\hline 
+\hline 
+French & 30 & milk & 0.366\tabularnewline
+\hline 
+French & 30 & sugar & 0.433\tabularnewline
+\hline 
+Indian & 30 & coconut & 0.346\tabularnewline
+\hline 
+Italian & 30 & pasta & 0.393\tabularnewline
+\hline 
+Mexican & 30 & orange & -0.433\tabularnewline
+\hline 
+Mexican & 30 & spring\_onion & -0.4\tabularnewline
+\hline 
+Mexican & 30 & tortilla & 0.4\tabularnewline
+\hline 
+Spanish & 36 & coriander & -0.361\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+
+}
+\par\end{centering}
+
+\begin{centering}
+\subfloat[Core network formed with top 250 edges]{\begin{centering}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Cuisine  & No. of nodes compared & Ingredient & Dislocation Index\tabularnewline
+\hline 
+\hline 
+Chinese & 54 & cinnamon & -0.33\tabularnewline
+\hline 
+Chinese & 54 & bamboo\_shoot & 0.351\tabularnewline
+\hline 
+Spanish & 59 & sunflower\_oil & 0.44\tabularnewline
+\hline 
+Spanish & 36 & coriander & -0.361\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+
+}
+\par\end{centering}
+
+\begin{centering}
+\subfloat[Core network formed with top 500 edges]{
+
+\begin{centering}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Cuisine  & No. of nodes compared & Ingredient & Dislocation Index\tabularnewline
+\hline 
+\hline 
+French & 78 & tequila & 0.41\tabularnewline
+\hline 
+Mexican & 85 & vanilla\_bean & 0.341\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+
+}
+\par\end{centering}
+
+\centering{}\subfloat[Core network formed with top 1000 edges]{\begin{centering}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Cuisine  & No. of nodes compared & Ingredient & Dislocation Index\tabularnewline
+\hline 
+\hline 
+French & 131 & vanilla\_bean & 0.359\tabularnewline
+\hline 
+French & 131 & raspberry & 0.366\tabularnewline
+\hline 
+French & 131 & rum & 0.366\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+
+
+
+}\protect\caption{Dislocated ingredients observed while comparing degree vs. frequency
+rank order\label{tab:DislocatedIngredientsDegreeFreq}}
+\end{table}
+
+\par\end{center}
+
+\begin{center}
+\pagebreak{}
+\par\end{center}
+
+\begin{center}
+\begin{table}
+\begin{centering}
+\subfloat[ Degree in core network vs. degree in overall network]{\begin{singlespace}
+{\small{}}%
+\begin{tabular}{|>{\centering}m{2cm}|p{0.4\columnwidth}|>{\raggedright}m{0.4\columnwidth}|}
+\hline 
+ & \centering{}{\small{}high degree in core network} & \centering{}{\small{}low degree in core network}\tabularnewline
+\hline 
+\hline 
+\multirow{2}{2cm}{{\small{}high degree in overall network}} & \multirow{2}{0.4\columnwidth}{\centering{}} & \begin{enumerate}
+\item {\small{}Node appears in large recipes connecting to many ingredients
+of lower degree.}{\small \par}
+\item {\small{}In such recipes, node appears as the only key ingredient
+connecting to few nodes in the influential core network }\end{enumerate}
+\tabularnewline
+\cline{3-3} 
+ &  & {\small{}e.g. lemon ($DI=0.81$) in italian core network formed with
+top 100 edges, lemon ($DI=0.657$) in spanish core network formed
+with top 100 edges}\tabularnewline
+\hline 
+\multirow{2}{2cm}{{\small{}low degree in overall network}} & \begin{enumerate}
+\item {\small{}Node frequently connects only to other nodes in core network
+(eigen node) and appears in shorter recipes where it connects to fewer
+ingredients }\end{enumerate}
+ & \multirow{2}{0.4\columnwidth}{\centering{}}\tabularnewline
+\cline{2-2} 
+ & {\small{}e.g. clam ($DI=-0.506$) in spanish core network formed with
+top 500 edges, chicken ($DI=-0.428$) in indian core network formed
+with top 250 edges} & \tabularnewline
+\hline 
+\end{tabular}{\small \par}
+\end{singlespace}
+
+
+\par\end{centering}
+
+\begin{centering}
+\subfloat[Degree in core network vs. frequency in recipes]{\begin{centering}
+{\small{}}%
+\begin{tabular}{|>{\centering}m{2cm}|p{0.4\columnwidth}|>{\raggedright}m{0.4\columnwidth}|}
+\hline 
+ & \centering{}{\small{}high degree in core network} & \centering{}{\small{}low degree in core network}\tabularnewline
+\hline 
+\hline 
+\multirow{2}{2cm}{{\small{}high frequency of occurrence }} & \multirow{2}{0.4\columnwidth}{\centering{}} & \begin{enumerate}
+\item {\small{}Node appears in large number of recipes. However, presence
+of other important nodes in such recipes is low which results in low
+degree in core network }\end{enumerate}
+\tabularnewline
+\cline{3-3} 
+ &  & {\small{}e.g. lemon ($DI=0.687$) in italian core network formed with
+top 100 edges, egg ($DI=0.457$) in spanish core network formed with
+top 100 edges}\tabularnewline
+\hline 
+\multirow{2}{2cm}{{\small{}low frequency of occurence}} & \begin{enumerate}
+\item {\small{}Node frequently connects only to other nodes in core network
+(eigen node) and appears in fewer recipes where it connects to important
+nodes }\end{enumerate}
+ & \multirow{2}{0.4\columnwidth}{\centering{}}\tabularnewline
+\cline{2-2} 
+ & {\small{}e.g. celery ($DI=-0.5$) in spanish core network formed with
+top 250 edges} & \tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}{\small \par}
+
+{\small{}}}
+\par\end{centering}
+
+\protect\caption{Pattern of ingredient's presence in a cuisine based on dislocation
+index\label{tab:linksvsdegreeFreqDislocPattern}}
+\end{table}
+
+\par\end{center}
+
+(A detailed list of ingredients with dislocation indices are attached
+in the supplementary material.)
+
+\pagebreak{}
+
+With reference to table \ref{tab:linksvsdegreeFreqDislocPattern},
+ingredients having a similar dislocation index with $crit_{coreDegree\_degree}$
+and $crit_{coreDegree\_frequency}$ , show unique structures in core
+networks. As seen from the table, if an ingredient has low degree
+and low frequency of occurrence in recipes with high degree in the
+core network, it potentially indicates a network structure where the
+ingredient connects to few other important nodes in the network and
+occurs in fewer recipes consisting of smaller number of ingredients.
+The following table (table \ref{tab:ingredDIIndex}) lists a few ingredients
+which have similar dislocation indices under $crit_{coreDegree\_degree}$
+and $crit_{coreDegree\_frequency}$. 
+
+\begin{center}
+\begin{table}
+\begin{centering}
+\subfloat[Ingredients with similar dislocation indices in $crit_{coreDegree\_degree}$
+and $crit_{coreDegree\_frequency}$]{\begin{centering}
+\begin{tabular*}{15cm}{@{\extracolsep{\fill}}|c|>{\centering}p{2cm}|c|c|>{\centering}p{2cm}|}
+\hline 
+Cuisine & No. of edges (in rank order) used for core networks & Ingredient & $DI_{coreDegree\_degree}$ & $DI_{coreDegree\_frequency}$\tabularnewline
+\hline 
+\hline 
+Italian & 100 & lemon & 0.812 & 0.687\tabularnewline
+\hline 
+Mexican & 100 & cinnamon & 0.586 & 0.448\tabularnewline
+\hline 
+Spanish & 100 & lemon & 0.657 & 0.457\tabularnewline
+\hline 
+Italian & 250 & beef & -0.356 & -0.356\tabularnewline
+\hline 
+Spanish & 250 & fish & -0.431 & -0.344\tabularnewline
+\hline 
+French & 500 & vegetable\_oil & 0.402 & 0.389\tabularnewline
+\hline 
+Indian & 500 & milk & 0.432 & 0.358\tabularnewline
+\hline 
+Spanish & 500 & mint & 0.554 & 0.397\tabularnewline
+\hline 
+French & 1000 & honey & 0.392 & 0.33\tabularnewline
+\hline 
+Italian & 1000 & walnut & 0.423 & 0.372\tabularnewline
+\hline 
+\end{tabular*}
+\par\end{centering}
+
+}
+\par\end{centering}
+
+\begin{centering}
+\subfloat[Network structures indicated by dislocation index patterns]{\begin{centering}
+\begin{tabular}{|c|>{\centering}p{5cm}|}
+\hline 
+ & Indicated network structure\tabularnewline
+\hline 
+\hline 
+$DI_{coreDegree\_degree}$ > 0 and $DI_{coreDegree\_frequency}$ >
+0 & Ingredient appears in large number of recipes. However, presence of
+other important nodes in such recipes is low which results in low
+degree in the core network.\tabularnewline
+\hline 
+$DI_{coreDegree\_degree}$ < 0 and $DI_{coreDegree\_frequency}$ <
+0 & Ingredient frequently connects only to other nodes in core network
+but appears in fewer recipes containing smaller number of ingredients.\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+
+}
+\par\end{centering}
+
+\protect\caption{Ingredient dislocation index patterns\label{tab:ingredDIIndex}}
+\end{table}
+
+\par\end{center}
+
+As seen from the above analysis, the experiment with ingredient dislocation
+elucidates interesting network structures and ingredients which comply
+to these structure in different cuisines. It also brings out the ``core''
+networks in each cuisine which characterize the cuisine uniquely.
+The core networks are graphically presented in the next section. 
+
+\pagebreak{}
+
+
+\subsection{Core Networks }
+
+On using the top 100 edges (ordered by edge weights) and selecting
+nodes which are incident on the top 100 edges, a core network is constructed
+for each of the six cuisines. Following show the structure of these
+networks. 
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.4]{Results_3/CoreNetworks/Indian100}
+\par\end{centering}
+
+\protect\caption{Indian }
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.4]{Results_3/CoreNetworks/Chinese100}
+\par\end{centering}
+
+\protect\caption{Chinese }
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.4]{Results_3/CoreNetworks/Mexican100}
+\par\end{centering}
+
+\protect\caption{Mexican }
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.4]{Results_3/CoreNetworks/Spanish100}
+\par\end{centering}
+
+\protect\caption{Spanish }
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.4]{Results_3/CoreNetworks/French100}
+\par\end{centering}
+
+\protect\caption{French }
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.4]{Results_3/CoreNetworks/Italian100}
+\par\end{centering}
+
+\protect\caption{Italian }
+\end{figure}
+
+\par\end{center}
+
+\pagebreak{}
+
+
+\section{Network Properties}
+
+This section details interesting results on the statistical network
+properties of cuisine networks formed with top 10000 edges ordered
+by edge weights. Seven graph level network measures are calculated
+namely degree, closeness, betweeness, average clustering coefficient,
+transitivity, assortativity and network density. 
+
+Figure \ref{fig:graphCentralities} and figure \ref{fig:graphCentralities-1}
+illustrate these results. While figure \ref{fig:graphCentralities},
+plots each of these measures individually, figure \ref{fig:graphCentralities-1}
+presents a heat map of these values across cuisines. As seen from
+both figures, the values for each measure across cuisines are very
+similar to one another (illustrated by the gradient in each row of
+the latter figure). Some of the striking features observed from this
+study are:
+\begin{enumerate}
+\item Assortative coefficient of all cuisine networks is negative indicating
+that all cuisine networks are disassortative. i.e nodes of high degree
+attach to nodes of low degree. Section \ref{sub:Disssortativity}
+discusses this metric in more detail.
+\item The two measures of clustering effect in networks namely average graph
+level clustering coefficient and transitivity are measured. The results
+indicate that transitivity of the networks are lower than average
+clustering coefficient resulting in a network structure indicated
+by section \ref{sub:ClustCoeff}.
+\item Average degree and betweeness centrality is low while average closeness
+centrality is high for these cuisine networks. Overall network density
+of these networks is low indicative of sparse connections forming
+cliques. Section \ref{sub:Centralities} and \ref{sub:NodeDist} illustrates
+on the individual node - level distributions for each of these measures
+to highlight some of the potential influencers of each of these cuisine
+networks based on their centrality values. 
+\end{enumerate}
+\begin{center}
+\begin{figure}
+\centering{}\includegraphics[scale=0.4]{TableuPlots/GraphCentralities}\protect\caption{Centralities and oher graph level statistics of cuisine networks\label{fig:graphCentralities}}
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\begin{figure}
+\centering{}\includegraphics{TableuPlots/graphCentralities-1}\protect\caption{Centralities and oher graph level statistics of cuisine networks\label{fig:graphCentralities-1}}
+\end{figure}
+
+\par\end{center}
+
+
+\subsection{Disassortativity \label{sub:Disssortativity}}
+
+Cuisine networks used in study of network properties are constructed
+out of top 10000 edges ordered by edge weights in each cuisine. Assortativity
+also known as a pattern of preferrential attachment in networks quantifies
+the tendency of nodes to attach to similar nodes. Disassortativity
+indicates the tendency of nodes to connect to dissimilar nodes. The
+mixing pattern of a network is meared by pearson correlation coefficient
+also known as the assortative coefficient defined as
+
+\begin{center}
+$r=\frac{\sum_{jk}jk(e_{jk}-q_{j}q_{k})}{\sigma_{q}^{2}}$
+\par\end{center}
+
+where $q_{j}$ is the distribution of the remaining degree and $e_{jk}$
+refers to the joint probability distribution of the remaining degree
+of the two vertices. By this definition, it can be seen that both
+$q_{j}$ and $e_{jk}$ are significantly affected by nodes of very
+low degree connecting to node $j$. In a cuisine networks, these could
+be nodes of rare occurence (resulting in very low degree). In order
+to measure the impact of the presence of such nodes on the perferential
+mixing pattern in these networks, two experiments were conducted.
+One, was to measure how the degree and average neighbor degree of
+a node are related to each other. The other experiment is to study
+the degree degree correlation of nodes i.e. quantify the number of
+edges whose incident nodes have a certain degree $d_{u}$ and $d_{v}$
+resulting in either an assortative or disassortative mixing pattern
+in the network. 
+
+
+\subsubsection{Average Neighbor Degree}
+
+Figure \ref{fig:degAvgNeiDeg} and \ref{fig:degAvgNeiDeg-1} show
+how degree and average neighbor degree of ingredient nodes are related
+to each other. As seen from the figure, nodes of low degree appear
+to have a wider range of average neighbor degree and as degree increases,
+the average neighbor degree lowers indicating disassortativity. 
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.45]{TableuPlots/Degree-AvgNeigDegree}
+\par\end{centering}
+
+\protect\caption{Degree vs. Average Neighbor Degree of Ingredient Nodes \label{fig:degAvgNeiDeg}}
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.45]{TableuPlots/Degree-AvgNeigDegree-log}
+\par\end{centering}
+
+\protect\caption{Degree vs. Average Neighbor Degree of Ingredient Nodes \label{fig:degAvgNeiDeg-1}}
+\end{figure}
+
+\par\end{center}
+
+
+\subsubsection{Degree Degree Correlation}
+
+Degree-degree correlation of ingredient nodes are examined for networks
+built with top 100, 250, 500 and 1000 edges. For each of these core
+networks formed with a smaller subset of edges, $n\times n$ degree-degree
+correlation matrix $D$ is maintained where $n$ is the maximum degree
+found in all cuisine networks. Each cell $D{}_{ij}$ contains the
+number of times, an ingredient of degree $i$ attached to an ingredient
+of degree $j$. Since the cuisine networks are undirected, $D$ is
+a symmetric matrix. Figure \ref{fig:DegreeDegree-100} shows the heat
+map representation of this matrix for all cuisine networks formed
+with top 100 edges. This figure illustrates a symmetric pattern in
+the top right corner of the image indicating an assortative mixing
+pattern contrary to the graph level disassortativity found. A similar
+assorative mixing pattern is found in networks formed with 250, 500
+and 1000 edges for all cuisines. 
+
+Through this experiment, it is possible to conclude that the presence
+of edges with $rank>1000$ results in disassortative mixing pattern.
+Such edges are likely to involve nodes of low degree which adds to
+the disassortative measure at the graph level. 
+
+\begin{figure}
+\begin{centering}
+\subfloat[Indian]{\includegraphics[scale=0.4]{TableuPlots/DegreeDegreeIndian100}
+
+}\subfloat[Chinese]{\includegraphics[scale=0.4]{TableuPlots/DegreeDegreeChinese100}
+
+}
+\par\end{centering}
+
+\begin{centering}
+\subfloat[Mexican]{\includegraphics[scale=0.4]{TableuPlots/DegreeDegreeMexican100}
+
+}\subfloat[Spanish]{\includegraphics[scale=0.4]{TableuPlots/DegreeDegreeSpanish100}
+
+}
+\par\end{centering}
+
+\begin{centering}
+\subfloat[French]{\includegraphics[scale=0.4]{TableuPlots/DegreeDegreeFrench100}
+
+}\subfloat[Italian]{\includegraphics[scale=0.4]{TableuPlots/DegreeDegreeItalian100}
+
+}
+\par\end{centering}
+
+\protect\caption{DegreeDegree Plot of all cuisines for networks formed with 100 edges\label{fig:DegreeDegree-100}}
+\end{figure}
+
+
+
+\subsection{Clustering Coefficient and Transitivity \label{sub:ClustCoeff}}
+
+Triadic closures in a network are often measured by graph level average
+clustering coefficient and transitivity metric. While both use the
+number of traids found in the network as a measure, they differ significantly
+in their definitions. Transitivity is a measure of the overall triangles
+found in the network with respect to the number of triads found and
+average clustering coefficient is measured by the average of number
+of triangles formed by the nodes given their degree. 
+
+\cite{key-1} discuss the possible network structures which lead to
+a difference in these network-level metrics. On evaluating the structure
+of these sparse networks (as seen from the network density measure)
+and their effect on clustering coefficient and transitivity, a structure
+similar to figure can be conjured up to support this data. This structure
+again highlights the inherent disassortativity in the cuisine networks. 
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics{TableuPlots/clusCoeff_transitivity}
+\par\end{centering}
+
+\protect\caption{Network structure illustrating high clustering coefficient and low
+transitivity}
+\end{figure}
+
+\par\end{center}
+
+Node level local clustering coefficient plotted against degree is
+shown in figure \ref{fig:degClusCoeff}. As seen, nodes of high degree
+have low clustering coefficient indicating disassortativity in the
+network. 
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.45]{TableuPlots/Degree-ClusCoeff}
+\par\end{centering}
+
+\protect\caption{Degree vs. Clustering Coefficient of Ingredient Nodes in Cuisine Networks\label{fig:degClusCoeff}}
+\end{figure}
+
+\par\end{center}
+
+
+\subsection{Centrality measure\label{sub:Centralities}}
+
+In this section, different node-level centrality measures are presented
+and compared to analyze the structure of cuisine networks. As seen
+from the graph level measures, degree and betweeness centrality is
+low while closeness centrality is high for all cuisine networks. Figure
+\ref{fig:Betweeness} and \ref{fig:Closeness}show the node level
+betweeness and closeness centrality meaures plotted against degree
+centrality measure. As seen from figure, betweeness measure is very
+low for all nodes while closeness is proportional to the degree of
+the node in the networks. High closeness and low betweeness of nodes
+indicate that multiple paths exist between nodes and nodes of high
+degree are close to a large amount of nodes in the network.
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.45]{TableuPlots/Deg-Betweeness}
+\par\end{centering}
+
+\protect\caption{Betweeness Centrality of Ingredient Nodes in Cuisine Networks\label{fig:Betweeness}}
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics{TableuPlots/Deg-Closeness}
+\par\end{centering}
+
+\protect\caption{Degree vs. Clustering Coefficient of Ingredient Nodes in Cuisine Networks\label{fig:Closeness}}
+\end{figure}
+
+\par\end{center}
+
+In order to analyze a subgraph structure of nodes of high degree,
+eigen vector centrality was computed for all nodes in the network.
+Figure \ref{fig:degeigen}shows the node level eigen vector centrality
+measure plotted against degree. Eigen vector centrality is low for
+nodes of high degree indicating a disassortative mixing pattern which
+is further ascertained by the low clustering coefficient (as seen
+in figure \ref{fig:degClusCoeff}).
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics{TableuPlots/Deg-Eigen}
+\par\end{centering}
+
+\protect\caption{Degree vs. Clustering Coefficient of Ingredient Nodes in Cuisine Networks\label{fig:degeigen}}
+\end{figure}
+
+\par\end{center}
+
+Communicability centrality of ingredient nodes is shown in figure
+\ref{fig:comm}. It can be observed that, Italian and Indian cuisines
+have higher proportion of closed walks for nodes of high degree as
+compared to other four cuisines. Mexican, Chinese and Spanish have
+very similar increase in number of closed walks with increase in degree.
+French cuisine has the lowest number of closed walks for individual
+ingredients indicating a potentially star-like network. 
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics{TableuPlots/Deg-Comm}
+\par\end{centering}
+
+\protect\caption{Degree vs. Clustering Coefficient of Ingredient Nodes in Cuisine Networks\label{fig:comm}}
+\end{figure}
+
+\par\end{center}
+
+
+\subsection{Node - level Distributions \label{sub:NodeDist}}
+
+In this section, we present node - level distributions of average
+neighbor degree, clustering coefficient. betweeness, closeness, eigen
+vector and communicability centrality. Rank Value plots for each of
+these metrics for all six cuisines are presented. 
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics{TableuPlots/RV-ClusCoeff}
+\par\end{centering}
+
+\protect\caption{Local Clustering Coefficient\label{fig:ClusCoeff}}
+
+
+As seen from the figure, Indian has highest and spanish has the lowest
+clustering coefficient values for ingredients compared to other cuisines.
+Italian starts with high clustering coefficient, but for $rank>300$,
+measure drops sharply to resemble the trend of Spanish. Mexican and
+Chinese have overlapping trends while French has a trend similar to
+that of Indian. 
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics{TableuPlots/RV-AvNDegree}
+\par\end{centering}
+
+\protect\caption{Average Neighbour Degree\label{fig:avNeigDegree}}
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.45]{TableuPlots/RV-Closeness}
+\par\end{centering}
+
+\protect\caption{log-log plot of Closeness\label{fig:closeness}}
+
+
+This figure shows a striking similarity in Closeness values of all
+cuisines uptil rank 100. For $rank>100$, Spanish, Italian and French
+cuisines show overlapping trend, while Chinese and Mexican have identical
+trends. Indian ingredients have highest closeness value of all cuisines
+and the trend has a sharp drop for $rank>500$ 
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.45]{TableuPlots/RV-Betweeness}
+\par\end{centering}
+
+\protect\caption{log-log plot of Betweeness\label{fig:betweeness}}
+
+
+In this figure, the betweeness trends of all cuisines are found to
+be very similar. Italian and Spanish have high betweeness of all cuisines
+although Italian has a drop in values to join the trend of Indian
+cuisine. French and Mexican overlap with Chinese and Spanish. 
+\end{figure}
+
+\par\end{center}
+
+Figure \ref{fig:eigen} and \ref{fig:comm-1} show a very identical
+trend in Eigen vector centrality and communicability centrality of
+cuisines. 
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.45]{TableuPlots/RV-Eigen}
+\par\end{centering}
+
+\protect\caption{log-log plot of Eigenvector Centrality\label{fig:eigen}}
+\end{figure}
+
+\par\end{center}
+
+\begin{center}
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.45]{TableuPlots/RV-Comm}
+\par\end{centering}
+
+\protect\caption{log-log plot of Communicability Centrality\label{fig:comm-1}}
+\end{figure}
+
+\par\end{center}
+\begin{thebibliography}{MongoDB}
+\bibitem[Schank]{key-1}Schank, Thomas, and Dorothea Wagner. \textquotedbl{}Approximating
+Clustering Coefficient and Transitivity.\textquotedbl{} Journal of
+Graph Algorithms and Applications 9.2 (2005): 265-75. Web
+
+\bibitem[Python]{key-5}http://www.python.org
+
+\bibitem[MongoDB]{key-6}http://www.mongodb.org\end{thebibliography}

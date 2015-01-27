@@ -7,6 +7,19 @@ function plotGraphLevelCentralities(netType)
     end
     data = [assortativeCoefficient, avgClusteringCoefficient, transitivity, degreeCentrality, betweeness, closeness, networkdensity];
     
+    
+    fileId = fopen('graphCentralities.txt', 'w');
+    fprintf(fileId, '%s\n', 'Cuisine, AssortativeCoefficient, AvgClusteringCoefficient, Transitivity, Degree Centrality, Betweeneness, Closeness, Network Density');
+    for i=1:6
+        fprintf(fileId, '%s\n', strcat(cuisine{i}, ',', num2str(assortativeCoefficient(i)), ...
+           ',', num2str(avgClusteringCoefficient(i)), ...
+           ',', num2str(transitivity(i)), ...
+           ',', num2str(degreeCentrality(i)),...
+           ',', num2str(betweeness(i)),...
+           ',', num2str(closeness(i)),...
+           ',', num2str(networkdensity(i))));
+    end
+    fclose(fileId);
     data = data';
     figure;
     bar(data);

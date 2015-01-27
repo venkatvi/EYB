@@ -30,9 +30,21 @@ function metricComparison(netType, mode, metric1, metric2)
                     'HorizontalAlignment', 'center');
                 print(h, strcat(plotTitle, '.png'));
                 
+                fileId = fopen(strcat(metric1, '-', metric2,'1.txt'), 'w');
+                fprintf(fileId, '%s\n', strcat('Cuisine,', metric1, ',', metric2));
+                
                 h = figure;
                 for k=1:6
                     [x,y] = getComparisonData(cuisines{k}, netType, i, j);
+                    
+                    %y = (y - min(y))/(max(y)-min(y));
+                    
+                    for i1 = 1:numel(x)
+                        fprintf(fileId, '%s\n', strcat(cuisines{k}, ',', num2str(x(i1)), ',', num2str(y(i1))));
+                    end
+                    
+                    ylim([0,1]);
+                    xlim([0,1]);
                     if strcmpi(mode, 'log')
                         loglog(x,y,'.', 'color',  c(colorIndex(k),:));
                     else
@@ -40,6 +52,7 @@ function metricComparison(netType, mode, metric1, metric2)
                     end
                     hold on;
                 end
+                fclose(fileId);
                 title(plotTitle);
                 xlabel(xtitle);
                 ylabel(ytitle);
@@ -75,7 +88,7 @@ function [x, node]=getData(i, fileName)
     load(fileName);
     switch(i)
         case 1
-            x=degree;
+            x=degreeCentrality;
         case 2
             x=closeness;
         case 3

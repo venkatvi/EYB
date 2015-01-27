@@ -7,9 +7,9 @@ function allData = plotEdgeDist(netType, threshold)
     allData = loadData('italian', netType, allData);
     allData = loadData('french', netType, allData);
     
-    %plotData(allData);
+    plotData(allData);
     %plotRF(allData);
-    plotHist(allData, threshold);
+    %plotHist(allData, threshold);
 end
 function plotHist(allData, threshold)
     figure;

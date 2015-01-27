@@ -1,4 +1,5 @@
 function plotRFDegree(netType, mode, lt, ht, isNormalizedToNodeCount, isNormalizedToMaxDegree)
+    %Plot node degree distributions of cuisine networks
     titleStr = '';
     if isNormalizedToNodeCount
         titleStr = strcat(titleStr, '-norm by nodeCount');
@@ -9,6 +10,8 @@ function plotRFDegree(netType, mode, lt, ht, isNormalizedToNodeCount, isNormaliz
     cuisines = {'indian', 'chinese', 'mexican', 'spanish', 'french', 'italian'};
     h = figure;
     plotTitle = strcat('Degree RF Plot-', mode, titleStr);
+    allData = {};
+    maxRank = 0;
     for i=1:numel(cuisines)
         subplot(3,2,i);
         sortedDegree = plotDegreeRF(cuisines{i}, netType, isNormalizedToNodeCount, isNormalizedToMaxDegree);
@@ -19,6 +22,10 @@ function plotRFDegree(netType, mode, lt, ht, isNormalizedToNodeCount, isNormaliz
         end
         xlabel(cuisines{i});
         hold on;
+        allData{i} = sortedDegree;
+        if maxRank < numel(sortedDegree)
+            maxRank = numel(sortedDegree);
+        end
     end
     annotation('textbox', [0 0.9 1 0.1], ...
                     'String', plotTitle, ...
@@ -54,6 +61,16 @@ function plotRFDegree(netType, mode, lt, ht, isNormalizedToNodeCount, isNormaliz
     legend(cuisines);
     title(plotTitle);
     saveas(h, plotTitle, 'png');
+    
+    fileId = fopen(strcat('DegreeRF_', mode,'.txt'), 'w');
+    fprintf(fileId, '%s\n', 'Cuisine, Rank, Value');
+    for i=1:numel(allData)
+        cuisineData = allData{i}; 
+        for j=1:numel(cuisineData)
+            fprintf(fileId, '%s\n', strcat(cuisines{i}, ',', num2str(j), ',', num2str(cuisineData(j))));
+        end
+    end
+    fclose(fileId);
 end
 function sortedDegree = plotDegreeRF(cuisine, netType, isNormalizedToNodeCount, isNormalizedToMaxDegree)
      nodeMetricsFile = strcat(cuisine, '_', netType , '_nodeOrder.csv');
